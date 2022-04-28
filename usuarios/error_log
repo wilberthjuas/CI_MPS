@@ -1,0 +1,5 @@
+[23-Apr-2020 13:58:36 America/Monterrey] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/mutua036/public_html/sistema/conexion/conexion.php on line 7
+[23-Apr-2020 13:58:36 America/Monterrey] PHP Warning:  mysqli_select_db() expects parameter 1 to be mysqli, boolean given in /home/mutua036/public_html/sistema/usuarios/login/login.php on line 10
+[23-Apr-2020 13:58:36 America/Monterrey] PHP Fatal error:  Call to a member function query() on boolean in /home/mutua036/public_html/sistema/usuarios/login/login.php on line 11
+[23-Apr-2020 14:00:19 America/Monterrey] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/mutua036/public_html/sistema/usuarios/login/login.php:17) in /home/mutua036/public_html/sistema/usuarios/login/login.php on line 21
+[23-Apr-2020 14:40:00 America/Monterrey] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/mutua036/public_html/sistema/usuarios/login/login.php:17) in /home/mutua036/public_html/sistema/usuarios/login/login.php on line 21

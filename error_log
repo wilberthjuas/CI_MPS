@@ -1,0 +1,21 @@
+[23-Apr-2020 14:44:56 America/Monterrey] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/mutua036/public_html/sistema/inicio.php:7) in /home/mutua036/public_html/sistema/inicio.php on line 15
+[23-Apr-2020 14:45:39 America/Monterrey] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/mutua036/public_html/sistema/inicio.php:1) in /home/mutua036/public_html/sistema/inicio.php on line 9
+[23-Apr-2020 14:45:40 America/Monterrey] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/mutua036/public_html/sistema/inicio.php:1) in /home/mutua036/public_html/sistema/inicio.php on line 9
+[23-Apr-2020 14:46:39 America/Monterrey] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/mutua036/public_html/sistema/inicio.php:1) in /home/mutua036/public_html/sistema/inicio.php on line 9
+[23-Apr-2020 14:47:34 America/Monterrey] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/mutua036/public_html/sistema/inicio.php:1) in /home/mutua036/public_html/sistema/inicio.php on line 9
+[23-Apr-2020 14:57:05 America/Monterrey] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/mutua036/public_html/sistema/inicio.php:1) in /home/mutua036/public_html/sistema/inicio.php on line 9
+[23-Apr-2020 14:58:51 America/Monterrey] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/mutua036/public_html/sistema/inicio.php:1) in /home/mutua036/public_html/sistema/inicio.php on line 9
+[23-Apr-2020 15:00:12 America/Monterrey] PHP Parse error:  syntax error, unexpected '}' in /home/mutua036/public_html/sistema/inicio.php on line 62
+[23-Apr-2020 15:01:03 America/Monterrey] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/mutua036/public_html/sistema/inicio.php on line 44
+[23-Apr-2020 15:02:05 America/Monterrey] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/mutua036/public_html/sistema/inicio.php on line 44
+[23-Apr-2020 15:02:09 America/Monterrey] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/mutua036/public_html/sistema/inicio.php on line 44
+[23-Apr-2020 15:02:10 America/Monterrey] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/mutua036/public_html/sistema/inicio.php on line 44
+[23-Apr-2020 15:02:58 America/Monterrey] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/mutua036/public_html/sistema/inicio.php on line 44
+[23-Apr-2020 15:02:59 America/Monterrey] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/mutua036/public_html/sistema/inicio.php on line 44
+[23-Apr-2020 15:02:59 America/Monterrey] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/mutua036/public_html/sistema/inicio.php on line 44
+[23-Apr-2020 15:03:24 America/Monterrey] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/mutua036/public_html/sistema/inicio.php:1) in /home/mutua036/public_html/sistema/inicio.php on line 9
+[18-Feb-2021 15:43:12 America/Monterrey] PHP Parse error:  syntax error, unexpected 'font' (T_STRING), expecting ',' or ';' in /home/mutua036/public_html/sistema/public/html/header_1.php on line 9
+[18-Feb-2021 15:45:52 America/Monterrey] PHP Parse error:  syntax error, unexpected 'font' (T_STRING), expecting ',' or ';' in /home/mutua036/public_html/sistema/public/html/header_1.php on line 9
+[18-Apr-2021 23:13:43 America/Monterrey] PHP Parse error:  syntax error, unexpected ')' in /home/mutua036/public_html/sistema/public/html/header_1.php on line 41
+[18-Apr-2021 23:21:08 America/Monterrey] PHP Parse error:  syntax error, unexpected '{' in /home/mutua036/public_html/sistema/public/html/header_1.php on line 46
+[19-Apr-2021 10:15:32 America/Monterrey] PHP Parse error:  syntax error, unexpected '<' in /home/mutua036/public_html/sistema/public/html/header_1.php on line 27
