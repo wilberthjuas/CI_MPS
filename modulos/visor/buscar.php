@@ -8,23 +8,35 @@
 		exit();
 	}
 ?>
-<html><link rel="shortcut icon" href="../../logop.png"/>
-<head><title>Mutualidad MPS</title></head>
-<link href="../../public/css/estilo.css" rel="stylesheet" type="text/css">
-<link charset="utf-8">
-<body>
 
-
-	<!--Cabecera-->
-    <?php
+<?php
       //CABECERA DEL SITIO
-      require_once('../../public/html/header.php');
-    ?>
-  	<!--Cabecera-->
-<div class="espacio-header"></div>
-      <img src="../../logop.png" width="232" height="220"> </div>
-</div>
-	<form id="form1" name="form1" method="post" action="visor.php">
+$user=$_SESSION['type'];
+$rootDir='../../';
+$title="VISOR";
+require_once($rootDir.'public/html/header_template.php');
+
+?>
+	<div class="card-body">
+		<form method="post" action="visor.php">
+			<div class="mb-3">
+				<label class="form-label"><strong>Ingresa datos y forma de búsqueda</strong></label>
+				<input autocomplete="off" type="text" name="buscar" class="form-control" placeholder="Ingrese datos de búsqueda" required/>
+			</div>
+			<div class="mb-3">
+				<select class="form-control mb-3" autocomplete="off" required="required" type="text" name="tipo" id="Numero de parte" />
+					<option disabled selected>Selecciona una opción</option>
+					<option>Folio</option>
+					<option>Placas</option>
+					<option>Nombre</option>
+				</select>
+			</div>
+
+			<button type="submit" class="btn btn-primary">Enviar</button> 
+		 </form>
+	</div>
+	
+<!--	<form id="form1" name="form1" method="post" action="visor.php">
 	<div class="container">
 		<div class="row">
 			<div class="col-6 push-3">
@@ -64,7 +76,7 @@
 			</div>
 
 		</div>
-	</div><!--Fin container-->
+	</div>
 	</form>   
     
     
@@ -76,10 +88,14 @@
 			</div>
 
 		</div>
-	</div><!--Fin container-->
-	</form>   
+	</div>
+	</form> -->   
+<?php
+      //PIE De PAGINA
+require_once($rootDir.'public/html/footer_template.php');
+?>
 
-</html>
+
 
 
 

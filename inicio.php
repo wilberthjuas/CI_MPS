@@ -16,31 +16,21 @@
 		}
 			ob_start();
 ?>
-<html>
-    <html><link rel="shortcut icon" href="logop.png"/>
-<link href="public/css/estilo.css" rel="stylesheet" type="text/css">
-<body
 
-	<!--Cabecera-->
-    <?php
+<?php
       //CABECERA DEL SITIO
-     require_once('public/html/header_1.php');
- $user=$_SESSION['type'];
-   ?>
-  	<!--Cabecera-->
-	<div class="container">
-		<div class="row">
-			<div class="col-1 push-5">
-				<p></p>
-			</div>
-		</div>
-	</div><!--Fin container-->
-	<br><br><br><br>
-<body>
-<div align="center"><img src="logop.png" width="554" height="554"></div>	
-<html>
-<head><title>Mutualidad MPS </title></head>
-<link href="public/css/estilo.css" rel="stylesheet" type="text/css">
-<body>
-</body>
-</html
+$user=$_SESSION['type'];
+$rootDir='';
+require_once($rootDir.'public/html/header_template.php');
+
+?>
+
+<div align="center">
+	<img src="logop.png" width="554" height="554">
+</div>	
+
+
+<?php
+      //PIE De PAGINA
+require_once($rootDir.'public/html/footer_template.php');
+?>

@@ -1,262 +1,175 @@
 <?php
-error_reporting(E_ERROR | E_WARNING | E_PARSE);
-session_start();
-if(isset($_SESSION['usuario']) && isset($_SESSION['usuario'])){
-
-}else{
-  header("Location: ../../index.php");
-  exit();
-}
+  error_reporting(E_ERROR | E_WARNING | E_PARSE);
+  session_start();
+  if(isset($_SESSION['usuario']) && isset($_SESSION['usuario'])){
+    $pintar_usaurio = strtoupper($_SESSION['usuario']);
+  }else{
+    header("Location: ../../index.php");
+    exit();
+  }
   //CONEXION
-require_once('../../conexion/conexion.php');
-mysqli_select_db($conexion, $database);
-$a = $_POST['buscar'];
+  require_once('../../conexion/conexion.php');
+  mysqli_select_db($conexion, $database);
+  $a = $_POST['buscar'];
+
+  $query1 = "SELECT * FROM datos WHERE folio='$a'   ";   //WHERE  bit_estatus  <> '2'
+  $result1 = mysqli_query($conexion,$query1);
+ 
+  //CABECERA DEL SITIO
+  $user=$_SESSION['type'];
+  $rootDir='../../';
+  $title="GRUAS";
+  require_once($rootDir.'public/html/header_template.php');
+
+
+
+  while( $row = $result1->fetch_assoc() ){
+    $poliza     = $row['folio'];
+    $nombre     = $row['nombre'];
+    $direccion  = $row['domicilio'].' '.$row['exterior'];
+    $colonia    = $row['col'];
+    $municipio  = $row['municipio'];
+    $telefono   = $row['tel'];
+
+    $vehiculo = $row['tipo'];
+    $serie    = $row['serie'];
+    $motor    = $row['nmotor'];
+    $placas   = $row['placas'];
+
+    $cobertura    = $row['cobertura'];
+    $fecha        = $row['expedicion'];
+    $anoPoliza    = $row['ano2'];
+    $abonoMensual = $row['pagomensual'];
+    $vendedor     = $row['vendedor'];
+    $cobrador     = $row['cobrador'];
+
+    $grua1 = $row['com1'];
+    $grua2 = $row['com2'];
+  }
 
 ?>  
-<html>
-<html><link rel="shortcut icon" href="../../logop.png"/>
-<head><title>Mutualidad MPS</title></head>
-<link href="../../public/css/estilo.css" rel="stylesheet" type="text/css">
-<body>
 
-
-
-  <!--Cabecera-->
-  <?php
-      //CABECERA DEL SITIO
-  require_once('../../public/html/header.php');
-  ?>
-  <!--Cabecera-->
-  
-  <img src="../../logop.png" width="232" height="220">
-
-  <center><p style="color:black; font-family: Verdana; font-size:20;"style="font-family:Arial;" aling="center">GRUAS</p></center><br>
-
-  
-
-
-  <?php
-  $query1 = "SELECT * FROM datos WHERE folio='$a'   ";   //WHERE  bit_estatus  <> '2'
-  $result1 = mysqli_query($conexion,$query1);
-  $resultado = "";
-  
-  
-  
-  
-  ?>
-  
-  <form id="form1" name="registrar" action="updategruas.php" method="post">
-   
-
-
-    <!--PINTAR LOS DATOS OBTENIDOS EN SELECT 2-->
-    <center>
-     
-      <tr>
-        <p align="right" style="color:#2962FF; font-family: Verdana;"><?php 
-        error_reporting(0);
-        $hoy= date("Y-m-d");
-        echo $hoy;
-        
-        
-      ?></p >
-      
-    </tr>
-    <table style="border-collapse: collapse=2;" border="5"; width="auto">
-      
-      <thead>
-        <tr>
-          <p style="color:#2962FF; font-family: Arial;"></p>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          
-         
-         <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Poliza:&nbsp;&nbsp;&nbsp;</div></td>
-         <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Nombre:&nbsp;&nbsp;&nbsp;</div></td>
-         <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Direccion:&nbsp;&nbsp;&nbsp;</div></td>
-         
-         <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Colonia:&nbsp;&nbsp;&nbsp;</div></td>
-         <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Municipio:&nbsp;&nbsp;&nbsp;</div></td>
-         <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Vehiculo:&nbsp;&nbsp;&nbsp;</div></td>
-         <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Telefono:&nbsp;&nbsp;&nbsp;</div></td>
-         
-         
-         <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Fecha:&nbsp;&nbsp;&nbsp;</div></td>
-         <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Cobertura:&nbsp;&nbsp;&nbsp;</div></td>
-         <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Placas:&nbsp;&nbsp;&nbsp;</div></td>
-         <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Numero de Serie:&nbsp;&nbsp;&nbsp;</div></td>
-         <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Numero de Motor:&nbsp;&nbsp;&nbsp;</div></td>
-         <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Abono Mensual:&nbsp;&nbsp;&nbsp;</div></td>
-         <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Vendedor:&nbsp;&nbsp;&nbsp;</div></td>
-         <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Cobrador:&nbsp;&nbsp;&nbsp;</div></td>
-         <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">A&ntilde;o de la Poliza:&nbsp;&nbsp;&nbsp;</div></td>
-         
-       </tr>
-       
-       
-       <?php
-
-       while( $row = $result1->fetch_assoc() ){
-        ?>
-        
+<div class="card-body">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">Datos Cliente</h5>
+        <h6 class="card-subtitle text-muted">
+          <?php 
+            error_reporting(0);
+            $hoy= date("Y-m-d");
+            echo $hoy;
+          ?>
+        </h6>
       </div>
-      
-      <tr>
-        
-        
-       <div align="center">
-        
-       </div>
-       <td><div align="center">
-         <input class="" type="text" name="folio" value="<?php echo $row['folio'] ?>" readonly/>
-       </div></td> 
-       <td><div align="center">
-         <input class="" type="text" name="nombre" value="<?php echo $row['nombre'] ?>" readonly/>
-       </div></td> 
-       <td><div align="center">
-         <input class="" type="text" size="70" name="domicilio"  value="<?php echo $row['domicilio']  ?>" readonly/>
-       </div></td> 
-       
-       <td><div align="center">
-         <input class="" type="text" name="col" value="<?php echo $row['col'] ?>"readonly/>
-       </div></td> 
-       <td><div align="center">
-         <input class="" type="text" name="municipio" value="<?php echo $row['municipio'] ?>" readonly/>
-       </div></td> 
-       <td ><div align="center">
-         <input class="" type="text" name="tipo" value="<?php echo $row['tipo'] ?>" readonly/>
-       </div></td>
-       <td><div align="center">
-         <input class="" type="text" name="tel" value="<?php echo $row['tel'] ?>" readonly/>
-       </div></td>
-       
-       <td><div align="center">
-         <input class="" type="text" name="expedicion" value="<?php echo $row['expedicion'] ?>" readonly/>
-       </div></td>
-       <td><div align="center">
-         <select class="" type="text" name="cobertura" value="<?php echo $row['cobertura'] ?>" readonly/>
-           <option><?php echo $row['cobertura'] ?></option>
-         </div></td>
-         <td><div align="center">
-           <input class="" type="text" name="placas" value="<?php echo $row['placas'] ?>" readonly/>
-         </div></td>
-         <td><div align="center">
-           <input class="" type="text" name="serie" size="40" value="<?php echo $row['serie'] ?>" readonly/>
-         </div></td>
-         <td><div align="center">
-           <input class="" type="text" name="nmotor" size="40" value="<?php echo $row['nmotor'] ?>" readonly/>
-         </div></td>
-         <td><div align="center">
-           <input class="" type="text" name="pagomensual" value="<?php echo $row['pagomensual'] ?>" readonly/>
-         </div></td>
-         <td><div align="center">
-           <input class="" type="text" name="vendedor" size="40" value="<?php echo $row['vendedor'] ?>" readonly/>
-         </div></td>
-         
-         <td><div align="center">
-           <input class="" type="text" name="cobrador"   size="40" value="<?php echo $row['cobrador'] ?>" readonly/>
-         </div></td>
-         <td><div align="center">
-           <input class="" type="text" name="ano2" value="<?php echo $row['ano2'] ?>" readonly/>
-         </div></td>
-         
-         
-       </tr>
-
-
-       
-       <?php
-     }
-     ?>
-
-     <?php
-  $query1 = "SELECT * FROM datos WHERE folio='$a'   ";   //WHERE  bit_estatus  <> '2'
-  $result1 = mysqli_query($conexion,$query1);
-  $resultado = "";
-  
-  ?>
-  
-  
-
-
-  <table border=1>
-    <thead>
-      <tr>
-        <p style="color:#2962FF; font-family: Verdana;"></p>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        
-       
-       <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Grua 1:&nbsp;&nbsp;&nbsp;</div></td>
-       <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Grua 2:&nbsp;&nbsp;&nbsp;</div></td>
-       
-     </tr>
-     
-     <?php
-
-     while( $row = $result1->fetch_assoc() ){
-      ?>
-      
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Póliza</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Dirección</th>
+              <th scope="col">Colonia</th>
+              <th scope="col">Municipio</th>
+              <th scope="col">Teléfono</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><?php echo $poliza; ?></td>
+              <td><?php echo $nombre; ?></td>
+              <td><?php echo $direccion; ?></td>
+              <td><?php echo $colonia;?></td>
+              <td><?php echo $municipio; ?></td>
+              <td><?php echo $telefono; ?></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-    
-    
-    
-    <tr>
-      
-      
-     <div align="center">
-      
-      
-      <?php
-      if($row['com1']==""){
-        
-        ?>
-        
-        <td><div align="center">
-         <input style="width:200px; height:150px"  type="text"   name="com1" value="" />
-       </div></td> 
-       <?php
-     }else {
-      
-      ?>
-      
-      <td><div align="center"> 
-       <input style="width:200px; height:150px"  type="text"   name="com1" value="<?php echo $row['com1'] ?>"  readonly/>
-     </div></td> 
-     
-     <?php
-   }
-   
-   if($row['com2']==""){
-    
-    ?>
-    
-    <td><div align="center">
-     <input style="width:200px; height:150px" type="text" name="com2" value="" />
-   </div></td> 
- </div></td> 
- <?php
-}else {
-  
-  ?>
-  <td><div align="center">
-   <input style="width:200px; height:150px" type="text" name="com2" value="<?php echo $row['com2'] ?>"  readonly/>
- </div></td> 
- <?php
-}
+  </div>
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">Datos Vehículo</h5>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Vehiculo</th>
+              <th scope="col">No. Serie</th>
+              <th scope="col">No. Motor</th>
+              <th scope="col">Placas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><?php echo $vehiculo; ?></td>
+              <td><?php echo $serie; ?></td>
+              <td><?php echo $motor; ?></td>
+              <td><?php echo $placas; ?></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">Datos Póliza</h5>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Cobertura</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Año de la póliza</th>
+              <th scope="col">Abono mensual</th>
+              <th scope="col">Vendedor</th>
+              <th scope="col">Cobrador</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><?php echo $cobertura; ?></td>
+              <td><?php echo $fecha; ?></td>
+              <td><?php echo $anoPoliza; ?></td>
+              <td><?php echo $abonoMensual; ?></td>
+              <td><?php echo $vendedor; ?></td>
+              <td><?php echo $cobrador; ?></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 
-?>
-
-</tr>
+  <form method="post" action="updategruas.php">
+    <div class="row">
+      <div class="mb-3 col-md-4">
+        <label class="form-label"><strong>Grua 1</strong></label>
+        <input autocomplete="off" type="text" name="com1" class="form-control" value="<?php echo $grua1; ?>"  
+        <?php if (strlen($grua1) > 0){ ?>readonly<?php } ?>/>
+      </div>
+      <div class="mb-3 col-md-4">
+        <label class="form-label"><strong>Grua 1</strong></label>
+        <input autocomplete="off" type="text" name="com2" class="form-control" value="<?php echo $grua2; ?>" 
+        <?php if (strlen($grua2) > 0){ ?>readonly<?php } ?>/>
+      </div>
+    </div>  
+    <input type="hidden" name="folio" value="<?php echo $poliza; ?>">
+    <button type="submit" class="btn btn-primary" <?php if (strlen($grua1) > 0 && strlen($grua2) > 0){ ?>disabled<?php } ?>>Guardar Cambios</button> 
+  </form>
+</div>
 
 
 
 <?php
-}
+//PIE De PAGINA
+require_once($rootDir.'public/html/footer_template.php');
 ?>
 
 
@@ -267,11 +180,9 @@ $a = $_POST['buscar'];
 
 
 
-</form>
 
-<br><br><br><br>
-<input style="position:absolute; top: 800px ; left: 1100px" type="submit" value="GUARDAR CAMBIOS" />
 
-</body>
 
-</html>
+
+
+ 

@@ -1,419 +1,400 @@
 <?php
-  error_reporting(E_ERROR | E_WARNING | E_PARSE);
-  session_start();
-  if(isset($_SESSION['usuario']) && isset($_SESSION['usuario'])){
-
-  }else{
-    header("Location: ../../index.php");
-    exit();
-  }
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+session_start();
+if(isset($_SESSION['usuario']) && isset($_SESSION['usuario'])){
+  $pintar_usaurio = strtoupper($_SESSION['usuario']);
+}else{
+  header("Location: ../../index.php");
+  exit();
+}
   //CONEXION
-  require_once('../../conexion/conexion.php');
-  mysqli_select_db($conexion, $database);
-  $a = $_POST['buscar'];
+require_once('../../conexion/conexion.php');
+mysqli_select_db($conexion, $database);
+$a = $_POST['buscar'];
 
+
+//CABECERA DEL SITIO
+$user=$_SESSION['type'];
+$rootDir='../../';
+$title="REGISTRAR PAGO";
+require_once($rootDir.'public/html/header_template.php');
+
+
+$query1 = "SELECT * FROM datos   WHERE folio='$a'   ";   //WHERE estatus='0'
+$result1 = mysqli_query($conexion,$query1);
+$resultado = "";
+
+
+while( $row = $result1->fetch_assoc() ){
+  $status     = $row['bit'] == 0 ? 'Activa':'Cancelada';
+  $poliza     = $row['folio'];
+  $nombre     = $row['nombre'];
+  $direccion  = $row['domicilio'].' '.$row['exterior'];
+  $colonia    = $row['col'];
+  $municipio  = $row['municipio'];
+  $telefono   = $row['tel'];
+
+  $vehiculo     = $row['tipo'];
+  $serie        = $row['serie'];
+  $motor        = $row['nmotor'];
+  $placas       = $row['placas'];
+
+  $cobertura    = $row['cobertura'];
+  $fecha        = $row['expedicion'];
+  $anoPoliza    = $row['ano2'];
+  $abonoMensual = $row['pagomensual'];
+  $vendedor     = $row['vendedor'];
+  $cobrador     = $row['cobrador'];
+
+  $uno          = $row['uno'];
+  $folio1       = $row['folio1'];
+  $cobra1       = $row['cobra1'];
+  $monto1       = $row['monto1'];
+  $fech1        = $row['fech1'];
+  $re1          = $row['re1'];
+
+  $dos          = $row['dos'];
+  $folio2       = $row['folio2'];
+  $cobra2       = $row['cobra2'];
+  $monto2       = $row['monto2'];
+  $fech2        = $row['fech2'];
+  $re2          = $row['re2'];
+
+  $tres         = $row['tres'];
+  $folio3       = $row['folio3'];
+  $cobra3       = $row['cobra3'];
+  $monto3       = $row['monto3'];
+  $fech3        = $row['fech3'];
+  $re3          = $row['re3'];
+
+  $cuatro       = $row['cuatro'];
+  $folio4       = $row['folio4'];
+  $cobra4       = $row['cobra4'];
+  $monto4       = $row['monto4'];
+  $fech4        = $row['fech4'];
+  $re4          = $row['re4'];
+
+  $cinco        = $row['cinco'];
+  $folio5       = $row['folio5'];
+  $cobra5       = $row['cobra5'];
+  $monto5       = $row['monto5'];
+  $fech5        = $row['fech5'];
+  $re5          = $row['re5'];
+
+  $seis         = $row['seis'];
+  $folio6       = $row['folio6'];
+  $cobra6       = $row['cobra6'];
+  $monto6       = $row['monto6'];
+  $fech6        = $row['fech6'];
+  $re6          = $row['re6'];
+
+  $siete        = $row['siete'];
+  $folio7       = $row['folio7'];
+  $cobra7       = $row['cobra7'];
+  $monto7       = $row['monto7'];
+  $fech7        = $row['fech7'];
+  $re7          = $row['re7'];
+
+  $ocho         = $row['ocho'];
+  $folio8       = $row['folio8'];
+  $cobra8       = $row['cobra8'];
+  $monto8       = $row['monto8'];
+  $fech8        = $row['fech8'];
+  $re8          = $row['re8'];
+
+  $nueve        = $row['nueve'];
+  $folio9       = $row['folio9'];
+  $cobra9       = $row['cobra9'];
+  $monto9       = $row['monto9'];
+  $fech9        = $row['fech9'];
+  $re9          = $row['re9'];
+
+  $diez          = $row['diez'];
+  $folio10       = $row['folio10'];
+  $cobra10       = $row['cobra10'];
+  $monto10       = $row['monto10'];
+  $fech10        = $row['fech10'];
+  $re10          = $row['re10'];
+
+  $once          = $row['once'];
+  $folio11       = $row['folio11'];
+  $cobra11       = $row['cobra11'];
+  $monto11       = $row['monto11'];
+  $fech11        = $row['fech11'];
+  $re11          = $row['re11'];
+
+}
 ?>  
-<html>
-<html><link rel="shortcut icon" href="../../logop.png"/>
-<head><title>Mutualidad MPS</title></head>
-<link href="../../public/css/estilo.css" rel="stylesheet" type="text/css">
-<body>
 
-
-
-  <!--Cabecera-->
-    <?php
-      //CABECERA DEL SITIO
-      require_once('../../public/html/header.php');
-    ?>
- <img src="../../logop.png" width="232" height="220">
-	<!--Cabecera-->
-    
-  	<!--Cabecera-->
-
-
-	<div class="container">
-		<div class="row">
-			<div class="col-1 push-5">
-				<p></p>
-			</div>
-		</div>
-	</div><!--Fin container-->
-	<br><br>
-
-
-<body>
-
-
-  <?php
-
-  $query1 = "SELECT * FROM datos   WHERE folio='$a'   ";   //WHERE estatus='0'
-  $result1 = mysqli_query($conexion,$query1);
-  $resultado = "";
-
-  ?>
- 
-  
-   
-
-
-<!--PINTAR LOS DATOS OBTENIDOS EN SELECT 2-->
-            <center>
-         
+<div class="card-body">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">Datos Cliente</h5>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
             <tr>
-                  <p align="right" style="color:#2962FF; font-family: Arial;"><?php 
-				  error_reporting(0);
-				  $hoy= date("Y-m-d");
-				  echo $hoy;
-				  
-				  
-				   ?></p>
-                </tr>
-              <table border=1>
-              <thead>
-                <tr>
-                  <p style="color:#2962FF; font-family: Verdana;"style="font-family:Arial;" aling="center">DATOS DE POLIZA</p>
-                </tr>
-              </thead>
-              <tbody>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:18;">STATUS:&nbsp;&nbsp;&nbsp;</td>
-                   <td style="color:#2962FF; font-family: Verdana; font-size:12;">POLIZA:&nbsp;&nbsp;&nbsp;</td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;">NOMBRE:&nbsp;&nbsp;&nbsp;</td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;">DIRECCION:&nbsp;&nbsp;&nbsp;</td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;">EXTERIOR:&nbsp;&nbsp;&nbsp;</td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;">CRUCE&nbsp;&nbsp;&nbsp;</td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;">COLONIA:&nbsp;&nbsp;&nbsp;</td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;">MUNICIPIO:&nbsp;&nbsp;&nbsp;</td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;">VEHICULO:&nbsp;&nbsp;&nbsp;</td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;">TELEFONO:&nbsp;&nbsp;&nbsp;</td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;">DOMCOM:&nbsp;&nbsp;&nbsp;</td>
-                 
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;">FECHA:&nbsp;&nbsp;&nbsp;</td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;">COBERTURA:&nbsp;&nbsp;&nbsp;</td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;">PLACAS:&nbsp;&nbsp;&nbsp;</td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;">ABONO MENSUAL:&nbsp;&nbsp;&nbsp;</td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;">VENDEDOR:&nbsp;&nbsp;&nbsp;</td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;">COBRADOR:&nbsp;&nbsp;&nbsp;</td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;">A&ntilde;O POLIZA:&nbsp;&nbsp;&nbsp;</td>
-                   
-                  
-                  
-                    
-
-                </tr>
-
-                <div align="center">
-                  <?php
-
-      while( $row = $result1->fetch_assoc() ){
-?>
-                  
-                </div>
-                <tr>
-                    <td><?php if ($row['bit']==0){
-                     
-                     echo "Activa";
-                 }else {
-                     
-                     echo"Cancelada";
-                 }
-                 
-                 
-                 
-                 ?></td>
-                 <td><?php echo $row['folio'] ?></td>
-                 <td><?php echo $row['nombre'] ?></td>
-                 <td><?php echo $row['domicilio'] ?></td>
-                 <td><?php echo $row['exterior'] ?></td>
-                 <td><?php echo $row['entre'] ?></td>
-                 <td><?php echo $row['col'] ?></td>
-                 <td><?php echo $row['municipio'] ?></td>
-                 <td><?php echo $row['tipo'] ?></td>
-                 <td><?php echo $row['tel2'] ?></td>
-                 <td><?php echo $row['domcom'] ?></td>
-                
-                 <td><?php echo $row['expedicion'] ?></td>
-                 <td><?php echo $row['cobertura'] ?></td>
-                 <td><?php echo $row['placas'] ?></td>
-                 <td><?php echo $row['pagomensual'] ?></td>
-                 <td><?php echo $row['vendedor'] ?></td>
-                 <td><?php echo $row['cobrador'] ?></td>
-                 <td><?php echo $row['ano2'] ?></td>
-                 
-                </tr>
-
-
-                <div align="center">
-                  <?php
-
-     }
-
-?>
-
-  <?php
-
-  $query1 = "SELECT * FROM datos   WHERE folio='$a'   ";   //WHERE estatus='0'
-  $result1 = mysqli_query($conexion,$query1);
-  $resultado = "";
-
-  ?>
- 
-  
-   
-
-
-<!--PINTAR LOS DATOS OBTENIDOS EN SELECT 2-->
-            <center>
-         
+              <th scope="col"><strong>STATUS</strong></th>
+              <th scope="col">Póliza</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Dirección</th>
+              <th scope="col">Colonia</th>
+              <th scope="col">Municipio</th>
+              <th scope="col">Teléfono</th>
+            </tr>
+          </thead>
+          <tbody>
             <tr>
-                  <p align="right" style="color:#2962FF; font-family: Arial;"><?php 
-				  error_reporting(0);
-				  $hoy= date("Y-m-d");
-				
-				  
-				  
-				   ?></p>
-                </tr>
-              <table border=1>
-              <thead>
-                <tr>
-                  <p style="color:#2962FF; font-family: Verdana;"style="font-family:Arial;" aling="center">PAGOS</p>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                   
-                   <td style="color:#2962FF; font-family: Verdana; font-size:12;">UNO/FOLIO/COBRADOR/MONTO/FECHA/RECIBO&nbsp;&nbsp;&nbsp;</td>
-                   <td style="color:#2962FF; font-family: Verdana; font-size:12;">DOS/FOLIO/COBRADOR/MONTO/FECHA/RECIBO&nbsp;&nbsp;&nbsp;</td>
-                   <td style="color:#2962FF; font-family: Verdana; font-size:12;">TRES/FOLIO/COBRADOR/MONTO/FECHA/RECIBO&nbsp;&nbsp;&nbsp;</td>
-                   <td style="color:#2962FF; font-family: Verdana; font-size:12;">CUATRO/FOLIO/COBRADOR/MONTO/FECHA/RECIBO&nbsp;&nbsp;&nbsp;</td>
-                   <td style="color:#2962FF; font-family: Verdana; font-size:12;">CINCO/FOLIO/COBRADOR/MONTO/FECHA/RECIBO&nbsp;&nbsp;&nbsp;</td>
-                 
-             
-                  
-                    
-                   
-                   
-                  
-                 
-                    
+              <td><?php echo $status; ?></td>
+              <td><?php echo $poliza; ?></td>
+              <td><?php echo $nombre; ?></td>
+              <td><?php echo $direccion; ?></td>
+              <td><?php echo $colonia;?></td>
+              <td><?php echo $municipio; ?></td>
+              <td><?php echo $telefono; ?></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">Datos Vehículo</h5>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Vehiculo</th>
+              <th scope="col">No. Serie</th>
+              <th scope="col">No. Motor</th>
+              <th scope="col">Placas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><?php echo $vehiculo; ?></td>
+              <td><?php echo $serie; ?></td>
+              <td><?php echo $motor; ?></td>
+              <td><?php echo $placas; ?></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">Datos Póliza</h5>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Cobertura</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Año de la póliza</th>
+              <th scope="col">Abono mensual</th>
+              <th scope="col">Vendedor</th>
+              <th scope="col">Cobrador</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><?php echo $cobertura; ?></td>
+              <td><?php echo $fecha; ?></td>
+              <td><?php echo $anoPoliza; ?></td>
+              <td><?php echo $abonoMensual; ?></td>
+              <td><?php echo $vendedor; ?></td>
+              <td><?php echo $cobrador; ?></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">Pagos</h5>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Status</th>
+              <th scope="col">Folio</th>
+              <th scope="col">Cobrador</th>
+              <th scope="col">Monto</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Recibo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><?php echo $uno; ?></td>
+              <td><?php echo $folio1; ?></td>
+              <td><?php echo $cobra1; ?></td>
+              <td><?php echo $monto1; ?></td>
+              <td><?php echo $fech1; ?></td>
+              <td><?php echo $re1; ?></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><?php echo $dos; ?></td>
+              <td><?php echo $folio2; ?></td>
+              <td><?php echo $cobra2; ?></td>
+              <td><?php echo $monto2; ?></td>
+              <td><?php echo $fech2; ?></td>
+              <td><?php echo $re2; ?></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><?php echo $tres; ?></td>
+              <td><?php echo $folio3; ?></td>
+              <td><?php echo $cobra3; ?></td>
+              <td><?php echo $monto3; ?></td>
+              <td><?php echo $fech3; ?></td>
+              <td><?php echo $re3; ?></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><?php echo $cuatro; ?></td>
+              <td><?php echo $folio4; ?></td>
+              <td><?php echo $cobra4; ?></td>
+              <td><?php echo $monto4; ?></td>
+              <td><?php echo $fech4; ?></td>
+              <td><?php echo $re4; ?></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td><?php echo $cinco; ?></td>
+              <td><?php echo $folio5; ?></td>
+              <td><?php echo $cobra5; ?></td>
+              <td><?php echo $monto5; ?></td>
+              <td><?php echo $fech5; ?></td>
+              <td><?php echo $re5; ?></td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td><?php echo $seis; ?></td>
+              <td><?php echo $folio6; ?></td>
+              <td><?php echo $cobra6; ?></td>
+              <td><?php echo $monto6; ?></td>
+              <td><?php echo $fech6; ?></td>
+              <td><?php echo $re6; ?></td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td><?php echo $siete; ?></td>
+              <td><?php echo $folio7; ?></td>
+              <td><?php echo $cobra7; ?></td>
+              <td><?php echo $monto7; ?></td>
+              <td><?php echo $fech7; ?></td>
+              <td><?php echo $re7; ?></td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td><?php echo $ocho; ?></td>
+              <td><?php echo $folio8; ?></td>
+              <td><?php echo $cobra8; ?></td>
+              <td><?php echo $monto8; ?></td>
+              <td><?php echo $fech8; ?></td>
+              <td><?php echo $re8; ?></td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td><?php echo $nueve; ?></td>
+              <td><?php echo $folio9; ?></td>
+              <td><?php echo $cobra9; ?></td>
+              <td><?php echo $monto9; ?></td>
+              <td><?php echo $fech9; ?></td>
+              <td><?php echo $re9; ?></td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td><?php echo $diez; ?></td>
+              <td><?php echo $folio10; ?></td>
+              <td><?php echo $cobra10; ?></td>
+              <td><?php echo $monto10; ?></td>
+              <td><?php echo $fech10; ?></td>
+              <td><?php echo $re10; ?></td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td><?php echo $once; ?></td>
+              <td><?php echo $folio11; ?></td>
+              <td><?php echo $cobra11; ?></td>
+              <td><?php echo $monto11; ?></td>
+              <td><?php echo $fech11; ?></td>
+              <td><?php echo $re11; ?></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <form method="post" action="pagos.php">
+          <div class="row">
+            <div class="mb-3 col-md-2">
+              <label class="form-label"><strong>Pago</strong></label>
+              <select class="form-control mb-3" required="required" type="text" name="pag" >
+                <option>Seleccione...</option>
+                <option>Pagado</option>
+              </select>
+            </div>
+            <div class="mb-3 col-md-2">
+              <label class="form-label"><strong>Folio</strong></label>
+              <input autocomplete="off" type="text" name="fol" class="form-control"  placeholder="Ingrese folio de cobro" required />
+            </div>
+            <div class="mb-3 col-md-3">
+              <label class="form-label"><strong>Cobrador</strong></label>
+              <input autocomplete="off" type="text" name="cob" class="form-control"  placeholder="Ingrese Cobrador" required />
+            </div>
+            <div class="mb-3 col-md-2">
+              <label class="form-label"><strong>Monto</strong></label>
+              <input autocomplete="off" type="text" name="mon" class="form-control"  placeholder="Ingrese monto" required />
+            </div>
+            <div class="mb-3 col-md-2">
+              <label class="form-label"><strong>Fecha del recibo</strong></label>
+              <input autocomplete="off" type="date" name="re" class="form-control" required />
+            </div>
+          </div>
 
-                </tr>
-
-                <div align="center">
-                  <?php
-
-      while( $row = $result1->fetch_assoc() ){
-?>
-                  
-                </div>
-                <tr>
-                 <td><?php echo  $row['uno'] ?> <br> <?php echo $row['folio1']?> <br><?php echo $row['cobra1']?> <br> <?php echo $row['monto1']?> <br> <?php echo $row['fech1'] ; ?><br> <?php echo $row['re1']; ?></td>
-                 <td><?php echo  $row['dos']?> <br> <?php echo $row['folio2']?> <br><?php echo $row['cobra2'] ?> <br> <?php echo $row['monto2']?> <br> <?php echo $row['fech2']; ?><br> <?php echo $row['re2'];  ?></td>
-                 <td><?php echo  $row['tres']?> <br> <?php echo $row['folio3']?> <br><?php echo $row['cobra3']?> <br> <?php echo $row['monto3']?> <br> <?php echo $row['fech3'] ; ?><br> <?php echo $row['re3']; ?></td>
-                 <td><?php echo  $row['cuatro']?> <br> <?php echo $row['folio4']?> <br><?php echo $row['cobra4']?> <br> <?php echo  $row['monto4']?> <br> <?php echo $row['fech4'] ; ?><br> <?php echo $row['re4']; ?></td>
-                 <td><?php echo  $row['cinco']?> <br> <?php echo $row['folio5']?> <br><?php echo $row['cobra5'] ?> <br> <?php echo $row['monto5']?> <br> <?php echo $row['fech5']; ?><br> <?php echo $row['re5']; ?></td>
-                 
-       
-                </tr>
-
-
-                <div align="center">
-                  <?php
-
-     }
-
-?>
-
+          <input  type="hidden" name="folio" value="<?php echo $a; ?>"  />
+          <button type="submit" class="btn btn-primary">Guardar Cambios</button> 
+        </form>
+      </div>
+    </div>
+  </div>  
+</div>
 
 <?php
+//PIE De PAGINA
+require_once($rootDir.'public/html/footer_template.php');
+?>
 
-  $query1 = "SELECT * FROM datos   WHERE folio='$a'   ";   //WHERE estatus='0'
-  $result1 = mysqli_query($conexion,$query1);
-  $resultado = "";
 
-  ?>
+
+
+
+
+
+
+
+
+
+
+
+
  
-  
-   
-
-
-<!--PINTAR LOS DATOS OBTENIDOS EN SELECT 2-->
-            <center>
-         
-            <tr>
-                  <p align="right" style="color:#2962FF; font-family: Arial;"><?php 
-				  error_reporting(0);
-				  $hoy= date("Y-m-d");
-				
-				  
-				  
-				   ?></p>
-                </tr>
-              <table border=1>
-              <thead>
-                <tr>
-                 
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                   
-                 
-                   <td style="color:#2962FF; font-family: Verdana; font-size:12;">SEIS/FOLIO/COBRADOR/MONTO/FECHA/RECIBO&nbsp;&nbsp;&nbsp;</td>
-                   <td style="color:#2962FF; font-family: Verdana; font-size:12;">SIETE/FOLIO/COBRADOR/MONTO/FECHA/RECIBO&nbsp;&nbsp;&nbsp;</td>
-                   <td style="color:#2962FF; font-family: Verdana; font-size:12;">OCHO/FOLIO/COBRADOR/MONTO/FECHA/RECIBO&nbsp;&nbsp;&nbsp;</td>
-                   <td style="color:#2962FF; font-family: Verdana; font-size:12;">NUEVE/FOLIO/COBRADOR/MONTO/FECHA/RECIBO&nbsp;&nbsp;&nbsp;</td>
-                   <td style="color:#2962FF; font-family: Verdana; font-size:12;">DIEZ/FOLIO/COBRADOR/MONTO/FECHA/RECIBO&nbsp;&nbsp;&nbsp;</td>
-                   <td style="color:#2962FF; font-family: Verdana; font-size:12;">ONCE/FOLIO/COBRADOR/MONTO/FECHA/RECIBO&nbsp;&nbsp;&nbsp;</td>
-             
-                  
-                    
-                   
-                   
-                  
-                 
-                    
-
-                </tr>
-
-                <div align="center">
-                  <?php
-
-      while( $row = $result1->fetch_assoc() ){
-?>
-                  
-                </div>
-                <tr>
-                
-                 <td><?php echo  $row['seis']?> <br> <?php echo $row['folio6']?> <br><?php echo $row['cobra6'] ?> <br> <?php echo $row['monto6']?> <br> <?php echo $row['fech6']; ?> <br> <?php echo $row['re6']; ?></td>
-                 <td><?php echo  $row['siete']?> <br> <?php echo $row['folio7']?> <br><?php echo $row['cobra7']?> <br> <?php echo $row['monto7']?> <br> <?php echo $row['fech7'] ; ?> <br> <?php echo $row['re7']; ?></td>
-                 <td><?php echo  $row['ocho']?> <br> <?php echo $row['folio8']?> <br><?php echo $row['cobra8'] ?> <br> <?php echo $row['monto8']?> <br> <?php echo $row['fech8']; ?> <br> <?php echo $row['re8']; ?></td>
-                 <td><?php echo  $row['nueve']?> <br> <?php echo $row['folio9']?> <br><?php echo $row['cobra9']?> <br> <?php echo $row['monto9']?> <br> <?php echo $row['fech9'] ; ?> <br> <?php echo $row['re9']; ?></td>
-                 <td><?php echo  $row['diez']?> <br> <?php echo $row['folio10']?> <br><?php echo $row['cobra10']?> <br> <?php echo $row['monto10']?> <br> <?php echo $row['fech10'] ; ?> <br> <?php echo $row['re10']; ?></td>
-                 <td><?php echo  $row['once']?> <br> <?php echo $row['folio11']?> <br><?php echo $row['cobra11']?> <br> <?php echo $row['monto11']?> <br> <?php echo $row['fech11'] ; ?> <br> <?php echo $row['re11']; ?></td>
-                 
-                </tr>
-
-
-                <div align="center">
-                  <?php
-
-     }
-
-?>
-
-
-
-
-
-
-
-
-<?php
-  $query1 =  "SELECT * FROM datos   WHERE folio='$a'   ";   //WHERE  bit_estatus  <> '2'
-  $result1 = mysqli_query($conexion,$query1);
-  $resultado = "";
-  
- 
-  
-   
-  ?>
- 
-  <form id="form1" name="registrar" action="pagos.php" method="post">
-   
-
-
-<!--PINTAR LOS DATOS OBTENIDOS EN SELECT 2-->
-            <center>
-         
-            <tr>
-                  <p align="right" style="color:#2962FF; font-family: Verdana;"><?php 
-				  error_reporting(0);
-                ?></p>
-    </tr>
-              <table border=1>
-    <thead>
-                <tr><br><br><br><br>
-                 
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                    
-                  
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">PAGO</div></td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">FOLIO</div></td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">COBRADOR</div></td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">MONTO</div></td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">FECHA DE RECIBO</div></td>
-                  
-             
-
-             
-               </tr>
-
-                <div align="center">
-                  <?php
-
-      while( $row = $result1->fetch_assoc() ){
-?>
-                  
-                </div>
-                
-                
-                <tr>
-                
-                          
-                   <div align="center">
-                    
-                   </div>
-                   
-                  
-                   <td><div align="center">
-                 
-                   
-                     <select   type="text" name="pag" />
-                     <option></option>
-                     <option>Pagado</option>
-                     </select>
-                     </td>
-                     <td>
-                     <input  type="text" name="fol" placeholder="INGRESE FOLIO DE COBRO"   />
-                     </td>
-                      <td><input  type="text" name="cob" placeholder="INGRESE COBRADOR"   />
-                      
-                        </td>
-                   </div>
-                   <td>
-                   <input  type="text" name="mon" placeholder="Ingrese Monto"   />
-                   </td>
-                    
-                    <td>
-                   <input  type="date" name="re"    />
-                   </td>
-           
-                    <input  type="hidden" name="folio" value="<?php echo $a; ?> " readonly />
-                  
-
-               
-                 </tr>
-                 
-   
-                  <?php
-
-     }
-
-?>
-         
-                </div>
-             
-<br><br><br>
-<div style="position:absolute; top:1050px; left:550px; h">  <input class="botom" type="submit" value="GUARDAR CAMBIOS" />
-                  
-   </form><br>                
-                  
-                  
-                </div>
-</body>
-</html>

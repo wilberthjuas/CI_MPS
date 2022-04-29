@@ -1,78 +1,38 @@
 <?php
-	error_reporting(E_ERROR | E_WARNING | E_PARSE);
-	session_start();
-	if(isset($_SESSION['usuario']) && isset($_SESSION['usuario'])){
-		$pintar_usaurio = strtoupper($_SESSION['usuario']);
-	}else{
-		header("Location: ../../index.php");
-		exit();
-	}
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+session_start();
+if(isset($_SESSION['usuario']) && isset($_SESSION['usuario'])){
+	$pintar_usaurio = strtoupper($_SESSION['usuario']);
+}else{
+	header("Location: ../../index.php");
+	exit();
+}
 ?>
-<html><link rel="shortcut icon" href="../../logop.png"/>
-<head><title>Mutualidad MPS</title></head>
-<link href="../../public/css/estilo.css" rel="stylesheet" type="text/css">
-<link charset="utf-8">
-<body>
-
-
-	<!--Cabecera-->
-    <?php
+<?php
       //CABECERA DEL SITIO
-      require_once('../../public/html/header.php');
-    ?>
-  	<!--Cabecera-->
-<div class="espacio-header"></div>
-      <img src="../../logop.png" width="232" height="220"> </div>
-</div>
-	<form id="form1" name="form1" method="post" action="excel.php">
-	<div class="container">
-		<div class="row">
-			<div class="col-6 push-3">
-				
-				<div class="panel_head">
-					<p class="titulo_panel"style="font-family:Arial;" aling="center">INGRESA FECHAS DE BUSQUEDA</p>
-                
-<div class="panel_body_footer">
-					<div class="row">
-						<br>
-						<div class="col-10 push-1"></div>
-					</div>
-					<div class="row">
-						<div class="col-10 push-1">
-						<br><br><br>
-								<form id="form1" name="form1" method="post" action="../../modulos/visor/visor.php">
-                              
-								  <div class="search_left">	
-										<input autocomplete="off" required class="box_search" type="date" name="buscar1" id="Numero de parte" placeholder="Ingrese Datos de Busqueda" />
-									</div>
-                                    <div class="search_left">	
-										<input autocomplete="off" required="required" class="box_search" type="date" name="buscar2" id="Numero de parte" />
-                                     
-									</div>
-									<div class="search_right">
-										<input class="btn_search" type="submit" name="enviar" id="enviar" value="" />
-									</div>	
-								</form>
-						</div>
-					</div>
-					<br><br><br><br><br><br>
-				</div>
+$user=$_SESSION['type'];
+$rootDir='../../';
+$title="DESCARGA DE ARCHIVO EXCEL";
+require_once($rootDir.'public/html/header_template.php');
+
+?>
+<form method="post" action="excel.php">
+	<div class="card-body">
+		<form method="post" action="../../modulos/visor/visor.php">
+			<div class="mb-3">
+				<label class="form-label"><strong>Ingresa fechas de búsqueda</strong></label>
+				<input autocomplete="off" type="date" name="buscar1" class="form-control" placeholder="Ingrese datos de búsqueda" required/>
+			</div>
+			<div class="mb-3">
+				<input autocomplete="off" type="date" name="buscar2" class="form-control" placeholder="Ingrese datos de búsqueda" required/>
 			</div>
 
-		</div>
-	</div><!--Fin container-->
-	</form>   
-    
-    
-    <
-						</div>
-					</div>
-					<br><br><br><br><br><br>
-				</div>
-			</div>
+			<button type="submit" class="btn btn-primary">Enviar</button> 
+		</form>
+	</div>
+</form>
 
-		</div>
-	</div><!--Fin container-->
-	</form>   
-
-</html>
+<?php
+      //PIE De PAGINA
+require_once($rootDir.'public/html/footer_template.php');
+?>

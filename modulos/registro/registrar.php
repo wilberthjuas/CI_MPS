@@ -1,302 +1,310 @@
 <?php
-	error_reporting(E_ERROR | E_WARNING | E_PARSE);
-	session_start();
-	if(isset($_SESSION['usuario']) && isset($_SESSION['usuario'])){
-		$pintar_usaurio = strtoupper($_SESSION['usuario']);
-	}else{
-		header("Location: index.php");
-		exit();
-	}
-	
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+session_start();
+if(isset($_SESSION['usuario']) && isset($_SESSION['usuario'])){
+	$pintar_usaurio = strtoupper($_SESSION['usuario']);
+}else{
+	header("Location: index.php");
+	exit();
+}
 
-       $is=$_SESSION['id'];
-		$name=$_SESSION['name'];
+$is=$_SESSION['id'];
+$name=$_SESSION['name'];
 
 
+//CABECERA DEL SITIO
+$user=$_SESSION['type'];
+$rootDir='../../';
+$title="REGISTRO DE NUEVA PÓLIZA";
+require_once($rootDir.'public/html/header_template.php');
+require_once($rootDir.'conexion/conexion.php');
+mysqli_select_db($conexion, $database);
 ?>
-<html><link rel="shortcut icon" href="../../logop.png"/>
-<head><title>Mutualidad MPS</title></head>
-<link href="calendario_dw/calendario_dw-estilos.css" type="text/css" rel="STYLESHEET">
-   <style type="text/css">
-   body{
-      font-family: tahoma, verdana, sans-serif;
-   }
-   </style>
-   <script type="text/javascript" src="calendario_dw/jquery-1.4.4.min.js"></script>
-   <script type="text/javascript" src="calendario_dw/calendario_dw.js"></script>
-   
-   <script type="text/javascript">
-   $(document).ready(function(){
-      $(".campofecha").calendarioDW();
-   })
-   </script>
-<link href="../../public/css/estilo.css" rel="stylesheet" type="text/css">
-<link charset="utf-8">
-<body>
 
 
-
-	<!--Cabecera-->
-    <?php
-      //CABECERA DEL SITIO
-      require_once('../../public/html/header.php');
-      require_once('../../conexion/conexion.php');
-	mysqli_select_db($conexion, $database);
-    ?>
-
-	<div class="container">
-		<div class="row">
-			<div class="col-10 push-1">
-			<div class="panel_head">
-				
-
-			</div>
-			<div class="panel_body_footer">
-				
-				<form id="form1" name="registrar" action="insertar.php" method="post">
-					
-					<div class="row">
-					<h1></h1><div class="col-12"><br><br> <p class="titulo-form" style="font-family:Arial;" aling="center">REGISTRO DE NUEVA POLIZA <?php ?>&#9660;</p><br><br></div>
-					</div></h1>
-                    <div class="col-12"><br><br> <p class="titulo-form"style="font-family:Arial;" aling="center">INFORMACION DEL ASEGURADO</p><br><br></div>
-					<div class="row">
-						<div class="col-2 push-3"><p class="labels">NOMBRE</p></div>
-						<div class="col-4"> <input class="text-box text-form" required type="text" name="nombre" /> </div>
-					</div>
-	
-					<div class="row">
-					<div class="col-2 push-3"><p class="labels">DOMICILIO</p></div>
-						<div class="col-4"> <input class="text-box text-form"  required type="text" name="domicilio" /> </div>
-					</div>
-					<div class="row">
-					<div class="col-2 push-3"><p class="labels">EXTERIOR</p></div>
-						<div class="col-4"> <input class="text-box text-form"  required type="text" name="exterior" /> </div>
-					</div>
-                    <div class="row">
-					<div class="col-2 push-3"><p class="labels">CRUCES</p></div>
-						<div class="col-4"> <input class="text-box text-form"  required type="text" name="entre" /> </div>
-					</div>
-					<div class="row">
-						<div class="col-2 push-3"><p class="labels">COLONIA</p></div>
-						<div class="col-4"> <input class="text-box text-form"  required type="text" name="col" /> </div>
-					</div>
-                    <div class="row">
-                    <div class="row">
-						<div class="col-2 push-3"><p class="labels">MUNICIPIO</p></div>
-						<div class="col-4"> <input class="text-box text-form" required type="text" name="municipio" /> </div>
-					</div>
-					
-                   
-                        
-					
-                    <div class="row">
-						<div class="col-2 push-3"><p class="labels">TELEFONO</p></div>
-						<div class="col-4"> <input class="text-box text-form"  required type="text" name="tel" /> </div>
-					</div>
-                   
-                    <div class="row">
-						<div class="col-2 push-3"><p class="labels">CODIGO POSTAL</p></div>
-						<div class="col-4"> <input class="text-box text-form"  required type="text" name="cp" /> </div>
-					</div>
-					
-					<div class="col-12"><br><br> <p class="titulo-form"style="font-family:Broadway;" aling="center">DATOS DEL VEHICULO</p><br><br></div>
-
-							 <div class="row">
-						<div class="col-2 push-3"><p class="labels">MARCA</p></div>
-						<div class="col-4"> <input class="text-box text-form"  required type="text" name="marca" /> </div>
-					</div>
-                     <div class="row">
-						<div class="col-2 push-3"><p class="labels">TIPO</p></div>
-						<div class="col-4"> <input class="text-box text-form"  required type="text" name="tipo" /> </div>
-					</div>
-                     <div class="row">
-						<div class="col-2 push-3"><p class="labels">A&ntilde;O</p></div>
-						<div class="col-4"> <input class="text-box text-form"  required type="text" name="ano" /> </div>
-					</div>
-                     <div class="row">
-						<div class="col-2 push-3"><p class="labels">COLOR</p></div>
-						<div class="col-4"> <input class="text-box text-form"  required type="text" name="color" /> </div>
-					</div>
-                     <div class="row">
-						<div class="col-2 push-3"><p class="labels">PLACAS</p></div>
-						<div class="col-4"> <input class="text-box text-form"  required type="text" name="placas" /> </div>
-					</div>
-                     <div class="row">
-						<div class="col-2 push-3"><p class="labels">VERSION</p></div>
-						<div class="col-4"> <input class="text-box text-form"  required type="text" name="version" /> </div>
-					</div>
-                     <div class="row">
-						<div class="col-2 push-3"><p class="labels">NO SERIE</p></div>
-						<div class="col-4"> <input class="text-box text-form"  required type="text" name="serie" /> </div>
-					</div>
-                     <div class="row">
-						<div class="col-2 push-3"><p class="labels">NO MOTOR</p></div>
-						<div class="col-4"> <input class="text-box text-form"  required type="text" name="nmotor" /> </div>
-					</div>
-					
-                      <div class="col-12"><br><br> <p class="titulo-form"style="font-family:Arial;" aling="center">INFORMACION DE COBERTURA A CONTRATAR</p><br><br></div>
-                      
-                      <div class="row">
-						<div class="col-2 push-3"><p class="labels">EXPEDICION</p></div>
-						<div class="col-4"> <input class="text-box text-form"  required type="date" name="expedicion" /> </div>
-					</div>
-                    
-                    <div class="row">
-						<div class="col-2 push-3"><p class="labels">VIGENCIA</p></div>
-						<div class="col-4"> <input class="text-box text-form"  required type="date" name="vigencia"  />  </div>
-					</div>
-                      <div class="row">
-						<div class="col-2 push-3"><p class="labels">COBERTURA</p></div>
-						<div class="col-4"> <select class="text-box text-form"  required type="text" name="cobertura" /> 
-                       <option></option>
-                       <option>MULTIPLATAFORMAS CD JUAREZ</option>
-                       <option>COTIZACION PARTICULAR RC ECONOMICA CON GRUA</option>
-                       <option>AMPLIA AUTOMOVIL PARTICULAR HASTA $50,000</option>
-                       <option>VEHICULO PARTICULAR AMPLIA HASTA $60,000</option>
-                       <option>AMPLIA AUTOMOVIL PARTICULAR HASTA $70,000</option>
-                       <option>AMPLIA AUTOMOVIL PARTICULAR HASTA $80,000</option>
-                       <option>POLIZA PARTICULAR AMPLIA 90 MIL</option>
-                       <option>POLIZA PARTICULAR AMPLIA 100 MIL</option>
-                       <option>POLIZA PARTICULAR AMPLIA 110 MIL</option>
-                       <option>POLIZA PARTICULAR AMPLIA 120 MIL</option>
-                       <option>POLIZA PARTICULAR AMPLIA 130 MIL</option>
-                       <option>POLIZA PARTICULAR AMPLIA 140 MIL</option>
-                       <option>TERCEROS CON GRUA PICKUP</option>
-                       <option>AMPLIA PICKUP HASTA $50,000</option>
-                       <option>AMPLIA PICKUP HASTA $60,000</option>
-                       <option>AMPLIA PICKUP HASTA $70,000</option>
-                       <option>AMPLIA PICKUP HASTA $80,000</option>
-                       <option>AMPLIA PICKUP HASTA $90,000</option>
-                       <option>AMPLIA PICKUP HASTA $100,000</option>
-                       <option>AMPLIA PICKUP HASTA $110,000</option>
-                       <option>AMPLIA PICKUP HASTA $120,000</option>
-                       <option>AMPLIA PICKUP HASTA $130,000</option>
-                       <option>AMPLIA PICKUP HASTA $140,000</option>
-                       <option>AMPLIA MOTO</option>
-                       <option>INTERMEDIA MOTO</option>
-                       <option>TERCEROS MOTO</option>
-                       <option>COTIZACION MULTIPLATAFORMAS PROMO JULIO 2021</option>
-                       <option>COTIZACION POLIZA MULTIPLATAFORMAS 4 MILLONES EN RC</option>
-                       <option>MULTIPLATAFORMAS ECONOMICA</option>
-                      </select>
-                        </div>
-					</div>
-                    <div class="row">
-						<div class="col-2 push-3"><p class="labels">DEDUCIBLE</p></div>
-						<div class="col-4"> <select class="text-box text-form"  required type="text" name="deducible" /> 
-                       <option></option>
-                       <option>SI APLICA</option>
-                        <option>NO APLICA</option>
-                    
-                         </select>
-                        </div>
-					</div>
-                    <div class="row">
-						<div class="col-2 push-3"><p class="labels">COSTO TOTAL</p></div>
-						<div class="col-4"> <input class="text-box text-form"  required type="text" name="costo_total" /> </div>
-					</div>
-                    
-                    <div class="row">
-						<div class="col-2 push-3"><p class="labels">OBSERVACIONES</p></div>
-						<div class="col-4"> <input class="text-box text-form"  required type="text" name="observaciones" /> </div>
-					</div>
-                    <div class="row">
-						<div class="col-2 push-3"><p class="labels">PAGO INICIAL</p></div>
-						<div class="col-4"> <input class="text-box text-form"  required type="text" name="pagoinicial" /> </div>
-					</div>
-                    <div class="row">
-						<div class="col-2 push-3"><p class="labels">PAGO MENSUAL</p></div>
-						<div class="col-4"> <input class="text-box text-form"  required type="text" name="pagomensual" /> </div>
-					</div>
-					<div class="row">
-						<div class="col-2 push-3"><p class="labels">PLAZO</p></div>
-						<div class="col-4"> <input class="text-box text-form"  required type="text" name="plazo" /> </div>
-					</div>
-                    <div class="row">
-						
-						<div class="col-4"> <input    type="hidden" name="captura"  value="<?php echo"$name" ?>" /> </div>
-					</div>
-                    
-                    <div class="col-12"><br><br> <p class="titulo-form"style="font-family:Arial;" aling="center">INFORMACION DE CAPTURA</p><br><br></div>
-                      
-                      <div class="row">
-						<div class="col-2 push-3"><p class="labels">VENDEDOR</p></div>
-						<div class="col-4"> <select class="text-box text-form"  required type="text" name="vendedor" /> 
-                        <option></option>
-                        <option>MPS GDL</option>
-                        <option>Roberto Cruz</option>
-                        <option>Gerardo Partida</option>
-                        <option>Miguel Ortega</option>
-                        <option>Samuel Mohamed</option>
-                        <option>Armando Cruz</option>
-                        <option>Miguel Galindo</option>
-                        <option>Israel Chavez</option>
-                        <option>Gibran Rios</option>
-                        <option>Gerardo Montes</option>
-                        <option>Jonathan Medina</option>
-                        <option>Adolfo Talamantes</option>
-                        <option>Hugo Montano</option>
-                        <option>MPS CD JUAREZ</option>
-                        <option>Cesar Banderas</option>
-                        <option>Gerardo Juarez</option>
-                        <option>Laura Alvarez</option>
-                        <option>Daniel Juarez</option>
-                        <option>Diana Garcia</option>
-                        <option>Julian Martinez</option>
-                        <option>Sergio Garcia</option>
-                        <option>Salvador Reyes</option>
-                        <option>Cruz Gonzalez</option>
-                        
-                        </select>
-                        </div>
-					</div>
-                    
-                    <div class="row">
-						<div class="col-2 push-3"><p class="labels">COBRADOR</p></div>
-						<div class="col-4"> <select class="text-box text-form"  required type="text" name="cobrador" /> 
-						<option></option>
-                        <option>Roberto Armando</option>
-                        <option>Samuel Mohamed</option>
-                        <option>Armando Cruz</option>
-                        <option>Miguel Galindo</option>
-                        <option>MPS CD JUAREZ</option>
-                      
-                        </select>
-                        </div>
-                        
-                         <div class="row">
-						<div class="col-2 push-3"><p class="labels">PLATAFORMA</p></div>
-						<div class="col-4"> <select class="text-box text-form"  required type="text" name="plataforma" /> 
-                        <option></option>
-                        <option>Multi Plataforma</option>
-                        <option>Uso Particular</option>
-                        <option>Servicio Publico</option>
-                  
-                      
-                        </select>
-                        </div>
-					</div>
-
-					<br><br><br>
-					<div class="col-3 push-6"> <input class="botom" type="submit"  value="Enviar" /></div>
-					<br><br><br><br><br><br>
-
-				</form>
-
-			</div>
-			</div>
-            
+<div class="card-body">
+	<form method="post" action="insertar.php" name="registrar">
+		<div>
+			<h2 class="card-body">Información del asegurado</h2>
 		</div>
-	</div><!--Fin container-->
-	<div class="espacio-header"></div>
+		<div class="row">
+			<div class="mb-3 col-md-4">
+				<label class="form-label">
+					<strong>Nombre</strong>
+				</label>
+				<input autocomplete="off" type="text" name="nombre" class="form-control" placeholder="Ingrese nombre del cliente" required/>
+			</div>
+			<div class="mb-3 col-md-4">
+				<label class="form-label">
+					<strong>Domicilio</strong>
+				</label>
+				<input autocomplete="off" type="text" name="domicilio" class="form-control" placeholder="Ingrese calle" required/>
+			</div>
+			<div class="mb-3 col-md-4">
+				<label class="form-label">
+					<strong>Exterior</strong>
+				</label>
+				<input autocomplete="off" type="text" name="exterior" class="form-control" placeholder="Ingrese número interior y/o exterior" required/>
+			</div>	
+		</div>
+		<div class="row">
+			<div class="mb-3 col-md-6">
+				<label class="form-label">
+					<strong>Cruces</strong>
+				</label>
+				<input autocomplete="off" type="text" name="entre" class="form-control" placeholder="Ingrese entre qué calles se localiza" required/>
+			</div>
+			<div class="mb-3 col-md-6">
+				<label class="form-label">
+					<strong>Colonia</strong>
+				</label>
+				<input autocomplete="off" type="text" name="col" class="form-control" placeholder="Ingrese nombre de la colonia" required/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="mb-3 col-md-4">
+				<label class="form-label">
+					<strong>Municipio</strong>
+				</label>
+				<input autocomplete="off" type="text" name="municipio" class="form-control" placeholder="Ingrese nombre de municipio o comunidad" required/>
+			</div>
+			<div class="mb-3 col-md-4">
+				<label class="form-label">
+					<strong>Teléfono</strong>
+				</label>
+				<input autocomplete="off" type="number" pattern="{1,10}" name="Teléfono" class="form-control" placeholder="Ingrese número celular o teléfono de casa" required/>
+			</div>
+			<div class="mb-3 col-md-4">
+				<label class="form-label">
+					<strong>Código postal</strong>
+				</label>
+				<input id="ip_cp" autocomplete="off" type="number" name="cp" class="form-control" placeholder="Ingrese código postal" required/>
+			</div>
+		</div>
+		<div>
+			<h2 class="card-body">Datos del vehículo</h2>
+		</div>
+		<div class="row">
+			<div class="mb-3 col-md-4">
+				<label class="form-label">
+					<strong>Marca</strong>
+				</label>
+				<input autocomplete="off" type="text" name="marca" class="form-control" placeholder="Ingrese marca del vehículo" required/>
+			</div>
+			<div class="mb-3 col-md-4">
+				<label class="form-label">
+					<strong>Tipo</strong>
+				</label>
+				<input autocomplete="off" type="text" name="tipo" class="form-control" placeholder="Ingrese el tipo de automóvil" required/>
+			</div>
+			<div class="mb-3 col-md-4">
+				<label class="form-label">
+					<strong>Año</strong>
+				</label>
+				<input autocomplete="off" type="number" name="ano" class="form-control" placeholder="Ingrese el año del vehículo" required/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="mb-3 col-md-4">
+				<label class="form-label">
+					<strong>Color</strong>
+				</label>
+				<input autocomplete="off" type="text" name="color" class="form-control" placeholder="Ingrese color del vehículo" required/>
+			</div>
+			<div class="mb-3 col-md-4">
+				<label class="form-label">
+					<strong>Placas</strong>
+				</label>
+				<input autocomplete="off" type="text" name="placas" class="form-control" placeholder="Ingrese los datos de la placa vehícular" style="text-transform: uppercase;" required/>
+			</div>
+			<div class="mb-3 col-md-4">
+				<label class="form-label">
+					<strong>Versión</strong>
+				</label>
+				<input autocomplete="off" type="text" name="version" class="form-control" placeholder="Ingrese la versión de autmóvil" required/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="mb-3 col-md-6">
+				<label class="form-label">
+					<strong>No. serie</strong>
+				</label>
+				<input autocomplete="off" type="text" name="serie" class="form-control" placeholder="Ingrese número de serie" required/>
+			</div>
+			<div class="mb-3 col-md-6">
+				<label class="form-label">
+					<strong>No. motor</strong>
+				</label>
+				<input autocomplete="off" type="text" name="nmotor" class="form-control" placeholder="Ingrese número de motor" required/>
+			</div>	
+		</div>
+		<div>
+			<h2 class="card-body">Información de cobertura a contratar</h2>
+		</div>
+		<div class="row">
+			<div class="mb-3 col-md-6">
+				<label class="form-label">
+					<strong>Expedición</strong>
+				</label>
+				<input autocomplete="off" type="date" min="1940-01-01"  name="expedicion" class="form-control" placeholder="Ingrese la fecha de expedición" required/>
+			</div>
+			<div class="mb-3 col-md-6">
+				<label class="form-label">
+					<strong>Vigencia</strong>
+				</label>
+				<input autocomplete="off" type="date" min="1940-01-01"  name="vigencia" class="form-control" placeholder="Ingrese la fecha de vigencia" required/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="mb-3 mb-3 col-md-4">
+				<label class="form-label">
+					<strong>Cobertura</strong>
+				</label>
+				<select class="form-control mb-3" required="required" name="cobertura">
+					<option disabled selected>Selecciona una opción</option>
+					<option>MULTIPLATAFORMAS CD JUAREZ</option>
+					<option>COTIZACION PARTICULAR RC ECONOMICA CON GRUA</option>
+					<option>AMPLIA AUTOMOVIL PARTICULAR HASTA $50,000</option>
+					<option>VEHICULO PARTICULAR AMPLIA HASTA $60,000</option>
+					<option>AMPLIA AUTOMOVIL PARTICULAR HASTA $70,000</option>
+					<option>AMPLIA AUTOMOVIL PARTICULAR HASTA $80,000</option>
+					<option>POLIZA PARTICULAR AMPLIA 90 MIL</option>
+					<option>POLIZA PARTICULAR AMPLIA 100 MIL</option>
+					<option>POLIZA PARTICULAR AMPLIA 110 MIL</option>
+					<option>POLIZA PARTICULAR AMPLIA 120 MIL</option>
+					<option>POLIZA PARTICULAR AMPLIA 130 MIL</option>
+					<option>POLIZA PARTICULAR AMPLIA 140 MIL</option>
+					<option>TERCEROS CON GRUA PICKUP</option>
+					<option>AMPLIA PICKUP HASTA $50,000</option>
+					<option>AMPLIA PICKUP HASTA $60,000</option>
+					<option>AMPLIA PICKUP HASTA $70,000</option>
+					<option>AMPLIA PICKUP HASTA $80,000</option>
+					<option>AMPLIA PICKUP HASTA $90,000</option>
+					<option>AMPLIA PICKUP HASTA $100,000</option>
+					<option>AMPLIA PICKUP HASTA $110,000</option>
+					<option>AMPLIA PICKUP HASTA $120,000</option>
+					<option>AMPLIA PICKUP HASTA $130,000</option>
+					<option>AMPLIA PICKUP HASTA $140,000</option>
+					<option>AMPLIA MOTO</option>
+					<option>INTERMEDIA MOTO</option>
+					<option>TERCEROS MOTO</option>
+					<option>COTIZACION MULTIPLATAFORMAS PROMO JULIO 2021</option>
+					<option>COTIZACION POLIZA MULTIPLATAFORMAS 4 MILLONES EN RC</option>
+					<option>MULTIPLATAFORMAS ECONOMICA</option>
+				</select>
+			</div>
+			<div class="mb-3 col-md-4">
+				<label class="form-label">
+					<strong>Deducible</strong>
+				</label>
+				<select class="form-control mb-3" required="required" name="deducible" >
+					<option disabled selected>Selecciona una opción</option>
+					<option>Sí aplica</option>
+					<option>No aplica</option>
+				</select>
+			</div>
+			<div class="mb-3 col-md-4">
+				<label class="form-label">
+					<strong>Costo total</strong>
+				</label>
+				<input autocomplete="off" type="text" name="costo_total" class="form-control" placeholder="Ingrese la cantidad" required/>
+			</div>
+		</div>
+		<div class="mb-3">
+			<label class="form-label">
+				<strong>Observciones</strong>
+			</label>
+			<input autocomplete="off" type="textarea" name="observaciones" class="form-control" placeholder="Ingrese los comentarios de las observaciones" required/>
+		</div>
+		<div class="row">
+			<div class="mb-3 col-md-4">
+				<label class="form-label">
+					<strong>Pago inicial</strong>
+				</label>
+				<input autocomplete="off" type="number" name="pagoinicial" class="form-control" placeholder="Ingrese la cantidad" required/>
+			</div>
+			<div class="mb-3 col-md-4">
+				<label class="form-label">
+					<strong>Pago mensual</strong>
+				</label>
+				<input autocomplete="off" type="number" name="pagomensual" class="form-control" placeholder="Ingrese el monto mensual" required/>
+			</div>
+			<div class="mb-3 col-md-4">
+				<label class="form-label">
+					<strong>Plazo</strong>
+				</label>
+				<input autocomplete="off" type="text" name="plazo" class="form-control" placeholder="Ingrese la fecha" required/>
+			</div>
+		</div>
+		<input type="hidden" name="captura"  value="<?php echo"$name" ?>" /> 
+		<div>
+			<h2 class="card-body">Información de captura</h2>
+		</div>
+		<div class="row">
+			<div class="mb-3 col-md-4">
+				<label class="form-label">
+					<strong>Vendedor</strong>
+				</label>
+				<select class="form-control mb-3" required="required" name="vendedor">
+					<option disabled selected>Selecciona una opción</option>
+					<option>MPS GDL</option>
+					<option>Roberto Cruz</option>
+					<option>Gerardo Partida</option>
+					<option>Miguel Ortega</option>
+					<option>Samuel Mohamed</option>
+					<option>Armando Cruz</option>
+					<option>Miguel Galindo</option>
+					<option>Israel Chavez</option>
+					<option>Gibran Rios</option>
+					<option>Gerardo Montes</option>
+					<option>Jonathan Medina</option>
+					<option>Adolfo Talamantes</option>
+					<option>Hugo Montano</option>
+					<option>MPS CD JUAREZ</option>
+					<option>Cesar Banderas</option>
+					<option>Gerardo Juarez</option>
+					<option>Laura Alvarez</option>
+					<option>Daniel Juarez</option>
+					<option>Diana Garcia</option>
+					<option>Julian Martinez</option>
+					<option>Sergio Garcia</option>
+					<option>Salvador Reyes</option>
+					<option>Cruz Gonzalez</option>
+				</select>
+			</div>
+
+			<div class="mb-3 col-md-4">
+				<label class="form-label">
+					<strong>Cobrador</strong>
+				</label>
+				<select class="form-control mb-3" required="required" name="cobrador">
+					<option disabled selected>Selecciona una opción</option>
+					<option>Roberto Armando</option>
+					<option>Samuel Mohamed</option>
+					<option>Armando Cruz</option>
+					<option>Miguel Galindo</option>
+					<option>MPS CD JUAREZ</option>
+				</select>
+			</div>
+
+			<div class="mb-3 col-md-4">
+				<label class="form-label">
+					<strong>Plataforma</strong>
+				</label>
+				<select class="form-control mb-3" required="required" name="cobrador">
+					<option disabled selected>Selecciona una opción</option>
+					<option>Multi Plataforma</option>
+					<option>Uso Particular</option>
+					<option>Servicio Publico</option>               
+				</select>
+			</div>
+		</div>
+		<button type="submit" class="btn btn-primary">Enviar</button> 
+	</form>
+</div>
 
 
 <?php
-
-
-
-
-
+      //PIE De PAGINA
+require_once($rootDir.'public/html/footer_template.php');
 ?>
-</body>
-</html>

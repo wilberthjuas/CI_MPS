@@ -542,7 +542,33 @@ $desglose="";
 `captura` ,
 `ediciones` ,
 `fecha_modificacion` ,
-`desglose`,`vendedor`,`cobrador`,`ano2`,`uno`,`dos`,`tres`,`cuatro`,`cinco`,`seis`,`siete`,`ocho`,`nueve`,`diez`,`tel2`,`costo_letra`,`asis`,`robo`,`dano`,`cristal`,`rca`,`gastos`,`grua`,`plataforma`,`vial`,`med`,`muerte`)
+`desglose`,
+`vendedor`,
+`cobrador`,
+`ano2`,
+`uno`,
+`dos`,
+`tres`,
+`cuatro`,
+`cinco`,
+`seis`,
+`siete`,
+`ocho`,
+`nueve`,
+`diez`,
+`tel2`,
+`costo_letra`,
+`asis`,
+`robo`,
+`dano`,
+`cristal`,
+`rca`,
+`gastos`,
+`grua`,
+`plataforma`,
+`vial`,
+`med`,
+`muerte`)
 VALUES ('$nombre',
 '$domicilio ',
 '$exterior',
@@ -575,9 +601,35 @@ Null,
 '$captura ',
 '$ediciones ',
 '$fecha_modificacion ',
-'$desglose','$vendedor','$cobrador','$ano2','Pendiente','Pendiente','Pendiente','Pendiente','Pendiente','Pendiente','Pendiente','Pendiente','Pendiente','Pendiente','$tel2','$costo_letra','$asis','$robo','$dano','$cristal','$rca','$gastos','$grua','$plataforma','$vial','$med','$muerte')";
+'$desglose',
+'$vendedor',
+'$cobrador',
+'$ano2',
+'Pendiente',
+'Pendiente',
+'Pendiente',
+'Pendiente',
+'Pendiente',
+'Pendiente',
+'Pendiente',
+'Pendiente',
+'Pendiente',
+'Pendiente',
+'$tel2',
+'$costo_letra',
+'$asis',
+'$robo',
+'$dano',
+'$cristal',
+'$rca',
+'$gastos',
+'$grua',
+'$plataforma',
+'$vial',
+'$med',
+'$muerte')";
 	
-	
+	$superQuery = $query1;
 	$result = mysqli_query($conexion,$query1);
 	mysqli_free_result($result);
 	
@@ -623,7 +675,7 @@ Null,
 					<br>
 					
 					
-					<div class="col-10 push-1"><p class="titulo-form">REGISTRO EXITOSO FOLIO: <?php echo $folio;?>  </p></div>
+					<div class="col-10 push-1"><p class="titulo-form">REGISTRO EXITOSO FOLIO: <?php echo $superQuery;?>  </p></div>
 
 				</div>
 					<div class="row">

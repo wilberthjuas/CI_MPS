@@ -2,7 +2,7 @@
   error_reporting(E_ERROR | E_WARNING | E_PARSE);
   session_start();
   if(isset($_SESSION['usuario']) && isset($_SESSION['usuario'])){
-
+    $pintar_usaurio = strtoupper($_SESSION['usuario']);
   }else{
     header("Location: ../../index.php");
     exit();
@@ -12,232 +12,301 @@
   mysqli_select_db($conexion, $database);
   $a = $_POST['buscar'];
 
-?>  
-<html>
-<html><link rel="shortcut icon" href="../../logop.png"/>
-<head><title>Mutualidad MPS</title></head>
-<link href="../../public/css/estilo.css" rel="stylesheet" type="text/css">
-<body>
+//CABECERA DEL SITIO
+$user=$_SESSION['type'];
+$rootDir='../../';
+$title="ACTUALIZAR PÓLIZA";
+require_once($rootDir.'public/html/header_template.php');
 
-
-
-  <!--Cabecera-->
-    <?php
-      //CABECERA DEL SITIO
-      require_once('../../public/html/header.php');
-    ?>
-    <!--Cabecera-->
- 
- <img src="../../logop.png" width="232" height="220">
-
-  <center><p style="color:black; font-family: Verdana; font-size:20;"style="font-family:Arial;" aling="center">ACTUALIZAR POLIZA</p></center><br>
-
+  $query1 = "SELECT * FROM datos WHERE folio='$a'   ";   //WHERE  bit_estatus  <> '2'
+  $result1 = mysqli_query($conexion,$query1);
   
+  while( $row = $result1->fetch_assoc() ){
+      $poliza     = $row['folio'];
+      $nombre     = $row['nombre'];
+      $direccion  = $row['domicilio'];
+      $exterior   = $row['exterior'];
+      $colonia    = $row['col'];
+      $municipio  = $row['municipio'];
+      $telefono   = $row['tel'];
+
+      $marca      = $row['marca'];
+      $vehiculo   = $row['tipo'];
+      $ano        = $row['ano'];
+      $color      = $row['color'];
+      $placas     = $row['placas'];
+      $version    = $row['version'];
+      $serie      = $row['serie'];
+      $motor      = $row['nmotor'];
+
+      
+      $expedicion = $row['expedicion'];
+      $vigencia   = $row['vigencia'];
+      $cobertura  = $row['cobertura'];
+      $total      = $row['costo_total'];
+      $abono      = $row['pagomensual'];
+      $anoPoliza  = $row['ano2'];
+      
+
+      $vendedor   = $row['vendedor'];
+      $cobrador   = $row['cobrador'];
+      $plataforma = $row['plataforma'];
+    
+  }
+
+?>
+ 
+<div class="card-body">
+  <form method="post" action="update.php" name="registrar">
+    <div class="row">
+      <div class="mb-3 col-md-4">
+        <label class="form-label">
+          <strong>Póliza</strong>
+        </label>
+        <input autocomplete="off" type="text" name="folio" class="form-control" value=" <?php echo $poliza; ?>" required/>
+      </div>
+    </div>
+    <div>
+      <h2 class="card-body">Información del asegurado</h2>
+    </div>
+    <div class="row">
+      <div class="mb-3 col-md-4">
+        <label class="form-label">
+          <strong>Nombre</strong>
+        </label>
+        <input autocomplete="off" type="text" name="nombre" class="form-control" value="<?php echo $nombre; ?>" required/>
+      </div>
+      <div class="mb-3 col-md-4">
+        <label class="form-label">
+          <strong>Domicilio</strong>
+        </label>
+        <input autocomplete="off" type="text" name="domicilio" class="form-control" value="<?php echo $direccion; ?>" required/>
+      </div>
+      <div class="mb-3 col-md-4">
+        <label class="form-label">
+          <strong>Exterior</strong>
+        </label>
+        <input autocomplete="off" type="text" name="exterior" class="form-control" value="<?php echo $exterior; ?>" required/>
+      </div>  
+    </div>
+    <div class="row">
+      <div class="mb-3 col-md-4">
+        <label class="form-label">
+          <strong>Colonia</strong>
+        </label>
+        <input autocomplete="off" type="text" name="col" class="form-control" value="<?php echo $colonia; ?>" required/>
+      </div>
+      <div class="mb-3 col-md-4">
+        <label class="form-label">
+          <strong>Municipio</strong>
+        </label>
+        <input autocomplete="off" type="text" name="municipio" class="form-control" value="<?php echo $municipio; ?>" required/>
+      </div>
+      <div class="mb-3 col-md-4">
+        <label class="form-label">
+          <strong>Teléfono</strong>
+        </label>
+        <input autocomplete="off" type="text" name="tel" class="form-control" value="<?php echo $telefono; ?>" required/>
+      </div>
+    </div>
+    <div>
+      <h2 class="card-body">Datos del vehículo</h2>
+    </div>
+    <div class="row">
+      <div class="mb-3 col-md-4">
+        <label class="form-label">
+          <strong>Marca</strong>
+        </label>
+        <input autocomplete="off" type="text" name="marca" class="form-control" value="<?php echo $marca; ?>" required/>
+      </div>
+      <div class="mb-3 col-md-4">
+        <label class="form-label">
+          <strong>Vehículo</strong>
+        </label>
+        <input autocomplete="off" type="text" name="tipo" class="form-control" value="<?php echo $vehiculo; ?>"  required/>
+      </div>
+      <div class="mb-3 col-md-4">
+        <label class="form-label">
+          <strong>Año</strong>
+        </label>
+        <input autocomplete="off" type="number" name="ano" class="form-control" value="<?php echo $ano; ?>"  required/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="mb-3 col-md-4">
+        <label class="form-label">
+          <strong>Color</strong>
+        </label>
+        <input autocomplete="off" type="text" name="color" class="form-control" value="<?php echo $color; ?>"  required/>
+      </div>
+      <div class="mb-3 col-md-4">
+        <label class="form-label">
+          <strong>Placas</strong>
+        </label>
+        <input autocomplete="off" type="text" name="placas" class="form-control" value="<?php echo $placas; ?>"  style="text-transform: uppercase;" required/>
+      </div>
+      <div class="mb-3 col-md-4">
+        <label class="form-label">
+          <strong>Versión</strong>
+        </label>
+        <input autocomplete="off" type="text" name="version" class="form-control" value="<?php echo $version; ?>"  required/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="mb-3 col-md-6">
+        <label class="form-label">
+          <strong>No. serie</strong>
+        </label>
+        <input autocomplete="off" type="text" name="serie" class="form-control" value="<?php echo $serie; ?>"  required/>
+      </div>
+      <div class="mb-3 col-md-6">
+        <label class="form-label">
+          <strong>No. motor</strong>
+        </label>
+        <input autocomplete="off" type="text" name="nmotor" class="form-control" value="<?php echo $motor; ?>"  required/>
+      </div>  
+    </div>
+    <div>
+      <h2 class="card-body">Información de cobertura</h2>
+    </div>
+    <div class="row">
+      <div class="mb-3 col-md-4">
+        <label class="form-label">
+          <strong>Expedición</strong>
+        </label>
+        <input autocomplete="off" type="date" min="1940-01-01" name="expedicion" class="form-control" value="<?php echo $expedicion; ?>" required/>
+      </div>
+      <div class="mb-3 col-md-4">
+        <label class="form-label">
+          <strong>Vigencia</strong>
+        </label>
+        <input autocomplete="off" type="date" min="1940-01-01" name="vigencia" class="form-control" value="<?php echo $vigencia; ?>" required/>
+      </div>
+      <div class="mb-3 col-md-4">
+        <label class="form-label">
+          <strong>Año de la póliza</strong>
+        </label>
+        <input autocomplete="off" type="text" name="ano2" class="form-control" value="<?php echo $anoPoliza; ?>" required/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="mb-3 mb-3 col-md-4">
+        <label class="form-label">
+          <strong>Cobertura</strong>
+        </label>
+        <select class="form-control mb-3" required="required" type="text" name="cobertura">
+          <option><?php echo $cobertura; ?></option>
+          <option disabled></option>
+          <option>MULTIPLATAFORMAS CD JUAREZ</option>
+          <option>COTIZACION PARTICULAR RC ECONOMICA CON GRUA</option>
+          <option>AMPLIA AUTOMOVIL PARTICULAR HASTA $50,000</option>
+          <option>VEHICULO PARTICULAR AMPLIA HASTA $60,000</option>
+          <option>AMPLIA AUTOMOVIL PARTICULAR HASTA $70,000</option>
+          <option>AMPLIA AUTOMOVIL PARTICULAR HASTA $80,000</option>
+          <option>POLIZA PARTICULAR AMPLIA 90 MIL</option>
+          <option>POLIZA PARTICULAR AMPLIA 100 MIL</option>
+          <option>POLIZA PARTICULAR AMPLIA 110 MIL</option>
+          <option>POLIZA PARTICULAR AMPLIA 120 MIL</option>
+          <option>POLIZA PARTICULAR AMPLIA 130 MIL</option>
+          <option>POLIZA PARTICULAR AMPLIA 140 MIL</option>
+          <option>TERCEROS CON GRUA PICKUP</option>
+          <option>AMPLIA PICKUP HASTA $50,000</option>
+          <option>AMPLIA PICKUP HASTA $60,000</option>
+          <option>AMPLIA PICKUP HASTA $70,000</option>
+          <option>AMPLIA PICKUP HASTA $80,000</option>
+          <option>AMPLIA PICKUP HASTA $90,000</option>
+          <option>AMPLIA PICKUP HASTA $100,000</option>
+          <option>AMPLIA PICKUP HASTA $110,000</option>
+          <option>AMPLIA PICKUP HASTA $120,000</option>
+          <option>AMPLIA PICKUP HASTA $130,000</option>
+          <option>AMPLIA PICKUP HASTA $140,000</option>
+          <option>AMPLIA MOTO</option>
+          <option>INTERMEDIA MOTO</option>
+          <option>TERCEROS MOTO</option>
+          <option>COTIZACION MULTIPLATAFORMAS PROMO JULIO 2021</option>
+          <option>COTIZACION POLIZA MULTIPLATAFORMAS 4 MILLONES EN RC</option>
+          <option>MULTIPLATAFORMAS ECONOMICA</option>
+        </select>
+      </div>
+      <div class="mb-3 col-md-4">
+        <label class="form-label">
+          <strong>Pago mensual</strong>
+        </label>
+        <input autocomplete="off" type="number" name="pagomensual" class="form-control" value="<?php echo $abono; ?>" required/>
+      </div>
+      <div class="mb-3 col-md-4">
+        <label class="form-label">
+          <strong>Costo total</strong>
+        </label>
+        <input autocomplete="off" type="text" name="costo_total" class="form-control" value="<?php echo $total; ?>" required/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="mb-3 col-md-4">
+        <label class="form-label">
+          <strong>Vendedor</strong>
+        </label>
+        <select class="form-control mb-3" type="text" name="vendedor">
+          <option><?php echo $vendedor; ?></option>
+          <option disabled></option>
+          <option>MPS GDL</option>
+          <option>Roberto Cruz</option>
+          <option>Gerardo Partida</option>
+          <option>Miguel Ortega</option>
+          <option>Samuel Mohamed</option>
+          <option>Armando Cruz</option>
+          <option>Miguel Galindo</option>
+          <option>Israel Chavez</option>
+          <option>Gibran Rios</option>
+          <option>Gerardo Montes</option>
+          <option>Jonathan Medina</option>
+          <option>Adolfo Talamantes</option>
+          <option>Hugo Montano</option>
+          <option>MPS CD JUAREZ</option>
+          <option>Cesar Banderas</option>
+          <option>Gerardo Juarez</option>
+          <option>Laura Alvarez</option>
+          <option>Daniel Juarez</option>
+          <option>Diana Garcia</option>
+          <option>Julian Martinez</option>
+          <option>Sergio Garcia</option>
+          <option>Salvador Reyes</option>
+          <option>Cruz Gonzalez</option>
+        </select>
+      </div>
+      <div class="mb-3 col-md-4">
+        <label class="form-label">
+          <strong>Cobrador</strong>
+        </label>
+        <select class="form-control mb-3" type="text" name="cobrador">
+          <option><?php echo $cobrador; ?></option>
+          <option disabled></option>
+          <option>Roberto Armando</option>
+          <option>Samuel Mohamed</option>
+          <option>Armando Cruz</option>
+          <option>Miguel Galindo</option>
+          <option>MPS CD JUAREZ</option>
+        </select>
+      </div>
+      <div class="mb-3 col-md-4">
+        <label class="form-label">
+          <strong>Plataforma</strong>
+        </label>
+        <select class="form-control mb-3" type="text" name="plataforma">
+          <option><?php echo $plataforma; ?></option>
+          <option disabled></option>
+          <option>Multi Plataforma</option>
+          <option>Uso Particular</option>
+          <option>Servicio Publico</option>               
+        </select>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">GUARDAR CAMBIOS</button> 
+  </form>
+</div>
 
 
 <?php
-  $query1 = "SELECT * FROM datos WHERE folio='$a'   ";   //WHERE  bit_estatus  <> '2'
-  $result1 = mysqli_query($conexion,$query1);
-  $resultado = "";
-  
- 
-  
-   
-  ?>
- 
-  <form id="form1" name="registrar" action="update.php" method="post">
-   
-
-
-<!--PINTAR LOS DATOS OBTENIDOS EN SELECT 2-->
-            <center>
-         
-            <tr>
-                  <p align="right" style="color:#2962FF; font-family: Verdana;"><?php 
-				  error_reporting(0);
-				  $hoy= date("Y-m-d");
-				  echo $hoy;
-				  
-				  
-				   ?></p>
-    </tr>
-              <table border=1>
-    <thead>
-                <tr>
-                  <p style="color:#2962FF; font-family: Arial;"></p>
-                </tr>
-              </thead>
-              <tbody style="width:auto">
-                <tr>
-                    
-             
-                   <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Poliza:&nbsp;&nbsp;&nbsp;</div></td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Nombre:&nbsp;&nbsp;&nbsp;</div></td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Direccion:&nbsp;&nbsp;&nbsp;</div></td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Exterior:&nbsp;&nbsp;&nbsp;</div></td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Colonia:&nbsp;&nbsp;&nbsp;</div></td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Municipio:&nbsp;&nbsp;&nbsp;</div></td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Marca:&nbsp;&nbsp;&nbsp;</div></td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Vehiculo:&nbsp;&nbsp;&nbsp;</div></td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Año:&nbsp;&nbsp;&nbsp;</div></td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Version:&nbsp;&nbsp;&nbsp;</div></td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Telefono:&nbsp;&nbsp;&nbsp;</div></td>
-               
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Fecha:&nbsp;&nbsp;&nbsp;</div></td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Vigencia:&nbsp;&nbsp;&nbsp;</div></td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Cobertura:&nbsp;&nbsp;&nbsp;</div></td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Placas:&nbsp;&nbsp;&nbsp;</div></td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Numero de Serie:&nbsp;&nbsp;&nbsp;</div></td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Numero de Motor:&nbsp;&nbsp;&nbsp;</div></td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Abono Mensual:&nbsp;&nbsp;&nbsp;</div></td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Vendedor:&nbsp;&nbsp;&nbsp;</div></td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Cobrador:&nbsp;&nbsp;&nbsp;</div></td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">A&ntilde;o de la Poliza:&nbsp;&nbsp;&nbsp;</div></td>
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Costo Total:&nbsp;&nbsp;&nbsp;</div></td>
-              
-                  <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Color:&nbsp;&nbsp;&nbsp;</div></td>
-                   <td style="color:#2962FF; font-family: Verdana; font-size:12;"><div align="center">Plataforma:&nbsp;&nbsp;&nbsp;</div></td>
-                   </tr>
-                 
-                   
-                  <?php
-
-      while( $row = $result1->fetch_assoc() ){
+      //PIE De PAGINA
+require_once($rootDir.'public/html/footer_template.php');
 ?>
-                  
-                </div>
-                
-                </tbody>
-                    
-                  <tbody style="width:auto">   
-                <tr>
-                
-                          
-                   <div align="center">
-                    
-                   </div>
-                   <td><div align="center">
-                     <input class="" type="text" name="folio" value="<?php echo $row['folio'] ?>" readonly/>
-                   </div></td> 
-                    <td><div align="center">
-                     <input class="" type="text" name="nombre" value="<?php echo $row['nombre'] ?>" />
-                   </div></td> 
-                    <td><div align="center">
-                     <input class="" type="text" size="70" name="domicilio"  value="<?php echo $row['domicilio']  ?>" />
-                   </div></td>
-                   <td><div align="center">
-                     <input class="" type="text" size="70" name="exterior"  value="<?php echo $row['exterior']  ?>" />
-                   </div></td>
-                    <td><div align="center">
-                     <input class="" type="text" name="col" value="<?php echo $row['col'] ?>"/>
-                   </div></td> 
-                    <td><div align="center">
-                     <input class="" type="text" name="municipio" value="<?php echo $row['municipio'] ?>" />
-                   </div></td>
-                   <td><div align="center">
-                     <input class="" type="text" name="marca" value="<?php echo $row['marca'] ?>" />
-                   </div></td>
-                   <td><div align="center">
-                     <input class="" type="text" name="tipo" value="<?php echo $row['tipo'] ?>" />
-                   </div></td>
-                   <td><div align="center">
-                     <input class="" type="text" name="ano" value="<?php echo $row['ano'] ?>" />
-                   </div></td>
-                   <td><div align="center">
-                     <input class="" type="text" name="version" value="<?php echo $row['version'] ?>" />
-                   </div></td>
-                   <td><div align="center">
-                     <input class="" type="text" name="tel" value="<?php echo $row['tel'] ?>" />
-                   </div></td>
-                  
-                     <td><div align="center">
-                     <input class="" type="text" name="expedicion" value="<?php echo $row['expedicion'] ?>" />
-                   </div></td>
-                   <td><div align="center">
-                     <input class="" type="text" name="vigencia" value="<?php echo $row['vigencia'] ?>" />
-                   </div></td>
-                   <td><div align="center">
-                     <select class="" type="text" name="cobertura" value="<?php echo $row['cobertura'] ?>" />
-                     <option><?php echo $row['cobertura'] ?></option>
-                    <option></option>
-                       <option>MULTIPLATAFORMAS CD JUAREZ</option>
-                       <option>COTIZACION PARTICULAR RC ECONOMICA CON GRUA</option>
-                       <option>AMPLIA AUTOMOVIL PARTICULAR HASTA $50,000</option>
-                       <option>VEHICULO PARTICULAR AMPLIA HASTA $60,000</option>
-                       <option>AMPLIA AUTOMOVIL PARTICULAR HASTA $70,000</option>
-                       <option>AMPLIA AUTOMOVIL PARTICULAR HASTA $80,000</option>
-                       <option>POLIZA PARTICULAR AMPLIA 90 MIL</option>
-                       <option>POLIZA PARTICULAR AMPLIA 100 MIL</option>
-                       <option>POLIZA PARTICULAR AMPLIA 110 MIL</option>
-                       <option>POLIZA PARTICULAR AMPLIA 120 MIL</option>
-                       <option>POLIZA PARTICULAR AMPLIA 130 MIL</option>
-                       <option>POLIZA PARTICULAR AMPLIA 140 MIL</option>
-                       <option>TERCEROS CON GRUA PICKUP</option>
-                       <option>AMPLIA PICKUP HASTA $50,000</option>
-                       <option>AMPLIA PICKUP HASTA $60,000</option>
-                       <option>AMPLIA PICKUP HASTA $70,000</option>
-                       <option>AMPLIA PICKUP HASTA $80,000</option>
-                       <option>AMPLIA PICKUP HASTA $90,000</option>
-                       <option>AMPLIA PICKUP HASTA $100,000</option>
-                       <option>AMPLIA PICKUP HASTA $110,000</option>
-                       <option>AMPLIA PICKUP HASTA $120,000</option>
-                       <option>AMPLIA PICKUP HASTA $130,000</option>
-                       <option>AMPLIA PICKUP HASTA $140,000</option>
-                       <option>AMPLIA MOTO</option>
-                       <option>INTERMEDIA MOTO</option>
-                       <option>TERCEROS MOTO</option>
-                       <option>COTIZACION MULTIPLATAFORMAS PROMO JULIO 2021</option>
-                       <option>COTIZACION POLIZA MULTIPLATAFORMAS 4 MILLONES EN RC</option>
-                       <option>MULTIPLATAFORMAS ECONOMICA</option>
-                     </select>
-                   </div></td>
-                   <td><div align="center">
-                     <input class="" type="text" name="placas" value="<?php echo $row['placas'] ?>" />
-                   </div></td>
-                   <td><div align="center">
-                     <input class="" type="text" name="serie" size="40" value="<?php echo $row['serie'] ?>" />
-                   </div></td>
-                   <td><div align="center">
-                     <input class="" type="text" name="nmotor" size="40" value="<?php echo $row['nmotor'] ?>" />
-                   </div></td>
-                   <td><div align="center">
-                     <input class="" type="text" name="pagomensual" value="<?php echo $row['pagomensual'] ?>" />
-                   </div></td>
-                   <td><div align="center">
-                     <input class="" type="text" name="vendedor" size="40" value="<?php echo $row['vendedor'] ?>" />
-                   </div></td>
-                   
-                   <td><div align="center">
-                     <input class="" type="text" name="cobrador"   size="40" value="<?php echo $row['cobrador'] ?>" />
-                   </div></td>
-                   <td><div align="center">
-                     <input class="" type="text" name="ano2" value="<?php echo $row['ano2'] ?>" />
-                   </div></td>
-                   
-                   <td><div align="center">
-                     <input class="" type="text" name="costo_total" value="<?php echo $row['costo_total'] ?>" />
-                   </div></td>
-                  
-                    <td><div align="center">
-                     <input class="" type="text" name="color" value="<?php echo $row['color'] ?>" />
-                   </div></td>
-                   <td><div align="center">
-                     <input class="" type="text" name="plataforma" value="<?php echo $row['plataforma'] ?>" />
-                   </div></td>
-                    
-              
-                </tr>
-</tbody>
-
-                <?php
-	  }
-?>
-             
- </form>
-
-<br><br><br><br>
-  <input style="position:absolute; top: 800px ; left: 1100px" type="submit" value="GUARDAR CAMBIOS" />
-
-</body>
- 
-  </html>
