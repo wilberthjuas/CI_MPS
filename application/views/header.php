@@ -51,7 +51,7 @@
 					</li>
 				<?php } ?>
 				<?php if( $_SESSION['type'] == "1" or $_SESSION['type'] == "3" ){ ?>
-					<li class="sidebar-item active">
+					<li class="sidebar-item <?= $url.'registro' == current_url() ?  (''):('active') ?> ?>">
 						<a class="sidebar-link" href="<?= $url ?>registro">>
 							<i class="align-middle" data-feather="edit-3"></i> 
 							<span class="align-middle">Registrar pago</span>
@@ -75,8 +75,9 @@
 					</li> 
 				<?php } ?>
 				<?php if( $_SESSION['type'] == "1"  or $_SESSION['type'] == "2" or $_SESSION['type'] == "3" or $_SESSION['type'] == "5"){ ?>
-					<li class="sidebar-item active">
-						<a class="sidebar-link" href="modulos/visor/buscar3.php">
+				
+					<li class="sidebar-item <?= $url.'visor' == current_url() ?  (''):('active') ?>">
+						<a class="sidebar-link" href="<?= $url ?>visor">
 							<i class="align-middle" data-feather="book-open"></i> 
 							<span class="align-middle">Historial</span>
 						</a>
