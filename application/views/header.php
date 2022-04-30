@@ -11,11 +11,11 @@
 	<title>Mutualidad MPS</title>
 
 	<link rel="canonical" href="https://appstack.bootlab.io/dashboard-default.html" />
-	<link rel="shortcut icon" href="<?php echo base_url(); ?>images/logop.png">
+	<link rel="shortcut icon" href="<?php echo $url; ?>images/logop.png">
 
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
-	<link href="<?php echo base_url(); ?>css/light.css" rel="stylesheet">
+	<link href="<?php echo $url?>css/light.css" rel="stylesheet">
 	
 </head>
 
@@ -25,8 +25,8 @@
 			<div class="sidebar-content js-simplebar">
 				<a class="sidebar-brand" href="images/inicio.php">
 					<picture>
-					  <source srcset="images/logop.png" type="image/svg+xml">
-					  <img src="<?php echo base_url(); ?>images/logop.png" class="img-fluid rounded-circle mb-2" width="128" height="128" style="background-color: white;">
+					 
+					  <img src="<?php echo $url?>images/logop.png" class="img-fluid rounded-circle mb-2" width="128" height="128" style="background-color: white;">
 					</picture>
 			</a>
 
@@ -36,7 +36,7 @@
 				</li>
 				<?php if( $_SESSION['type'] == "1" or $_SESSION['type'] == "3"  ){ ?>
 					<li class="sidebar-item active">
-						<a class="sidebar-link" href="modulos/registro/registrar.php">
+						<a class="sidebar-link" href="<?= $url ?>index.php/modulos/registro">
 							<i class="align-middle" data-feather="file-text"></i> 
 							<span class="align-middle">Registrar póliza</span>
 						</a>
