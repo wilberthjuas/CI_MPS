@@ -23,7 +23,7 @@
 	<div class="wrapper">
 		<nav id="sidebar" class="sidebar">
 			<div class="sidebar-content js-simplebar">
-				<a class="sidebar-brand" href="images/inicio.php">
+				<a class="sidebar-brand" href="Welcome">
 					<picture>
 					 
 					  <img src="<?php echo $url?>images/logop.png" class="img-fluid rounded-circle mb-2" width="128" height="128" style="background-color: white;">
@@ -36,7 +36,7 @@
 				</li>
 				<?php if( $_SESSION['type'] == "1" or $_SESSION['type'] == "3"  ){ ?>
 					<li class="sidebar-item active">
-						<a class="sidebar-link" href="<?= $url ?>registro">
+						<a class="sidebar-link" href="<?= $url ?>Poliza">
 							<i class="align-middle" data-feather="file-text"></i> 
 							<span class="align-middle">Registrar póliza</span>
 						</a>
@@ -68,7 +68,7 @@
 				<?php } ?>
 				<?php if( $_SESSION['type'] == "1" ){ ?>
 					<li class="sidebar-item active">
-						<a class="sidebar-link" href="modulos/aprobacion/buscar2.php">
+						<a class="sidebar-link" href="<?= $url ?>Poliza/modificar">
 							<i class="align-middle" data-feather="edit"></i> 
 							<span class="align-middle">Modificar</span>
 						</a>
