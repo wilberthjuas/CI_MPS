@@ -4,15 +4,6 @@
 class Registro_Model extends CI_Model {
   
   function getData($searchTerm) {
-    //
-    // Update the entries in the todos table:
-    //
-    // 1. only update the entries that match
-    //    the specifications in $update_criteria
-    //    (or if $update_criteria is an empty array, update ALL entries)
-    //
-    // 2. and update only the fields designated in $update_info
-    //
     $this->load->database();
     $query = $this->db->query("SELECT * FROM datos   WHERE folio='$searchTerm'");
     return $query->result_array();
