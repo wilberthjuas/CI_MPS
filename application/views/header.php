@@ -92,8 +92,8 @@
 					</li>
 				<?php } ?>
 				<?php if( $_SESSION['type'] == "1" or $_SESSION['type'] == "2" or $_SESSION['type'] == "3"){ ?>
-					<li class="sidebar-item active">
-						<a class="sidebar-link" href="modulos/visor/visor4.php">
+					<li class="sidebar-item <?= $url.'tarjeta' == current_url() ?  (''):('active') ?>">
+						<a class="sidebar-link" href="<?= $url ?>tarjeta">
 							<i class="align-middle" data-feather="credit-card"></i> 
 							<span class="align-middle">Tarjeta</span>
 						</a>
