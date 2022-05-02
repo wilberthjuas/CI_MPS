@@ -84,16 +84,16 @@
 					</li>
 				<?php } ?>
 				<?php if( $_SESSION['type'] == "1" ){ ?>
-					<li class="sidebar-item active">
-						<a class="sidebar-link" href="modulos/aprobacion/precancelar.php">
+					<li class="sidebar-item <?= $url.'cancelarreactivarpoliza' == current_url() ?  (''):('active') ?>">
+						<a class="sidebar-link" href="<?= $url ?>cancelarreactivarpoliza">
 							<i class="align-middle" data-feather="shuffle"></i> 
 							<span class="align-middle">Cancelar / Reactivar</span>
 						</a>
 					</li>
 				<?php } ?>
 				<?php if( $_SESSION['type'] == "1" or $_SESSION['type'] == "2" or $_SESSION['type'] == "3"){ ?>
-					<li class="sidebar-item active">
-						<a class="sidebar-link" href="modulos/visor/visor4.php">
+					<li class="sidebar-item <?= $url.'tarjeta' == current_url() ?  (''):('active') ?>">
+						<a class="sidebar-link" href="<?= $url ?>tarjeta">
 							<i class="align-middle" data-feather="credit-card"></i> 
 							<span class="align-middle">Tarjeta</span>
 						</a>
@@ -108,8 +108,8 @@
 					</li>
 				<?php } ?>
 				<?php if( $_SESSION['type'] == "1" or $_SESSION['type'] == "2" or $_SESSION['type'] == "3" or $_SESSION['type'] == "5"){ ?>
-					<li class="sidebar-item active">
-						<a class="sidebar-link" href="modulos/aprobacion/buscargrua.php">
+					<li class="sidebar-item <?= $url.'gruas' == current_url() ?  (''):('active') ?>">
+						<a class="sidebar-link" href="<?= $url ?>gruas">
 							<i class="align-middle" data-feather="phone"></i> 
 							<span class="align-middle">Grúas</span>
 						</a>
