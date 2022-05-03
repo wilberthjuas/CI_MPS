@@ -35,7 +35,7 @@
 					Bienvenido 
 				</li>
 				<?php if( $_SESSION['type'] == "1" or $_SESSION['type'] == "3"  ){ ?>
-					<li class="sidebar-item active">
+					<li class="sidebar-item <?= $url.'Poliza' == current_url() ?  (''):('active') ?>">
 						<a class="sidebar-link" href="<?= $url ?>Poliza">
 							<i class="align-middle" data-feather="file-text"></i> 
 							<span class="align-middle">Registrar póliza</span>
@@ -51,8 +51,8 @@
 					</li>
 				<?php } ?>
 				<?php if( $_SESSION['type'] == "1" or $_SESSION['type'] == "3" ){ ?>
-					<li class="sidebar-item <?= $url.'registro' == current_url() ?  (''):('active') ?> ?>">
-						<a class="sidebar-link" href="<?= $url ?>registro">>
+					<li class="sidebar-item <?= $url.'registro' == current_url() ?  (''):('active') ?> ">
+						<a class="sidebar-link" href="<?= $url ?>registro">
 							<i class="align-middle" data-feather="edit-3"></i> 
 							<span class="align-middle">Registrar pago</span>
 						</a>
@@ -67,7 +67,7 @@
 					</li>
 				<?php } ?>
 				<?php if( $_SESSION['type'] == "1" ){ ?>
-					<li class="sidebar-item active">
+					<li class="sidebar-item <?= $url.'Poliza/modificar' == current_url() ?  (''):('active') ?>">
 						<a class="sidebar-link" href="<?= $url ?>Poliza/modificar">
 							<i class="align-middle" data-feather="edit"></i> 
 							<span class="align-middle">Modificar</span>
@@ -101,7 +101,7 @@
 				<?php } ?>
 				<?php if( $_SESSION['type'] == "1" or $_SESSION['type'] == "2" or $_SESSION['type'] == "3"){ ?>
 					<li class="sidebar-item active">
-						<a class="sidebar-link" href="modulos/visor/buscari.php">
+						<a class="sidebar-link" href="<?= $url ?>Visor/visorimpresion">
 							<i class="align-middle" data-feather="printer"></i> 
 							<span class="align-middle">Visor/Impresión</span>
 						</a>
@@ -116,13 +116,31 @@
 					</li>
 				<?php } ?>
 				<?php  if( $_SESSION['type'] == "1"  or $_SESSION['type'] == "2" or $_SESSION['type'] == "3"){ ?>
-					<li class="sidebar-item active">
-						<a class="sidebar-link" href="modulos/visor/prebuscar3.php">
+					<li class="sidebar-item <?= $url.'Excel' == current_url() ?  (''):('active') ?>">
+						<a class="sidebar-link" href="<?= $url ?>Excel">
 							<i class="align-middle" data-feather="download"></i> 
 							<span class="align-middle">Excel</span>
 						</a>
 					</li>
 				<?php } ?>
+				<li class="sidebar-item <?= $url.'plataformaCRUD' == current_url() ?  (''):('active') ?>">
+					<a class="sidebar-link" href="<?= $url ?>plataformaCRUD">
+						<i class="align-middle" data-feather="download"></i> 
+						<span class="align-middle">Plataformas</span>
+					</a>
+				</li>
+				<li class="sidebar-item <?= $url.'vendedorCRUD' == current_url() ?  (''):('active') ?>">
+					<a class="sidebar-link" href="<?= $url ?>vendedorCRUD">
+						<i class="align-middle" data-feather="download"></i> 
+						<span class="align-middle">Vendedores</span>
+					</a>
+				</li>
+				<li class="sidebar-item <?= $url.'cobradorCRUD' == current_url() ?  (''):('active') ?>">
+					<a class="sidebar-link" href="<?= $url ?>cobradorCRUD">
+						<i class="align-middle" data-feather="download"></i> 
+						<span class="align-middle">Cobradores</span>
+					</a>
+				</li>
 			</ul>
 		</div>
 	</nav>
@@ -140,10 +158,10 @@
 						</a>
 
 						<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-							<span class="text-dark">Wildo</span>
+							<span class="text-dark"><?= $name ?></span>
 						</a>
 						<div class="dropdown-menu dropdown-menu-end">
-							<a class="dropdown-item" href="usuarios/salir.php">Salir</a>
+							<a class="dropdown-item" href="<?php echo $url; ?>Usuarios/logout">Salir</a>
 						</div>
 					</li>
 				</ul>

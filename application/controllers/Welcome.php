@@ -2,12 +2,26 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
+
+	public function __construct()
+	{
+		parent::__construct();
+		//Do your magic here
+		$this->load->helper('url');
+		$this->logged_in();
+		
+	}
+
+	private function logged_in() {
+        if(! $this->session->userdata('authenticated')) {
+            redirect('login');
+        }
+    }
 	
 	public function index()
 	{
-		$this->load->helper('url');
-		session_start();
-		$data['title'] = "";
+		$data['title'] = "MPS";
+		$data['name'] = $this->session->userdata('name');
 		$data['url'] = base_url();
 		$this->load->view('header',$data);
 		$this->load->view('welcome_message');

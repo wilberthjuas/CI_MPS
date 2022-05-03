@@ -84,7 +84,7 @@ foreach($result1 as $row ){
             </div>
             <div class="row">
                 <form>
-                    <a class="btn btn-primary" href="tarjetaPdf.php?n=<?php echo $poliza; ?>" >Descargar PDF</a> 
+                    <a class="btn btn-primary" href="<?=$url?>tarjeta/tarjetaPdf?n=<?php echo $poliza; ?>" target="_blank">Descargar PDF</a> 
                 </form>
             </div>
         </div>

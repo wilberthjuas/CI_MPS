@@ -8,16 +8,21 @@
  	{
  		parent::__construct();
  		$this->load->helper('url');
+ 		$this->logged_in();
  		$this->load->model('Poliza_Model');
- 		session_start();
-
  	}
+
+ 	private function logged_in() {
+        if(! $this->session->userdata('authenticated')) {
+            redirect('login');
+        }
+    }
 
  	public function index(){
  		
 		$data['title'] = "REGISTRO DE NUEVA PÓLIZA";
         $data['url'] = base_url();
-        $data['name'] = '';
+        $data['name'] = $this->session->userdata('name');
 		
 		$this->load->view('header',$data);
 		$this->load->view('poliza/nueva',$data);
@@ -27,6 +32,7 @@
  	public function sendNewPolicy(){
  		$data['title'] = "REGISTRO DE NUEVA PÓLIZA";
         $data['url'] = base_url();
+        $data['name'] = $this->session->userdata('name');
  		if($this->input->server('REQUEST_METHOD') == "POST"){
  			
  			$save = array(
@@ -78,7 +84,7 @@
  	public function modificar(){
  		$data['title'] = "MODIFICAR";
         $data['url'] = base_url();
-        $data['name'] = '';
+        $data['name'] = $this->session->userdata('name');
 
         $this->load->view('header',$data);
 		$this->load->view('poliza/modificar',$data);
@@ -92,7 +98,7 @@
 		$data['result'] = $poliza;
 		$data['title'] = "ACTUALIZAR PÓLIZA";
         $data['url'] = base_url();
-        $data['name'] = '';
+        $data['name'] = $this->session->userdata('name');
 		$this->load->view('header',$data);
 		$this->load->view('poliza/actualizar',$data);
 		$this->load->view('footer');
@@ -101,6 +107,7 @@
  	public function updatePolicy(){
  		$data['title'] = "ACTUALIZAR PÓLIZA";
         $data['url'] = base_url();
+        $data['name'] = $this->session->userdata('name');
  		$update = array(
 			'folio'=> $this->input->post('folio'),
 			'nombre'=> $this->input->post("nombre"),

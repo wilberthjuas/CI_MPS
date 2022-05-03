@@ -3,12 +3,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Registro extends CI_Controller {
 	
+
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->helper('url');
+		$this->logged_in();
+		$this->load->model('Registro_Model');
+	}
+
+	private function logged_in() {
+        if(! $this->session->userdata('authenticated')) {
+            redirect('login');
+        }
+    }
+
 	public function index()
 	{
-		$this->load->helper('url');
-		session_start();
 		$data['title'] = "REGISTRO DE NUEVO PAGO";
         $data['url'] = base_url();
+        $data['name'] = $this->session->userdata('name');
 		$this->load->view('header',$data);
 		$this->load->view('registro');
 		$this->load->view('footer');
@@ -16,13 +30,11 @@ class Registro extends CI_Controller {
 
 	public function sendForm()
 	{
-		$this->load->model('Registro_Model');
 		$searchTerm = $_POST['buscar'];
 		$resultado =$this->Registro_Model->getData($searchTerm);
-		$this->load->helper('url');
-		session_start();
 		$data['title'] = "REGISTRO DE NUEVO PAGO";
         $data['url'] = base_url();
+        $data['name'] = $this->session->userdata('name');
 		$data['result1'] = $resultado;
 		$this->load->view('header',$data);
 		$this->load->view('datos',$data);
@@ -31,9 +43,6 @@ class Registro extends CI_Controller {
 
 	public function pagos()
 	{
-		$this->load->helper('url');
-		session_start();
-		$this->load->model('Registro_Model');
 		$datos['pag']=$_POST['pag'];//Pago
 		$datos['fol']=$_POST['fol'];//Folio
 		$datos['cob']=$_POST['cob'];//Cobro	
@@ -49,6 +58,7 @@ class Registro extends CI_Controller {
 
 		$data['title'] = "REGISTRO DE NUEVO PAGO";
         $data['url'] = base_url();
+        $data['name'] = $this->session->userdata('name');
 		$this->load->view('header',$data);
 		if($resultUpdate){
 			$this->load->view('correcto');

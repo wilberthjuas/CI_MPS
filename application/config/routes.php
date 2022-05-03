@@ -52,3 +52,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['login'] = 'Usuarios/login';
+$route['plataformaCRUD'] = "plataformaCRUD/index";
+$route['plataformaCRUD/(:num)'] = "plataformaCRUD/show/$1";
+$route['plataformaCRUDCreate']['post'] = "plataformaCRUD/store";
+$route['plataformaCRUDEdit/(:any)'] = "plataformaCRUD/edit/$1";
+$route['plataformaCRUDUpdate/(:any)']['put'] = "plataformaCRUD/update/$1";
+$route['plataformaCRUDDelete/(:any)']['delete'] = "plataformaCRUD/delete/$1";
+$route['vendedorCRUD'] = "vendedorCRUD/index";
+$route['vendedorCRUD/(:num)'] = "vendedorCRUD/show/$1";
+$route['vendedorCRUDCreate']['post'] = "vendedorCRUD/store";
+$route['vendedorCRUDEdit/(:any)'] = "vendedorCRUD/edit/$1";
+$route['vendedorCRUDUpdate/(:any)']['put'] = "vendedorCRUD/update/$1";
+$route['vendedorCRUDDelete/(:any)']['delete'] = "vendedorCRUD/delete/$1";
+$route['cobradorCRUD'] = "cobradorCRUD/index";
+$route['cobradorCRUD/(:num)'] = "cobradorCRUD/show/$1";
+$route['cobradorCRUDCreate']['post'] = "cobradorCRUD/store";
+$route['cobradorCRUDEdit/(:any)'] = "cobradorCRUD/edit/$1";
+$route['cobradorCRUDUpdate/(:any)']['put'] = "cobradorCRUD/update/$1";
+$route['cobradorCRUDDelete/(:any)']['delete'] = "cobradorCRUD/delete/$1";
+
+
+
+
