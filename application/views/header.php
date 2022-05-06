@@ -42,30 +42,17 @@
 						</a>
 					</li>
 				<?php } ?>
-				<?php if($_SESSION['type'] =="5" or $_SESSION['type'] == "7" or $_SESSION['type'] == "8" or $_SESSION['type'] == "9"){ ?>
-					<li class="sidebar-item active">
-						<a class="sidebar-link" href="modulos/visor/buscar.php">
-							<i class="align-middle" data-feather="eye"></i> 
-							<span class="align-middle">Visor</span>
-						</a>
-					</li>
-				<?php } ?>
-				<?php if( $_SESSION['type'] == "1" or $_SESSION['type'] == "3" ){ ?>
-					<li class="sidebar-item <?= $url.'registro' == current_url() ?  (''):('active') ?> ">
-						<a class="sidebar-link" href="<?= $url ?>registro">
-							<i class="align-middle" data-feather="edit-3"></i> 
+				<li class="sidebar-item <?= $url.'registro' == current_url() ?  (''):('active') ?> ">
+					<a class="sidebar-link" href="<?= $url ?>registro">
+						<i class="align-middle" data-feather="edit-3"></i> 
+						<?php if( $_SESSION['type'] == "1" or $_SESSION['type'] == "3" ){ ?>
 							<span class="align-middle">Registrar pago</span>
-						</a>
-					</li> 
-				<?php } ?>
-				<?php if( $_SESSION['type'] == "5"){ ?>
-					<li class="sidebar-item active">
-						<a class="sidebar-link" href="modulos/registro/registrarpago.php">
-							<i class="align-middle" data-feather="check-square"></i> 
+						<?php } ?>
+						<?php if( $_SESSION['type'] == "5"){ ?>
 							<span class="align-middle">Validar pagos</span>
-						</a>
-					</li>
-				<?php } ?>
+						<?php } ?>
+					</a>
+				</li> 
 				<?php if( $_SESSION['type'] == "1" ){ ?>
 					<li class="sidebar-item <?= $url.'Poliza/modificar' == current_url() ?  (''):('active') ?>">
 						<a class="sidebar-link" href="<?= $url ?>Poliza/modificar">
@@ -74,7 +61,7 @@
 						</a>
 					</li> 
 				<?php } ?>
-				<?php if( $_SESSION['type'] == "1"  or $_SESSION['type'] == "2" or $_SESSION['type'] == "3" or $_SESSION['type'] == "5"){ ?>
+				<?php if( $_SESSION['type'] == "1" or $_SESSION['type'] == "5"){ ?>
 				
 					<li class="sidebar-item <?= $url.'visor' == current_url() ?  (''):('active') ?>">
 						<a class="sidebar-link" href="<?= $url ?>visor">
@@ -99,14 +86,17 @@
 						</a>
 					</li>
 				<?php } ?>
-				<?php if( $_SESSION['type'] == "1" or $_SESSION['type'] == "2" or $_SESSION['type'] == "3"){ ?>
-					<li class="sidebar-item active">
-						<a class="sidebar-link" href="<?= $url ?>Visor/visorimpresion">
-							<i class="align-middle" data-feather="printer"></i> 
-							<span class="align-middle">Visor/Impresión</span>
-						</a>
-					</li>
-				<?php } ?>
+				<li class="sidebar-item active">
+					<a class="sidebar-link" href="<?= $url ?>Visor/visorimpresion">
+						<i class="align-middle" data-feather="eye"></i>  
+						<?php if( $_SESSION['type'] == "1" or $_SESSION['type'] == "3"){ ?>
+						<span class="align-middle">Visor/Impresión</span>
+						<?php } ?>
+						<?php if($_SESSION['type'] =="5"){ ?>
+							<span class="align-middle">Visor</span>
+						<?php } ?>
+					</a>
+				</li>
 				<?php if( $_SESSION['type'] == "1" or $_SESSION['type'] == "2" or $_SESSION['type'] == "3" or $_SESSION['type'] == "5"){ ?>
 					<li class="sidebar-item <?= $url.'gruas' == current_url() ?  (''):('active') ?>">
 						<a class="sidebar-link" href="<?= $url ?>gruas">
@@ -125,20 +115,26 @@
 				<?php } ?>
 				<li class="sidebar-item <?= $url.'plataformaCRUD' == current_url() ?  (''):('active') ?>">
 					<a class="sidebar-link" href="<?= $url ?>plataformaCRUD">
-						<i class="align-middle" data-feather="download"></i> 
+						<i class="align-middle" data-feather="codepen"></i> 
 						<span class="align-middle">Plataformas</span>
 					</a>
 				</li>
 				<li class="sidebar-item <?= $url.'vendedorCRUD' == current_url() ?  (''):('active') ?>">
 					<a class="sidebar-link" href="<?= $url ?>vendedorCRUD">
-						<i class="align-middle" data-feather="download"></i> 
+						<i class="align-middle" data-feather="briefcase"></i> 
 						<span class="align-middle">Vendedores</span>
 					</a>
 				</li>
 				<li class="sidebar-item <?= $url.'cobradorCRUD' == current_url() ?  (''):('active') ?>">
 					<a class="sidebar-link" href="<?= $url ?>cobradorCRUD">
-						<i class="align-middle" data-feather="download"></i> 
+						<i class="align-middle" data-feather="dollar-sign"></i> 
 						<span class="align-middle">Cobradores</span>
+					</a>
+				</li>
+				<li class="sidebar-item <?= $url.'municipioCRUD' == current_url() ?  (''):('active') ?>">
+					<a class="sidebar-link" href="<?= $url ?>municipioCRUD">
+						<i class="align-middle" data-feather="dollar-sign"></i> 
+						<span class="align-middle">Municipios</span>
 					</a>
 				</li>
 			</ul>

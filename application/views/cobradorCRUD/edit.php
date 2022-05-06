@@ -15,19 +15,19 @@
                 <label class="form-label">
                     <strong>Ingresa el nuevo cobrador</strong>
                 </label>
-                <input autocomplete="off" type="text" name="name" class="form-control" value="<?php echo $cobrador->nombre; ?>" required/>
+                <input type="text" name="name" class="form-control" value="<?php echo $cobrador->nombre; ?>" required/>
             </div>
             <div class="mb-3">
                 <label class="form-label">
                     <strong>Ingresa el teléfono</strong>
                 </label>
-                <input autocomplete="off" type="text" name="phone" class="form-control" value="<?php echo $cobrador->telefono; ?>" required/>
+                <input type="text" name="phone" class="form-control" value="<?php echo $cobrador->telefono; ?>" required/>
             </div>
             <div class="mb-3">
                 <label class="form-label">
                     <strong>Ingresa el correo</strong>
                 </label>
-                <input autocomplete="off" type="email" name="email" class="form-control" value="<?php echo $cobrador->correo; ?>" required/>
+                <input type="email" name="email" class="form-control" value="<?php echo $cobrador->correo; ?>" required/>
             </div>
 			
 

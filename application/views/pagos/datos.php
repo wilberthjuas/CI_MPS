@@ -334,8 +334,17 @@ foreach( $result1 as $row){
               <input autocomplete="off" type="text" name="fol" class="form-control"  placeholder="Ingrese folio de cobro" required />
             </div>
             <div class="mb-3 col-md-3">
-              <label class="form-label"><strong>Cobrador</strong></label>
-              <input autocomplete="off" type="text" name="cob" class="form-control"  placeholder="Ingrese Cobrador" required />
+              <label class="form-label">
+                <strong>
+                  Cobrador 
+                </strong>
+              </label>
+              <select class="form-control mb-3" name="cob" required>
+                <option value="" disabled selected>Selecciona una opción</option>
+                <?php foreach( $cobradores as $cobrador){ ?>
+                <option value="<?php echo $cobrador->nombre; ?>"><?php echo $cobrador->nombre; ?></option>
+                <?php } ?>
+              </select>
             </div>
             <div class="mb-3 col-md-2">
               <label class="form-label"><strong>Monto</strong></label>

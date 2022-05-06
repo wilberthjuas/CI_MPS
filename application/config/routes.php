@@ -71,6 +71,12 @@ $route['cobradorCRUDCreate']['post'] = "cobradorCRUD/store";
 $route['cobradorCRUDEdit/(:any)'] = "cobradorCRUD/edit/$1";
 $route['cobradorCRUDUpdate/(:any)']['put'] = "cobradorCRUD/update/$1";
 $route['cobradorCRUDDelete/(:any)']['delete'] = "cobradorCRUD/delete/$1";
+$route['municipioCRUD'] = "municipioCRUD/index";
+$route['municipioCRUD/(:num)'] = "municipioCRUD/show/$1";
+$route['municipioCRUDCreate']['post'] = "municipioCRUD/store";
+$route['municipioCRUDEdit/(:any)'] = "municipioCRUD/edit/$1";
+$route['municipioCRUDUpdate/(:any)']['put'] = "municipioCRUD/update/$1";
+$route['municipioCRUDDelete/(:any)']['delete'] = "municipioCRUD/delete/$1";
 
 
 

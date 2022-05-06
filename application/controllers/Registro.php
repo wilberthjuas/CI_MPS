@@ -24,20 +24,22 @@ class Registro extends CI_Controller {
         $data['url'] = base_url();
         $data['name'] = $this->session->userdata('name');
 		$this->load->view('header',$data);
-		$this->load->view('registro');
+		$this->load->view('pagos/registro');
 		$this->load->view('footer');
 	}
 
 	public function sendForm()
 	{
 		$searchTerm = $_POST['buscar'];
-		$resultado =$this->Registro_Model->getData($searchTerm);
+		$data['result1'] = $this->Registro_Model->getData($searchTerm);
+		$this->load->model('Cobrador_Model');
+		$data['cobradores'] = $this->Cobrador_Model->get_cobradorCRUD();
 		$data['title'] = "REGISTRO DE NUEVO PAGO";
         $data['url'] = base_url();
         $data['name'] = $this->session->userdata('name');
-		$data['result1'] = $resultado;
+		
 		$this->load->view('header',$data);
-		$this->load->view('datos',$data);
+		$this->load->view('pagos/datos',$data);
 		$this->load->view('footer');
 	}
 

@@ -46,13 +46,11 @@ class Gruas extends CI_Controller {
 	public function setGrua(){
 		$grua1 = $_POST['com1'];
 		$grua2 = $_POST['com2'];
-		$folio=$_POST['folio'];
-		$this->load->model('Gruas_Model');
+		$folio = $_POST['folio'];
 		$resultado =$this->Gruas_Model->setGrua($grua1,$grua2,$folio);
-		$this->load->helper('url');
-		session_start();
-		$data['title'] = "GRÚAS";
-        $data['url'] = base_url();
+		$data['title'] 	= "GRÚAS";
+        $data['url'] 	= base_url();
+        $data['name'] 	= $this->session->userdata('name');
 		$this->load->view('header',$data);
 		$this->load->view('correcto',$data);
 		$this->load->view('footer');

@@ -41,7 +41,7 @@ foreach( $result as $row ){
         <label class="form-label">
           <strong>Póliza</strong>
         </label>
-        <input autocomplete="off" type="text" name="folio" class="form-control" value=" <?php echo $poliza; ?>" required/>
+        <input type="text" name="folio" class="form-control" value=" <?php echo $poliza; ?>" readonly/>
       </div>
     </div>
     <div>
@@ -224,58 +224,30 @@ foreach( $result as $row ){
         <label class="form-label">
           <strong>Vendedor</strong>
         </label>
-        <select class="form-control mb-3" type="text" name="vendedor">
-          <option><?php echo $vendedor; ?></option>
-          <option disabled></option>
-          <option>MPS GDL</option>
-          <option>Roberto Cruz</option>
-          <option>Gerardo Partida</option>
-          <option>Miguel Ortega</option>
-          <option>Samuel Mohamed</option>
-          <option>Armando Cruz</option>
-          <option>Miguel Galindo</option>
-          <option>Israel Chavez</option>
-          <option>Gibran Rios</option>
-          <option>Gerardo Montes</option>
-          <option>Jonathan Medina</option>
-          <option>Adolfo Talamantes</option>
-          <option>Hugo Montano</option>
-          <option>MPS CD JUAREZ</option>
-          <option>Cesar Banderas</option>
-          <option>Gerardo Juarez</option>
-          <option>Laura Alvarez</option>
-          <option>Daniel Juarez</option>
-          <option>Diana Garcia</option>
-          <option>Julian Martinez</option>
-          <option>Sergio Garcia</option>
-          <option>Salvador Reyes</option>
-          <option>Cruz Gonzalez</option>
+        <select class="form-control mb-3" name="vendedor" required>
+          <?php foreach( $vendedores as $ven){ ?>
+          <option value="<?php echo $ven->nombre; ?>" <?php if($vendedor == $ven->nombre){ echo 'selected';} ?>><?php echo $ven->nombre; ?></option>
+          <?php } ?> 
         </select>
       </div>
       <div class="mb-3 col-md-4">
         <label class="form-label">
           <strong>Cobrador</strong>
         </label>
-        <select class="form-control mb-3" type="text" name="cobrador">
-          <option><?php echo $cobrador; ?></option>
-          <option disabled></option>
-          <option>Roberto Armando</option>
-          <option>Samuel Mohamed</option>
-          <option>Armando Cruz</option>
-          <option>Miguel Galindo</option>
-          <option>MPS CD JUAREZ</option>
+        <select class="form-control mb-3" name="cobrador" required>
+          <?php foreach( $cobradores as $cob){ ?>
+          <option value="<?php echo $cob->nombre; ?>" <?php if($cobrador == $cob->nombre){ echo 'selected';} ?>><?php echo $cob->nombre; ?></option>
+          <?php } ?> 
         </select>
       </div>
       <div class="mb-3 col-md-4">
         <label class="form-label">
           <strong>Plataforma</strong>
         </label>
-        <select class="form-control mb-3" type="text" name="plataforma">
-          <option><?php echo $plataforma; ?></option>
-          <option disabled></option>
-          <option>Multi Plataforma</option>
-          <option>Uso Particular</option>
-          <option>Servicio Publico</option>               
+        <select class="form-control mb-3" name="plataforma" required>
+          <?php foreach( $plataformas as $platform){ ?>
+          <option value="<?php echo $platform->descripcion; ?>" <?php if($plataforma == $platform->descripcion){ echo 'selected';} ?>><?php echo $platform->descripcion; ?></option>
+          <?php } ?>                
         </select>
       </div>
     </div>

@@ -10,6 +10,9 @@
  		$this->load->helper('url');
  		$this->logged_in();
  		$this->load->model('Poliza_Model');
+ 		$this->load->model('Cobrador_Model');
+ 		$this->load->model('Plataforma_Model');
+ 		$this->load->model('Vendedor_Model');
  	}
 
  	private function logged_in() {
@@ -23,8 +26,10 @@
 		$data['title'] = "REGISTRO DE NUEVA PÓLIZA";
         $data['url'] = base_url();
         $data['name'] = $this->session->userdata('name');
-		
 		$this->load->view('header',$data);
+		$data['cobradores'] = $this->Cobrador_Model->get_cobradorCRUD();
+		$data['plataformas']= $this->Plataforma_Model->get_plataformaCRUD();
+		$data['vendedores'] = $this->Vendedor_Model->get_vendedorCRUD();
 		$this->load->view('poliza/nueva',$data);
 		$this->load->view('footer');
  	}
@@ -100,6 +105,9 @@
         $data['url'] = base_url();
         $data['name'] = $this->session->userdata('name');
 		$this->load->view('header',$data);
+		$data['cobradores'] = $this->Cobrador_Model->get_cobradorCRUD();
+		$data['plataformas']= $this->Plataforma_Model->get_plataformaCRUD();
+		$data['vendedores'] = $this->Vendedor_Model->get_vendedorCRUD();
 		$this->load->view('poliza/actualizar',$data);
 		$this->load->view('footer');
  	}

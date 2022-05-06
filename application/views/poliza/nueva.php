@@ -221,31 +221,11 @@
 				<label class="form-label">
 					<strong>Vendedor</strong>
 				</label>
-				<select class="form-control mb-3" required="required" name="vendedor">
-					<option disabled selected>Selecciona una opción</option>
-					<option>MPS GDL</option>
-					<option>Roberto Cruz</option>
-					<option>Gerardo Partida</option>
-					<option>Miguel Ortega</option>
-					<option>Samuel Mohamed</option>
-					<option>Armando Cruz</option>
-					<option>Miguel Galindo</option>
-					<option>Israel Chavez</option>
-					<option>Gibran Rios</option>
-					<option>Gerardo Montes</option>
-					<option>Jonathan Medina</option>
-					<option>Adolfo Talamantes</option>
-					<option>Hugo Montano</option>
-					<option>MPS CD JUAREZ</option>
-					<option>Cesar Banderas</option>
-					<option>Gerardo Juarez</option>
-					<option>Laura Alvarez</option>
-					<option>Daniel Juarez</option>
-					<option>Diana Garcia</option>
-					<option>Julian Martinez</option>
-					<option>Sergio Garcia</option>
-					<option>Salvador Reyes</option>
-					<option>Cruz Gonzalez</option>
+				<select class="form-control mb-3" name="vendedor" required>
+					<option value="" disabled selected>Selecciona una opción</option>
+					<?php foreach( $vendedores as $vendedor){ ?>
+	                <option value="<?php echo $vendedor->nombre; ?>"><?php echo $vendedor->nombre; ?></option>
+	                <?php } ?> 
 				</select>
 			</div>
 
@@ -253,13 +233,11 @@
 				<label class="form-label">
 					<strong>Cobrador</strong>
 				</label>
-				<select class="form-control mb-3" required="required" name="cobrador">
-					<option disabled selected>Selecciona una opción</option>
-					<option>Roberto Armando</option>
-					<option>Samuel Mohamed</option>
-					<option>Armando Cruz</option>
-					<option>Miguel Galindo</option>
-					<option>MPS CD JUAREZ</option>
+				<select class="form-control mb-3" name="cobrador" required>
+					<option value="" disabled selected>Selecciona una opción</option>
+					<?php foreach( $cobradores as $cobrador){ ?>
+	                <option value="<?php echo $cobrador->nombre; ?>"><?php echo $cobrador->nombre; ?></option>
+	                <?php } ?>
 				</select>
 			</div>
 
@@ -267,11 +245,11 @@
 				<label class="form-label">
 					<strong>Plataforma</strong>
 				</label>
-				<select class="form-control mb-3" required="required" name="plataforma">
-					<option disabled selected>Selecciona una opción</option>
-					<option>Multi Plataforma</option>
-					<option>Uso Particular</option>
-					<option>Servicio Publico</option>               
+				<select class="form-control mb-3" name="plataforma" required>
+					<option value="" disabled selected>Selecciona una opción</option>
+					<?php foreach( $plataformas as $plataforma){ ?>
+	                <option value="<?php echo $plataforma->descripcion; ?>"><?php echo $plataforma->descripcion; ?></option>
+	                <?php } ?>               
 				</select>
 			</div>
 		</div>
