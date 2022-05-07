@@ -198,6 +198,213 @@ class Poliza_Model extends CI_Model {
 		return true;
 	}
 
+	function migrateData(){
+		$query = $this->db->query("SELECT * FROM datos ");
+		foreach ($query->result() as $row) {
+			//VALIDATE 
+			$this->db->like('cobertura', $row->cobertura);
+			$query1 = $this->db->get("coberturas");
+
+			if( empty($query1->result()) ){
+				$this->db->set('cobertura',	$row->cobertura);
+				$this->db->set('rca',		$row->rca);
+				$this->db->set('robo',		$row->robo);
+				$this->db->set('dano',		$row->dano);
+				$this->db->set('gastos',	$row->gastos);
+				$this->db->set('medico',	$row->med);
+				$this->db->set('asistencia',$row->asis);
+				$this->db->set('cristal',	$row->cristal);
+				$this->db->set('vial',		$row->vial);
+				$this->db->set('muerte',	$row->muerte);
+
+				$this->db->insert('coberturas');
+
+				$idCobertura = $this->db->insert_id();
+			}
+			else{
+				$cob = $query1->row();
+				$idCobertura = $cob->id;
+			}
+
+			//INSERT CLIENTE
+			$this->db->set('nombre',	$row->nombre);
+			$this->db->set('domicilio',	$row->domicilio);
+			$this->db->set('exterior',	$row->exterior);
+			$this->db->set('entre',		$row->entre);
+			$this->db->set('colonia',	$row->col);
+			$this->db->set('municipio',	$row->municipio);
+			$this->db->set('domcom',	$row->domcom);
+			$this->db->set('estado_civil',$row->estado_civil);
+			$this->db->set('fecha_n',	$row->fecha_n);
+			$this->db->set('telefono',	$row->tel);
+			$this->db->set('cp',		$row->cp);
+			$this->db->insert('cliente');
+			$idCliente = $this->db->insert_id();
+
+			//INSERT VEHICULO
+			$this->db->set('id_cliente',	$idCliente);
+			$this->db->set('marca',			$row->marca);
+			$this->db->set('tipo',			$row->tipo);
+			$this->db->set('ano',			$row->ano);
+			$this->db->set('color',			$row->color);
+			$this->db->set('placas',		$row->placas);
+			$this->db->set('version',		$row->version);
+			$this->db->set('serie',			$row->serie);
+			$this->db->set('nmotor',		$row->nmotor);
+			$this->db->insert('vehiculo');
+			$idVehiculo = $this->db->insert_id();
+
+			//INSERT POLIZA
+			$this->db->set('id_vehiculo',	$idVehiculo);
+			$this->db->set('id_cobertura',	$idCobertura);
+			$this->db->set('folio_prev',	$row->folio);
+			$this->db->set('expedicion',	$row->expedicion);
+			$this->db->set('vigencia',		$row->vigencia);
+			$this->db->set('deducible',		$row->deducible);
+			$this->db->set('costo_total',	$row->costo_total);
+			$this->db->set('plazo',			$row->plazo);
+			$this->db->set('pagoinicial',	$row->pagoinicial);
+			$this->db->set('pagomensual',	$row->pagomensual);
+			$this->db->set('observaciones',	$row->observaciones);
+			$this->db->set('captura',		$row->captura);
+			$this->db->set('ediciones',		$row->ediciones);
+			$this->db->set('fecha_modificacion', $row->fecha_modificacion);
+			$this->db->set('vendedor',		$row->vendedor);
+			$this->db->set('cobrador',		$row->cobrador);
+			$this->db->set('ano2',			$row->ano2);
+			$this->db->set('bit',			$row->bit);
+			$this->db->set('motivo',		$row->mot);
+			$this->db->insert('polizas');
+			$idPoliza = $this->db->insert_id();
+
+			//INSERT GRUAS
+			//GRUA1
+			$this->db->set('id_poliza',	$idPoliza);
+			$this->db->set('grua',		$row->grua1);
+			$this->db->set('comentario',$row->com1);
+			$this->db->insert('gruas');
+			//GRUA2
+			$this->db->set('id_poliza',	$idPoliza);
+			$this->db->set('grua',		$row->grua2);
+			$this->db->set('comentario',$row->com2);
+			$this->db->insert('gruas');
+
+			//INSERT PAGOS
+			$this->db->set('id_poliza',	$idPoliza);
+			$this->db->set('num_pago',	'1');
+			$this->db->set('estatus',	$row->uno);
+			$this->db->set('folio',		$row->folio1);
+			$this->db->set('monto',		$row->monto1);
+			$this->db->set('cobrador',	$row->cobra1);
+			$this->db->set('fecha',		$row->fech1);
+			$this->db->set('recibo',	$row->re1);
+			$this->db->insert('pagos');
+
+			$this->db->set('id_poliza',	$idPoliza);
+			$this->db->set('num_pago',	'2');
+			$this->db->set('estatus',	$row->dos);
+			$this->db->set('folio',		$row->folio2);
+			$this->db->set('monto',		$row->monto2);
+			$this->db->set('cobrador',	$row->cobra2);
+			$this->db->set('fecha',		$row->fech2);
+			$this->db->set('recibo',	$row->re2);
+			$this->db->insert('pagos');
+
+			$this->db->set('id_poliza',	$idPoliza);
+			$this->db->set('num_pago',	'3');
+			$this->db->set('estatus',	$row->tres);
+			$this->db->set('folio',		$row->folio3);
+			$this->db->set('monto',		$row->monto3);
+			$this->db->set('cobrador',	$row->cobra3);
+			$this->db->set('fecha',		$row->fech3);
+			$this->db->set('recibo',	$row->re3);
+			$this->db->insert('pagos');
+
+			$this->db->set('id_poliza',	$idPoliza);
+			$this->db->set('num_pago',	'4');
+			$this->db->set('estatus',	$row->cuatro);
+			$this->db->set('folio',		$row->folio4);
+			$this->db->set('monto',		$row->monto4);
+			$this->db->set('cobrador',	$row->cobra4);
+			$this->db->set('fecha',		$row->fech4);
+			$this->db->set('recibo',	$row->re4);
+			$this->db->insert('pagos');
+
+			$this->db->set('id_poliza',	$idPoliza);
+			$this->db->set('num_pago',	'5');
+			$this->db->set('estatus',	$row->cinco);
+			$this->db->set('folio',		$row->folio5);
+			$this->db->set('monto',		$row->monto5);
+			$this->db->set('cobrador',	$row->cobra5);
+			$this->db->set('fecha',		$row->fech5);
+			$this->db->set('recibo',	$row->re5);
+			$this->db->insert('pagos');
+
+			$this->db->set('id_poliza',	$idPoliza);
+			$this->db->set('num_pago',	'6');
+			$this->db->set('estatus',	$row->seis);
+			$this->db->set('folio',		$row->folio6);
+			$this->db->set('monto',		$row->monto6);
+			$this->db->set('cobrador',	$row->cobra6);
+			$this->db->set('fecha',		$row->fech6);
+			$this->db->set('recibo',	$row->re6);
+			$this->db->insert('pagos');
+
+			$this->db->set('id_poliza',	$idPoliza);
+			$this->db->set('num_pago',	'7');
+			$this->db->set('estatus',	$row->siete);
+			$this->db->set('folio',		$row->folio7);
+			$this->db->set('monto',		$row->monto7);
+			$this->db->set('cobrador',	$row->cobra7);
+			$this->db->set('fecha',		$row->fech7);
+			$this->db->set('recibo',	$row->re7);
+			$this->db->insert('pagos');
+
+			$this->db->set('id_poliza',	$idPoliza);
+			$this->db->set('num_pago',	'8');
+			$this->db->set('estatus',	$row->ocho);
+			$this->db->set('folio',		$row->folio8);
+			$this->db->set('monto',		$row->monto8);
+			$this->db->set('cobrador',	$row->cobra8);
+			$this->db->set('fecha',		$row->fech8);
+			$this->db->set('recibo',	$row->re8);
+			$this->db->insert('pagos');
+
+			$this->db->set('id_poliza',	$idPoliza);
+			$this->db->set('num_pago',	'9');
+			$this->db->set('estatus',	$row->nueve);
+			$this->db->set('folio',		$row->folio9);
+			$this->db->set('monto',		$row->monto9);
+			$this->db->set('cobrador',	$row->cobra9);
+			$this->db->set('fecha',		$row->fech9);
+			$this->db->set('recibo',	$row->re9);
+			$this->db->insert('pagos');
+
+			$this->db->set('id_poliza',	$idPoliza);
+			$this->db->set('num_pago',	'10');
+			$this->db->set('estatus',	$row->diez);
+			$this->db->set('folio',		$row->folio10);
+			$this->db->set('monto',		$row->monto10);
+			$this->db->set('cobrador',	$row->cobra10);
+			$this->db->set('fecha',		$row->fech10);
+			$this->db->set('recibo',	$row->re10);
+			$this->db->insert('pagos');
+
+			$this->db->set('id_poliza',	$idPoliza);
+			$this->db->set('num_pago',	'11');
+			$this->db->set('estatus',	$row->once);
+			$this->db->set('folio',		$row->folio11);
+			$this->db->set('monto',		$row->monto11);
+			$this->db->set('cobrador',	$row->cobra11);
+			$this->db->set('fecha',		$row->fech11);
+			$this->db->set('recibo',	$row->re11);
+			$this->db->insert('pagos');
+		}
+
+
+
+	}
+
 	private function getPrimas($cobertura){
 		$rca="";
 		$robo="";
@@ -531,6 +738,7 @@ class Poliza_Model extends CI_Model {
 		);
 		return $response;
 	}
+
 
 }
 

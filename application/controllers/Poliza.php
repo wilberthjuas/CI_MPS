@@ -155,6 +155,16 @@
 		$this->load->view('poliza/respuesta',$resultUpdate);
 		$this->load->view('footer');
  	}
+
+ 	public function cargarCobertura(){
+ 		$this->Poliza_Model->fillCoberturas();
+ 		redirect(base_url('Poliza/modificar'));
+ 	}
+
+ 	public function migrarDatos(){
+ 		$this->Poliza_Model->migrateData();
+ 		redirect(base_url('Poliza/modificar'));
+ 	}
  
  }
  
