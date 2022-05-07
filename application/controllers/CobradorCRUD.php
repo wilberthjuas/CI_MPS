@@ -25,8 +25,10 @@ class CobradorCRUD extends CI_Controller {
         $data['url'] = base_url();
         $data['name'] = $this->session->userdata('name');
 
-	   	$this->load->view('header',$data);       
+	   	$this->load->view('header',$data); 
+	   	$this->load->view('tablasDinamicas/libreriasH');      
 	   	$this->load->view('cobradorCRUD/list',$data);
+	   	$this->load->view('tablasDinamicas/implementacionF');
 	   	$this->load->view('footer');
 	}
 

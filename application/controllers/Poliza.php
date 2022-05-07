@@ -13,6 +13,8 @@
  		$this->load->model('Cobrador_Model');
  		$this->load->model('Plataforma_Model');
  		$this->load->model('Vendedor_Model');
+ 		$this->load->model('Cobertura_Model');
+ 		$this->load->model('Municipio_Model');
  	}
 
  	private function logged_in() {
@@ -30,6 +32,8 @@
 		$data['cobradores'] = $this->Cobrador_Model->get_cobradorCRUD();
 		$data['plataformas']= $this->Plataforma_Model->get_plataformaCRUD();
 		$data['vendedores'] = $this->Vendedor_Model->get_vendedorCRUD();
+		$data['coberturas'] = $this->Cobertura_Model->get_coberturaCRUD();
+		$data['municipios'] = $this->Municipio_Model->get_municipioCRUD();
 		$this->load->view('poliza/nueva',$data);
 		$this->load->view('footer');
  	}
@@ -108,6 +112,8 @@
 		$data['cobradores'] = $this->Cobrador_Model->get_cobradorCRUD();
 		$data['plataformas']= $this->Plataforma_Model->get_plataformaCRUD();
 		$data['vendedores'] = $this->Vendedor_Model->get_vendedorCRUD();
+		$data['coberturas'] = $this->Cobertura_Model->get_coberturaCRUD();
+		$data['municipios'] = $this->Municipio_Model->get_municipioCRUD();
 		$this->load->view('poliza/actualizar',$data);
 		$this->load->view('footer');
  	}

@@ -143,6 +143,61 @@ class Poliza_Model extends CI_Model {
 		return $this->db->trans_status();
 	}
 
+	function fillCoberturas(){
+		$coberturas = array(
+			"POLIZA PARTICULAR AMPLIA 140 MIL",
+			"POLIZA PARTICULAR AMPLIA 130 MIL",
+			"POLIZA PARTICULAR AMPLIA 120 MIL",
+			"POLIZA PARTICULAR AMPLIA 110 MIL",
+			"POLIZA PARTICULAR AMPLIA 100 MIL",
+			"POLIZA PARTICULAR AMPLIA 90 MIL",
+			"VEHICULO PARTICULAR AMPLIA HASTA $60,000",
+			"COTIZACION POLIZA MULTIPLATAFORMAS 4 MILLONES EN RC",
+			"COTIZACION PARTICULAR RC ECONOMICA CON GRUA",
+			"COTIZACION MULTIPLATAFORMAS PROMO JULIO 2021",
+			"AMPLIA AUTOMOVIL PARTICULAR HASTA $50,000",
+			"AMPLIA AUTOMOVIL PARTICULAR HASTA $70,000",
+			"COBERTURA BASICA MULTIPLATAFORMA",
+			"AMPLIA AUTOMOVIL PARTICULAR HASTA $80,000",
+			"TERCEROS CON GRUA PICKUP",
+			"AMPLIA PICKUP HASTA $50,000",
+			"AMPLIA PICKUP HASTA $60,000",
+			"AMPLIA PICKUP HASTA $70,000",
+			"AMPLIA PICKUP HASTA $80,000",
+			"AMPLIA PICKUP HASTA $90,000",
+			"AMPLIA PICKUP HASTA $100,000",
+			"AMPLIA PICKUP HASTA $110,000",
+			"AMPLIA PICKUP HASTA $120,000",
+			"AMPLIA PICKUP HASTA $130,000",
+			"AMPLIA PICKUP HASTA $140,000",
+			"AMPLIA MOTO",
+			"INTERMEDIA MOTO",
+			"TERCEROS MOTO"
+		);
+
+		foreach ($coberturas as $cobertura) {
+
+			$this->db->like('cobertura', $cobertura);
+			$query = $this->db->get("coberturas");
+			if(empty($query->result())){
+				$primas = $this->getPrimas($cobertura);
+				$this->db->set('cobertura',	$cobertura);
+				$this->db->set('rca',		$primas['rca']);
+				$this->db->set('robo',		$primas['robo']);
+				$this->db->set('dano',		$primas['dano']);
+				$this->db->set('gastos',	$primas['gastos']);
+				$this->db->set('medico',	$primas['med']);
+				$this->db->set('asistencia',$primas['asis']);
+				$this->db->set('cristal',	$primas['cristal']);
+				$this->db->set('vial',		$primas['vial']);
+				$this->db->set('muerte',	$primas['muerte']);
+
+				$this->db->insert('coberturas');
+			}
+		}
+		return true;
+	}
+
 	private function getPrimas($cobertura){
 		$rca="";
 		$robo="";
@@ -478,6 +533,9 @@ class Poliza_Model extends CI_Model {
 	}
 
 }
+
+/*
+*/
 
 /* End of file Poliza_Model.php */
 /* Location: ./application/models/Poliza_Model.php */

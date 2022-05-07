@@ -31,8 +31,10 @@ class PlataformaCRUD extends CI_Controller {
         $data['url'] = base_url();
         $data['name'] = $this->session->userdata('name');
 
-	   	$this->load->view('header',$data);       
+	   	$this->load->view('header',$data); 
+	   	$this->load->view('tablasDinamicas/libreriasH');
 	   	$this->load->view('plataformaCRUD/list',$data);
+	   	$this->load->view('tablasDinamicas/implementacionF');
 	   	$this->load->view('footer');
 	}
 

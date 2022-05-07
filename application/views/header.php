@@ -137,6 +137,12 @@
 						<span class="align-middle">Municipios</span>
 					</a>
 				</li>
+				<li class="sidebar-item <?= $url.'coberturaCRUD' == current_url() ?  (''):('active') ?>">
+					<a class="sidebar-link" href="<?= $url ?>coberturaCRUD">
+						<i class="align-middle" data-feather="dollar-sign"></i> 
+						<span class="align-middle">Cobertura</span>
+					</a>
+				</li>
 			</ul>
 		</div>
 	</nav>

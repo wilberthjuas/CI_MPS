@@ -1,4 +1,8 @@
 <div class="card">
+    <div class="card-header">
+        <a class="btn btn-success" href="<?php echo base_url('vendedorCRUD'); ?>"> Regresar</a>
+    </div>
+    <br/>
     <div class="card-body">
         <form method="post" action="<?php echo base_url('vendedorCRUDCreate');?>">
             <?php

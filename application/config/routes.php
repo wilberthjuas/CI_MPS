@@ -77,6 +77,12 @@ $route['municipioCRUDCreate']['post'] = "municipioCRUD/store";
 $route['municipioCRUDEdit/(:any)'] = "municipioCRUD/edit/$1";
 $route['municipioCRUDUpdate/(:any)']['put'] = "municipioCRUD/update/$1";
 $route['municipioCRUDDelete/(:any)']['delete'] = "municipioCRUD/delete/$1";
+$route['coberturaCRUD'] = "coberturaCRUD/index";
+$route['coberturaCRUD/(:num)'] = "coberturaCRUD/show/$1";
+$route['coberturaCRUDCreate']['post'] = "coberturaCRUD/store";
+$route['coberturaCRUDEdit/(:any)'] = "coberturaCRUD/edit/$1";
+$route['coberturaCRUDUpdate/(:any)']['put'] = "coberturaCRUD/update/$1";
+$route['coberturaCRUDDelete/(:any)']['delete'] = "coberturaCRUD/delete/$1";
 
 
 

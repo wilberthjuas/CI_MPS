@@ -26,7 +26,9 @@ class Visor extends CI_Controller {
         $resultado =$this->Visor_Model->getData();
         $data['result1'] =  $resultado;
 		$this->load->view('header',$data);
-        $this->load->view('historial',$data);
+		$this->load->view('tablasDinamicas/libreriasH');
+        $this->load->view('visores/historial',$data);
+        $this->load->view('tablasDinamicas/implementacionF');
 		$this->load->view('footer');
 	}
 

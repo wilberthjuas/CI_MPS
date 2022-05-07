@@ -8,19 +8,19 @@
 				<label class="form-label">
 					<strong>Nombre</strong>
 				</label>
-				<input autocomplete="off" type="text" name="nombre" class="form-control" placeholder="Ingrese nombre del cliente" required/>
+				<input autocomplete="off" type="text" name="nombre" class="form-control" maxlength="250" placeholder="Ingrese nombre del cliente" required/>
 			</div>
 			<div class="mb-3 col-md-4">
 				<label class="form-label">
 					<strong>Domicilio</strong>
 				</label>
-				<input autocomplete="off" type="text" name="domicilio" class="form-control" placeholder="Ingrese calle" required/>
+				<input autocomplete="off" type="text" name="domicilio" class="form-control" maxlength="500" placeholder="Ingrese calle" required/>
 			</div>
 			<div class="mb-3 col-md-4">
 				<label class="form-label">
 					<strong>Exterior</strong>
 				</label>
-				<input autocomplete="off" type="text" name="exterior" class="form-control" placeholder="Ingrese número interior y/o exterior" required/>
+				<input autocomplete="off" type="text" name="exterior" class="form-control" maxlength="50" placeholder="Ingrese número interior y/o exterior" required/>
 			</div>	
 		</div>
 		<div class="row">
@@ -28,13 +28,13 @@
 				<label class="form-label">
 					<strong>Cruces</strong>
 				</label>
-				<input autocomplete="off" type="text" name="entre" class="form-control" placeholder="Ingrese entre qué calles se localiza" required/>
+				<input autocomplete="off" type="text" name="entre" class="form-control" maxlength="500" placeholder="Ingrese entre qué calles se localiza" required/>
 			</div>
 			<div class="mb-3 col-md-6">
 				<label class="form-label">
 					<strong>Colonia</strong>
 				</label>
-				<input autocomplete="off" type="text" name="col" class="form-control" placeholder="Ingrese nombre de la colonia" required/>
+				<input autocomplete="off" type="text" name="col" class="form-control" maxlength="255" placeholder="Ingrese nombre de la colonia" required/>
 			</div>
 		</div>
 		<div class="row">
@@ -42,19 +42,24 @@
 				<label class="form-label">
 					<strong>Municipio</strong>
 				</label>
-				<input autocomplete="off" type="text" name="municipio" class="form-control" placeholder="Ingrese nombre de municipio o comunidad" required/>
+				<select class="form-control mb-3" name="municipio" required>
+					<option value="" disabled selected>Selecciona una opción</option>
+					<?php foreach( $municipios as $municipio){ ?>
+	                <option value="<?php echo $municipio->descripcion; ?>"><?php echo $municipio->descripcion; ?></option>
+	                <?php } ?> 
+				</select>
 			</div>
 			<div class="mb-3 col-md-4">
 				<label class="form-label">
 					<strong>Teléfono</strong>
 				</label>
-				<input autocomplete="off" type="text" pattern="{1,10}" name="telefono" class="form-control" placeholder="Ingrese número celular o teléfono de casa" required/>
+				<input autocomplete="off" type="text" pattern="[0-9]{10,30}" name="telefono" class="form-control" placeholder="Ingrese número celular o teléfono de casa" required/>
 			</div>
 			<div class="mb-3 col-md-4">
 				<label class="form-label">
 					<strong>Código postal</strong>
 				</label>
-				<input id="ip_cp" autocomplete="off" type="text" name="cp" class="form-control" placeholder="Ingrese código postal" required/>
+				<input id="ip_cp" autocomplete="off" type="text" name="cp" pattern="[0-9]{5,30}" class="form-control" placeholder="Ingrese código postal" required/>
 			</div>
 		</div>
 		<div>
@@ -65,19 +70,19 @@
 				<label class="form-label">
 					<strong>Marca</strong>
 				</label>
-				<input autocomplete="off" type="text" name="marca" class="form-control" placeholder="Ingrese marca del vehículo" required/>
+				<input autocomplete="off" type="text" name="marca" class="form-control" maxlength="200" placeholder="Ingrese marca del vehículo" required/>
 			</div>
 			<div class="mb-3 col-md-4">
 				<label class="form-label">
 					<strong>Tipo</strong>
 				</label>
-				<input autocomplete="off" type="text" name="tipo" class="form-control" placeholder="Ingrese el tipo de automóvil" required/>
+				<input autocomplete="off" type="text" name="tipo" class="form-control" maxlength="200" placeholder="Ingrese el tipo de automóvil" required/>
 			</div>
 			<div class="mb-3 col-md-4">
 				<label class="form-label">
 					<strong>Año</strong>
 				</label>
-				<input autocomplete="off" type="number" name="ano" class="form-control" placeholder="Ingrese el año del vehículo" required/>
+				<input autocomplete="off" type="number" name="ano" class="form-control" max="3000" placeholder="Ingrese el año del vehículo" required/>
 			</div>
 		</div>
 		<div class="row">
@@ -85,19 +90,19 @@
 				<label class="form-label">
 					<strong>Color</strong>
 				</label>
-				<input autocomplete="off" type="text" name="color" class="form-control" placeholder="Ingrese color del vehículo" required/>
+				<input autocomplete="off" type="text" name="color" class="form-control" maxlength="50" placeholder="Ingrese color del vehículo" required/>
 			</div>
 			<div class="mb-3 col-md-4">
 				<label class="form-label">
 					<strong>Placas</strong>
 				</label>
-				<input autocomplete="off" type="text" name="placas" class="form-control" placeholder="Ingrese los datos de la placa vehícular" style="text-transform: uppercase;" required/>
+				<input autocomplete="off" type="text" name="placas" class="form-control" maxlength="50" placeholder="Ingrese los datos de la placa vehícular" style="text-transform: uppercase;" required/>
 			</div>
 			<div class="mb-3 col-md-4">
 				<label class="form-label">
 					<strong>Versión</strong>
 				</label>
-				<input autocomplete="off" type="text" name="version" class="form-control" placeholder="Ingrese la versión de autmóvil" required/>
+				<input autocomplete="off" type="text" name="version" class="form-control" maxlength="100" placeholder="Ingrese la versión de autmóvil" required/>
 			</div>
 		</div>
 		<div class="row">
@@ -105,13 +110,13 @@
 				<label class="form-label">
 					<strong>No. serie</strong>
 				</label>
-				<input autocomplete="off" type="text" name="serie" class="form-control" placeholder="Ingrese número de serie" required/>
+				<input autocomplete="off" type="text" name="serie" class="form-control" maxlength="255" placeholder="Ingrese número de serie" required/>
 			</div>
 			<div class="mb-3 col-md-6">
 				<label class="form-label">
 					<strong>No. motor</strong>
 				</label>
-				<input autocomplete="off" type="text" name="nmotor" class="form-control" placeholder="Ingrese número de motor" required/>
+				<input autocomplete="off" type="text" name="nmotor" class="form-control" maxlength="255" placeholder="Ingrese número de motor" required/>
 			</div>	
 		</div>
 		<div>
@@ -136,37 +141,11 @@
 				<label class="form-label">
 					<strong>Cobertura</strong>
 				</label>
-				<select class="form-control mb-3" required="required" name="cobertura">
-					<option disabled selected>Selecciona una opción</option>
-					<option>MULTIPLATAFORMAS CD JUAREZ</option>
-					<option>COTIZACION PARTICULAR RC ECONOMICA CON GRUA</option>
-					<option>AMPLIA AUTOMOVIL PARTICULAR HASTA $50,000</option>
-					<option>VEHICULO PARTICULAR AMPLIA HASTA $60,000</option>
-					<option>AMPLIA AUTOMOVIL PARTICULAR HASTA $70,000</option>
-					<option>AMPLIA AUTOMOVIL PARTICULAR HASTA $80,000</option>
-					<option>POLIZA PARTICULAR AMPLIA 90 MIL</option>
-					<option>POLIZA PARTICULAR AMPLIA 100 MIL</option>
-					<option>POLIZA PARTICULAR AMPLIA 110 MIL</option>
-					<option>POLIZA PARTICULAR AMPLIA 120 MIL</option>
-					<option>POLIZA PARTICULAR AMPLIA 130 MIL</option>
-					<option>POLIZA PARTICULAR AMPLIA 140 MIL</option>
-					<option>TERCEROS CON GRUA PICKUP</option>
-					<option>AMPLIA PICKUP HASTA $50,000</option>
-					<option>AMPLIA PICKUP HASTA $60,000</option>
-					<option>AMPLIA PICKUP HASTA $70,000</option>
-					<option>AMPLIA PICKUP HASTA $80,000</option>
-					<option>AMPLIA PICKUP HASTA $90,000</option>
-					<option>AMPLIA PICKUP HASTA $100,000</option>
-					<option>AMPLIA PICKUP HASTA $110,000</option>
-					<option>AMPLIA PICKUP HASTA $120,000</option>
-					<option>AMPLIA PICKUP HASTA $130,000</option>
-					<option>AMPLIA PICKUP HASTA $140,000</option>
-					<option>AMPLIA MOTO</option>
-					<option>INTERMEDIA MOTO</option>
-					<option>TERCEROS MOTO</option>
-					<option>COTIZACION MULTIPLATAFORMAS PROMO JULIO 2021</option>
-					<option>COTIZACION POLIZA MULTIPLATAFORMAS 4 MILLONES EN RC</option>
-					<option>MULTIPLATAFORMAS ECONOMICA</option>
+				<select class="form-control mb-3" name="cobertura" required>
+					<option value="" disabled selected>Selecciona una opción</option>
+					<?php foreach( $coberturas as $cobertura){ ?>
+	                <option value="<?php echo $cobertura->cobertura; ?>"><?php echo $cobertura->cobertura; ?></option>
+	                <?php } ?> 
 				</select>
 			</div>
 			<div class="mb-3 col-md-4">

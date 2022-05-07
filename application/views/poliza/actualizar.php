@@ -52,19 +52,19 @@ foreach( $result as $row ){
         <label class="form-label">
           <strong>Nombre</strong>
         </label>
-        <input autocomplete="off" type="text" name="nombre" class="form-control" value="<?php echo $nombre; ?>" required/>
+        <input autocomplete="off" type="text" name="nombre" class="form-control" value="<?php echo $nombre; ?>" maxlength="250" required/>
       </div>
       <div class="mb-3 col-md-4">
         <label class="form-label">
           <strong>Domicilio</strong>
         </label>
-        <input autocomplete="off" type="text" name="domicilio" class="form-control" value="<?php echo $direccion; ?>" required/>
+        <input autocomplete="off" type="text" name="domicilio" class="form-control" value="<?php echo $direccion; ?>" maxlength="500" required/>
       </div>
       <div class="mb-3 col-md-4">
         <label class="form-label">
           <strong>Exterior</strong>
         </label>
-        <input autocomplete="off" type="text" name="exterior" class="form-control" value="<?php echo $exterior; ?>" required/>
+        <input autocomplete="off" type="text" name="exterior" class="form-control" value="<?php echo $exterior; ?>" maxlength="50"required/>
       </div>  
     </div>
     <div class="row">
@@ -72,19 +72,23 @@ foreach( $result as $row ){
         <label class="form-label">
           <strong>Colonia</strong>
         </label>
-        <input autocomplete="off" type="text" name="col" class="form-control" value="<?php echo $colonia; ?>" required/>
+        <input autocomplete="off" type="text" name="col" class="form-control" value="<?php echo $colonia; ?>" maxlength="255"required/>
       </div>
       <div class="mb-3 col-md-4">
         <label class="form-label">
           <strong>Municipio</strong>
         </label>
-        <input autocomplete="off" type="text" name="municipio" class="form-control" value="<?php echo $municipio; ?>" required/>
+        <select class="form-control mb-3" name="municipio" required>
+          <?php foreach( $municipios as $mun){ ?>
+          <option value="<?php echo $mun->descripcion; ?>" <?php if($municipio == $mun->descripcion){ echo 'selected';} ?>><?php echo $mun->descripcion; ?></option>
+          <?php } ?> 
+        </select>
       </div>
       <div class="mb-3 col-md-4">
         <label class="form-label">
           <strong>Teléfono</strong>
         </label>
-        <input autocomplete="off" type="text" name="tel" class="form-control" value="<?php echo $telefono; ?>" required/>
+        <input autocomplete="off" type="text" name="tel" class="form-control" value="<?php echo $telefono; ?>" pattern="[0-9]{10,30}"required/>
       </div>
     </div>
     <div>
@@ -95,19 +99,19 @@ foreach( $result as $row ){
         <label class="form-label">
           <strong>Marca</strong>
         </label>
-        <input autocomplete="off" type="text" name="marca" class="form-control" value="<?php echo $marca; ?>" required/>
+        <input autocomplete="off" type="text" name="marca" class="form-control" value="<?php echo $marca; ?>" maxlength="200" required/>
       </div>
       <div class="mb-3 col-md-4">
         <label class="form-label">
           <strong>Vehículo</strong>
         </label>
-        <input autocomplete="off" type="text" name="tipo" class="form-control" value="<?php echo $vehiculo; ?>"  required/>
+        <input autocomplete="off" type="text" name="tipo" class="form-control" value="<?php echo $vehiculo; ?>" maxlength="200"  required/>
       </div>
       <div class="mb-3 col-md-4">
         <label class="form-label">
           <strong>Año</strong>
         </label>
-        <input autocomplete="off" type="number" name="ano" class="form-control" value="<?php echo $ano; ?>"  required/>
+        <input autocomplete="off" type="number" name="ano" class="form-control" value="<?php echo $ano; ?>" max="3000"  required/>
       </div>
     </div>
     <div class="row">
@@ -115,19 +119,19 @@ foreach( $result as $row ){
         <label class="form-label">
           <strong>Color</strong>
         </label>
-        <input autocomplete="off" type="text" name="color" class="form-control" value="<?php echo $color; ?>"  required/>
+        <input autocomplete="off" type="text" name="color" class="form-control" value="<?php echo $color; ?>" maxlength="50"  required/>
       </div>
       <div class="mb-3 col-md-4">
         <label class="form-label">
           <strong>Placas</strong>
         </label>
-        <input autocomplete="off" type="text" name="placas" class="form-control" value="<?php echo $placas; ?>"  style="text-transform: uppercase;" required/>
+        <input autocomplete="off" type="text" name="placas" class="form-control" value="<?php echo $placas; ?>"  style="text-transform: uppercase;" maxlength="50" required/>
       </div>
       <div class="mb-3 col-md-4">
         <label class="form-label">
           <strong>Versión</strong>
         </label>
-        <input autocomplete="off" type="text" name="version" class="form-control" value="<?php echo $version; ?>"  required/>
+        <input autocomplete="off" type="text" name="version" class="form-control" value="<?php echo $version; ?>" maxlength="100"  required/>
       </div>
     </div>
     <div class="row">
@@ -135,13 +139,13 @@ foreach( $result as $row ){
         <label class="form-label">
           <strong>No. serie</strong>
         </label>
-        <input autocomplete="off" type="text" name="serie" class="form-control" value="<?php echo $serie; ?>"  required/>
+        <input autocomplete="off" type="text" name="serie" class="form-control" value="<?php echo $serie; ?>" maxlength="255"  required/>
       </div>
       <div class="mb-3 col-md-6">
         <label class="form-label">
           <strong>No. motor</strong>
         </label>
-        <input autocomplete="off" type="text" name="nmotor" class="form-control" value="<?php echo $motor; ?>"  required/>
+        <input autocomplete="off" type="text" name="nmotor" class="form-control" value="<?php echo $motor; ?>" maxlength="255"  required/>
       </div>  
     </div>
     <div>
@@ -172,38 +176,10 @@ foreach( $result as $row ){
         <label class="form-label">
           <strong>Cobertura</strong>
         </label>
-        <select class="form-control mb-3" required="required" type="text" name="cobertura">
-          <option><?php echo $cobertura; ?></option>
-          <option disabled></option>
-          <option>MULTIPLATAFORMAS CD JUAREZ</option>
-          <option>COTIZACION PARTICULAR RC ECONOMICA CON GRUA</option>
-          <option>AMPLIA AUTOMOVIL PARTICULAR HASTA $50,000</option>
-          <option>VEHICULO PARTICULAR AMPLIA HASTA $60,000</option>
-          <option>AMPLIA AUTOMOVIL PARTICULAR HASTA $70,000</option>
-          <option>AMPLIA AUTOMOVIL PARTICULAR HASTA $80,000</option>
-          <option>POLIZA PARTICULAR AMPLIA 90 MIL</option>
-          <option>POLIZA PARTICULAR AMPLIA 100 MIL</option>
-          <option>POLIZA PARTICULAR AMPLIA 110 MIL</option>
-          <option>POLIZA PARTICULAR AMPLIA 120 MIL</option>
-          <option>POLIZA PARTICULAR AMPLIA 130 MIL</option>
-          <option>POLIZA PARTICULAR AMPLIA 140 MIL</option>
-          <option>TERCEROS CON GRUA PICKUP</option>
-          <option>AMPLIA PICKUP HASTA $50,000</option>
-          <option>AMPLIA PICKUP HASTA $60,000</option>
-          <option>AMPLIA PICKUP HASTA $70,000</option>
-          <option>AMPLIA PICKUP HASTA $80,000</option>
-          <option>AMPLIA PICKUP HASTA $90,000</option>
-          <option>AMPLIA PICKUP HASTA $100,000</option>
-          <option>AMPLIA PICKUP HASTA $110,000</option>
-          <option>AMPLIA PICKUP HASTA $120,000</option>
-          <option>AMPLIA PICKUP HASTA $130,000</option>
-          <option>AMPLIA PICKUP HASTA $140,000</option>
-          <option>AMPLIA MOTO</option>
-          <option>INTERMEDIA MOTO</option>
-          <option>TERCEROS MOTO</option>
-          <option>COTIZACION MULTIPLATAFORMAS PROMO JULIO 2021</option>
-          <option>COTIZACION POLIZA MULTIPLATAFORMAS 4 MILLONES EN RC</option>
-          <option>MULTIPLATAFORMAS ECONOMICA</option>
+        <select class="form-control mb-3" name="cobertura" required>
+          <?php foreach( $coberturas as $cobert){ ?>
+          <option value="<?php echo $cobert->cobertura; ?>" <?php if($cobertura == $cobert->cobertura){ echo 'selected';} ?>><?php echo $cobert->cobertura; ?></option>
+          <?php } ?> 
         </select>
       </div>
       <div class="mb-3 col-md-4">
