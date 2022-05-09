@@ -39,17 +39,19 @@ class Visor_Model extends CI_Model {
         $this->load->dbutil();
         $query =  $this->db->query("
             SELECT 
-                folio       AS 'FOLIO',
-                costo_total AS 'COSTO',
-                pagoinicial AS '1ER PAGO',
-                placas      AS 'PLACAS',
-                plazo       AS '11 MENSUALIDADES',
-                vendedor    AS 'VENDEDOR' 
-            FROM datos 
+                p.id            AS 'FOLIO', 
+                p.costo_total   AS 'COSTO', 
+                p.pagoinicial   AS '1ER PAGO', 
+                v.placas        AS 'PLACAS', 
+                p.plazo         AS '11 MENSUALIDADES',
+                p.vendedor      AS 'VENDEDOR'
+            FROM polizas p INNER JOIN vehiculo v on p.id_vehiculo = v.id 
             WHERE expedicion BETWEEN '$f1' AND '$f2' ");
+           
         $delimiter = ",";
         $newline = "\r\n";
         $enclosure = '"';
+
 
         return $this->dbutil->csv_from_result($query, $delimiter, $newline, $enclosure);
     }

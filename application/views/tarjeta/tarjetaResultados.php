@@ -4,9 +4,9 @@ foreach($result1 as $row ){
     $poliza     = $row['folio'];
     $nombre     = $row['nombre'];
     $direccion  = $row['domicilio'].' '.$row['exterior'];
-    $colonia    = $row['col'];
+    $colonia    = $row['colonia'];
     $municipio  = $row['municipio'];
-    $telefono   = $row['tel'];
+    $telefono   = $row['telefono'];
     $entre      = $row['entre'];
 
     $placas     = $row['placas'];
@@ -17,7 +17,7 @@ foreach($result1 as $row ){
     $vendedor   = $row['vendedor'];
     $cobrador   = $row['cobrador'];
 
-    $f1         = $row['fech1'];
+    /*$f1         = $row['fech1'];
 
     $m1         = $row['monto1'];
     $m2         = $row['monto2'];
@@ -30,7 +30,7 @@ foreach($result1 as $row ){
     $m9         = $row['monto9'];
     $m10        = $row['monto10'];
     $m11        = $row['monto11'];
-
+*/
 
   }
 ?> 
@@ -106,100 +106,25 @@ foreach($result1 as $row ){
                           </tr>
                         </thead>
                         <tbody>
+                            <?php 
+                            $cont = 0;
+                            foreach($pagos as $pago ){ ?>
                             <tr>
-                                <td><input type="text" class="form-control" name="fech1" value="<?php echo $f1; ?>"></td>
-                                <td><input type="text" class="form-control" name="" readonly></td>
-                                <td><input type="text" class="form-control" name="monto1" value="<?php echo $m1; ?>"></td>
-                                <td><input type="text" class="form-control" name=""></td>
-                            </tr>
-                            <tr>
+                                <input type="hidden" name="id[]" value="<?php echo $pago['id']; ?>">
                                 <td>
-                                    <input type="text" class="form-control" name="fech2" value="<?php echo date("Y-m-d",strtotime($f1."+ 1 month"));?>">
+                                    <input type="text" class="form-control" name="fecha[]" value="<?php echo date("Y-m-d",strtotime($pagos[0]['fecha']."+ ".$cont." month")); ?>">
                                 </td>
-                                <td><input type="text" class="form-control" name="" readonly></td>
-                                <td><input type="text" class="form-control" name="monto2" value="<?php echo $m2; ?>"></td>
-                                <td><input type="text" class="form-control" name=""></td>
-                            </tr>
-                            <tr>
                                 <td>
-                                    <input type="text" class="form-control" name="fech3" value="<?php echo date("Y-m-d",strtotime($f1."+ 2 month"));?>">
+                                    <input type="text" class="form-control" name="" readonly>
                                 </td>
-                                <td><input type="text" class="form-control" name="" readonly></td>
-                                <td><input type="text" class="form-control" name="monto3" value="<?php echo $m3; ?>"></td>
-                                <td><input type="text" class="form-control" name=""></td>
-                            </tr>
-                            <tr>
                                 <td>
-                                    <input type="text" class="form-control" name="fech4" value="<?php echo date("Y-m-d",strtotime($f1."+ 3 month"));?>">
+                                    <input type="text" class="form-control" name="monto[]" value="<?php echo $pago['monto']; ?>">
                                 </td>
-                                <td><input type="text" class="form-control" name="" readonly></td>
-                                <td><input type="text" class="form-control" name="monto4" value="<?php echo $m4; ?>"></td>
-                                <td><input type="text" class="form-control" name=""></td>
-                            </tr>
-                            <tr>
                                 <td>
-                                    <input type="text" class="form-control" name="fech5" value="<?php echo date("Y-m-d",strtotime($f1."+ 4 month"));?>">
+                                    <input type="text" class="form-control" name="" readonly>
                                 </td>
-                                <td><input type="text" class="form-control" name="" readonly></td>
-                                <td><input type="text" class="form-control" name="monto5" value="<?php echo $m5; ?>"></td>
-                                <td><input type="text" class="form-control" name=""></td>
                             </tr>
-                            <tr>
-                                <td>
-                                    <input type="text" class="form-control" name="fech6" value="<?php echo date("Y-m-d",strtotime($f1."+ 5 month"));?>">
-                                </td>
-                                <td><input type="text" class="form-control" name="" readonly></td>
-                                <td><input type="text" class="form-control" name="monto6" value="<?php echo $m6; ?>"></td>
-                                <td><input type="text" class="form-control" name=""></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="text" class="form-control" name="fech7" value="<?php echo date("Y-m-d",strtotime($f1."+ 6 month"));?>">
-                                </td>
-                                <td><input type="text" class="form-control" name="" readonly></td>
-                                <td><input type="text" class="form-control" name="monto7" value="<?php echo $m7; ?>"></td>
-                                <td><input type="text" class="form-control" name=""></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="text" class="form-control" name="fech8" value="<?php echo date("Y-m-d",strtotime($f1."+ 7 month"));?>">
-                                </td>
-                                <td><input type="text" class="form-control" name="" readonly></td>
-                                <td><input type="text" class="form-control" name="monto8" value="<?php echo $m8; ?>"></td>
-                                <td><input type="text" class="form-control" name=""></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="text" class="form-control" name="fech9" value="<?php echo date("Y-m-d",strtotime($f1."+ 8 month"));?>">
-                                </td>
-                                <td><input type="text" class="form-control" name="" readonly></td>
-                                <td><input type="text" class="form-control" name="monto9" value="<?php echo $m9; ?>"></td>
-                                <td><input type="text" class="form-control" name=""></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="text" class="form-control" name="fech10" value="<?php echo date("Y-m-d",strtotime($f1."+ 9 month"));?>">
-                                </td>
-                                <td><input type="text" class="form-control" name="" readonly></td>
-                                <td><input type="text" class="form-control" name="monto10" value="<?php echo $m10; ?>"></td>
-                                <td><input type="text" class="form-control" name=""></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="text" class="form-control" name="fech11" value="<?php echo date("Y-m-d",strtotime($f1."+ 10 month"));?>">
-                                </td>
-                                <td><input type="text" class="form-control" name="" readonly></td>
-                                <td><input type="text" class="form-control" name="monto11" value="<?php echo $m11; ?>"></td>
-                                <td><input type="text" class="form-control" name=""></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="text" class="form-control" name="fech12" value="<?php echo date("Y-m-d",strtotime($f1."+ 11 month"));?>">
-                                </td>
-                                <td><input type="text" class="form-control" name="" readonly></td>
-                                <td><input type="text" class="form-control" name="monto12" value="<?php echo $m11; ?>"></td>
-                                <td><input type="text" class="form-control" name=""></td>
-                            </tr>
+                            <?php $cont++; } ?>
                         </tbody>
                     </table>
                 </div>

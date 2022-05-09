@@ -279,15 +279,21 @@ class Poliza_Model extends CI_Model {
 
 			//INSERT GRUAS
 			//GRUA1
-			$this->db->set('id_poliza',	$idPoliza);
-			$this->db->set('grua',		$row->grua1);
-			$this->db->set('comentario',$row->com1);
-			$this->db->insert('gruas');
+			if(strlen($row->grua1) > 0){
+				$this->db->set('id_poliza',	$idPoliza);
+				$this->db->set('grua',		$row->grua1);
+				$this->db->set('comentario',$row->com1);
+				$this->db->insert('gruas');	
+			}
+			
 			//GRUA2
-			$this->db->set('id_poliza',	$idPoliza);
-			$this->db->set('grua',		$row->grua2);
-			$this->db->set('comentario',$row->com2);
-			$this->db->insert('gruas');
+			if(strlen($row->grua2) > 0){
+				$this->db->set('id_poliza',	$idPoliza);
+				$this->db->set('grua',		$row->grua2);
+				$this->db->set('comentario',$row->com2);
+				$this->db->insert('gruas');	
+			}
+			
 
 			//INSERT PAGOS
 			$this->db->set('id_poliza',	$idPoliza);

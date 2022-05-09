@@ -4,9 +4,9 @@ foreach($result1 as $row ){
     $poliza     = $row['folio'];
     $nombre     = $row['nombre'];
     $direccion  = $row['domicilio'].' '.$row['exterior'];
-    $colonia    = $row['col'];
+    $colonia    = $row['colonia'];
     $municipio  = $row['municipio'];
-    $telefono   = $row['tel'];
+    $telefono   = $row['telefono'];
     $entre      = $row['entre'];
 
     $placas     = $row['placas'];
@@ -16,20 +16,6 @@ foreach($result1 as $row ){
     $cobertura  = $row['cobertura'];
     $vendedor   = $row['vendedor'];
     $cobrador   = $row['cobrador'];
-
-    $f1         = $row['fech1'];
-
-    $m1         = $row['monto1'];
-    $m2         = $row['monto2'];
-    $m3         = $row['monto3'];
-    $m4         = $row['monto4'];
-    $m5         = $row['monto5'];
-    $m6         = $row['monto6'];
-    $m7         = $row['monto7'];
-    $m8         = $row['monto8'];
-    $m9         = $row['monto9'];
-    $m10        = $row['monto10'];
-    $m11        = $row['monto11'];
     $domcom     = '';
     $telefono2  = '';
     $costoTotal = $row['costo_total'];
@@ -125,174 +111,30 @@ foreach($result1 as $row ){
             </tr>
         </table>
         <table border="1">
+            <?php 
+            $cont = 0;
+            $x = 290;
+            foreach($pagos as $pago ){ 
+            ?>
             <tr>
-                <td style="position:absolute; top:290px ; left:10px; ">
-                    <input type="text" name="fech12" value=" <?php echo $f1; ?>">
+                <td style="position:absolute; top:<?php echo $x; ?>px ; left:10px; ">
+                    <input type="text" value="<?php echo date("Y-m-d",strtotime($pagos[0]['fecha']."+ ".$cont." month")); ?>"/>
                 </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:290px ; left:100px;   ">
-                    <input type="text" name="uno" value="" readonly>
+                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:<?php echo $x; ?>px ; left:100px;   ">
+                    <input type="text" readonly/>
                 </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:290px ;  left:250px;    ">
-                    <input type="text" name="monto1" value="<?php echo $m1; ?>">
+                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:<?php echo $x; ?>px ;  left:250px;    ">
+                    <input type="text" value="<?php echo $pago['monto']; ?>"/>
                 </td>
-                <td style=" font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:290px ; left:350px;  ">
-                    <input   type="text" name="" value="" width="">
+                <td style=" font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:<?php echo $x; ?>px ; left:350px;  ">
+                    <input type="text"/>
                 </td>
             </tr>
-            <tr>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:310px ; left:10px ">
-                    <input type="text" name="fech2" value=" <?php echo date("Y-m-d",strtotime($f1."+ 1 month"));  ?>"/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;position:absolute; top:310px ; left:100px;  ">
-                    <input type="text" name="dos" value=""/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;  position:absolute; top:310px ; left:250px; ">
-                    <input type="text" name="monto2" value="<?php echo $m2; ?>"/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:310px ; left:350px;    ">
-                    <input type="text" name="" value=""/>
-                </td>
-            </tr>
-            <tr>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:330px ; left:10px ">
-                    <input type="text" name="fech3" value=" <?php echo date("Y-m-d",strtotime($f1."+ 2 month"));  ?>"/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;position:absolute; top:330px ; left:100px;  ">
-                    <input type="text" name="tres" value=""/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:330px ; left:250px; ">
-                    <input type="text" name="monto3" value="<?php echo $m3; ?>"/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:330px ; left:350px;  ">
-                    <input type="text" name="" value=""/>
-                </td>
-            </tr>
-            <tr>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:350px ; left:10px">
-                    <input type="text" name="fech4" value="<?php echo date("Y-m-d",strtotime($f1."+ 3 month"));  ?>"/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;position:absolute; top:350px ; left:100px;  ">
-                    <input type="text" name="cuatro" value=""/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;   position:absolute; top:350px ; left:250px;">
-                    <input type="text" name="monto4" value="<?php echo $m4; ?>"/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:350px ; left:350px;  ">
-                    <input type="text" name="" value=""/>
-                </td>
-            </tr>
-            <tr>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:370px ; left:10px">
-                    <input type="text" name="fech5" value="<?php echo date("Y-m-d",strtotime($f1."+ 4 month"));  ?>"/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:370px ; left:100px; ">
-                    <input type="text" name="cinco" value=""/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;  position:absolute; top:370px ; left:250px;  ">
-                    <input type="text" name="monto5" value="<?php echo $m5; ?>"/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;position:absolute; top:370px ; left:350px;    ">
-                    <input type="text" name="" value=""/>
-                </td>
-            </tr>
-            <tr>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:390px ; left:10px">
-                    <input type="text" name="fech6" value="<?php echo date("Y-m-d",strtotime($f1."+ 5 month"));  ?>"/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:390px ; left:100px;">
-                    <input type="text" name="seis" value=""/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;  position:absolute; top:390px ; left:250px;  ">
-                    <input type="text" name="monto6" value="<?php echo $m6; ?>"/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:390px ; left:350px;   ">
-                    <input type="text" name="" value=""/>
-                </td>
-            </tr>
-            <tr>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:410px ; left:10px">
-                    <input type="text" name="fech7" value="<?php echo date("Y-m-d",strtotime($f1."+ 6 month"));  ?>"/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;position:absolute; top:410px ; left:100px; ">
-                    <input type="text" name="siete" value=""/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;  position:absolute; top:410px ; left:250px; ">
-                    <input type="text" name="monto7" value="<?php echo $m7; ?>"/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;position:absolute; top:410px ; left:350px;  ">
-                    <input type="text" name="" value=""/>
-                </td>
-            </tr>
-            <tr>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:430px ; left:10px">
-                    <input type="text" name="fech8" value="<?php echo date("Y-m-d",strtotime($f1."+ 7 month"));  ?>"/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;position:absolute; top:430px ; left:100px;  ">
-                    <input type="text" name="ocho" value=""/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;  position:absolute; top:430px ; left:250px;  ">
-                    <input type="text" name="monto8" value="<?php echo $m8; ?>"/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;  position:absolute; top:430px ; left:350px; ">
-                    <input type="text" name="" value=""/>
-                </td>
-            </tr>
-            <tr>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:450px ; left:10px">
-                    <input type="text" name="fech9" value="<?php echo date("Y-m-d",strtotime($f1."+ 8 month"));  ?>"/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;position:absolute; top:450px ; left:100px; ">
-                    <input type="text" name="nueve" value=""/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;  position:absolute; top:450px ; left:250px;  ">
-                    <input type="text" name="monto9" value="<?php echo $m9; ?>"/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:450px ; left:350px;   ">
-                    <input type="text" name="" value=""/>
-                </td>
-            </tr>
-            <tr>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:470px ; left:10px">
-                    <input type="text" name="fech10" value="<?php echo date("Y-m-d",strtotime($f1."+ 9 month"));  ?>"/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:470px ; left:100px; ">
-                    <input type="text" name="diez" value=""/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;  position:absolute; top:470px ; left:250px;  ">
-                    <input type="text" name="monto10" value="<?php echo $m10; ?>"/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:470px ; left:350px;   ">
-                    <input type="text" name="" value=""/>
-                </td>
-            </tr>
-            <tr>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:490px ; left:10px">
-                    <input type="text" name="fech11" value="<?php echo date("Y-m-d",strtotime($f1."+ 10 month"));  ?>"/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:490px ; left:100px; ">
-                    <input type="text" name="once" value=""/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;  position:absolute; top:490px ; left:250px;  ">
-                    <input type="text" name="monto11" value="<?php echo $m11; ?>"/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:510px ; left:10px">
-                    <input type="text" name="fech11" value="<?php echo date("Y-m-d",strtotime($f1."+ 11 month"));  ?>"/>
-                </td>
-            </tr>
-            <tr>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:510px ; left:100px; ">
-                    <input type="text" name="once" value=""/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;  position:absolute; top:510px ; left:250px;  ">
-                    <input type="text" name="monto11" value="<?php echo $m10; ?>"/>
-                </td>                
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:490px ; left:350px; ">
-                    <input type="text" name="" value=""/>
-                </td>
-                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:510px ; left:350px;   ">
-                    <input type="text" name="" value=""/>
-                </td>
-            </tr>
+            <?php 
+                $cont++;
+                $x += 20;
+            } 
+            ?>
             <tr>
                 <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:24;  border:0.0px; position:absolute; top:530px ; left:10px;  ">
                     GRACIAS POR SU CONFIANZA TOTAL A PAGAR POLIZA <?php echo $costoTotal; ?>
@@ -377,182 +219,37 @@ foreach($result1 as $row ){
                 </td>
             </tr>
         </table>
-                <table border="1">
-                    <tr>
-                        <td style="position:absolute; top:290px ; left:610px; width:155px">
-                            <input type="text" name="fech1" value=" <?php echo $f1; ?>">
-                        </td>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:290px ; left:700px;width:200px; height:200px  ">
-                            <input type="text" name="uno" value="" readonly>
-                        </td>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:290px ; left:850px;   ">
-                            <input type="text" name="monto1" value="<?php echo $m1; ?>">
-                        </td>
-                        <td style=" font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:290px ; left:950px;   ">
-                            <input  type="text" name="" value="" width="">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:310px ; left:610px ">
-                            <input type="text" name="fech2" value=" <?php echo date("Y-m-d",strtotime($f1."+ 1 month"));  ?>"/>
-                        </td>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;position:absolute; top:310px ; left:700px;  ">
-                            <input type="text" name="dos" value=""/>
-                        </td>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;  position:absolute; top:310px ; left:850px;  ">
-                            <input type="text" name="monto2" value="<?php echo $m2; ?>"/>
-                        </td>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:310px ; left:950px;    ">
-                            <input type="text" name="" value=""/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:330px ; left:610px ">
-                            <input type="text" name="fech3" value=" <?php echo date("Y-m-d",strtotime($f1."+ 2 month"));  ?>"/>
-                        </td>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;position:absolute; top:330px ; left:700px;  ">
-                            <input type="text" name="tres" value=""/>
-                        </td>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:330px ; left:850px;   ">
-                            <input type="text" name="monto3" value="<?php echo $m3; ?>"/>
-                        </td>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:330px ; left:950px;   ">
-                            <input type="text" name="" value=""/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:350px ; left:610px">
-                            <input type="text" name="fech4" value="<?php echo date("Y-m-d",strtotime($f1."+ 3 month"));  ?>"/>
-                        </td>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;position:absolute; top:350px ; left:700px; ">
-                            <input type="text" name="cuatro" value=""/>
-                        </td>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;   position:absolute; top:350px ; left:850px; ">
-                            <input type="text" name="monto4" value="<?php echo $m4; ?>"/>
-                        </td>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:350px ; left:950px;   ">
-                            <input type="text" name="" value=""/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:370px ; left:610px">
-                            <input type="text" name="fech5" value="<?php echo date("Y-m-d",strtotime($f1."+ 4 month"));  ?>"/>
-                        </td>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:370px ; left:700px; ">
-                            <input type="text" name="cinco" value=""/>
-                        </td>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;  position:absolute; top:370px ; left:850px;  ">
-                            <input type="text" name="monto5" value="<?php echo $m5; ?>"/>
-                        </td>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;position:absolute; top:370px ; left:950px;    ">
-                            <input type="text" name="" value=""/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:390px ; left:610px">
-                            <input type="text" name="fech6" value="<?php echo date("Y-m-d",strtotime($f1."+ 5 month"));  ?>"/>
-                        </td>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:390px ; left:700px; ">
-                            <input type="text" name="seis" value=""/>
-                        </td>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;  position:absolute; top:390px ; left:850px;  ">
-                            <input type="text" name="monto6" value="<?php echo $m6; ?>"/>
-                        </td>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:390px ; left:950px;   ">
-                            <input type="text" name="" value=""/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:410px ; left:610px">
-                            <input type="text" name="fech7" value="<?php echo date("Y-m-d",strtotime($f1."+ 6 month"));  ?>"/>
-                        </td>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;position:absolute; top:410px ; left:700px;  ">
-                            <input type="text" name="siete" value=""/>
-                        </td>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;  position:absolute; top:410px ; left:850px; ">
-                            <input type="text" name="monto7" value="<?php echo $m7; ?>"/>
-                        </td>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;position:absolute; top:410px ; left:950px;   ">
-                            <input type="text" name="" value=""/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:430px ; left:610px">
-                            <input type="text" name="fech8" value="<?php echo date("Y-m-d",strtotime($f1."+ 7 month"));  ?>"/>
-                        </td>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;position:absolute; top:430px ; left:700px; ">
-                            <input type="text" name="ocho" value=""/>
-                        </td>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;  position:absolute; top:430px ; left:850px; ">
-                            <input type="text" name="monto8" value="<?php echo $m8; ?>"/>
-                        </td>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size22;  position:absolute; top:430px ; left:950px;  ">
-                            <input type="text" name="" value=""/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:450px ; left:610px">
-                            <input type="text" name="fech9" value="<?php echo date("Y-m-d",strtotime($f1."+ 8 month"));  ?>"/>
-                        </td>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;position:absolute; top:450px ; left:700px;  ">
-                            <input type="text" name="nueve" value=""/>
-                        </td>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;  position:absolute; top:450px ; left:850px; ">
-                            <input type="text" name="monto9" value="<?php echo $m9; ?>"/>
-                        </td>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:450px ; left:950px;   ">
-                            <input type="text" name="" value=""/>
-                        </td>
-                    </tr>
-                    <tr>
-                         <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:470px ; left:610px">
-                            <input type="text" name="fech10" value="<?php echo date("Y-m-d",strtotime($f1."+ 9 month"));  ?>"/>
-                        </td>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:470px ; left:700px; ">
-                            <input type="text" name="diez" value=""/>
-                        </td>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;  position:absolute; top:470px ; left:850px;  ">
-                            <input type="text" name="monto10" value="<?php echo $m10; ?>"/>
-                        </td>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:470px ; left:950px;   ">
-                            <input type="text" name="" value=""/>
-                        </td>
-                    </tr>
-                <tr>
-                    <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:490px ; left:610px">
-                        <input type="text" name="fech11" value="<?php echo date("Y-m-d",strtotime($f1."+ 10 month"));  ?>"/>
-                    </td>
-                    <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:490px ; left:700px; ">
-                        <input type="text" name="once" value=""/>
-                    </td>
-                    <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;  position:absolute; top:490px ; left:850px;  ">
-                        <input type="text" name="monto11" value="<?php echo $m10; ?>"/>
-                    </td>
-                    <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:490px ; left:950px; ">
-                        <input type="text" name="once" value=""/>
-                    </td>
-                </tr>
-                <tr>
-                                    
-                    <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:510px ; left:610px">
-                        <input type="text" name="fech11" value="<?php echo date("Y-m-d",strtotime($f1."+ 11 month"));  ?>"/>
-                    </td>
-                    <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:510px ; left:700px; ">
-                        <input type="text" name="once" value=""/>
-                    </td>
-                    <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22;  position:absolute; top:510px ; left:850px;  ">
-                        <input type="text" name="monto11" value="<?php echo $m10; ?>"/>
-                    </td>              
-                    <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:510px ; left:950px;   ">
-                        <input type="text" name="" value=""/>
-                    </td>                
-                </tr>                           
-                <tr>
-                    <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:24;  border:0.0px; position:absolute; top:530px ; left:610px;  ">
-                        GRACIAS POR SU CONFIANZA       TOTAL A PAGAR POLIZA<?php echo $costoTotal; ?>
-                    </td> 
-                </tr>                   
-            </table>
-        </center>
-    </body>
+        <table border="1">
+            <?php 
+            $cont = 0;
+            $x = 290;
+            foreach($pagos as $pago ){ 
+            ?>
+            <tr>
+                <td style="position:absolute; top:<?php echo $x; ?>px ; left:610px;">
+                    <input type="text" value="<?php echo date("Y-m-d",strtotime($pagos[0]['fecha']."+ ".$cont." month")); ?>" />
+                </td>
+                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:<?php echo $x; ?>px ; left:700px;">
+                    <input type="text"readonly />
+                </td>
+                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:<?php echo $x; ?>px ; left:850px;   ">
+                    <input type="text" value="<?php echo $pago['monto']; ?>"/>
+                </td>
+                <td style=" font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:<?php echo $x; ?>px ; left:950px;   ">
+                    <input  type="text" />
+                </td>
+            </tr> 
+            <?php 
+                $cont++;
+                $x += 20;
+            } 
+            ?>                          
+            <tr>
+                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:24;  border:0.0px; position:absolute; top:530px ; left:610px;  ">
+                    GRACIAS POR SU CONFIANZA       TOTAL A PAGAR POLIZA<?php echo $costoTotal; ?>
+                </td> 
+            </tr>                   
+        </table>
+    </center>
+</body>
 </html>

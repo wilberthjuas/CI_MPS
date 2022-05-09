@@ -3,61 +3,73 @@
 
 class Tarjeta_Model extends CI_Model {
 
-    function getData($a,$b) {
+    public function __construct()
+    {
+        parent::__construct();
+        //Do your magic here
+        $this->load->database();
+    }
+
+    public function getData($a,$b) {
+        $query = "
+            SELECT 
+                p.id            AS 'folio',
+                c.nombre ,
+                c.domicilio ,
+                c.exterior ,
+                c.colonia ,
+                c.municipio ,
+                c.telefono,
+                c.entre,
+                v.tipo,
+                v.placas ,
+                v.marca,
+                v.color,
+                v.ano,
+                (SELECT cb.cobertura FROM coberturas cb WHERE cb.id = p.id_cobertura  ) AS 'cobertura',
+                p.expedicion,
+                p.ano2,
+                p.pagomensual ,
+                p.vendedor,
+                p.cobrador,
+                p.costo_total
+            FROM polizas p 
+            INNER JOIN vehiculo v ON p.id_vehiculo = v.id 
+            INNER JOIN cliente c ON c.id = v.id_cliente";
+
+
+
         if($b=="Folio"){
-            $query = "SELECT * FROM datos WHERE folio='$a' ";
+            $query = $query." WHERE p.id ='$a' ";
         }
         elseif ($b=="Placas") {
-            $query = "SELECT * FROM datos   WHERE placas='$a' ";
+            $query = $query." WHERE v.placas='$a' ";
         }
         elseif ($b=="Nombre"){
-            $query = "SELECT * FROM datos   WHERE nombre='$a' ";
+            $query = $query." WHERE c.nombre='$a' ";
         }
-        $this->load->database();
+    
         $queryExecute = $this->db->query($query);
         return $queryExecute->result_array();
       }
 
-     
-    function setGrua($com1,$com2,$folio) {
-        $this->load->database();
+    public function getPayments($folio){
+        $query = $this->db->query("SELECT * FROM pagos WHERE id_poliza = $folio");
+        return $query->result_array();
+    } 
+
+    public function setGrua($com1,$com2,$folio) {
         $query = $this->db->query("UPDATE datos SET com1 = '$com1',com2 = '$com2' WHERE datos.folio = '$folio'");
         return true;
     }
 
-    function updateCard($folio,$fech,$monto){
+    public function updateCard($folio,$fech,$monto){
         
-	
-        $fech1=$fech['fech1'];
-        $fech2=$fech['fech2'];
-        $fech3=$fech['fech3'];
-        $fech4=$fech['fech4'];
-        $fech5=$fech['fech5'];
-        $fech6=$fech['fech6'];
-        $fech7=$fech['fech7'];
-        $fech8=$fech['fech8'];
-        $fech9=$fech['fech9'];
-        $fech10=$fech['fech10'];
-        $fech11=$fech['fech11'];
+        $this->db->set('fecha', $fech);
+        $this->db->set('monto', $monto);
+        $this->db->where('id', $folio);
+        $this->db->update('pagos'); 
         
-        
-        $monto1=$monto['monto1'];
-        $monto2=$monto['monto2'];
-        $monto3=$monto['monto3'];
-        $monto4=$monto['monto4'];
-        $monto5=$monto['monto5'];
-        $monto6=$monto['monto6'];
-        $monto7=$monto['monto7'];
-        $monto8=$monto['monto8'];
-        $monto9=$monto['monto9'];
-        $monto10=$monto['monto10'];
-        $monto11=$monto['monto11'];
-        
-                           
-                           
-        $query = "UPDATE `mutua402_mps`.`datos` SET `fech1` = '$fech1', `fech2` = '$fech2' , `fech3` = '$fech3' , `fech4` = '$fech4' , `fech5` = '$fech5' , `fech6` = '$fech6' , `fech7` = '$fech7' , `fech8` = '$fech8' , `fech9` = '$fech9' , `fech10` = '$fech10' , `fech11` = '$fech11' , `monto1` = '$monto1' , `monto2` = '$monto2' , `monto3` = '$monto3' , `monto4` = '$monto4' , `monto5` = '$monto5' , `monto6` = '$monto6' , `monto7` = '$monto7' , `monto8` = '$monto8' , `monto9` = '$monto9' , `monto10` = '$monto10', `monto11` = '$monto11' WHERE `datos`.`folio` = '$folio'; ";
-        $this->load->database();
-        $query_execute = $this->db->query($query);
         return true;
     }
 }
