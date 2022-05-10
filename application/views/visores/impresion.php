@@ -1,13 +1,12 @@
 <html>
-<html><link rel="shortcut icon" href="../../logop.png"/>
+<html><link rel="shortcut icon" href="<?php echo $url; ?>images/logop.png"/>
 <head><title>Mutualidad MPS</title></head>
-<link href="../../public/css/estilo.css" rel="stylesheet" type="text/css">
-<body onLoad="imprimir();">
-<!--Cabecera-->
-<!--Cabecera-->
-<!--Cabecera-->
+<link href="<?php echo $url?>css/estilo.css" rel="stylesheet" type="text/css">
+<body>
+
 <body>
 <?php
+$plataforma=$result1[0]['plataforma'];
 if($b=="Folio"){
 ?>
 <!--PINTAR LOS DATOS OBTENIDOS EN SELECT 2-->
@@ -89,8 +88,8 @@ $plataforma=$row['plataforma'];
 <td style="position:absolute; top:380px ;left:750px; border:0.0px"><?php echo $row['plataforma'] ?></td>
 <td style="position:absolute; top:410px ;left:750px; border:0.0px"><?php echo $row['color'] ?></td>
 <td style="position:absolute; top:515px ;left:190px; border:0.0px"><?php echo $row['nombre'] ?></td>
-<td style="position:absolute; top:545px ;left:190px; border:0.0px"><?php echo $row['domicilio'] . $row['exterior'] .  $row['col'] ?></td>
-<td style="position:absolute; top:515px ;left:700px; border:0.0px"><?php echo $row['tel'] ?></td>
+<td style="position:absolute; top:545px ;left:190px; border:0.0px"><?php echo $row['domicilio'] . $row['exterior'] .  $row['colonia'] ?></td>
+<td style="position:absolute; top:515px ;left:700px; border:0.0px"><?php echo $row['telefono'] ?></td>
 <td style="position:absolute; top:545px ;left:700px; border:0.0px"><?php echo $row['municipio'] ?></td>
 <td style="position:absolute; top:515px ;left:830px; border:0.0px"><?php echo $row['cp'] ?></td>
 </tr>

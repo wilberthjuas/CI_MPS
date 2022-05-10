@@ -9,9 +9,9 @@
 		<div class="mb-3">
 			<select class="form-control mb-3" name="tipo" required>
 				<option value="" disabled selected>Selecciona una opción</option>
-				<option value="">Folio</option>
-				<option value="">Placas</option>
-				<option value="">Nombre</option>
+				<option value="Folio">Folio</option>
+				<option value="Placas">Placas</option>
+				<option value="Nombre">Nombre</option>
 			</select>
 		</div>
 

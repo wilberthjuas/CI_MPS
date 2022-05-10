@@ -5,9 +5,9 @@ foreach( $result as $row ){
       $nombre     = $row['nombre'];
       $direccion  = $row['domicilio'];
       $exterior   = $row['exterior'];
-      $colonia    = $row['col'];
+      $colonia    = $row['colonia'];
       $municipio  = $row['municipio'];
-      $telefono   = $row['tel'];
+      $telefono   = $row['telefono'];
 
       $marca      = $row['marca'];
       $vehiculo   = $row['tipo'];
@@ -178,7 +178,7 @@ foreach( $result as $row ){
         </label>
         <select class="form-control mb-3" name="cobertura" required>
           <?php foreach( $coberturas as $cobert){ ?>
-          <option value="<?php echo $cobert->cobertura; ?>" <?php if($cobertura == $cobert->cobertura){ echo 'selected';} ?>><?php echo $cobert->cobertura; ?></option>
+          <option value="<?php echo $cobert->id; ?>" <?php if($cobertura == $cobert->id){ echo 'selected';} ?>><?php echo $cobert->cobertura; ?></option>
           <?php } ?> 
         </select>
       </div>

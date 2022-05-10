@@ -35,7 +35,7 @@
                   <td><?php echo $row['folio'] ?></td>
                   <td><?php echo $row['nombre'] ?></td>
                   <td><?php echo $row['domicilio'].' '.$row['exterior'] ?></td>
-                  <td><?php echo $row['tel'] ?></td>
+                  <td><?php echo $row['telefono'] ?></td>
                   <td><?php echo $row['marca'] ?></td>
                   <td><?php echo $row['tipo'] ?></td>
                   <td><?php echo $row['placas'] ?></td>
@@ -43,7 +43,7 @@
                   <td><?php echo $row['ano'] ?></td>
                   <td><?php echo $row['expedicion'] ?></td>
                   <td><?php if ($row['bit']==0){echo "Activa";}else {echo"Cancelada";}?></td>
-                  <td><?php echo $row['mot'] ?></td>
+                  <td><?php echo $row['motivo'] ?></td>
                   <td><?php echo $row['cobertura'] ?></td>
                   <td><?php echo $row['vendedor'] ?></td>
                   <td><?php echo $row['municipio'] ?></td>

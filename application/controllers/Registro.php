@@ -39,6 +39,11 @@ class Registro extends CI_Controller {
         $data['name'] = $this->session->userdata('name');
 		
 		$this->load->view('header',$data);
+		$data['result1'] = $this->Registro_Model->getData($searchTerm);
+		$this->load->model('Cobrador_Model');
+		$data['cobradores'] = $this->Cobrador_Model->get_cobradorCRUD();
+		$this->load->model('Tarjeta_Model');
+		$data['pagos'] = $this->Tarjeta_Model->getPayments($searchTerm);
 		$this->load->view('pagos/datos',$data);
 		$this->load->view('footer');
 	}
@@ -52,11 +57,9 @@ class Registro extends CI_Controller {
 		$datos['mon']=$_POST['mon'];//Monto
 		$datos['fec']=date("Y-m-d");//Fecha Actual
 		$datos['re']=$_POST['re'];//Fecha de Registro
-		
-		//Pasan los datos al modelo
-		$resultFromFetch =$this->Registro_Model->setPago($datos); 
+		 
 
-		$resultUpdate = $this->Registro_Model->defineUpdate($datos,$resultFromFetch);
+		$resultUpdate = $this->Registro_Model->defineUpdate($datos);
 
 		$data['title'] = "REGISTRO DE NUEVO PAGO";
         $data['url'] = base_url();

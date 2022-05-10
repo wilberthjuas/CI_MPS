@@ -144,7 +144,7 @@
 				<select class="form-control mb-3" name="cobertura" required>
 					<option value="" disabled selected>Selecciona una opción</option>
 					<?php foreach( $coberturas as $cobertura){ ?>
-	                <option value="<?php echo $cobertura->cobertura; ?>"><?php echo $cobertura->cobertura; ?></option>
+	                <option value="<?php echo $cobertura->id; ?>"><?php echo $cobertura->cobertura; ?></option>
 	                <?php } ?> 
 				</select>
 			</div>
@@ -152,10 +152,10 @@
 				<label class="form-label">
 					<strong>Deducible</strong>
 				</label>
-				<select class="form-control mb-3" required="required" name="deducible" >
-					<option disabled selected>Selecciona una opción</option>
-					<option>Sí aplica</option>
-					<option>No aplica</option>
+				<select class="form-control mb-3" name="deducible" required>
+					<option value="" disabled selected>Selecciona una opción</option>
+					<option value="Sí aplica">Sí aplica</option>
+					<option value="No aplica">No aplica</option>
 				</select>
 			</div>
 			<div class="mb-3 col-md-4">

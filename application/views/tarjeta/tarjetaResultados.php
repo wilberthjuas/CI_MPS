@@ -17,20 +17,6 @@ foreach($result1 as $row ){
     $vendedor   = $row['vendedor'];
     $cobrador   = $row['cobrador'];
 
-    /*$f1         = $row['fech1'];
-
-    $m1         = $row['monto1'];
-    $m2         = $row['monto2'];
-    $m3         = $row['monto3'];
-    $m4         = $row['monto4'];
-    $m5         = $row['monto5'];
-    $m6         = $row['monto6'];
-    $m7         = $row['monto7'];
-    $m8         = $row['monto8'];
-    $m9         = $row['monto9'];
-    $m10        = $row['monto10'];
-    $m11        = $row['monto11'];
-*/
 
   }
 ?> 

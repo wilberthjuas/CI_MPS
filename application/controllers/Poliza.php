@@ -134,7 +134,6 @@
 			'telefono'=> $this->input->post("tel"),
 			'expedicion'=> $this->input->post("expedicion"),
 			'vigencia'=> $this->input->post("vigencia"),
-
 			'cobertura'=> $this->input->post("cobertura"),
 			'placas'=> $this->input->post("placas"),
 			'serie'=> $this->input->post("serie"),

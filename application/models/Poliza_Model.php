@@ -9,115 +9,135 @@ class Poliza_Model extends CI_Model {
 		$this->load->database();
 	}
 
-	function savePoliza($save){
+	public function savePoliza($save){
 		$placas = $save['placas'];
 		$serie 	= $save['serie'];
-		$query = $this->db->query("SELECT * FROM datos WHERE placas='$placas' AND serie='$serie' ");
+		//VALIDAR QUE LAS PLACAS NO EXITAN
+		$query = $this->db->query("SELECT * FROM vehiculo WHERE placas='$placas' AND serie='$serie' ");
 		if( $query->num_rows() == 0 ){	
-			$cobertura = $save['cobertura'];
-			
-			$primas = $this->getPrimas($cobertura);
-			$rca 	= $primas['rca'];
-			$robo 	= $primas['robo'];
-			$dano 	= $primas['dano'];
-			$gastos = $primas['gastos'];
-			$med 	= $primas['med'];
-		    $asis 	= $primas['asis']; 
-		    $cristal= $primas['cristal'];
-			$vial 	= $primas['vial'];
-			$muerte = $primas['muerte'];	
+		
+			//CLIENTE
+			$this->db->set('nombre',		$save['nombre']);
+			$this->db->set('domicilio',		$save['domicilio']);
+			$this->db->set('exterior',		$save['exterior']);
+			$this->db->set('entre',			$save['entre']);
+			$this->db->set('colonia',		$save['col']);
+			$this->db->set('municipio',		$save['municipio']);
+			$this->db->set('domcom',		'');
+			$this->db->set('estado_civil',	'');
+			$this->db->set('fecha_n',		'');
+			$this->db->set('telefono',		$save['telefono']);
+			$this->db->set('cp',			$save['cp']);
+			$this->db->insert('cliente');
+			$idCliente = $this->db->insert_id();
 
-			$this->db->set('rca',$rca);
-			$this->db->set('robo',$robo);
-			$this->db->set('dano',$dano);
-			$this->db->set('gastos',$gastos);
-			$this->db->set('med',$med);
-			$this->db->set('asis',$asis);
-			$this->db->set('cristal',$cristal);
-			$this->db->set('vial',$vial);
-			$this->db->set('muerte',$muerte);
-			$this->db->set('nombre',$save['nombre']);
-			$this->db->set('domicilio',$save['domicilio']);
-			$this->db->set('exterior',$save['exterior']);
-			$this->db->set('entre',$save['entre']);
-			$this->db->set('col',$save['col']);
-			$this->db->set('municipio',$save['municipio']);
-			$this->db->set('domcom','');
-			$this->db->set('estado_civil','');
-			$this->db->set('fecha_n','');
-			$this->db->set('tel',$save['telefono']);
-			$this->db->set('cp',$save['cp']);
-			$this->db->set('marca',$save['marca']);
-			$this->db->set('tipo',$save['tipo']);
-			$this->db->set('ano',$save['ano']);
-			$this->db->set('color',$save['color']);
-			$this->db->set('placas',$placas);
-			$this->db->set('version',$save['version']);
-			$this->db->set('serie',$save['serie']);
-			$this->db->set('nmotor',$save['nmotor']);
-			$this->db->set('expedicion',$save['expedicion']);
-			$this->db->set('vigencia',$save['vigencia']);
-			$this->db->set('cobertura',$save['cobertura']);
-			$this->db->set('deducible',$save['deducible']);
-			$this->db->set('costo_total',$save['costo_total']);
-			$this->db->set('plazo',$save['plazo']);
-			$this->db->set('pagoinicial',$save['pagoinicial']);
-			$this->db->set('pagomensual',$save['pagomensual']);
-			$this->db->set('observaciones',$save['observaciones']);
-			$this->db->set('captura',$save['captura']);
-			$this->db->set('ediciones','');
+			//VEHICULO
+			$this->db->set('id_cliente',	$idCliente);
+			$this->db->set('marca',			$save['marca']);
+			$this->db->set('tipo',			$save['tipo']);
+			$this->db->set('ano',			$save['ano']);
+			$this->db->set('color',			$save['color']);
+			$this->db->set('placas',		$placas);
+			$this->db->set('version',		$save['version']);
+			$this->db->set('serie',			$save['serie']);
+			$this->db->set('nmotor',		$save['nmotor']);
+			$this->db->insert('vehiculo');
+			$idVehiculo = $this->db->insert_id();
+
+			//POLIZA
+			$this->db->set('id_vehiculo',		$idVehiculo);
+			$this->db->set('id_cobertura',		$save['cobertura']);
+			$this->db->set('expedicion',		$save['expedicion']);
+			$this->db->set('vigencia',			$save['vigencia']);
+			$this->db->set('deducible',			$save['deducible']);
+			$this->db->set('costo_total',		$save['costo_total']);
+			$this->db->set('plazo',				$save['plazo']);
+			$this->db->set('pagoinicial',		$save['pagoinicial']);
+			$this->db->set('pagomensual',		$save['pagomensual']);
+			$this->db->set('observaciones',		$save['observaciones']);
+			$this->db->set('captura',			$save['captura']);
+			$this->db->set('ediciones',			'');
 			$this->db->set('fecha_modificacion',date("d-m-Y") );
-			$this->db->set('desglose','');
-			$this->db->set('vendedor',$save['vendedor']);
-			$this->db->set('cobrador',$save['cobrador']);
-			$this->db->set('ano2',date('Y'));
-			$this->db->set('bit',0);
-			$this->db->set('plataforma',$save['plataforma']);
+			$this->db->set('vendedor',			$save['vendedor']);
+			$this->db->set('cobrador',			$save['cobrador']);
+			$this->db->set('ano2',				date('Y'));
+			$this->db->set('bit',				0);
+			$this->db->set('motivo',			'');
+			$this->db->set('plataforma',		$save['plataforma']);
+			$this->db->insert('polizas');
+			$idPoliza = $this->db->insert_id();
 
-			$this->db->insert('datos');
-			return $this->db->insert_id();
+			//GENERAR ALGORITMO PARA PAGOS
+			for ($i = 1; $i <= 11; $i++) {
+			    $this->db->set('id_poliza',		$idPoliza);
+				$this->db->set('num_pago',		$i);
+				$this->db->set('estatus',		'Pendiente');
+				$this->db->insert('pagos');
+			}
+
+			return $idPoliza;
+
 		}
 		else{
 			return false;
 		}
 	}
 
-	function getPolicy($policy){
-		$query = $this->db->query("SELECT * FROM datos WHERE folio='$policy'");
+	public function getPolicy($poliza){
+		$query = $this->db->query("
+			SELECT 
+	            p.id  AS 'folio',
+	            c.nombre ,
+	            c.domicilio ,
+	            c.exterior ,
+	            c.colonia,
+	            c.municipio,
+	            c.telefono,
+	            v.marca ,
+	            v.tipo,
+	            v.ano ,
+	            v.color,
+	            v.placas ,
+	            v.version,
+	            v.serie,
+	            v.nmotor,
+	            p.expedicion,
+	            p.vigencia,
+	            p.ano2,
+	            p.id_cobertura as 'cobertura',
+	            p.pagomensual,
+	            p.costo_total,
+	            p.vendedor,
+	            p.cobrador,
+	            p.plataforma
+	        FROM polizas p 
+	        INNER JOIN vehiculo v ON p.id_vehiculo = v.id 
+	        INNER JOIN cliente c ON c.id = v.id_cliente 
+	        WHERE p.id = $poliza
+			");
     	return $query->result_array();
 	}
 
-	function updatePolicy($update){
-		$cobertura = $update['cobertura'];
-			
-		$primas = $this->getPrimas($cobertura);
-		$rca 	= $primas['rca'];
-		$robo 	= $primas['robo'];
-		$dano 	= $primas['dano'];
-		$gastos = $primas['gastos'];
-		$med 	= $primas['med'];
-	    $asis 	= $primas['asis']; 
-	    $cristal= $primas['cristal'];
-		$vial 	= $primas['vial'];
-		$muerte = $primas['muerte'];	
-
+	public function updatePolicy($update){
 		$this->db->trans_start();
-		$this->db->set('rca',$rca);
-		$this->db->set('robo',$robo);
-		$this->db->set('dano',$dano);
-		$this->db->set('gastos',$gastos);
-		$this->db->set('med',$med);
-		$this->db->set('asis',$asis);
-		$this->db->set('cristal',$cristal);
-		$this->db->set('vial',$vial);
-		$this->db->set('muerte',$muerte);
-		$this->db->set('nombre',$update['nombre']);
-		$this->db->set('domicilio',$update['domicilio']);
-		$this->db->set('exterior',$update['exterior']);
-		$this->db->set('entre',$update['entre']);
-		$this->db->set('col',$update['col']);
-		$this->db->set('municipio',$update['municipio']);
-		$this->db->set('tel',$update['telefono']);
+		$folio = $update['folio'];
+		//POLIZA
+		$this->db->set('expedicion',$update['expedicion']);
+		$this->db->set('vigencia',$update['vigencia']);
+		$this->db->set('id_cobertura',$update['cobertura']);
+		$this->db->set('costo_total',$update['costo_total']);
+		$this->db->set('pagomensual',$update['pagomensual']);
+		$this->db->set('vendedor',$update['vendedor']);
+		$this->db->set('cobrador',$update['cobrador']);
+		$this->db->set('ano2',$update['ano2']);
+		$this->db->set('plataforma',$update['plataforma']);
+		$this->db->where('id', $folio);
+		$this->db->update('polizas');
+
+		$query = $this->db->query("SELECT id_vehiculo FROM polizas WHERE id = '$folio' ");
+		$poliza = $query->row();
+
+		//VEHICULO
 		$this->db->set('marca',$update['marca']);
 		$this->db->set('tipo',$update['tipo']);
 		$this->db->set('ano',$update['ano']);
@@ -126,18 +146,23 @@ class Poliza_Model extends CI_Model {
 		$this->db->set('version',$update['version']);
 		$this->db->set('serie',$update['serie']);
 		$this->db->set('nmotor',$update['nmotor']);
-		$this->db->set('expedicion',$update['expedicion']);
-		$this->db->set('vigencia',$update['vigencia']);
-		$this->db->set('cobertura',$cobertura);
-		$this->db->set('costo_total',$update['costo_total']);
-		$this->db->set('pagomensual',$update['pagomensual']);
-		$this->db->set('vendedor',$update['vendedor']);
-		$this->db->set('cobrador',$update['cobrador']);
-		$this->db->set('ano2',$update['ano2']);
-		$this->db->set('plataforma',$update['plataforma']);
+		$this->db->where('id', $poliza->id_vehiculo);
+		$this->db->update('vehiculo');
 
-		$this->db->where('folio', $update['folio']);
-		$this->db->update('datos');
+		$query1 = $this->db->query("SELECT id_cliente FROM vehiculo WHERE id = $poliza->id_vehiculo ");
+		$vehiculo = $query1->row();
+		
+		//CLIENTE
+		$this->db->set('nombre',$update['nombre']);
+		$this->db->set('domicilio',$update['domicilio']);
+		$this->db->set('exterior',$update['exterior']);
+		$this->db->set('entre',$update['entre']);
+		$this->db->set('colonia',$update['col']);
+		$this->db->set('municipio',$update['municipio']);
+		$this->db->set('telefono',$update['telefono']);
+		$this->db->where('id', $vehiculo->id_cliente);
+		$this->db->update('cliente');
+
 		$this->db->trans_complete();
 
 		return $this->db->trans_status();
@@ -274,6 +299,7 @@ class Poliza_Model extends CI_Model {
 			$this->db->set('ano2',			$row->ano2);
 			$this->db->set('bit',			$row->bit);
 			$this->db->set('motivo',		$row->mot);
+			$this->db->set('plataforma',	$row->plataforma);
 			$this->db->insert('polizas');
 			$idPoliza = $this->db->insert_id();
 
@@ -406,9 +432,6 @@ class Poliza_Model extends CI_Model {
 			$this->db->set('recibo',	$row->re11);
 			$this->db->insert('pagos');
 		}
-
-
-
 	}
 
 	private function getPrimas($cobertura){

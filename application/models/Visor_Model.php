@@ -12,25 +12,28 @@ class Visor_Model extends CI_Model {
     public function getData(){
         $query = $this->db->query("
         SELECT 
-            folio, 
-            nombre, 
-            domicilio, 
-            exterior, 
-            tel, 
-            marca, 
-            tipo, 
-            placas, 
-            serie, 
-            ano, 
-            expedicion, 
-            bit, 
-            mot, 
-            cobertura, 
-            vendedor, 
-            municipio, 
-            cobrador  
-        FROM datos  
-        where expedicion ");
+            p.id  AS 'folio',
+            c.nombre ,
+            c.domicilio ,
+            c.exterior ,
+            c.telefono,
+            c.municipio ,
+            v.marca ,
+            v.tipo,
+            v.placas ,
+            v.serie,
+            v.ano ,
+            v.nmotor,
+            p.expedicion,
+            p.bit,
+            p.motivo,
+            (SELECT cb.cobertura FROM coberturas cb WHERE cb.id = p.id_cobertura  ) AS 'cobertura',
+            p.vendedor,
+            p.vigencia,
+            p.cobrador
+        FROM polizas p 
+        INNER JOIN vehiculo v ON p.id_vehiculo = v.id 
+        INNER JOIN cliente c ON c.id = v.id_cliente ");
         return $query->result_array();
     }
 
@@ -55,6 +58,53 @@ class Visor_Model extends CI_Model {
 
         return $this->dbutil->csv_from_result($query, $delimiter, $newline, $enclosure);
     }
+
+    public function getImpresion($a,$b) {
+        $query = "
+            SELECT 
+                p.id  AS 'Folio',
+                c.nombre ,
+                c.domicilio ,
+                c.exterior ,
+                c.colonia ,
+                c.municipio ,
+                c.telefono,
+                c.cp,
+                v.tipo,
+                v.serie,
+                v.nmotor,
+                v.placas ,
+                v.marca ,
+                v.ano ,
+                v.color ,
+                v.version,
+                (SELECT cb.cobertura FROM coberturas cb WHERE cb.id = p.id_cobertura  ) AS 'cobertura',
+                p.expedicion,
+                p.vigencia,
+                p.pagomensual ,
+                p.vendedor,
+                p.plazo ,
+                p.pagoinicial,
+                p.plataforma
+            FROM polizas p 
+            INNER JOIN vehiculo v ON p.id_vehiculo = v.id 
+            INNER JOIN cliente c ON c.id = v.id_cliente ";
+
+
+
+        if($b=="Folio"){
+            $query = $query." WHERE p.id ='$a' ";
+        }
+        elseif ($b=="Placas") {
+            $query = $query." WHERE v.placas='$a' ";
+        }
+        elseif ($b=="Nombre"){
+            $query = $query." WHERE c.nombre='$a' ";
+        }
+    
+        $queryExecute = $this->db->query($query);
+        return $queryExecute->result_array();
+      }
 
 }
   

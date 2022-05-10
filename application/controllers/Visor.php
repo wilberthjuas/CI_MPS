@@ -44,8 +44,7 @@ class Visor extends CI_Controller {
 	public function visorimpresionPdf(){
 		$a = $this->input->post('buscar');
         $b = $this->input->post('tipo');
-        $this->load->model('Tarjeta_Model');
-        $resultado =$this->Tarjeta_Model->getData($a,$b);
+        $resultado =$this->Visor_Model->getImpresion($a,$b);
         $data['result1'] = $resultado;
         $data['url'] = base_url();
         $data['a'] = $a;
