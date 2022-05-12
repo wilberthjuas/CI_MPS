@@ -143,6 +143,18 @@
 						<span class="align-middle">Cobertura</span>
 					</a>
 				</li>
+				<li class="sidebar-item <?= $url.'qasCRUD' == current_url() ?  (''):('active') ?>">
+					<a class="sidebar-link" href="<?= $url ?>qasCRUD">
+						<i class="align-middle" data-feather="dollar-sign"></i> 
+						<span class="align-middle">Preguntas y Respuestas</span>
+					</a>
+				</li>
+				<li class="sidebar-item <?= $url.'consejoCRUD' == current_url() ?  (''):('active') ?>">
+					<a class="sidebar-link" href="<?= $url ?>consejoCRUD">
+						<i class="align-middle" data-feather="dollar-sign"></i> 
+						<span class="align-middle">Consejos</span>
+					</a>
+				</li>
 			</ul>
 		</div>
 	</nav>

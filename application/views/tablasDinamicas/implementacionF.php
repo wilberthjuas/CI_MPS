@@ -5,7 +5,7 @@
       responsive: true,
       language:{
           "decimal":        "",
-          "emptyTable":     "No data available in table",
+          "emptyTable":     "No hay información disponible en la tabla",
           "info":           "Mostrando _START_/_END_ de _TOTAL_ ",
           "infoEmpty":      "Mostranto 0/0 de 0 entradas",
           "infoFiltered":   "(filtrado de _MAX_ entradas en total)",

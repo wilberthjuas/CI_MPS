@@ -83,6 +83,18 @@ $route['coberturaCRUDCreate']['post'] = "coberturaCRUD/store";
 $route['coberturaCRUDEdit/(:any)'] = "coberturaCRUD/edit/$1";
 $route['coberturaCRUDUpdate/(:any)']['put'] = "coberturaCRUD/update/$1";
 $route['coberturaCRUDDelete/(:any)']['delete'] = "coberturaCRUD/delete/$1";
+$route['qasCRUD'] = "qasCRUD/index";
+$route['qasCRUD/(:num)'] = "qasCRUD/show/$1";
+$route['qasCRUDCreate']['post'] = "qasCRUD/store";
+$route['qasCRUDEdit/(:any)'] = "qasCRUD/edit/$1";
+$route['qasCRUDUpdate/(:any)']['put'] = "qasCRUD/update/$1"; 
+$route['qasCRUDDelete/(:any)']['delete'] = "qasCRUD/delete/$1";
+$route['consejoCRUD'] = "consejoCRUD/index";
+$route['consejoCRUD/(:num)'] = "consejoCRUD/show/$1";
+$route['consejoCRUDCreate']['post'] = "consejoCRUD/store";
+$route['consejoCRUDEdit/(:any)'] = "consejoCRUD/edit/$1";
+$route['consejoCRUDUpdate/(:any)']['put'] = "consejoCRUD/update/$1";
+$route['consejoCRUDDelete/(:any)']['delete'] = "consejoCRUD/delete/$1";
 
 
 
