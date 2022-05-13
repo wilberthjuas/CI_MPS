@@ -95,6 +95,24 @@ $route['consejoCRUDCreate']['post'] = "consejoCRUD/store";
 $route['consejoCRUDEdit/(:any)'] = "consejoCRUD/edit/$1";
 $route['consejoCRUDUpdate/(:any)']['put'] = "consejoCRUD/update/$1";
 $route['consejoCRUDDelete/(:any)']['delete'] = "consejoCRUD/delete/$1";
+$route['tallerCRUD'] = "tallerCRUD/index";
+$route['tallerCRUD/(:num)'] = "tallerCRUD/show/$1";
+$route['tallerCRUDCreate']['post'] = "tallerCRUD/store";
+$route['tallerCRUDEdit/(:any)'] = "tallerCRUD/edit/$1";
+$route['tallerCRUDUpdate/(:any)']['put'] = "tallerCRUD/update/$1";
+$route['tallerCRUDDelete/(:any)']['delete'] = "tallerCRUD/delete/$1";
+$route['sucursalCRUD'] = "sucursalCRUD/index";
+$route['sucursalCRUD/(:num)'] = "sucursalCRUD/show/$1";
+$route['sucursalCRUDCreate']['post'] = "sucursalCRUD/store";
+$route['sucursalCRUDEdit/(:any)'] = "sucursalCRUD/edit/$1";
+$route['sucursalCRUDUpdate/(:any)']['put'] = "sucursalCRUD/update/$1";
+$route['sucursalCRUDDelete/(:any)']['delete'] = "sucursalCRUD/delete/$1";
+$route['emergenciaCRUD'] = "emergenciaCRUD/index";
+$route['emergenciaCRUD/(:num)'] = "emergenciaCRUD/show/$1";
+$route['emergenciaCRUDCreate']['post'] = "emergenciaCRUD/store";
+$route['emergenciaCRUDEdit/(:any)'] = "emergenciaCRUD/edit/$1";
+$route['emergenciaCRUDUpdate/(:any)']['put'] = "emergenciaCRUD/update/$1";
+$route['emergenciaCRUDDelete/(:any)']['delete'] = "emergenciaCRUD/delete/$1";
 
 
 

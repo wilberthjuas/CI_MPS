@@ -155,6 +155,24 @@
 						<span class="align-middle">Consejos</span>
 					</a>
 				</li>
+				<li class="sidebar-item <?= $url.'tallerCRUD' == current_url() ?  (''):('active') ?>">
+					<a class="sidebar-link" href="<?= $url ?>tallerCRUD">
+						<i class="align-middle" data-feather="dollar-sign"></i> 
+						<span class="align-middle">Talleres</span>
+					</a>
+				</li>
+				<li class="sidebar-item <?= $url.'sucursalCRUD' == current_url() ?  (''):('active') ?>">
+					<a class="sidebar-link" href="<?= $url ?>sucursalCRUD">
+						<i class="align-middle" data-feather="dollar-sign"></i> 
+						<span class="align-middle">Sucursales</span>
+					</a>
+				</li>
+				<li class="sidebar-item <?= $url.'emergenciaCRUD' == current_url() ?  (''):('active') ?>">
+					<a class="sidebar-link" href="<?= $url ?>emergenciaCRUD">
+						<i class="align-middle" data-feather="dollar-sign"></i> 
+						<span class="align-middle">Contactos de Emergencia</span>
+					</a>
+				</li>
 			</ul>
 		</div>
 	</nav>
