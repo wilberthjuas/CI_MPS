@@ -29,9 +29,9 @@
                     <!--<i class="align-middle" data-feather="edit-2"></i>-->
                     Editar
                   </a>
-                  <!--<button type="submit" class="btn btn-danger">
+                  <button type="submit" class="btn btn-danger">
                     <i class="align-middle" data-feather="trash"></i>
-                  </button>-->
+                  </button>
                 </form>
               </td>     
           </tr>

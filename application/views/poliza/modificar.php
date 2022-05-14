@@ -1,11 +1,4 @@
 <div class="card-body">
-	<div class="card-header">
-		<a class="btn btn-success" href="<?php echo base_url('poliza/cargarCobertura');?>"> CargarCoberturas</a>
-	</div>
-	<div class="card-header">
-		<a class="btn btn-success" href="<?php echo base_url('poliza/migrarDatos');?>"> MigrarDatos</a>
-	</div>
-	<br/>
 	<form method="post" action="<?=$url?>Poliza/modifyPolicy">
 		<div class="mb-3">
 			<label class="form-label">
