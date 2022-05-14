@@ -113,7 +113,12 @@ $route['emergenciaCRUDCreate']['post'] = "emergenciaCRUD/store";
 $route['emergenciaCRUDEdit/(:any)'] = "emergenciaCRUD/edit/$1";
 $route['emergenciaCRUDUpdate/(:any)']['put'] = "emergenciaCRUD/update/$1";
 $route['emergenciaCRUDDelete/(:any)']['delete'] = "emergenciaCRUD/delete/$1";
-
+$route['promocionCRUD'] = "promocionCRUD/index";
+$route['promocionCRUD/(:num)'] = "promocionCRUD/show/$1";
+$route['promocionCRUDCreate']['post'] = "promocionCRUD/store";
+$route['promocionCRUDEdit/(:any)'] = "promocionCRUD/edit/$1";
+$route['promocionCRUDUpdate/(:any)']['put'] = "promocionCRUD/update/$1";
+$route['promocionCRUDDelete/(:any)']['delete'] = "promocionCRUD/delete/$1";
 
 
 

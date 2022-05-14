@@ -112,67 +112,70 @@
 							<span class="align-middle">Excel</span>
 						</a>
 					</li>
+				<li class="sidebar-item active">
+					<a data-bs-target="#catalogs" data-bs-toggle="collapse" class="sidebar-link collapsed">
+              			<i class="align-middle" data-feather="check-square"></i>
+              			<span class="align-middle">Catálogos</span>
+            		</a>
+					<ul id="catalogs" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+						<li class="sidebar-item <?= $url.'coberturaCRUD' == current_url() ? ('active'):('') ?>">
+							<a class="sidebar-link" href="<?= $url ?>coberturaCRUD">
+								<span class="align-middle">Coberturas</span>
+							</a>
+						</li>
+						<li class="sidebar-item <?= $url.'cobradorCRUD' == current_url() ?  ('active'):('') ?>">
+							<a class="sidebar-link" href="<?= $url ?>cobradorCRUD">
+								<span class="align-middle">Cobradores</span>
+							</a>
+						</li>
+						<li class="sidebar-item <?= $url.'consejoCRUD' == current_url() ?  ('active'):('') ?>">
+							<a class="sidebar-link" href="<?= $url ?>consejoCRUD">
+								<span class="align-middle">Consejos</span>
+							</a>
+						</li>
+						<li class="sidebar-item <?= $url.'emergenciaCRUD' == current_url() ? ('active'):('') ?>">
+							<a class="sidebar-link" href="<?= $url ?>emergenciaCRUD">
+								<span class="align-middle">Contactos de Emergencia</span>
+							</a>
+						</li>
+						<li class="sidebar-item <?= $url.'municipioCRUD' == current_url() ? ('active'):('') ?>">
+							<a class="sidebar-link" href="<?= $url ?>municipioCRUD">
+								<span class="align-middle">Municipios</span>
+							</a>
+						</li>
+						<li class="sidebar-item <?= $url.'plataformaCRUD' == current_url() ? ('active'):('') ?>">
+							<a class="sidebar-link" href="<?= $url ?>plataformaCRUD">
+								<span class="align-middle">Plataformas</span>
+							</a>
+						</li>
+						<li class="sidebar-item <?= $url.'qasCRUD' == current_url() ? ('active'):('') ?>">
+							<a class="sidebar-link" href="<?= $url ?>qasCRUD">
+								<span class="align-middle">Preguntas y Respuestas</span>
+							</a>
+						</li>
+						<li class="sidebar-item <?= $url.'promocionCRUD' == current_url() ? ('active'):('') ?>">
+							<a class="sidebar-link" href="<?= $url ?>promocionCRUD">
+								<span class="align-middle">Promociones</span>
+							</a>
+						</li>
+						<li class="sidebar-item <?= $url.'tallerCRUD' == current_url() ? ('active'):('') ?>">
+							<a class="sidebar-link" href="<?= $url ?>tallerCRUD">
+								<span class="align-middle">Talleres</span>
+							</a>
+						</li>
+						<li class="sidebar-item <?= $url.'sucursalCRUD' == current_url() ? ('active'):('') ?>">
+							<a class="sidebar-link" href="<?= $url ?>sucursalCRUD">
+								<span class="align-middle">Sucursales</span>
+							</a>
+						</li>
+						<li class="sidebar-item <?= $url.'vendedorCRUD' == current_url() ? ('active'):('') ?>">
+							<a class="sidebar-link" href="<?= $url ?>vendedorCRUD">
+								<span class="align-middle">Vendedores</span>
+							</a>
+						</li>
+					</ul>
+				</li>
 				<?php } ?>
-				<li class="sidebar-item <?= $url.'plataformaCRUD' == current_url() ?  (''):('active') ?>">
-					<a class="sidebar-link" href="<?= $url ?>plataformaCRUD">
-						<i class="align-middle" data-feather="codepen"></i> 
-						<span class="align-middle">Plataformas</span>
-					</a>
-				</li>
-				<li class="sidebar-item <?= $url.'vendedorCRUD' == current_url() ?  (''):('active') ?>">
-					<a class="sidebar-link" href="<?= $url ?>vendedorCRUD">
-						<i class="align-middle" data-feather="briefcase"></i> 
-						<span class="align-middle">Vendedores</span>
-					</a>
-				</li>
-				<li class="sidebar-item <?= $url.'cobradorCRUD' == current_url() ?  (''):('active') ?>">
-					<a class="sidebar-link" href="<?= $url ?>cobradorCRUD">
-						<i class="align-middle" data-feather="dollar-sign"></i> 
-						<span class="align-middle">Cobradores</span>
-					</a>
-				</li>
-				<li class="sidebar-item <?= $url.'municipioCRUD' == current_url() ?  (''):('active') ?>">
-					<a class="sidebar-link" href="<?= $url ?>municipioCRUD">
-						<i class="align-middle" data-feather="dollar-sign"></i> 
-						<span class="align-middle">Municipios</span>
-					</a>
-				</li>
-				<li class="sidebar-item <?= $url.'coberturaCRUD' == current_url() ?  (''):('active') ?>">
-					<a class="sidebar-link" href="<?= $url ?>coberturaCRUD">
-						<i class="align-middle" data-feather="dollar-sign"></i> 
-						<span class="align-middle">Cobertura</span>
-					</a>
-				</li>
-				<li class="sidebar-item <?= $url.'qasCRUD' == current_url() ?  (''):('active') ?>">
-					<a class="sidebar-link" href="<?= $url ?>qasCRUD">
-						<i class="align-middle" data-feather="dollar-sign"></i> 
-						<span class="align-middle">Preguntas y Respuestas</span>
-					</a>
-				</li>
-				<li class="sidebar-item <?= $url.'consejoCRUD' == current_url() ?  (''):('active') ?>">
-					<a class="sidebar-link" href="<?= $url ?>consejoCRUD">
-						<i class="align-middle" data-feather="dollar-sign"></i> 
-						<span class="align-middle">Consejos</span>
-					</a>
-				</li>
-				<li class="sidebar-item <?= $url.'tallerCRUD' == current_url() ?  (''):('active') ?>">
-					<a class="sidebar-link" href="<?= $url ?>tallerCRUD">
-						<i class="align-middle" data-feather="dollar-sign"></i> 
-						<span class="align-middle">Talleres</span>
-					</a>
-				</li>
-				<li class="sidebar-item <?= $url.'sucursalCRUD' == current_url() ?  (''):('active') ?>">
-					<a class="sidebar-link" href="<?= $url ?>sucursalCRUD">
-						<i class="align-middle" data-feather="dollar-sign"></i> 
-						<span class="align-middle">Sucursales</span>
-					</a>
-				</li>
-				<li class="sidebar-item <?= $url.'emergenciaCRUD' == current_url() ?  (''):('active') ?>">
-					<a class="sidebar-link" href="<?= $url ?>emergenciaCRUD">
-						<i class="align-middle" data-feather="dollar-sign"></i> 
-						<span class="align-middle">Contactos de Emergencia</span>
-					</a>
-				</li>
 			</ul>
 		</div>
 	</nav>
