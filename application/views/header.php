@@ -71,8 +71,8 @@
 					</li>
 				<?php } ?>
 				<?php if( $_SESSION['type'] == "1" ){ ?>
-					<li class="sidebar-item <?= $url.'cancelarreactivarpoliza' == current_url() ?  (''):('active') ?>">
-						<a class="sidebar-link" href="<?= $url ?>cancelarreactivarpoliza">
+					<li class="sidebar-item <?= $url.'CancelarReactivarPoliza' == current_url() ?  (''):('active') ?>">
+						<a class="sidebar-link" href="<?= $url ?>CancelarReactivarPoliza">
 							<i class="align-middle" data-feather="shuffle"></i> 
 							<span class="align-middle">Cancelar / Reactivar</span>
 						</a>

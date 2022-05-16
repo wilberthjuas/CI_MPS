@@ -24,7 +24,7 @@ class CancelarReactivarPoliza extends CI_Controller {
 		$data['name'] = $this->session->userdata('name');
         $data['url'] = base_url();
 		$this->load->view('header',$data);
-		$this->load->view('cancelarreactivarpolizas');
+		$this->load->view('activarpolizas_form');
 		$this->load->view('footer');
 	}
 

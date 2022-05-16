@@ -30,7 +30,7 @@ class Gruas_Model extends CI_Model {
                 p.ano2,
                 p.pagomensual ,
                 p.vendedor,
-                P.cobrador
+                p.cobrador
             FROM polizas p 
             INNER JOIN vehiculo v ON p.id_vehiculo = v.id 
             INNER JOIN cliente c ON c.id = v.id_cliente 

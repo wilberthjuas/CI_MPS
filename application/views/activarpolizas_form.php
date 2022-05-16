@@ -1,4 +1,4 @@
-<form method="post" action="<?=$url?>cancelarreactivarpoliza/setPolizaStatus">
+<form method="post" action="<?=$url?>CancelarReactivarPoliza/setPolizaStatus">
 	<div class="card-body">
 		<form method="post" >
 			<div class="mb-3">
@@ -6,10 +6,10 @@
 				<input autocomplete="off" type="text" name="buscar" class="form-control" placeholder="Ingrese folio de búsqueda" required/>
 			</div>
 			<div class="mb-3">
-				<select class="form-control mb-3" autocomplete="off" required="required" type="text" name="accion" id="Numero de parte" />
-				<option disabled selected>Seleccione acción</option>
-				<option>Cancelar</option>
-				<option>Reactivar</option>
+				<select class="form-control mb-3" name="accion" />
+				<option value="" disabled selected>Seleccione acción</option>
+				<option value="Cancelar">Cancelar</option>
+				<option value="Reactivar">Reactivar</option>
 			</select>
 		</div>
 		<div class="mb-3">

@@ -62,7 +62,7 @@ class Visor_Model extends CI_Model {
     public function getImpresion($a,$b) {
         $query = "
             SELECT 
-                p.id  AS 'Folio',
+                p.id  AS 'folio',
                 c.nombre ,
                 c.domicilio ,
                 c.exterior ,
