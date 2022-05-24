@@ -64,7 +64,6 @@ class Tarjeta_Model extends CI_Model {
     }
 
     public function updateCard($folio,$fech,$monto){
-        
         $this->db->set('fecha', $fech);
         $this->db->set('monto', $monto);
         $this->db->where('id', $folio);

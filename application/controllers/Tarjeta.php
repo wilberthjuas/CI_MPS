@@ -52,7 +52,8 @@ class Tarjeta extends CI_Controller {
 		$monto=$_POST['monto'];
 
 		for($i=0;$i<count($folio);$i++){
-			$resultado =$this->Tarjeta_Model->updateCard($folio[$i],$fech[$i],$monto[$i]);		
+			$mon = substr($monto[$i],1);   
+			$resultado =$this->Tarjeta_Model->updateCard($folio[$i],$fech[$i],$mon);		
 		}
 	
 		$data['title'] = "ACTUALIZACIÓN TARJETA";
