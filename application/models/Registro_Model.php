@@ -47,7 +47,7 @@ class Registro_Model extends CI_Model {
     $fol=$info['fol'];
     $cob=$info['cob'];	
     $a=$info['folio'];
-    $mon=$info['mon'];	
+    $mon=substr($info['mon'],1);	
     $fec=$info['fec'];
     $re=$info['re'];
     

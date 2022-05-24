@@ -62,9 +62,7 @@ class VendedorCRUD extends CI_Controller {
    	{
    		$this->form_validation->set_rules('name', 'Name', 'trim|required');
    		$this->form_validation->set_rules('phone', 'Phone', 'trim|required');
-   		$this->form_validation->set_rules('email', 'Email', 'trim|required');
-
-
+   	
 	   	if ($this->form_validation->run() == FALSE){
 	   		$this->session->set_flashdata('errors', validation_errors());
 	   		redirect(base_url('vendedorCRUD/create'));
@@ -94,8 +92,6 @@ class VendedorCRUD extends CI_Controller {
    		
    		$this->form_validation->set_rules('name', 'Name', 'trim|required');
    		$this->form_validation->set_rules('phone', 'Phone', 'trim|required');
-   		$this->form_validation->set_rules('email', 'Email', 'trim|required');
-
 
    		if ($this->form_validation->run() == FALSE){
 	   		$this->session->set_flashdata('errors', validation_errors());

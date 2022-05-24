@@ -73,4 +73,8 @@ class Tarjeta extends CI_Controller {
     	$data['url'] = base_url();
     	$this->load->view('tarjeta/tarjetaPdf',$data);
     }
+
+    public function tarjeta12(){
+    	$data['pagos'] = $this->Tarjeta_Model->set12payments();
+    }
 }

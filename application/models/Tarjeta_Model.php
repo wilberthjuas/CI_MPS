@@ -72,4 +72,19 @@ class Tarjeta_Model extends CI_Model {
         
         return true;
     }
+
+    /*public function set12payments(){
+        $query = $this->db->query("SELECT id_poliza, COUNT(*) as cuenta  FROM pagos p group by id_poliza");
+        $result = $query->result_array();
+        foreach ($result as $pago) {
+            if($pago['cuenta'] < 12){
+                $this->db->set('id_poliza',     $pago['id_poliza']);
+                $this->db->set('num_pago',      12);
+                $this->db->set('estatus',       'Pendiente');
+                $this->db->insert('pagos');
+            }
+        }
+
+        return true;
+    }*/
 }

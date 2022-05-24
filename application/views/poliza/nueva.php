@@ -162,7 +162,7 @@
 				<label class="form-label">
 					<strong>Costo total</strong>
 				</label>
-				<input autocomplete="off" type="text" name="costo_total" class="form-control" placeholder="Ingrese la cantidad" required/>
+				<input autocomplete="off" type="text" name="costo_total" class="form-control" placeholder="Ingrese la cantidad" data-mask="$99999999999" pattern="^\\$?(([1-9](\\d*|\\d{0,2}(,\\d{3})*))|0)(\\.\\d{1,2})?$" required/>
 			</div>
 		</div>
 		<div class="mb-3">
@@ -176,19 +176,33 @@
 				<label class="form-label">
 					<strong>Pago inicial</strong>
 				</label>
-				<input autocomplete="off" type="number" name="pagoinicial" class="form-control" placeholder="Ingrese la cantidad" required/>
+				<input autocomplete="off" type="text" name="pagoinicial" class="form-control" placeholder="Ingrese la cantidad" data-mask="$99999999999" pattern="^\\$?(([1-9](\\d*|\\d{0,2}(,\\d{3})*))|0)(\\.\\d{1,2})?$" required/>
 			</div>
 			<div class="mb-3 col-md-4">
 				<label class="form-label">
 					<strong>Pago mensual</strong>
 				</label>
-				<input autocomplete="off" type="number" name="pagomensual" class="form-control" placeholder="Ingrese el monto mensual" required/>
+				<input autocomplete="off" type="text" pattern="^\\$?(([1-9](\\d*|\\d{0,2}(,\\d{3})*))|0)(\\.\\d{1,2})?$" name="pagomensual" class="form-control" placeholder="Ingrese el monto mensual" data-mask="$99999999999" required/>
 			</div>
 			<div class="mb-3 col-md-4">
 				<label class="form-label">
 					<strong>Plazo</strong>
 				</label>
-				<input autocomplete="off" type="text" name="plazo" class="form-control" placeholder="Ingrese la fecha" required/>
+				<select class="form-control mb-3" name="plazo" required>
+					<option value="" disabled selected>Selecciona una opción</option>
+					<option value="0">Contado (Plazo 0)</option>
+					<option value="1">1 MES</option>
+					<option value="2">2 MESES</option>
+					<option value="3">3 MESES</option>
+					<option value="4">4 MESES</option>
+					<option value="5">5 MESES</option>
+					<option value="6">6 MESES</option>
+					<option value="7">7 MESES</option>
+					<option value="8">8 MESES</option>
+					<option value="9">9 MESES</option>
+					<option value="10">10 MESES</option>
+					<option value="11">11 MESES</option>
+				</select>
 			</div>
 		</div>
 		<input type="hidden" name="captura"  value="<?php echo $name; ?>" /> 

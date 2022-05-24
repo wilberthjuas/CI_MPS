@@ -27,7 +27,7 @@
                 <label class="form-label">
                     <strong>Ingresa el correo</strong>
                 </label>
-                <input autocomplete="off" type="email" name="email" class="form-control" value="<?php echo $vendedor->correo; ?>" required/>
+                <input autocomplete="off" type="email" name="email" class="form-control" value="<?php echo $vendedor->correo; ?>"/>
             </div>
 			
 

@@ -124,7 +124,7 @@ foreach($result1 as $row ){
                     <input type="text" readonly/>
                 </td>
                 <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:<?php echo $x; ?>px ;  left:250px;    ">
-                    <input type="text" value="<?php echo $pago['monto']; ?>"/>
+                    <input type="text" data-mask="$99999999999"  value="$<?php echo $pago['monto']; ?>"/>
                 </td>
                 <td style=" font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:<?php echo $x; ?>px ; left:350px;  ">
                     <input type="text"/>
@@ -194,15 +194,15 @@ foreach($result1 as $row ){
                 </td>
             </tr>
             <tr>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:20;  border:0.0px ; position:absolute; top:240px ; left:610px">
-                            TELEFONO: <?php echo $telefono; ?>
-                        </td>
-                        <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:20;  border:0.0px ; position:absolute; top:240px ; left:760px">
-                            TELEFONO2: <?php echo $telefono2; ?>
-                        </td>
-                        <td style="color:#000000F; font-family: 'Bodoni MT Condensed'; font-size:20; border:0.0px ; position:absolute; top:240px ; left:930px">
-                            COBRADOR: <?php echo $cobrador; ?>
-                        </td>
+                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:20;  border:0.0px ; position:absolute; top:240px ; left:610px">
+                    TELEFONO: <?php echo $telefono; ?>
+                </td>
+                <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:20;  border:0.0px ; position:absolute; top:240px ; left:760px">
+                    TELEFONO2: <?php echo $telefono2; ?>
+                </td>
+                <td style="color:#000000F; font-family: 'Bodoni MT Condensed'; font-size:20; border:0.0px ; position:absolute; top:240px ; left:930px">
+                    COBRADOR: <?php echo $cobrador; ?>
+                </td>
             </tr>     
             <tr>
                 <td style="font-family: 'Bodoni MT Condensed'; font-size:20;  position:absolute; top:270px ; left:630px ; ">
@@ -233,7 +233,7 @@ foreach($result1 as $row ){
                     <input type="text"readonly />
                 </td>
                 <td style="color:#000000; font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:<?php echo $x; ?>px ; left:850px;   ">
-                    <input type="text" value="<?php echo $pago['monto']; ?>"/>
+                    <input type="text" data-mask="$99999999999"  value="$<?php echo $pago['monto']; ?>"/>
                 </td>
                 <td style=" font-family: 'Bodoni MT Condensed'; font-size:22; position:absolute; top:<?php echo $x; ?>px ; left:950px;   ">
                     <input  type="text" />

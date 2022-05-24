@@ -68,10 +68,37 @@ class Poliza_Model extends CI_Model {
 			$idPoliza = $this->db->insert_id();
 
 			//GENERAR ALGORITMO PARA PAGOS
-			for ($i = 1; $i <= 11; $i++) {
+			for ($i = 1; $i <= 12; $i++) {
 			    $this->db->set('id_poliza',		$idPoliza);
 				$this->db->set('num_pago',		$i);
-				$this->db->set('estatus',		'Pendiente');
+				if( $save['plazo'] == 0){
+					$this->db->set('estatus',	'Pagado');
+					$this->db->set('monto',		substr($save['pagomensual'],1));
+					$this->db->set('fecha',		date("Y-m-d"));
+					$this->db->set('recibo',	date("Y-m-d"));
+					$this->db->set('folio',		date("YmdHms"));
+					$this->db->insert('pagos');
+					return $idPoliza;
+				}
+				else if($i == 1){
+					$this->db->set('estatus',	'Pagado En Tarjeta');
+					$this->db->set('monto',		substr($save['pagomensual'],1));
+					$this->db->set('fecha',		date("Y-m-d"));
+					$this->db->set('recibo',	date("Y-m-d"));
+					$this->db->set('folio',		date("YmdHms"));
+				}
+				else if( $i <= ($save['plazo'] + 1)){
+					$this->db->set('estatus',	'Pagado');
+					$this->db->set('monto',		substr($save['pagomensual'],1));
+					$this->db->set('fecha',		date("Y-m-d"));
+					$this->db->set('recibo',	date("Y-m-d"));
+					$this->db->set('folio',		date("YmdHms"));
+
+					
+				}else{
+					$this->db->set('estatus',	'Pendiente');	
+				}
+				
 				$this->db->insert('pagos');
 			}
 

@@ -104,7 +104,7 @@ foreach($result1 as $row ){
                                     <input type="text" class="form-control" name="" readonly>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control" name="monto[]" value="<?php echo $pago['monto']; ?>">
+                                    <input type="text" class="form-control" name="monto[]" data-mask="$99999999999"  value="<?php echo $pago['monto']; ?>">
                                 </td>
                                 <td>
                                     <input type="text" class="form-control" name="" readonly>

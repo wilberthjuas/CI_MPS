@@ -144,7 +144,7 @@ foreach( $result1 as $row){
               <td><?php echo $pago['estatus']; ?></td>
               <td><?php echo $pago['folio']; ?></td>
               <td><?php echo $pago['cobrador']; ?></td>
-              <td><?php echo $pago['monto']; ?></td>
+              <td>$<?php echo $pago['monto']; ?></td>
               <td><?php echo $pago['fecha']; ?></td>
               <td><?php echo $pago['recibo']; ?></td>
             </tr>
@@ -185,7 +185,7 @@ foreach( $result1 as $row){
             </div>
             <div class="mb-3 col-md-2">
               <label class="form-label"><strong>Monto</strong></label>
-              <input autocomplete="off" type="text" name="mon" class="form-control"  placeholder="Ingrese monto" required />
+              <input autocomplete="off" type="text" name="mon" class="form-control" data-mask="$99999999999"  placeholder="Ingrese monto" required />
             </div>
             <div class="mb-3 col-md-2">
               <label class="form-label"><strong>Fecha del recibo</strong></label>

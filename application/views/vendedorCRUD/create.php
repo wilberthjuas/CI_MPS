@@ -28,7 +28,7 @@
                 <label class="form-label">
                     <strong>Ingresa el correo</strong>
                 </label>
-                <input autocomplete="off" type="email" name="email" class="form-control" required/>
+                <input autocomplete="off" type="email" name="email" class="form-control"/>
             </div>
 
             <button type="submit" class="btn btn-primary">Enviar</button> 

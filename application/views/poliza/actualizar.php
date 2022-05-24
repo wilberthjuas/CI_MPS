@@ -186,13 +186,13 @@ foreach( $result as $row ){
         <label class="form-label">
           <strong>Pago mensual</strong>
         </label>
-        <input autocomplete="off" type="number" name="pagomensual" class="form-control" value="<?php echo $abono; ?>" required/>
+        <input autocomplete="off" type="text" name="pagomensual" class="form-control" data-mask="$99999999999" pattern="^\\$?(([1-9](\\d*|\\d{0,2}(,\\d{3})*))|0)(\\.\\d{1,2})+$" value="<?php echo $abono; ?>" required/>
       </div>
       <div class="mb-3 col-md-4">
         <label class="form-label">
           <strong>Costo total</strong>
         </label>
-        <input autocomplete="off" type="text" name="costo_total" class="form-control" value="<?php echo $total; ?>" required/>
+        <input autocomplete="off" type="text" name="costo_total" class="form-control" data-mask="$99999999999" pattern="^\\$?(([1-9](\\d*|\\d{0,2}(,\\d{3})*))|0)(\\.\\d{1,2})+$" value="<?php echo $total; ?>" required/>
       </div>
     </div>
     <div class="row">
