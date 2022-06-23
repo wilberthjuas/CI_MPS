@@ -54,4 +54,14 @@ class Vendedor_Model extends CI_Model{
     {
         return $this->db->delete('vendedores', array('id' => $id));
     }
+
+    public function get_vendedor_random()
+    {
+        $query = $this->db->get('vendedores');
+        $vendors = $query->result();
+        $total = $query->num_rows();
+        $pos = rand(0, $total - 1);
+
+        return $vendors[$pos];
+    }
 }
