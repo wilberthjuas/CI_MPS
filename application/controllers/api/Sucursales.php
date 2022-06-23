@@ -10,6 +10,7 @@ class Sucursales extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->model('Sucursal_Model', 'sucursales');
 		$this->load->model('util/Api_Utils_Model', 'api_utils');
+		$this->load->model('Estado_Model', 'estados');
 		$this->method = $this->input->server('REQUEST_METHOD');
 	}
 
@@ -18,12 +19,14 @@ class Sucursales extends CI_Controller {
 		$this->api_utils->validate_method($this->method, ['GET']);
 		try {
 			$sucursales = $this->sucursales->get_sucursalCRUD();	
+			foreach ($sucursales as $sucursal) {
+				$sucursal->estado = $this->estados->find_estado($sucursal->estado)->estado;
+			}
 			$this->api_utils->api_response($sucursales, 1);	
 		} catch (Exception $e) {
 			$error = $this->api_utils->create_error_object(500, 'Error en el servidor' ,$e->getMessage());
 			$this->api_utils->api_response($error, 0, 500);
 		}
 	}
-
 
 }
