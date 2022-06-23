@@ -8,8 +8,8 @@ class Sucursales extends CI_Controller {
 		parent::__construct();
 		//Do your magic here
 		$this->load->helper('url');
-		$this->load->model('Sucursal_model', 'sucursales');
-		$this->load->model('util/api_utils_model', 'api_utils');
+		$this->load->model('Sucursal_Model', 'sucursales');
+		$this->load->model('util/Api_Utils_Model', 'api_utils');
 		$this->method = $this->input->server('REQUEST_METHOD');
 	}
 
