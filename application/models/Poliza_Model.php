@@ -145,6 +145,42 @@ class Poliza_Model extends CI_Model {
     	return $query->result_array();
 	}
 
+	public function getMobileData($poliza){
+	
+		$query = $this->db->query("
+			SELECT 
+				p.id  AS 'Folio',
+				c.nombre ,
+				c.domicilio ,
+				c.exterior ,
+				c.colonia ,
+				c.municipio ,
+				c.telefono,
+				c.cp,
+				v.tipo,
+				v.serie,
+				v.nmotor,
+				v.placas ,
+				v.marca ,
+				v.ano ,
+				v.color ,
+				v.version,
+				(SELECT cb.cobertura FROM coberturas cb WHERE cb.id = p.id_cobertura  ) AS 'cobertura',
+				p.expedicion,
+				p.vigencia,
+				p.pagomensual ,
+				p.vendedor,
+				p.plazo ,
+				p.pagoinicial,
+				p.plataforma
+			FROM polizas p 
+			INNER JOIN vehiculo v ON p.id_vehiculo = v.id 
+			INNER JOIN cliente c ON c.id = v.id_cliente 
+			WHERE p.id = $poliza AND p.`bit` = 0
+			");
+		return $query->result_array();
+	}
+
 	public function updatePolicy($update){
 		$this->db->trans_start();
 		$folio = $update['folio'];
