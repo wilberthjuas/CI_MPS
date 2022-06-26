@@ -75,6 +75,28 @@ class Api_Utils_Model extends CI_Model {
 		return $error_response;
 	}
 
+	public function response_form_error( $http_code = 400 )
+	{
+		$error = $this->single_error();
+		$error = $this->create_error_object($http_code, $error, $error);
+		$this->api_response($error, 0, $http_code);
+	}
+
+	public function single_error()
+	{
+		$errors = $this->validation_errors();
+		return isset($errors[0])? $errors[0] : 'Unknown error';
+	}
+
+	public function validation_errors()
+	{
+		$errors = [];
+		foreach ($this->form_validation->error_array() as $key => $value) {
+			$errors[] = $value;
+		}
+		return $errors;
+	}
+
 	public function dump( $var, $text = false )
 	{
 	    if( $text ){

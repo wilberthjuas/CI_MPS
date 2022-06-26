@@ -54,4 +54,14 @@ class Cobrador_Model extends CI_Model{
     {
         return $this->db->delete('cobradores', array('id' => $id));
     }
+
+    public function get_cobrador_random()
+    {
+        $query = $this->db->get('cobradores');
+        $cobrador = $query->result();
+        $total = $query->num_rows();
+        $pos = rand(0, $total - 1);
+
+        return $cobrador[$pos];
+    }
 }

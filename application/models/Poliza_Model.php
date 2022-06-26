@@ -801,6 +801,18 @@ class Poliza_Model extends CI_Model {
 		return $response;
 	}
 
+	public function getPoliza_byClient($client_id)
+	{
+		$query = $this->db->select('P.*, V.placas')
+					->from('polizas P')
+					->join('vehiculo V', 'P.id_vehiculo = V.id')
+					->join('cliente C', 'V.id_cliente = C.id')
+					->where('V.id_cliente', $client_id)
+					->get();
+
+		return $query->row() ? $query->row() : [];  			
+	}
+
 
 }
 
