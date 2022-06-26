@@ -128,11 +128,6 @@
 								<span class="align-middle">Cobradores</span>
 							</a>
 						</li>
-						<li class="sidebar-item <?= $url.'consejoCRUD' == current_url() ?  ('active'):('') ?>">
-							<a class="sidebar-link" href="<?= $url ?>consejoCRUD">
-								<span class="align-middle">Consejos</span>
-							</a>
-						</li>
 						<li class="sidebar-item <?= $url.'emergenciaCRUD' == current_url() ? ('active'):('') ?>">
 							<a class="sidebar-link" href="<?= $url ?>emergenciaCRUD">
 								<span class="align-middle">Contactos de Emergencia</span>
