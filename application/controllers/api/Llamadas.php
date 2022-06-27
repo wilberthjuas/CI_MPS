@@ -17,6 +17,7 @@ class Llamadas extends CI_Controller {
 
 	public function saveLlamada()
 	{
+		$_POST = json_decode(file_get_contents("php://input"), true);		
 		$this->api_utils->validate_method($this->method, ['POST']);
 		$this->form_validation->set_rules('nombre', 'Nombre', 'required');
 		$this->form_validation->set_rules('telefono', 'Telefono', 'required');
@@ -24,7 +25,7 @@ class Llamadas extends CI_Controller {
 		$this->form_validation->set_rules('hora', 'Hora', 'required');
 		if ($this->form_validation->run()) {
 			try {
-				$post = (Object)$this->input->post();
+				$post = (Object)$_POST;
 				$vendedor = $this->vendedores->get_vendedor_random();
 				$llamada = $this->llamadas->save_Llamada($post->nombre, $post->telefono, $post->fecha, $post->hora, $vendedor->nombre);
 				$post->id = $llamada;

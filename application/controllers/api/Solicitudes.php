@@ -19,13 +19,14 @@ class Solicitudes extends CI_Controller {
 
 	public function saveSolicitud()
 	{
+		$_POST = json_decode(file_get_contents("php://input"), true);	
 		$this->api_utils->validate_method($this->method, ['POST']);
 		$this->form_validation->set_rules('cliente_id', 'Cliente ID', 'required');
 		$this->form_validation->set_rules('fecha', 'Fecha', 'required');
 		$this->form_validation->set_rules('hora', 'Hora', 'required');
 		if ($this->form_validation->run()) {
 			try {
-				$post = (Object)$this->input->post();
+				$post = (Object)$_POST;
 				$cliente = $this->clientes->getClient_byID($post->cliente_id);
 				$direccion = $cliente->domicilio.' '.$cliente->municipio.' '.$cliente->cp;
 				$poliza = $this->polizas->getPoliza_byClient($post->cliente_id);
