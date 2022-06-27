@@ -151,12 +151,7 @@ class Poliza_Model extends CI_Model {
 			SELECT 
 				p.id  AS 'Folio',
 				c.nombre ,
-				c.domicilio ,
-				c.exterior ,
-				c.colonia ,
-				c.municipio ,
 				c.telefono,
-				c.cp,
 				v.tipo,
 				v.serie,
 				v.nmotor,
@@ -180,7 +175,7 @@ class Poliza_Model extends CI_Model {
 			");
 		return $query->result_array();
 	}
-
+	
 	public function updatePolicy($update){
 		$this->db->trans_start();
 		$folio = $update['folio'];
