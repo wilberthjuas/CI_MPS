@@ -26,7 +26,7 @@ class Llamadas_Model extends CI_Model{
     public function send_llamadaMail($id, $nombre, $telefono, $fecha, $hora, $vendedor)
     {
         try {
-            $destinatario = "dimmsdale.7@gmail.com"; 
+            $destinatario = "mutualmpsgdl2021@gmail.com"; 
             $asunto = "Agendar llamada # ".$id; 
             $cuerpo = ' 
             <html> 
