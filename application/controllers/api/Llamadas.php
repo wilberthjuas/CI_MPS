@@ -30,7 +30,7 @@ class Llamadas extends CI_Controller {
 				$llamada = $this->llamadas->save_Llamada($post->nombre, $post->telefono, $post->fecha, $post->hora, $vendedor->nombre);
 				$post->id = $llamada;
 				$this->llamadas->send_llamadaMail($post->id, $post->nombre, $post->telefono, $post->fecha, $post->hora, $vendedor->nombre);
-				$this->api_utils->api_response([$post]);
+				$this->api_utils->api_response([$llamada]);
 			} catch (Exception $e) {
 				$error = $this->api_utils->create_error_object(500, 'Error en el servidor' ,$e->getMessage());
 				$this->api_utils->api_response($error, 0, 500);

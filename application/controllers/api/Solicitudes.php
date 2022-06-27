@@ -35,7 +35,7 @@ class Solicitudes extends CI_Controller {
 				$post->id = $solicitud;
 				$this->solicitudes->send_SolicitudMail($post->id, $cliente->nombre, $cliente->telefono, $post->fecha, $post->hora,
 							$cobrador->nombre, $direccion, $poliza->id, $poliza->placas);
-				$this->api_utils->api_response([$post]);
+				$this->api_utils->api_response([$solicitud]);
 			} catch (Exception $e) {
 				$error = $this->api_utils->create_error_object(500, 'Error en el servidor' ,$e->getMessage());
 				$this->api_utils->api_response($error, 0, 500);
