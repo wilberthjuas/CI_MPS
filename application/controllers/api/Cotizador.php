@@ -9,6 +9,7 @@ class Cotizador extends CI_Controller {
 		//Do your magic here
 		$this->load->helper('url');
 		$this->load->model('Cotizador_Model', 'cotizador');
+		$this->load->model('Vendedor_Model', 'vendedores');
 		$this->load->model('util/Api_Utils_Model', 'api_utils');
 		$this->method = $this->input->server('REQUEST_METHOD');
 	}
@@ -20,6 +21,8 @@ class Cotizador extends CI_Controller {
 			$request = json_decode($this->input->raw_input_stream);
 			$idCotizador = $this->cotizador->saveCotizacion($request);	
 			if( $idCotizador != null && $idCotizador != ""){
+				$vendedor = $this->vendedores->get_vendedor_random();
+				$this->cotizador->send_cotizacionMail($idCotizador,$request,$vendedor->nombre);
 				$reponse['idCotizador'] = $idCotizador;
 				$this->api_utils->api_response($reponse, 1);
 			}else{
