@@ -22,11 +22,12 @@ class Polizas extends CI_Controller {
 			if( $request->{'poliza'} != null && $request->{'poliza'} != "" && $request->{'numero'} != null && 
 				$request->{'numero'} != "" ){
 
-				$poliza = $this->polizas->getMobileData($request->{'poliza'},$request->{'numero'});
+				$poliza = $this->polizas->getMobileData($request->{'poliza'});
 
 				if( count($poliza) > 0 && substr($poliza[0]['telefono'], - 4) == $request->{'numero'}){
 					$polizas["poliza"] = $poliza[0];
-					$polizas["pago"]   = $this->tarjetas->getPayments($request->{'poliza'});
+					$polizas["pago"]   = $this->tarjetas->getPayments($poliza[0]['folio']);
+					$polizas["cobertura"] = $this->polizas->getCobertura($poliza[0]['id_cobertura']);
 
 				} else{
 					$polizas= [];	

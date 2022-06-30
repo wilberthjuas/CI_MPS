@@ -146,36 +146,53 @@ class Poliza_Model extends CI_Model {
 	}
 
 	public function getMobileData($poliza){
-	
-		$query = $this->db->query("
+		$qry = "
 			SELECT 
-				p.id  AS 'Folio',
-				c.nombre ,
-				c.telefono,
-				v.tipo,
-				v.serie,
-				v.nmotor,
-				v.placas ,
-				v.marca ,
-				v.ano ,
-				v.color ,
-				v.version,
-				(SELECT cb.cobertura FROM coberturas cb WHERE cb.id = p.id_cobertura  ) AS 'cobertura',
-				p.expedicion,
-				p.vigencia,
-				p.pagomensual ,
-				p.vendedor,
-				p.plazo ,
-				p.pagoinicial,
-				p.plataforma
-			FROM polizas p 
-			INNER JOIN vehiculo v ON p.id_vehiculo = v.id 
-			INNER JOIN cliente c ON c.id = v.id_cliente 
-			WHERE p.id = $poliza AND p.`bit` = 0
-			");
+                p.id  AS 'folio',
+                c.nombre ,
+                c.domicilio ,
+                c.exterior ,
+                c.colonia ,
+                c.municipio ,
+                c.telefono,
+                c.cp,
+                v.tipo,
+                v.serie,
+                v.nmotor,
+                v.placas ,
+                v.marca ,
+                v.ano ,
+                v.color ,
+                v.version,
+                p.id_cobertura,
+                p.expedicion,
+                p.vigencia,
+                p.pagomensual ,
+                p.vendedor,
+                p.plazo ,
+                p.pagoinicial,
+                p.plataforma
+            FROM polizas p 
+            INNER JOIN vehiculo v ON p.id_vehiculo = v.id 
+            INNER JOIN cliente c ON c.id = v.id_cliente
+		";
+		if(is_numeric($poliza)){
+			$qry = $qry."WHERE p.id = $poliza AND p.`bit` = 0";
+		}
+		else {
+			$qry = $qry."WHERE v.placas = '".$poliza."' AND p.`bit` = 0";
+		}
+
+		$query = $this->db->query($qry);
 		return $query->result_array();
 	}
 	
+
+	public function getCobertura($id){
+		$query = $this->db->query("SELECT * FROM coberturas WHERE id = $id");
+		return $query->result_array();
+	}
+
 	public function updatePolicy($update){
 		$this->db->trans_start();
 		$folio = $update['folio'];
