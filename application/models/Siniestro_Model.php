@@ -60,7 +60,7 @@ class Siniestro_Model extends CI_Model {
         $result = "";
         foreach ($number as $item) {
             $url = "https://graph.facebook.com/v13.0/100652392713098/messages";
-            $customHeaders = ['Content-Type: application/json','Authorization: Bearer EAAaVxmkDltYBAHQnSQnwgNZB8U0Q8YK0Omw7uKatsGcdXV2tkbFCI23jWcu5Dbk10YL3yRjnuQRmwzEceZB4I3HOZCtvbxPZAw7mGxd2oOZA899M39R4qMJrfWjvC9HgptbHIHTVuEY04qwZAWBTQhmANc2iCHMZCYsEUc7IVQW464MC1JAg1Jyc6T5Ibl1l0eNZC6iFI6J9PwZDZD'];
+            $customHeaders = ['Content-Type: application/json','Authorization: Bearer xxx'];
 
             $msg = "SINIESTRO #$id con poliza #".$save->{'poliza'}." reporta un siniestro en la ubicacion:".$save->{'direccion'}.",el numero de contacto asiociado a esa poliza es el siguiente: ".$telefono;
 
