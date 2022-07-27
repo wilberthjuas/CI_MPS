@@ -23,13 +23,29 @@ class Siniestro extends CI_Controller {
 			$idSiniestro = $this->siniestro->report($request);
 			$response['idSiniestro'] = $idSiniestro;
 			$this->siniestro->reportAccident($idSiniestro,$request,$row[0]['telefono']);
-			//$result = $this->siniestro->sendWhatsApp($idSiniestro,$request,$row[0]['telefono']);
+			$result = $this->siniestro->sendWhatsApp($idSiniestro,$request,$row[0]['telefono']);
 			$this->api_utils->api_response($response, 1);
 				
 		} catch (Exception $e) {
 			$error = $this->api_utils->create_error_object(500, 'Error en el servidor' ,$e->getMessage());
 			$this->api_utils->api_response($error, 0, 500);
 		}
+	}
+
+
+	public function initialize(){
+		$this->api_utils->validate_method($this->method, ['GET']);
+		try {
+			$response = $this->siniestro->initializeWhats();
+			$this->api_utils->api_response($response, 1);	
+		} catch (Exception $e) {
+			$error = $this->api_utils->create_error_object(500, 'Error en el servidor' ,$e->getMessage());
+			$this->api_utils->api_response($error, 0, 500);
+		}
+	}
+
+	public function cron(){
+		$response = $this->siniestro->initializeWhats();
 	}
 
 

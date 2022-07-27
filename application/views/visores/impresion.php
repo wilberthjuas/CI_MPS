@@ -969,6 +969,34 @@ if($cobertura=="MULTIPLATAFORMAS CD JUAREZ")
 <?php	
 }
 ?>
+<?php
+if($cobertura=="MULTIPLATAFORMA JUAREZ/LEON PROMO")
+{
+?>
+<td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
+<td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
+<td style="position:absolute; top:690px ;left:50px; border:0.0px; width:500px"><?php echo "DA&Ntilde;OS MATERIALES" ?></td>
+<td style="position:absolute; top:715px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
+<td style="position:absolute; top:740px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA LEGAL" ?></td>
+<td style="position:absolute; top:765px ;left:50px; border:0.0px; width:500px"><?php echo "CRISTALES"?></td>
+<td style="position:absolute; top:790px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA VIAL"?></td>
+<td style="position:absolute; top:640px ; left:450px; border:0.1px"><div>$1,000,000.00</div></td> 
+<td style="position:absolute; top:640px ; left:700px; border:0.1px"><div>NO APLICA</div></td> 
+<td style="position:absolute; top:665px ; left:430px; border:0.1px"><div>HASTA $100,000.00</div></td> 
+<td style="position:absolute; top:665px ; left:700px; border:0.1px"><div>5%</div></td> 
+<td style="position:absolute; top:690px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>35% VALOR DEL DAÑO PROPIO</div></td>
+<td style="position:absolute; top:715px ; left:450px; border:0.1px"><div>$100,000.00</div></td> 
+<td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20%</div></td>
+<td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 35KM </div></td> 
+<td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<?php	
+}
+?>
 <?php	
 	if($plataforma=="Multi Plataforma")
 {

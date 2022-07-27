@@ -9,8 +9,6 @@
 	<meta name="author" content="MPS">
 
 	<title>Mutualidad MPS</title>
-
-	<link rel="canonical" href="https://appstack.bootlab.io/dashboard-default.html" />
 	<link rel="shortcut icon" href="<?php echo $url; ?>images/logop.png">
 
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
@@ -34,7 +32,7 @@
 				<li class="sidebar-header">
 					Bienvenido 
 				</li>
-				<?php if( $_SESSION['type'] == "1" or $_SESSION['type'] == "3"  ){ ?>
+				<?php if( $_SESSION['type'] == "1" or $_SESSION['type'] == "3" or $_SESSION['type'] == "12"  ){ ?>
 					<li class="sidebar-item <?= $url.'Poliza' == current_url() ?  (''):('active') ?>">
 						<a class="sidebar-link" href="<?= $url ?>Poliza">
 							<i class="align-middle" data-feather="file-text"></i> 
@@ -42,17 +40,14 @@
 						</a>
 					</li>
 				<?php } ?>
+				<?php if( $_SESSION['type'] == "1" or $_SESSION['type'] == "3" or $_SESSION['type'] == "5" ){ ?>
 				<li class="sidebar-item <?= $url.'registro' == current_url() ?  (''):('active') ?> ">
 					<a class="sidebar-link" href="<?= $url ?>registro">
 						<i class="align-middle" data-feather="edit-3"></i> 
-						<?php if( $_SESSION['type'] == "1" or $_SESSION['type'] == "3" ){ ?>
-							<span class="align-middle">Registrar pago</span>
-						<?php } ?>
-						<?php if( $_SESSION['type'] == "5"){ ?>
-							<span class="align-middle">Validar pagos</span>
-						<?php } ?>
+						<span class="align-middle">Registrar Pago</span>
 					</a>
 				</li> 
+				<?php } ?>
 				<?php if( $_SESSION['type'] == "1" ){ ?>
 					<li class="sidebar-item <?= $url.'Poliza/modificar' == current_url() ?  (''):('active') ?>">
 						<a class="sidebar-link" href="<?= $url ?>Poliza/modificar">
@@ -86,17 +81,14 @@
 						</a>
 					</li>
 				<?php } ?>
+				<?php if( $_SESSION['type'] == "1" or $_SESSION['type'] == "3" or $_SESSION['type'] == "12"){ ?>
 				<li class="sidebar-item active">
 					<a class="sidebar-link" href="<?= $url ?>Visor/visorimpresion">
 						<i class="align-middle" data-feather="eye"></i>  
-						<?php if( $_SESSION['type'] == "1" or $_SESSION['type'] == "3"){ ?>
-						<span class="align-middle">Visor/Impresión</span>
-						<?php } ?>
-						<?php if($_SESSION['type'] =="5"){ ?>
-							<span class="align-middle">Visor</span>
-						<?php } ?>
+						<span class="align-middle">Visor/Impresión</span>						
 					</a>
 				</li>
+				<?php } ?>
 				<?php if( $_SESSION['type'] == "1" or $_SESSION['type'] == "2" or $_SESSION['type'] == "3" or $_SESSION['type'] == "5"){ ?>
 					<li class="sidebar-item <?= $url.'gruas' == current_url() ?  (''):('active') ?>">
 						<a class="sidebar-link" href="<?= $url ?>gruas">

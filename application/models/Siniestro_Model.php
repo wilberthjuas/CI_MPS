@@ -27,9 +27,17 @@ class Siniestro_Model extends CI_Model {
 
 
     public function reportAccident($id,$save,$telefono){
+        $driverPhone = "";
+        if(property_exists($save, 'telefono'))
+        {
+            $driverPhone = $save->{'telefono'};
+        }else {
+            $driverPhone = "N/A";
+        }
+
         try {
             $destinatario = "mutualmpsgdl2021@gmail.com"; 
-            $asunto = "SINIESTRO # ".$id; 
+            $asunto = "SINIESTRO #1000".$id; 
             $cuerpo = ' 
             <html> 
                 <head> 
@@ -40,6 +48,7 @@ class Siniestro_Model extends CI_Model {
                         La póliza número '.$save->{'poliza'}.' resporta el siguiente SINIESTRO:<br>
                         Tipo: '.$save->{'tipo'}.'<br>
                         Teléfono:'.$telefono.'<br>
+                        Teléfono del conductor:'.$driverPhone.'<br>
                         Dirección: '.$save->{'direccion'}.'<br>
                         Ubicación Aproximada: <a href="https://www.google.com/maps/search/?api=1&query='.$save->{'latitud'}.'%2C'.$save->{'longitud'}.'">Ubicacion</a><br>
                     </p> 
@@ -54,15 +63,44 @@ class Siniestro_Model extends CI_Model {
         }
     }
 
-    public function sendWhatsApp($id,$save,$telefono)
-    {
+    public function sendWhatsApp($id,$save,$telefono){
+
+        $driverPhone = "";
+        if(property_exists($save, 'telefono'))
+        {
+            $driverPhone = $save->{'telefono'};
+        }else {
+            $driverPhone = "N/A";
+        }
+
+
         $number = $this->retunNumbers();
         $result = "";
         foreach ($number as $item) {
-            $url = "https://graph.facebook.com/v13.0/100652392713098/messages";
-            $customHeaders = ['Content-Type: application/json','Authorization: Bearer xxx'];
+            $url = "https://graph.facebook.com/v13.0/105771648864613/messages";
+            $customHeaders = ['Content-Type: application/json','XXXX'];
 
-            $msg = "SINIESTRO #$id con poliza #".$save->{'poliza'}." reporta un siniestro en la ubicacion:".$save->{'direccion'}.",el numero de contacto asiociado a esa poliza es el siguiente: ".$telefono;
+            $msg = "SINIESTRO #1000$id con poliza #".$save->{'poliza'}." reporta un siniestro en la ubicacion:".$save->{'direccion'}.", El numero de contacto asiociado a esa poliza es el siguiente: ".$telefono.", El numero del conductor es el siguiente: ".$driverPhone;
+
+            $language = new stdClass();
+            $language->code = "en";
+
+            $b = new stdClass();
+            $b->name = "siniestro";
+            $b->language = $language;
+            
+
+            $obj0 = new stdClass();
+            $obj0->messaging_product = "whatsapp";
+            $obj0->to = $item;
+            $obj0->type = "template";
+            $obj0->template = $b;
+
+            $res = $this->call($url,"POST",json_encode($obj0),$customHeaders);
+            $result = $result.$res;
+
+
+
 
             $body = new stdClass();
             $body->latitude = $save->{'latitud'};
@@ -100,7 +138,7 @@ class Siniestro_Model extends CI_Model {
     }
 
     private function retunNumbers(){
-        $number = array("523329387372", "523339554123", "523331052310", "523330345030", "523334994220");
+        $number = array("523329387372", "523339554123", "523331052310", "523330345030", "523334994220","525563162231");
         return $number;
     }
 
@@ -142,4 +180,42 @@ class Siniestro_Model extends CI_Model {
         }
         return $result;
     }
+
+
+    public function initializeWhats(){
+        $number = $this->retunNumbers();
+        $result = "";
+
+        foreach ($number as $item) {
+            $url = "https://graph.facebook.com/v13.0/105771648864613/messages";
+            $customHeaders = ['Content-Type: application/json','XXXX'];
+
+            $language = new stdClass();
+            $language->code = "en";
+
+            $body = new stdClass();
+            $body->name = "presentacion";
+            $body->language = $language;
+            
+
+            $obj1 = new stdClass();
+            $obj1->messaging_product = "whatsapp";
+            $obj1->to = $item;
+            $obj1->type = "template";
+            $obj1->template = $body;
+
+            $res = $this->call($url,"POST",json_encode($obj1),$customHeaders);
+            $result = $result.$res;
+        }
+        
+        return $result;
+
+    }
+
 }
+
+
+
+
+
+

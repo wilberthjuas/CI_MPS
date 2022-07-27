@@ -180,7 +180,7 @@ class Poliza_Model extends CI_Model {
 			$qry = $qry."WHERE p.id = $poliza AND p.`bit` = 0";
 		}
 		else {
-			$qry = $qry."WHERE v.placas = '".$poliza."' AND p.`bit` = 0";
+			$qry = $qry."WHERE UPPER(v.placas) = UPPER('".$poliza."') AND p.`bit` = 0";
 		}
 
 		$query = $this->db->query($qry);

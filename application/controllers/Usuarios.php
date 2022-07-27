@@ -39,7 +39,6 @@ class Usuarios extends CI_Controller{
             
             if($user){
                 $userdata = array(
-        //////TODO MOVERLE A ESTE ARRAY
                     'name' => $user->nombre,
                     'type' => $user->user_type,
                     'id' => $user->user_id,

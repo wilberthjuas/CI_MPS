@@ -92,10 +92,16 @@ class CoberturaCRUD extends CI_Controller {
    
    	public function update($id)
    	{
-   		
-   		$this->form_validation->set_rules('name', 'Name', 'trim|required');
-   		$this->form_validation->set_rules('phone', 'Phone', 'trim|required');
-   		$this->form_validation->set_rules('email', 'Email', 'trim|required');
+   		$this->form_validation->set_rules('cobertura', 'cobertura', 'trim|required');
+   		$this->form_validation->set_rules('rca', 'rca', 'trim|required');
+   		$this->form_validation->set_rules('robo', 'robo', 'trim|required');
+   		$this->form_validation->set_rules('dano', 'dano', 'trim|required');
+   		$this->form_validation->set_rules('gastos', 'gastos', 'trim|required');
+   		$this->form_validation->set_rules('medico', 'medico', 'trim|required');
+   		$this->form_validation->set_rules('asistencia', 'asistencia', 'trim|required');
+   		$this->form_validation->set_rules('cristal', 'cristal', 'trim|required');
+   		$this->form_validation->set_rules('vial', 'vial', 'trim|required');
+   		$this->form_validation->set_rules('muerte', 'muerte', 'trim|required');
 
 
    		if ($this->form_validation->run() == FALSE){

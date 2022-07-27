@@ -14,7 +14,7 @@ class Welcome extends CI_Controller {
 
 	private function logged_in() {
         if(! $this->session->userdata('authenticated')) {
-            redirect('login');
+            redirect('Usuarios/login');
         }
     }
 	
