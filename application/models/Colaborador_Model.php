@@ -54,18 +54,22 @@ class Colaborador_Model extends CI_Model{
             try {
                 $destinatario = $mail['correo']; 
                 $asunto = "REGISTRO PORTAL WEB";
-                $cuerpo = ' 
-                <html> 
-                    <head> 
-                       <title></title> 
-                    </head> 
-                    <body> 
-                        <p> 
+                $info = '
+                    <tr> 
+                        <td colspan="12"> 
                             Favor de registrarse en la siguiente liga para poder acceder al portal web<br>
                             '.$url.'
-                        </p> 
-                    </body> 
-                </html> '; 
+                        </td> 
+                    </tr>';
+                $cuerpo = '<table style="width: 450px;margin: auto;color:black;">
+                                <tbody style="background: #efeeed;text-align: center;">
+                                    <tr>
+                                        <th colspan="6"> NOTIFICACION MPS </th>
+                                        <th colspan="6"> <img src="https://multiplataformaysimilaresmps.com.mx/images/mps_circle.png" style="width:64px;height: 64px;"/> </th>
+                                    </tr>
+                                    '.$info.'
+                                </tbody>
+                            </table>';
                 $headers = "MIME-Version: 1.0\r\n"; 
                 $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
                 $headers .= "<noreply@noreply.com>\r\n"; 
@@ -85,18 +89,20 @@ class Colaborador_Model extends CI_Model{
             try {
                 $destinatario = $mail['correo']; 
                 $asunto = "REGISTRO APP";
-                $cuerpo = ' 
-                <html> 
-                    <head> 
-                       <title></title> 
-                    </head> 
-                    <body> 
-                        <p> 
+                $info = ' 
+                        <tr colspan="12"> 
                             Favor de registrarse en la siguiente liga para poder acceder a la aplicación móvil<br>
                             '.$url.'
-                        </p> 
-                    </body> 
-                </html> '; 
+                        </tr> ';
+                $cuerpo = '<table style="width: 450px;margin: auto;color:black;">
+                <tbody style="background: #efeeed;text-align: center;">
+                    <tr>
+                        <th colspan="6"> NOTIFICACION MPS </th>
+                        <th colspan="6"> <img src="https://multiplataformaysimilaresmps.com.mx/images/mps_circle.png" style="width:64px;height: 64px;"/> </th>
+                    </tr>
+                    '.$info.'
+                </tbody>
+            </table>';
                 $headers = "MIME-Version: 1.0\r\n"; 
                 $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
                 $headers .= "<noreply@noreply.com>\r\n"; 

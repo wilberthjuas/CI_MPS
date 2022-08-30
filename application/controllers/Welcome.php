@@ -27,4 +27,15 @@ class Welcome extends CI_Controller {
 		$this->load->view('welcome_message');
 		$this->load->view('footer');
 	}
+
+
+	public function mail()
+	{
+		$data['title'] = "MPS";
+		$data['name'] = $this->session->userdata('name');
+		$data['url'] = base_url();
+		$this->load->view('header',$data);
+		$this->load->view('mailTemplate');
+		$this->load->view('footer');
+	}
 }

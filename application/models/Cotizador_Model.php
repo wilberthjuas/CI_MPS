@@ -36,28 +36,86 @@ class Cotizador_Model extends CI_Model {
         try {
             $destinatario = "mutualmpsgdl2021@gmail.com"; 
             $asunto = "Cotización Mobile # ".$id; 
-            $cuerpo = ' 
-            <html> 
-                <head> 
-                   <title></title> 
-                </head> 
-                <body> 
-                    <p> 
-                        La siguiente persona solicita una cotización con lo siguientes datos:<br>
-                        Nombre:<bold>'.$save->{'nombre'}.'</bold><br>
-                        Edad:<bold>'.$save->{'edad'}.'</bold><br>
-                        Correo:<bold>'.$save->{'correo'}.'</bold><br>
-                        Número:<bold>'.$save->{'telefono'}.'</bold><br>
-                        Municipio:<bold>'.$save->{'municipio'}.'</bold><br>
-                        Tipo:<bold>'.$save->{'tipo'}.'</bold><br>
-                        Plataforma:<bold>'.$save->{'plataforma'}.'</bold><br>
-                        Modelo:<bold>'.$save->{'modelo'}.'</bold><br>
-                        Marca:<bold>'.$save->{'marca'}.'</bold><br>
-                        Vehiculo:<bold>'.$save->{'vehiculo'}.'</bold><br>
-                        Esta oportunidad de venta fue asignada al vendedor '.$vendedor.'
-                    </p> 
-                </body> 
-            </html> '; 
+            $info = '
+                   
+                        <tr>
+                            <td colspan="12">
+                                La siguiente persona solicita una cotización con lo siguientes datos:
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Nombre:</td>
+                            <td colspan="8">
+                                <bold>'.$save->{'nombre'}.'</bold>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Edad:</td>
+                            <td colspan="8">
+                                <bold>'.$save->{'edad'}.'</bold><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Correo:</td>
+                            <td colspan="8">
+                                <bold>'.$save->{'correo'}.'</bold><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Número:</td>
+                            <td colspan="8">
+                                <bold>'.$save->{'telefono'}.'</bold><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Municipio:</td>
+                            <td colspan="8">
+                                <bold>'.$save->{'municipio'}.'</bold><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Tipo:</td>
+                            <td colspan="8">
+                                <bold>'.$save->{'tipo'}.'</bold><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Plataforma:</td>
+                            <td colspan="8">
+                                <bold>'.$save->{'plataforma'}.'</bold><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Modelo:</td>
+                            <td colspan="8">
+                                <bold>'.$save->{'modelo'}.'</bold><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Marca:</td>
+                            <td colspan="8">
+                                <bold>'.$save->{'marca'}.'</bold><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Vehiculo:</td>
+                            <td colspan="8">
+                                <bold>'.$save->{'vehiculo'}.'</bold><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="12"> Esta oportunidad de venta fue asignada al vendedor '.$vendedor.'</td>
+                        </tr>
+                   ';
+            $cuerpo =   '<table style="width: 450px;margin: auto;color:black;">
+                            <tbody style="background: #efeeed;text-align: center;">
+                                <tr>
+                                    <th colspan="6"> NOTIFICACION MPS </th>
+                                    <th colspan="6"> <img src="https://multiplataformaysimilaresmps.com.mx/images/mps_circle.png" style="width:64px;height: 64px;"/> </th>
+                                </tr>
+                                '.$info.'
+                            </tbody>
+                        </table>';
             $headers = "MIME-Version: 1.0\r\n"; 
             $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
             $headers .= "<noreply@noreply.com>\r\n"; 

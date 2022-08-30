@@ -38,22 +38,60 @@ class Siniestro_Model extends CI_Model {
         try {
             $destinatario = "mutualmpsgdl2021@gmail.com"; 
             $asunto = "SINIESTRO #1000".$id; 
-            $cuerpo = ' 
-            <html> 
-                <head> 
-                   <title></title> 
-                </head> 
-                <body> 
-                    <p> 
-                        La póliza número '.$save->{'poliza'}.' resporta el siguiente SINIESTRO:<br>
-                        Tipo: '.$save->{'tipo'}.'<br>
-                        Teléfono:'.$telefono.'<br>
-                        Teléfono del conductor:'.$driverPhone.'<br>
-                        Dirección: '.$save->{'direccion'}.'<br>
-                        Ubicación Aproximada: <a href="https://www.google.com/maps/search/?api=1&query='.$save->{'latitud'}.'%2C'.$save->{'longitud'}.'">Ubicacion</a><br>
-                    </p> 
-                </body> 
-            </html> '; 
+            $info = '   <tr>         
+                            <td colspan="12">
+                                La póliza número '.$save->{'poliza'}.' resporta el siguiente SINIESTRO:
+                            </td>
+                        </tr>
+                        <tr>         
+                            <td colspan="4">
+                                Tipo:
+                            </td>
+                            <td colspan="8">
+                                La póliza número '.$save->{'tipo'}.'
+                            </td>
+                        </tr>
+                        <tr>         
+                            <td colspan="4">
+                            Teléfono:
+                            </td>
+                            <td colspan="8">
+                                La póliza número '.$telefono.'
+                            </td>
+                        </tr>
+                        <tr>         
+                            <td colspan="4">
+                                Teléfono del conductor:
+                            </td>
+                            <td colspan="8">
+                                La póliza número '.$driverPhone.'
+                            </td>
+                        </tr>
+                        <tr>         
+                            <td colspan="4">
+                                Dirección:
+                            </td>
+                            <td colspan="8">
+                                La póliza número '.$save->{'direccion'}.'
+                            </td>
+                        </tr>
+                        <tr>         
+                            <td colspan="4">
+                                Ubicación Aproximada:
+                            </td>
+                            <td colspan="8">
+                                <a href="https://www.google.com/maps/search/?api=1&query='.$save->{'latitud'}.'%2C'.$save->{'longitud'}.'">Ubicacion</a><br>
+                            </td>
+                        </tr>';
+            $cuerpo ='<table style="width: 450px;margin: auto;color:black;">
+            <tbody style="background: #efeeed;text-align: center;">
+                <tr>
+                    <th colspan="6"> NOTIFICACION MPS </th>
+                    <th colspan="6"> <img src="https://multiplataformaysimilaresmps.com.mx/images/mps_circle.png" style="width:64px;height: 64px;"/> </th>
+                </tr>
+                '.$info.'
+            </tbody>
+        </table>';
             $headers = "MIME-Version: 1.0\r\n"; 
             $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
             $headers .= "<noreply@noreply.com>\r\n"; 
