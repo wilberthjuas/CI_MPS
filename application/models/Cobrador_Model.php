@@ -64,4 +64,5 @@ class Cobrador_Model extends CI_Model{
 
         return $cobrador[$pos];
     }
+
 }
