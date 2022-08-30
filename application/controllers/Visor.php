@@ -50,6 +50,18 @@ class Visor extends CI_Controller {
         $data['a'] = $a;
         $data['b'] = $b;
         $this->load->view('visores/impresion',$data);
-
 	}
+
+	public function visorPolizaWeb($folio = ""){
+		if( $folio != ""){
+			$resultado =$this->Visor_Model->getImpresion($folio,"Folio");
+	        $data['result1'] = $resultado;
+	        $data['url'] = base_url();
+	        $data['a'] = $folio;
+	        $data['b'] = "Folio";
+	        $this->load->view('visores/impresion',$data);
+		}
+        
+	}
+
 }

@@ -101,8 +101,14 @@ class Poliza_Model extends CI_Model {
 				
 				$this->db->insert('pagos');
 			}
+			$save['idPoliza'] = $idPoliza;
+			$number = $this->notifyNewPolicy($save);
 
-			return $idPoliza;
+			if($number){
+				return $idPoliza;	
+			}
+			return false;
+			
 
 		}
 		else{
@@ -861,6 +867,38 @@ class Poliza_Model extends CI_Model {
 		return $query->row() ? $query->row() : [];  			
 	}
 
+
+	public function notifyNewPolicy($save){
+		$query = $this->db->query("SELECT * FROM correos_notificacion WHERE tipo='POLIZA' ");
+		$notifiaciones = $query->result();
+		//$msg = "";
+		foreach( $notifiaciones  as $not){
+			try {
+	            $destinatario = $not->correo; 
+	            $asunto = "REGISTRO NUEVA POLIZA #".$save['idPoliza']; 
+	            $cuerpo = ' 
+	            <html> 
+	                <head> 
+	                   <title></title> 
+	                </head> 
+	                <body> 
+	                    <p> 
+	                        El usuario '.$save['captura'].' registro la poliza #'.$save['idPoliza'].' a nombre de '.$save['nombre'].'.<br>
+	                        Para revisar los detalles de la poliza consulte <a href="https://multiplataformaysimilaresmps.com.mx/Visor/visorPolizaWeb/'.$save['idPoliza'].'">Aqui</a>
+	                    </p> 
+	                </body> 
+	            </html> '; 
+	            $headers = "MIME-Version: 1.0\r\n"; 
+	            $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
+	            $headers .= "<noreply@noreply.com>\r\n"; 
+	            mail($destinatario,$asunto,$cuerpo,$headers);     
+	        } catch (Exception $e) {
+	            throw new Exception('Error al enviar el mail', 1);
+	        }
+	        //msg = $msg.$not->correo;
+		}
+		return true;
+	}
 
 }
 

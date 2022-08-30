@@ -57,7 +57,7 @@ if($plataforma=="Multi Plataforma")
 }
 ?>
 <td style="position:absolute; top:900px ;left:75px; border:0.0px; "><div align="center">SE REQUIERE DE GPS OBLIGATORIO PARA VEHICULOS DE PLATAFORMAS, MAXIMO 8 DIAS PARA LA INSTALACION<BR> DESPUES DE LA CONTRATACION (SOLO PARA ESTADO DE JALISCO).<BR>NO MOVERSE DE LUGAR (SOLO POR INDICACIONES DE LA AUTORIDAD)<BR>NO TENER NINGUN ARREGLO CON TERCEROS<BR>NO ACEPTAR RESPONSABILIDAD (ESPERA AL AJUSTADOR)<BR>SUJETO A CONDICIONES DE CONTRATO-POLIZA</div></td>
-<td style="position:absolute; top:1008px ;left:240px; border:0.0px; width:680px ; background:#F00; font-size:28px;"><div align="center">TELEFONO DE EMERGENCIA 3330345030 3334994220</div></td>
+<td style="position:absolute; top:1008px ;left:240px; border:0.0px; width:680px ; background:#F00; font-size:24px;"><div align="center">TELEFONO DE EMERGENCIA 3330345030 3334994220</div></td>
 <td style="position:absolute; top:1045px ;left:340px; border:0.0px; font-size:22px; "><div align="center">OFICINAS GENERALES Y CENTRO DE VALUACION</div></td>
 <td style="position:absolute; top:1070px ;left:305px; border:0.0px; font-size:22px; "><div align="center">AV. ARTESANOS #3745 COL. SAN MIGUEL DE HUENTITAN </div></td>
 <td style="position:absolute; top:1095px ;left:450px; border:0.0px; font-size:22px; "><div align="center">GUADALAJARA, JALISCO</div></td>
