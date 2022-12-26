@@ -119,6 +119,7 @@ $route['promocionCRUDCreate']['post'] = "promocionCRUD/store";
 $route['promocionCRUDEdit/(:any)'] = "promocionCRUD/edit/$1";
 $route['promocionCRUDUpdate/(:any)']['put'] = "promocionCRUD/update/$1";
 $route['promocionCRUDDelete/(:any)']['delete'] = "promocionCRUD/delete/$1";
+$route['mundialCRUD'] = "Mundial/index";
 
 
 

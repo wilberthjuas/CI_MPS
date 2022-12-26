@@ -16,61 +16,61 @@
                 <label class="form-label">
                     <strong>Ingresa la nueva cobertura</strong>
                 </label>
-                <input autocomplete="off" type="text" name="cobertura" class="form-control" required/>
+                <input autocomplete="off" type="text" name="cobertura" class="form-control" />
             </div>
             <div class="mb-3">
                 <label class="form-label">
                     <strong>Ingresa la prima de RCA</strong>
                 </label>
-                <input autocomplete="off" type="text" name="rca" class="form-control" required/>
+                <input autocomplete="off" type="text" name="rca" class="form-control" />
             </div>
             <div class="mb-3">
                 <label class="form-label">
                     <strong>Ingresa la prima de Robo</strong>
                 </label>
-                <input autocomplete="off" type="text" name="robo" class="form-control" required/>
+                <input autocomplete="off" type="text" name="robo" class="form-control"/>
             </div>
             <div class="mb-3">
                 <label class="form-label">
                     <strong>Ingresa la prima de Daño</strong>
                 </label>
-                <input autocomplete="off" type="text" name="dano" class="form-control" required/>
+                <input autocomplete="off" type="text" name="dano" class="form-control" />
             </div>
             <div class="mb-3">
                 <label class="form-label">
                     <strong>Ingresa la prima de Gastos</strong>
                 </label>
-                <input autocomplete="off" type="text" name="gastos" class="form-control" required/>
+                <input autocomplete="off" type="text" name="gastos" class="form-control" />
             </div>
             <div class="mb-3">
                 <label class="form-label">
                     <strong>Ingresa la prima de Médico</strong>
                 </label>
-                <input autocomplete="off" type="text" name="medico" class="form-control" required/>
+                <input autocomplete="off" type="text" name="medico" class="form-control" />
             </div>
             <div class="mb-3">
                 <label class="form-label">
                     <strong>Ingresa la prima de Asistencia</strong>
                 </label>
-                <input autocomplete="off" type="text" name="asistencia" class="form-control" required/>
+                <input autocomplete="off" type="text" name="asistencia" class="form-control" />
             </div>
             <div class="mb-3">
                 <label class="form-label">
                     <strong>Ingresa la prima de Cristal</strong>
                 </label>
-                <input autocomplete="off" type="text" name="cristal" class="form-control" required/>
+                <input autocomplete="off" type="text" name="cristal" class="form-control" />
             </div>
             <div class="mb-3">
                 <label class="form-label">
                     <strong>Ingresa la prima de Vial</strong>
                 </label>
-                <input autocomplete="off" type="text" name="vial" class="form-control" required/>
+                <input autocomplete="off" type="text" name="vial" class="form-control"/>
             </div>
             <div class="mb-3">
                 <label class="form-label">
                     <strong>Ingresa la prima de Muerte</strong>
                 </label>
-                <input autocomplete="off" type="text" name="muerte" class="form-control" required/>
+                <input autocomplete="off" type="text" name="muerte" class="form-control" />
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button> 
         </form>

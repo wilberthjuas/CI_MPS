@@ -86,7 +86,8 @@ $plataforma=$row['plataforma'];
 <td style="position:absolute; top:320px ;left:750px; border:0.0px"><?php echo $row['nmotor'] ?></td>
 <td style="position:absolute; top:350px ;left:750px; border:0.0px"><?php echo $row['serie'] ?></td>
 <td style="position:absolute; top:380px ;left:750px; border:0.0px"><?php echo $row['plataforma'] ?></td>
-<td style="position:absolute; top:410px ;left:750px; border:0.0px"><?php echo $row['color'] ?></td>
+<td style="position:absolute; top:408px ;left:750px; border:0.0px"><?php echo $row['color'] ?></td>
+<td style="position:absolute; top:438px ;left:750px; border:0.0px"><?php echo $row['ocupantes']?></td>
 <td style="position:absolute; top:515px ;left:190px; border:0.0px"><?php echo $row['nombre'] ?></td>
 <td style="position:absolute; top:545px ;left:190px; border:0.0px"><?php echo $row['domicilio'] . $row['exterior'] .  $row['colonia'] ?></td>
 <td style="position:absolute; top:515px ;left:700px; border:0.0px"><?php echo $row['telefono'] ?></td>
@@ -131,6 +132,37 @@ if($cobertura=="POLIZA PARTICULAR AMPLIA 140 MIL")
 }
 ?>
 <?php	  
+if($cobertura=="POLIZA PARTICULAR VALLARTA  AMPLIA 140 MIL")
+{
+?>
+<td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
+<td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
+<td style="position:absolute; top:690px ;left:50px; border:0.0px; width:500px"><?php echo "DA&Ntilde;OS MATERIALES" ?></td>
+<td style="position:absolute; top:715px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
+<td style="position:absolute; top:740px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA LEGAL" ?></td>
+<td style="position:absolute; top:765px ;left:50px; border:0.0px; width:500px"><?php echo "CRISTALES"?></td>
+<td style="position:absolute; top:790px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA VIAL"?></td>
+<td style="position:absolute; top:815px ;left:50px; border:0.0px; width:500px"><?php echo "MUERTE CONDUCTOR"?></td>
+<td style="position:absolute; top:640px ; left:450px; border:0.1px"><div>$700,000.00</div></td> 
+<td style="position:absolute; top:640px ; left:700px; border:0.1px"><div>NO APLICA</div></td> 
+<td style="position:absolute; top:665px ; left:430px; border:0.1px"><div>HASTA $140,000.00</div></td> 
+<td style="position:absolute; top:665px ; left:700px; border:0.1px"><div>10%</div></td> 
+<td style="position:absolute; top:690px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>5% VALOR COMERCIAL</div></td>
+<td style="position:absolute; top:715px ; left:450px; border:0.1px"><div>$50,000.00</div></td> 
+<td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
+<td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 30KM</div></td> 
+<td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
+<td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<?php	
+}
+?>
+<?php	  
 if($cobertura=="POLIZA PARTICULAR AMPLIA 130 MIL")
 {
 ?>
@@ -155,6 +187,37 @@ if($cobertura=="POLIZA PARTICULAR AMPLIA 130 MIL")
 <td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
 <td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
 <td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 50KM</div></td> 
+<td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
+<td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<?php	
+}
+?>
+<?php	  
+if($cobertura=="POLIZA PARTICULAR VALLARTA  AMPLIA 130 MIL")
+{
+?>
+<td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
+<td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
+<td style="position:absolute; top:690px ;left:50px; border:0.0px; width:500px"><?php echo "DA&Ntilde;OS MATERIALES" ?></td>
+<td style="position:absolute; top:715px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
+<td style="position:absolute; top:740px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA LEGAL" ?></td>
+<td style="position:absolute; top:765px ;left:50px; border:0.0px; width:500px"><?php echo "CRISTALES"?></td>
+<td style="position:absolute; top:790px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA VIAL"?></td>
+<td style="position:absolute; top:815px ;left:50px; border:0.0px; width:500px"><?php echo "MUERTE CONDUCTOR"?></td>
+<td style="position:absolute; top:640px ; left:450px; border:0.1px"><div>$700,000.00</div></td> 
+<td style="position:absolute; top:640px ; left:700px; border:0.1px"><div>NO APLICA</div></td> 
+<td style="position:absolute; top:665px ; left:430px; border:0.1px"><div>HASTA $130,000.00</div></td> 
+<td style="position:absolute; top:665px ; left:700px; border:0.1px"><div>10%</div></td> 
+<td style="position:absolute; top:690px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>5% VALOR COMERCIAL</div></td>
+<td style="position:absolute; top:715px ; left:450px; border:0.1px"><div>$50,000.00</div></td> 
+<td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
+<td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 30KM</div></td> 
 <td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
@@ -192,6 +255,37 @@ if($cobertura=="POLIZA PARTICULAR AMPLIA 120 MIL")
 <?php	
 }
 ?>
+<?php
+if($cobertura=="POLIZA PARTICULAR VALLARTA  AMPLIA 120 MIL")
+{
+?>
+<td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
+<td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
+<td style="position:absolute; top:690px ;left:50px; border:0.0px; width:500px"><?php echo "DA&Ntilde;OS MATERIALES" ?></td>
+<td style="position:absolute; top:715px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
+<td style="position:absolute; top:740px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA LEGAL" ?></td>
+<td style="position:absolute; top:765px ;left:50px; border:0.0px; width:500px"><?php echo "CRISTALES"?></td>
+<td style="position:absolute; top:790px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA VIAL"?></td>
+<td style="position:absolute; top:815px ;left:50px; border:0.0px; width:500px"><?php echo "MUERTE CONDUCTOR"?></td>
+<td style="position:absolute; top:640px ; left:450px; border:0.1px"><div>$700,000.00</div></td> 
+<td style="position:absolute; top:640px ; left:700px; border:0.1px"><div>NO APLICA</div></td> 
+<td style="position:absolute; top:665px ; left:430px; border:0.1px"><div>HASTA $120,000.00</div></td> 
+<td style="position:absolute; top:665px ; left:700px; border:0.1px"><div>10%</div></td> 
+<td style="position:absolute; top:690px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>5% VALOR COMERCIAL</div></td>
+<td style="position:absolute; top:715px ; left:450px; border:0.1px"><div>$50,000.00</div></td> 
+<td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
+<td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 30KM</div></td> 
+<td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
+<td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<?php	
+}
+?>
 <?php	 
 if($cobertura=="POLIZA PARTICULAR AMPLIA 110 MIL")
 {
@@ -217,6 +311,37 @@ if($cobertura=="POLIZA PARTICULAR AMPLIA 110 MIL")
 <td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
 <td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
 <td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 50KM</div></td> 
+<td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
+<td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<?php	
+}
+?>
+<?php	 
+if($cobertura=="POLIZA PARTICULAR VALLARTA  AMPLIA 110 MIL")
+{
+?>
+<td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
+<td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
+<td style="position:absolute; top:690px ;left:50px; border:0.0px; width:500px"><?php echo "DA&Ntilde;OS MATERIALES" ?></td>
+<td style="position:absolute; top:715px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
+<td style="position:absolute; top:740px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA LEGAL" ?></td>
+<td style="position:absolute; top:765px ;left:50px; border:0.0px; width:500px"><?php echo "CRISTALES"?></td>
+<td style="position:absolute; top:790px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA VIAL"?></td>
+<td style="position:absolute; top:815px ;left:50px; border:0.0px; width:500px"><?php echo "MUERTE CONDUCTOR"?></td>
+<td style="position:absolute; top:640px ; left:450px; border:0.1px"><div>$700,000.00</div></td> 
+<td style="position:absolute; top:640px ; left:700px; border:0.1px"><div>NO APLICA</div></td> 
+<td style="position:absolute; top:665px ; left:430px; border:0.1px"><div>HASTA $110,000.00</div></td> 
+<td style="position:absolute; top:665px ; left:700px; border:0.1px"><div>10%</div></td> 
+<td style="position:absolute; top:690px ; left:450px; border:0 .1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>5% VALOR COMERCIAL</div></td>
+<td style="position:absolute; top:715px ; left:450px; border:0.1px"><div>$50,000.00</div></td> 
+<td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
+<td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 30KM</div></td> 
 <td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
@@ -254,6 +379,37 @@ if($cobertura=="POLIZA PARTICULAR AMPLIA 100 MIL")
 <?php	
 }
 ?>
+<?php
+if($cobertura=="POLIZA PARTICULAR VALLARTA  AMPLIA 100 MIL")
+{
+?>
+<td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
+<td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
+<td style="position:absolute; top:690px ;left:50px; border:0.0px; width:500px"><?php echo "DA&Ntilde;OS MATERIALES" ?></td>
+<td style="position:absolute; top:715px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
+<td style="position:absolute; top:740px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA LEGAL" ?></td>
+<td style="position:absolute; top:765px ;left:50px; border:0.0px; width:500px"><?php echo "CRISTALES"?></td>
+<td style="position:absolute; top:790px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA VIAL"?></td>
+<td style="position:absolute; top:815px ;left:50px; border:0.0px; width:500px"><?php echo "MUERTE CONDUCTOR"?></td>
+<td style="position:absolute; top:640px ; left:450px; border:0.1px"><div>$700,000.00</div></td> 
+<td style="position:absolute; top:640px ; left:700px; border:0.1px"><div>NO APLICA</div></td> 
+<td style="position:absolute; top:665px ; left:430px; border:0.1px"><div>HASTA $100,000.00</div></td> 
+<td style="position:absolute; top:665px ; left:700px; border:0.1px"><div>10%</div></td> 
+<td style="position:absolute; top:690px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>5% VALOR COMERCIAL</div></td>
+<td style="position:absolute; top:715px ; left:450px; border:0.1px"><div>$50,000.00</div></td> 
+<td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
+<td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 30KM</div></td> 
+<td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
+<td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<?php	
+}
+?>
 <?php	
 if($cobertura=="POLIZA PARTICULAR AMPLIA 90 MIL")
 {
@@ -279,6 +435,37 @@ if($cobertura=="POLIZA PARTICULAR AMPLIA 90 MIL")
 <td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
 <td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
 <td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 50KM</div></td> 
+<td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
+<td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<?php	
+}
+?>
+<?php	
+if($cobertura=="POLIZA PARTICULAR VALLARTA  AMPLIA 90 MIL")
+{
+?>
+<td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
+<td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
+<td style="position:absolute; top:690px ;left:50px; border:0.0px; width:500px"><?php echo "DA&Ntilde;OS MATERIALES" ?></td>
+<td style="position:absolute; top:715px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
+<td style="position:absolute; top:740px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA LEGAL" ?></td>
+<td style="position:absolute; top:765px ;left:50px; border:0.0px; width:500px"><?php echo "CRISTALES"?></td>
+<td style="position:absolute; top:790px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA VIAL"?></td>
+<td style="position:absolute; top:815px ;left:50px; border:0.0px; width:500px"><?php echo "MUERTE CONDUCTOR"?></td>
+<td style="position:absolute; top:640px ; left:450px; border:0.1px"><div>$700,000.00</div></td> 
+<td style="position:absolute; top:640px ; left:700px; border:0.1px"><div>NO APLICA</div></td> 
+<td style="position:absolute; top:665px ; left:430px; border:0.1px"><div>HASTA $90,000.00</div></td> 
+<td style="position:absolute; top:665px ; left:700px; border:0.1px"><div>10%</div></td> 
+<td style="position:absolute; top:690px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>5% VALOR COMERCIAL</div></td>
+<td style="position:absolute; top:715px ; left:450px; border:0.1px"><div>$50,000.00</div></td> 
+<td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
+<td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 30KM</div></td> 
 <td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
@@ -335,6 +522,28 @@ if($cobertura=="COTIZACION PARTICULAR RC ECONOMICA CON GRUA")
 <td style="position:absolute; top:690px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
 <td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <td style="position:absolute; top:715px ; left:355px; border:0.1px"><div>1 GRUA POR A&Ntilde;O MAXIMO 50 KM</div></td> 
+<td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
+<td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<?php	
+}
+?>
+<?php
+if($cobertura=="INTERMEDIA PARTICULAR  VALLARTA 1 GRUA")
+{
+?>
+<td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
+<td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
+<td style="position:absolute; top:690px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA LEGAL" ?></td>
+<td style="position:absolute; top:715px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA VIAL"?></td>
+<td style="position:absolute; top:740px ;left:50px; border:0.0px; width:500px"><?php echo "MUERTE CONDUCTOR"?></td>
+<td style="position:absolute; top:640px ; left:450px; border:0.1px"><div>$700,000.00</div></td> 
+<td style="position:absolute; top:640px ; left:700px; border:0.1px"><div>NO APLICA</div></td> 
+<td style="position:absolute; top:665px ; left:450px; border:0.1px"><div>$50,000</div></td> 
+<td style="position:absolute; top:665px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:690px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:715px ; left:355px; border:0.1px"><div>1 GRUA POR A&Ntilde;O MAXIMO 30 KM</div></td> 
 <td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
@@ -432,6 +641,37 @@ if($cobertura=="AMPLIA AUTOMOVIL PARTICULAR HASTA $50,000")
 }
 ?>
 <?php
+if($cobertura=="POLIZA PARTICULAR VALLARTA  AMPLIA 50 MIL")
+{
+?>
+<td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
+<td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
+<td style="position:absolute; top:690px ;left:50px; border:0.0px; width:500px"><?php echo "DA&Ntilde;OS MATERIALES" ?></td>
+<td style="position:absolute; top:715px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
+<td style="position:absolute; top:740px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA LEGAL" ?></td>
+<td style="position:absolute; top:765px ;left:50px; border:0.0px; width:500px"><?php echo "CRISTALES"?></td>
+<td style="position:absolute; top:790px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA VIAL"?></td>
+<td style="position:absolute; top:815px ;left:50px; border:0.0px; width:500px"><?php echo "MUERTE CONDUCTOR"?></td>
+<td style="position:absolute; top:640px ; left:450px; border:0.1px"><div>$700,000.00</div></td> 
+<td style="position:absolute; top:640px ; left:700px; border:0.1px"><div>NO APLICA</div></td> 
+<td style="position:absolute; top:665px ; left:430px; border:0.1px"><div>HASTA $50,000.00</div></td> 
+<td style="position:absolute; top:665px ; left:700px; border:0.1px"><div>10%</div></td> 
+<td style="position:absolute; top:690px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>5% VALOR COMERCIAL</div></td>
+<td style="position:absolute; top:715px ; left:450px; border:0.1px"><div>$50,000.00</div></td> 
+<td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
+<td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 30KM</div></td> 
+<td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
+<td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<?php	
+}
+?>
+<?php
 if($cobertura=="AMPLIA AUTOMOVIL PARTICULAR HASTA $70,000")
 {
 ?>
@@ -456,6 +696,37 @@ if($cobertura=="AMPLIA AUTOMOVIL PARTICULAR HASTA $70,000")
 <td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
 <td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
 <td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 50KM</div></td> 
+<td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
+<td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<?php	
+}
+?>
+<?php
+if($cobertura=="POLIZA PARTICULAR VALLARTA  AMPLIA 70 MIL")
+{
+?>
+<td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
+<td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
+<td style="position:absolute; top:690px ;left:50px; border:0.0px; width:500px"><?php echo "DA&Ntilde;OS MATERIALES" ?></td>
+<td style="position:absolute; top:715px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
+<td style="position:absolute; top:740px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA LEGAL" ?></td>
+<td style="position:absolute; top:765px ;left:50px; border:0.0px; width:500px"><?php echo "CRISTALES"?></td>
+<td style="position:absolute; top:790px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA VIAL"?></td>
+<td style="position:absolute; top:815px ;left:50px; border:0.0px; width:500px"><?php echo "MUERTE CONDUCTOR"?></td>
+<td style="position:absolute; top:640px ; left:450px; border:0.1px"><div>$700,000.00</div></td> 
+<td style="position:absolute; top:640px ; left:700px; border:0.1px"><div>NO APLICA</div></td> 
+<td style="position:absolute; top:665px ; left:430px; border:0.1px"><div>HASTA $70,000.00</div></td> 
+<td style="position:absolute; top:665px ; left:700px; border:0.1px"><div>10%</div></td> 
+<td style="position:absolute; top:690px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>5% VALOR COMERCIAL</div></td>
+<td style="position:absolute; top:715px ; left:450px; border:0.1px"><div>$50,000.00</div></td> 
+<td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
+<td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 30KM</div></td> 
 <td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
@@ -494,6 +765,37 @@ if($cobertura=="AMPLIA AUTOMOVIL PARTICULAR HASTA $80,000")
 }
 ?>
 <?php
+if($cobertura=="POLIZA PARTICULAR VALLARTA  AMPLIA 80 MIL")
+{
+?>
+<td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
+<td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
+<td style="position:absolute; top:690px ;left:50px; border:0.0px; width:500px"><?php echo "DA&Ntilde;OS MATERIALES" ?></td>
+<td style="position:absolute; top:715px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
+<td style="position:absolute; top:740px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA LEGAL" ?></td>
+<td style="position:absolute; top:765px ;left:50px; border:0.0px; width:500px"><?php echo "CRISTALES"?></td>
+<td style="position:absolute; top:790px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA VIAL"?></td>
+<td style="position:absolute; top:815px ;left:50px; border:0.0px; width:500px"><?php echo "MUERTE CONDUCTOR"?></td>
+<td style="position:absolute; top:640px ; left:450px; border:0.1px"><div>$700,000.00</div></td> 
+<td style="position:absolute; top:640px ; left:700px; border:0.1px"><div>NO APLICA</div></td> 
+<td style="position:absolute; top:665px ; left:430px; border:0.1px"><div>HASTA $80,000.00</div></td> 
+<td style="position:absolute; top:665px ; left:700px; border:0.1px"><div>10%</div></td> 
+<td style="position:absolute; top:690px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>5% VALOR COMERCIAL</div></td>
+<td style="position:absolute; top:715px ; left:450px; border:0.1px"><div>$50,000.00</div></td> 
+<td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
+<td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 30KM</div></td> 
+<td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
+<td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<?php	
+}
+?>
+<?php
 if($cobertura=="VEHICULO PARTICULAR AMPLIA HASTA $60,000")
 {
 ?>
@@ -524,6 +826,37 @@ if($cobertura=="VEHICULO PARTICULAR AMPLIA HASTA $60,000")
 <?php	
 }
 ?>
+<?php
+if($cobertura=="POLIZA PARTICULAR VALLARTA  AMPLIA 60 MIL")
+{
+?>
+<td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
+<td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
+<td style="position:absolute; top:690px ;left:50px; border:0.0px; width:500px"><?php echo "DA&Ntilde;OS MATERIALES" ?></td>
+<td style="position:absolute; top:715px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
+<td style="position:absolute; top:740px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA LEGAL" ?></td>
+<td style="position:absolute; top:765px ;left:50px; border:0.0px; width:500px"><?php echo "CRISTALES"?></td>
+<td style="position:absolute; top:790px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA VIAL"?></td>
+<td style="position:absolute; top:815px ;left:50px; border:0.0px; width:500px"><?php echo "MUERTE CONDUCTOR"?></td>
+<td style="position:absolute; top:640px ; left:450px; border:0.1px"><div>$700,000.00</div></td> 
+<td style="position:absolute; top:640px ; left:700px; border:0.1px"><div>NO APLICA</div></td> 
+<td style="position:absolute; top:665px ; left:430px; border:0.1px"><div>HASTA $60,000.00</div></td> 
+<td style="position:absolute; top:665px ; left:700px; border:0.1px"><div>10%</div></td> 
+<td style="position:absolute; top:690px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>5% VALOR COMERCIAL</div></td>
+<td style="position:absolute; top:715px ; left:450px; border:0.1px"><div>$50,000.00</div></td> 
+<td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
+<td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 30KM</div></td> 
+<td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
+<td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<?php	
+}
+?>
 <?php	  
 if($cobertura=="TERCEROS CON GRUA PICKUP")
 {
@@ -543,7 +876,29 @@ if($cobertura=="TERCEROS CON GRUA PICKUP")
 <td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
-               <?php	
+<?php	
+}
+?>
+<?php	  
+if($cobertura=="INTERMEDIA PICKUP   VALLARTA 1 GRUA")
+{
+?>
+<td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
+<td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
+<td style="position:absolute; top:690px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA LEGAL" ?></td>
+<td style="position:absolute; top:715px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA VIAL"?></td>
+<td style="position:absolute; top:740px ;left:50px; border:0.0px; width:500px"><?php echo "MUERTE CONDUCTOR"?></td>
+<td style="position:absolute; top:640px ; left:450px; border:0.1px"><div>$450,000.00</div></td> 
+<td style="position:absolute; top:640px ; left:700px; border:0.1px"><div>NO APLICA</div></td> 
+<td style="position:absolute; top:665px ; left:450px; border:0.1px"><div>$50,000.00</div></td> 
+<td style="position:absolute; top:665px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:690px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:715px ; left:355px; border:0.1px"><div>1 GRUA POR A&Ntilde;O MAXIMO 30 KM</div></td> 
+<td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
+<td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<?php	
 }
 ?>
 <?php	  
@@ -571,6 +926,37 @@ if($cobertura=="AMPLIA PICKUP HASTA $50,000")
 <td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
 <td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
 <td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 50KM </div></td> 
+<td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
+<td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<?php	
+}
+?>
+<?php	  
+if($cobertura=="AMPLIA PICKUP VALLARTA  HASTA $50,000")
+{
+?>
+<td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
+<td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
+<td style="position:absolute; top:690px ;left:50px; border:0.0px; width:500px"><?php echo "DA&Ntilde;OS MATERIALES" ?></td>
+<td style="position:absolute; top:715px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
+<td style="position:absolute; top:740px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA LEGAL" ?></td>
+<td style="position:absolute; top:765px ;left:50px; border:0.0px; width:500px"><?php echo "CRISTALES"?></td>
+<td style="position:absolute; top:790px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA VIAL"?></td>
+<td style="position:absolute; top:815px ;left:50px; border:0.0px; width:500px"><?php echo "MUERTE CONDUCTOR"?></td>
+<td style="position:absolute; top:640px ; left:450px; border:0.1px"><div>$450,000.00</div></td> 
+<td style="position:absolute; top:640px ; left:700px; border:0.1px"><div>NO APLICA</div></td> 
+<td style="position:absolute; top:665px ; left:430px; border:0.1px"><div>HASTA $50,000.00</div></td> 
+<td style="position:absolute; top:665px ; left:700px; border:0.1px"><div>10%</div></td> 
+<td style="position:absolute; top:690px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>5% VALOR COMERCIAL</div></td>
+<td style="position:absolute; top:715px ; left:450px; border:0.1px"><div>$50,000.00</div></td> 
+<td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
+<td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 30KM </div></td> 
 <td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
@@ -608,6 +994,37 @@ if($cobertura=="AMPLIA PICKUP HASTA $60,000")
 <?php	
 }
 ?>
+<?php	  
+if($cobertura=="AMPLIA PICKUP VALLARTA  HASTA $60,000")
+{
+?>
+<td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
+<td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
+<td style="position:absolute; top:690px ;left:50px; border:0.0px; width:500px"><?php echo "DA&Ntilde;OS MATERIALES" ?></td>
+<td style="position:absolute; top:715px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
+<td style="position:absolute; top:740px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA LEGAL" ?></td>
+<td style="position:absolute; top:765px ;left:50px; border:0.0px; width:500px"><?php echo "CRISTALES"?></td>
+<td style="position:absolute; top:790px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA VIAL"?></td>
+<td style="position:absolute; top:815px ;left:50px; border:0.0px; width:500px"><?php echo "MUERTE CONDUCTOR"?></td>
+<td style="position:absolute; top:640px ; left:450px; border:0.1px"><div>$450,000.00</div></td> 
+<td style="position:absolute; top:640px ; left:700px; border:0.1px"><div>NO APLICA</div></td> 
+<td style="position:absolute; top:665px ; left:430px; border:0.1px"><div>HASTA $60,000.00</div></td> 
+<td style="position:absolute; top:665px ; left:700px; border:0.1px"><div>10%</div></td> 
+<td style="position:absolute; top:690px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>5% VALOR COMERCIAL</div></td>
+<td style="position:absolute; top:715px ; left:450px; border:0.1px"><div>$50,000.00</div></td> 
+<td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
+<td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 30KM </div></td> 
+<td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
+<td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<?php	
+}
+?>
 <?php
 if($cobertura=="AMPLIA PICKUP HASTA $70,000")
 {
@@ -633,6 +1050,37 @@ if($cobertura=="AMPLIA PICKUP HASTA $70,000")
 <td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
 <td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
 <td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 50KM </div></td> 
+<td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
+<td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<?php	
+}
+?>
+<?php
+if($cobertura=="AMPLIA PICKUP VALLARTA  HASTA $70,000")
+{
+?>
+<td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
+<td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
+<td style="position:absolute; top:690px ;left:50px; border:0.0px; width:500px"><?php echo "DA&Ntilde;OS MATERIALES" ?></td>
+<td style="position:absolute; top:715px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
+<td style="position:absolute; top:740px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA LEGAL" ?></td>
+<td style="position:absolute; top:765px ;left:50px; border:0.0px; width:500px"><?php echo "CRISTALES"?></td>
+<td style="position:absolute; top:790px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA VIAL"?></td>
+<td style="position:absolute; top:815px ;left:50px; border:0.0px; width:500px"><?php echo "MUERTE CONDUCTOR"?></td>
+<td style="position:absolute; top:640px ; left:450px; border:0.1px"><div>$450,000.00</div></td> 
+<td style="position:absolute; top:640px ; left:700px; border:0.1px"><div>NO APLICA</div></td> 
+<td style="position:absolute; top:665px ; left:430px; border:0.1px"><div>HASTA $70,000.00</div></td> 
+<td style="position:absolute; top:665px ; left:700px; border:0.1px"><div>10%</div></td> 
+<td style="position:absolute; top:690px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>5% VALOR COMERCIAL</div></td>
+<td style="position:absolute; top:715px ; left:450px; border:0.1px"><div>$50,000.00</div></td> 
+<td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
+<td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 30KM </div></td> 
 <td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
@@ -670,6 +1118,37 @@ if($cobertura=="AMPLIA PICKUP HASTA $80,000")
 <?php	
 }
 ?>
+<?php	  
+if($cobertura=="AMPLIA PICKUP VALLARTA  HASTA $80,000")
+{
+?>
+<td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
+<td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
+<td style="position:absolute; top:690px ;left:50px; border:0.0px; width:500px"><?php echo "DA&Ntilde;OS MATERIALES" ?></td>
+<td style="position:absolute; top:715px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
+<td style="position:absolute; top:740px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA LEGAL" ?></td>
+<td style="position:absolute; top:765px ;left:50px; border:0.0px; width:500px"><?php echo "CRISTALES"?></td>
+<td style="position:absolute; top:790px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA VIAL"?></td>
+<td style="position:absolute; top:815px ;left:50px; border:0.0px; width:500px"><?php echo "MUERTE CONDUCTOR"?></td>
+<td style="position:absolute; top:640px ; left:450px; border:0.1px"><div>$450,000.00</div></td> 
+<td style="position:absolute; top:640px ; left:700px; border:0.1px"><div>NO APLICA</div></td> 
+<td style="position:absolute; top:665px ; left:430px; border:0.1px"><div>HASTA $80,000.00</div></td> 
+<td style="position:absolute; top:665px ; left:700px; border:0.1px"><div>10%</div></td> 
+<td style="position:absolute; top:690px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>5% VALOR COMERCIAL</div></td>
+<td style="position:absolute; top:715px ; left:450px; border:0.1px"><div>$50,000.00</div></td> 
+<td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
+<td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 30KM </div></td> 
+<td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
+<td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<?php	
+}
+?>
 <?php	
 if($cobertura=="AMPLIA PICKUP HASTA $90,000")
 {
@@ -695,6 +1174,37 @@ if($cobertura=="AMPLIA PICKUP HASTA $90,000")
 <td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
 <td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
 <td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 50KM </div></td> 
+<td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
+<td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<?php	
+}
+?>
+<?php	
+if($cobertura=="AMPLIA PICKUP VALLARTA  HASTA $90,000")
+{
+?>
+<td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
+<td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
+<td style="position:absolute; top:690px ;left:50px; border:0.0px; width:500px"><?php echo "DA&Ntilde;OS MATERIALES" ?></td>
+<td style="position:absolute; top:715px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
+<td style="position:absolute; top:740px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA LEGAL" ?></td>
+<td style="position:absolute; top:765px ;left:50px; border:0.0px; width:500px"><?php echo "CRISTALES"?></td>
+<td style="position:absolute; top:790px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA VIAL"?></td>
+<td style="position:absolute; top:815px ;left:50px; border:0.0px; width:500px"><?php echo "MUERTE CONDUCTOR"?></td>
+<td style="position:absolute; top:640px ; left:450px; border:0.1px"><div>$450,000.00</div></td> 
+<td style="position:absolute; top:640px ; left:700px; border:0.1px"><div>NO APLICA</div></td> 
+<td style="position:absolute; top:665px ; left:430px; border:0.1px"><div>HASTA $90,000.00</div></td> 
+<td style="position:absolute; top:665px ; left:700px; border:0.1px"><div>10%</div></td> 
+<td style="position:absolute; top:690px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>5% VALOR COMERCIAL</div></td>
+<td style="position:absolute; top:715px ; left:450px; border:0.1px"><div>$50,000.00</div></td> 
+<td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
+<td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 30KM </div></td> 
 <td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
@@ -733,6 +1243,37 @@ if($cobertura=="AMPLIA PICKUP HASTA $100,000")
 }
 ?>
 <?php	  
+if($cobertura=="AMPLIA PICKUP VALLARTA  HASTA $100,000")
+{
+?>
+<td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
+<td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
+<td style="position:absolute; top:690px ;left:50px; border:0.0px; width:500px"><?php echo "DA&Ntilde;OS MATERIALES" ?></td>
+<td style="position:absolute; top:715px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
+<td style="position:absolute; top:740px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA LEGAL" ?></td>
+<td style="position:absolute; top:765px ;left:50px; border:0.0px; width:500px"><?php echo "CRISTALES"?></td>
+<td style="position:absolute; top:790px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA VIAL"?></td>
+<td style="position:absolute; top:815px ;left:50px; border:0.0px; width:500px"><?php echo "MUERTE CONDUCTOR"?></td>
+<td style="position:absolute; top:640px ; left:450px; border:0.1px"><div>$450,000.00</div></td> 
+<td style="position:absolute; top:640px ; left:700px; border:0.1px"><div>NO APLICA</div></td> 
+<td style="position:absolute; top:665px ; left:430px; border:0.1px"><div>HASTA $100,000.00</div></td> 
+<td style="position:absolute; top:665px ; left:700px; border:0.1px"><div>10%</div></td> 
+<td style="position:absolute; top:690px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>5% VALOR COMERCIAL</div></td>
+<td style="position:absolute; top:715px ; left:450px; border:0.1px"><div>$50,000.00</div></td> 
+<td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
+<td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 30KM </div></td> 
+<td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
+<td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<?php	
+}
+?>
+<?php	  
 if($cobertura=="AMPLIA PICKUP HASTA $110,000")
 {
 ?>
@@ -757,6 +1298,37 @@ if($cobertura=="AMPLIA PICKUP HASTA $110,000")
 <td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
 <td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
 <td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 50KM </div></td> 
+<td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
+<td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<?php	
+}
+?>
+<?php	  
+if($cobertura=="AMPLIA PICKUP VALLARTA  HASTA $110,000")
+{
+?>
+<td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
+<td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
+<td style="position:absolute; top:690px ;left:50px; border:0.0px; width:500px"><?php echo "DA&Ntilde;OS MATERIALES" ?></td>
+<td style="position:absolute; top:715px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
+<td style="position:absolute; top:740px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA LEGAL" ?></td>
+<td style="position:absolute; top:765px ;left:50px; border:0.0px; width:500px"><?php echo "CRISTALES"?></td>
+<td style="position:absolute; top:790px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA VIAL"?></td>
+<td style="position:absolute; top:815px ;left:50px; border:0.0px; width:500px"><?php echo "MUERTE CONDUCTOR"?></td>
+<td style="position:absolute; top:640px ; left:450px; border:0.1px"><div>$450,000.00</div></td> 
+<td style="position:absolute; top:640px ; left:700px; border:0.1px"><div>NO APLICA</div></td> 
+<td style="position:absolute; top:665px ; left:430px; border:0.1px"><div>HASTA $110,000.00</div></td> 
+<td style="position:absolute; top:665px ; left:700px; border:0.1px"><div>10%</div></td> 
+<td style="position:absolute; top:690px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>5% VALOR COMERCIAL</div></td>
+<td style="position:absolute; top:715px ; left:450px; border:0.1px"><div>$50,000.00</div></td> 
+<td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
+<td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 30KM </div></td> 
 <td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
@@ -795,6 +1367,37 @@ if($cobertura=="AMPLIA PICKUP HASTA $120,000")
 }
 ?>
 <?php
+if($cobertura=="AMPLIA PICKUP VALLARTA  HASTA $120,000")
+{
+?>
+<td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
+<td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
+<td style="position:absolute; top:690px ;left:50px; border:0.0px; width:500px"><?php echo "DA&Ntilde;OS MATERIALES" ?></td>
+<td style="position:absolute; top:715px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
+<td style="position:absolute; top:740px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA LEGAL" ?></td>
+<td style="position:absolute; top:765px ;left:50px; border:0.0px; width:500px"><?php echo "CRISTALES"?></td>
+<td style="position:absolute; top:790px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA VIAL"?></td>
+<td style="position:absolute; top:815px ;left:50px; border:0.0px; width:500px"><?php echo "MUERTE CONDUCTOR"?></td>
+<td style="position:absolute; top:640px ; left:450px; border:0.1px"><div>$450,000.00</div></td> 
+<td style="position:absolute; top:640px ; left:700px; border:0.1px"><div>NO APLICA</div></td> 
+<td style="position:absolute; top:665px ; left:430px; border:0.1px"><div>HASTA $120,000.00</div></td> 
+<td style="position:absolute; top:665px ; left:700px; border:0.1px"><div>10%</div></td> 
+<td style="position:absolute; top:690px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>5% VALOR COMERCIAL</div></td>
+<td style="position:absolute; top:715px ; left:450px; border:0.1px"><div>$50,000.00</div></td> 
+<td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
+<td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 30KM </div></td> 
+<td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
+<td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<?php	
+}
+?>
+<?php
 if($cobertura=="AMPLIA PICKUP HASTA $130,000")
 {
 ?>
@@ -819,6 +1422,37 @@ if($cobertura=="AMPLIA PICKUP HASTA $130,000")
 <td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
 <td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
 <td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 50KM </div></td> 
+<td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
+<td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<?php	
+}
+?>
+<?php
+if($cobertura=="AMPLIA PICKUP VALLARTA  HASTA $130,000")
+{
+?>
+<td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
+<td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
+<td style="position:absolute; top:690px ;left:50px; border:0.0px; width:500px"><?php echo "DA&Ntilde;OS MATERIALES" ?></td>
+<td style="position:absolute; top:715px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
+<td style="position:absolute; top:740px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA LEGAL" ?></td>
+<td style="position:absolute; top:765px ;left:50px; border:0.0px; width:500px"><?php echo "CRISTALES"?></td>
+<td style="position:absolute; top:790px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA VIAL"?></td>
+<td style="position:absolute; top:815px ;left:50px; border:0.0px; width:500px"><?php echo "MUERTE CONDUCTOR"?></td>
+<td style="position:absolute; top:640px ; left:450px; border:0.1px"><div>$450,000.00</div></td> 
+<td style="position:absolute; top:640px ; left:700px; border:0.1px"><div>NO APLICA</div></td> 
+<td style="position:absolute; top:665px ; left:430px; border:0.1px"><div>HASTA $130,000.00</div></td> 
+<td style="position:absolute; top:665px ; left:700px; border:0.1px"><div>10%</div></td> 
+<td style="position:absolute; top:690px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>5% VALOR COMERCIAL</div></td>
+<td style="position:absolute; top:715px ; left:450px; border:0.1px"><div>$50,000.00</div></td> 
+<td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
+<td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 30KM </div></td> 
 <td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
@@ -856,6 +1490,37 @@ if($cobertura=="AMPLIA PICKUP HASTA $140,000")
 <?php	
 }
 ?>
+<?php	 
+if($cobertura=="AMPLIA PICKUP VALLARTA  HASTA $140,000")
+{
+?>
+<td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
+<td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
+<td style="position:absolute; top:690px ;left:50px; border:0.0px; width:500px"><?php echo "DA&Ntilde;OS MATERIALES" ?></td>
+<td style="position:absolute; top:715px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
+<td style="position:absolute; top:740px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA LEGAL" ?></td>
+<td style="position:absolute; top:765px ;left:50px; border:0.0px; width:500px"><?php echo "CRISTALES"?></td>
+<td style="position:absolute; top:790px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA VIAL"?></td>
+<td style="position:absolute; top:815px ;left:50px; border:0.0px; width:500px"><?php echo "MUERTE CONDUCTOR"?></td>
+<td style="position:absolute; top:640px ; left:450px; border:0.1px"><div>$450,000.00</div></td> 
+<td style="position:absolute; top:640px ; left:700px; border:0.1px"><div>NO APLICA</div></td> 
+<td style="position:absolute; top:665px ; left:430px; border:0.1px"><div>HASTA $140,000.00</div></td> 
+<td style="position:absolute; top:665px ; left:700px; border:0.1px"><div>10%</div></td> 
+<td style="position:absolute; top:690px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>5% VALOR COMERCIAL</div></td>
+<td style="position:absolute; top:715px ; left:430px; border:0.1px"><div>$50,000.00</div></td> 
+<td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
+<td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 30KM </div></td> 
+<td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
+<td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<?php	
+}
+?>
 <?php
 if($cobertura=="AMPLIA MOTO")
 {
@@ -882,6 +1547,31 @@ if($cobertura=="AMPLIA MOTO")
 }
 ?>
 <?php
+if($cobertura=="AMPLIA MOTO VALLARTA")
+{
+?>
+<td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
+<td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
+<td style="position:absolute; top:690px ;left:50px; border:0.0px; width:500px"><?php echo "DA&Ntilde;OS MATERIALES" ?></td>
+<td style="position:absolute; top:715px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
+<td style="position:absolute; top:740px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA LEGAL" ?></td>
+<td style="position:absolute; top:765px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA VIAL"?></td>
+<td style="position:absolute; top:640px ; left:450px; border:0.1px"><div>$350,000.00</div></td> 
+<td style="position:absolute; top:640px ; left:700px; border:0.1px"><div>NO APLICA</div></td> 
+<td style="position:absolute; top:665px ; left:430px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:665px ; left:700px; border:0.1px"><div>10%</div></td> 
+<td style="position:absolute; top:690px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>5% VALOR COMERCIAL</div></td>
+<td style="position:absolute; top:715px ; left:430px; border:0.1px"><div>$40,000.00</div></td> 
+<td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:765px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 30KM </div></td> 
+<td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<?php	
+}
+?>
+<?php
 if($cobertura=="INTERMEDIA MOTO")
 {
 ?>
@@ -896,6 +1586,25 @@ if($cobertura=="INTERMEDIA MOTO")
 <td style="position:absolute; top:690px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
 <td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <td style="position:absolute; top:715px ; left:355px; border:0.1px"><div>1 GRUA POR A&Ntilde;O MAXIMO 50KM </div></td> 
+<td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<?php	
+}
+?>
+<?php
+if($cobertura=="INTERMEDIA MOTO VALLARTA")
+{
+?>
+<td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
+<td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
+<td style="position:absolute; top:690px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA LEGAL" ?></td>
+<td style="position:absolute; top:715px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA VIAL"?></td>
+<td style="position:absolute; top:640px ; left:450px; border:0.1px"><div>$350,000.00</div></td> 
+<td style="position:absolute; top:640px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:665px ; left:430px; border:0.1px"><div>$40,000.00</div></td> 
+<td style="position:absolute; top:665px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:690px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:715px ; left:355px; border:0.1px"><div>1 GRUA POR A&Ntilde;O MAXIMO 30KM </div></td> 
 <td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
 }
@@ -937,6 +1646,34 @@ if($cobertura=="MULTIPLATAFORMAS ECONOMICA")
 <td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
 <td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
 <td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 50KM </div></td> 
+<td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<?php	
+}
+?>
+<?php	  
+if($cobertura=="MULTIPLATAFORMAS VALLARTA")
+{
+?>
+<td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
+<td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
+<td style="position:absolute; top:690px ;left:50px; border:0.0px; width:500px"><?php echo "DA&Ntilde;OS MATERIALES" ?></td>
+<td style="position:absolute; top:715px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
+<td style="position:absolute; top:740px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA LEGAL" ?></td>
+<td style="position:absolute; top:765px ;left:50px; border:0.0px; width:500px"><?php echo "CRISTALES"?></td>
+<td style="position:absolute; top:790px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA VIAL"?></td>
+<td style="position:absolute; top:640px ; left:450px; border:0.1px"><div>$450,000.00</div></td> 
+<td style="position:absolute; top:640px ; left:700px; border:0.1px"><div>NO APLICA</div></td> 
+<td style="position:absolute; top:665px ; left:430px; border:0.1px"><div>HASTA $100,000.00</div></td> 
+<td style="position:absolute; top:665px ; left:700px; border:0.1px"><div>10%</div></td> 
+<td style="position:absolute; top:690px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>45% VALOR DA&Ntilde;O PROPIO</div></td>
+<td style="position:absolute; top:715px ; left:450px; border:0.1px"><div>$100,000.00</div></td> 
+<td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20% VALOR CRISTAL</div></td>
+<td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 30KM </div></td> 
 <td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
 }
@@ -994,6 +1731,39 @@ if($cobertura=="MULTIPLATAFORMA JUAREZ/LEON PROMO")
 <td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>20%</div></td>
 <td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 35KM </div></td> 
 <td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<?php	
+}
+?>
+<?php
+if($cobertura=="PREMIUM LEON")
+{
+?>
+<td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
+<td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
+<td style="position:absolute; top:690px ;left:50px; border:0.0px; width:500px"><?php echo "DA&Ntilde;OS MATERIALES" ?></td>
+<td style="position:absolute; top:715px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
+<td style="position:absolute; top:740px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS CONDUCTOR"?></td>
+<td style="position:absolute; top:765px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA LEGAL" ?></td>
+<td style="position:absolute; top:790px ;left:50px; border:0.0px; width:500px"><?php echo "CRISTALES"?></td>
+<td style="position:absolute; top:815px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA VIAL"?></td>
+<td style="position:absolute; top:640px ; left:450px; border:0.1px"><div>$3,000,000.00</div></td> 
+<td style="position:absolute; top:640px ; left:700px; border:0.1px"><div>50 UMAS</div></td> 
+<td style="position:absolute; top:665px ; left:420px; border:0.1px"><div>VALOR COMERCIAL</div></td>
+<td style="position:absolute; top:665px ; left:700px; border:0.1px"><div>10%</div></td> 
+<td style="position:absolute; top:690px ; left:450px; border:0.1px"><div>VALOR COMERCIAL</div></td> 
+<td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>10%</div></td>
+<td style="position:absolute; top:715px ; left:450px; border:0.1px"><div>10,185 UMAS</div></td> 
+<td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>10 UMA</div></td>
+<td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>10,080 UMA</div></td> 
+<td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>10 UMA</div></td>
+<td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:790px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>20%</div></td>
+<td style="position:absolute; top:815px ; left:320px; border:0.1px"><div>1 GRUAS POR A&Ntilde;O MAXIMO 30KM</div></td> 
+<td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<td style="position:absolute; top:840px ; left:450px; border:0.1px"><div></div></td> 
+<td style="position:absolute; top:840px ; left:700px; border:0.1px"><div></div></td>
 <?php	
 }
 ?>

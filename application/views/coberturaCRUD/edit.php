@@ -21,55 +21,55 @@
                 <label class="form-label">
                     <strong>Ingresa la prima de RCA</strong>
                 </label>
-                <input autocomplete="off" type="text" name="rca" class="form-control" value="<?php echo $cobertura->rca; ?>" required/>
+                <input autocomplete="off" type="text" name="rca" class="form-control" value="<?php echo $cobertura->rca; ?>" />
             </div>
             <div class="mb-3">
                 <label class="form-label">
                     <strong>Ingresa la prima de Robo</strong>
                 </label>
-                <input autocomplete="off" type="text" name="robo" class="form-control" value="<?php echo $cobertura->robo; ?>" required/>
+                <input autocomplete="off" type="text" name="robo" class="form-control" value="<?php echo $cobertura->robo; ?>" />
             </div>
             <div class="mb-3">
                 <label class="form-label">
                     <strong>Ingresa la prima de Daño</strong>
                 </label>
-                <input autocomplete="off" type="text" name="dano" class="form-control" value="<?php echo $cobertura->dano; ?>" required/>
+                <input autocomplete="off" type="text" name="dano" class="form-control" value="<?php echo $cobertura->dano; ?>" />
             </div>
             <div class="mb-3">
                 <label class="form-label">
                     <strong>Ingresa la prima de Gastos</strong>
                 </label>
-                <input autocomplete="off" type="text" name="gastos" class="form-control" value="<?php echo $cobertura->gastos; ?>" required/>
+                <input autocomplete="off" type="text" name="gastos" class="form-control" value="<?php echo $cobertura->gastos; ?>" />
             </div>
             <div class="mb-3">
                 <label class="form-label">
                     <strong>Ingresa la prima de Médico</strong>
                 </label>
-                <input autocomplete="off" type="text" name="medico" class="form-control" value="<?php echo $cobertura->medico; ?>" required/>
+                <input autocomplete="off" type="text" name="medico" class="form-control" value="<?php echo $cobertura->medico; ?>" />
             </div>
             <div class="mb-3">
                 <label class="form-label">
                     <strong>Ingresa la prima de Asistencia</strong>
                 </label>
-                <input autocomplete="off" type="text" name="asistencia" class="form-control" value="<?php echo $cobertura->asistencia; ?>" required/>
+                <input autocomplete="off" type="text" name="asistencia" class="form-control" value="<?php echo $cobertura->asistencia; ?>" />
             </div>
             <div class="mb-3">
                 <label class="form-label">
                     <strong>Ingresa la prima de Cristal</strong>
                 </label>
-                <input autocomplete="off" type="text" name="cristal" class="form-control" value="<?php echo $cobertura->cristal; ?>" required/>
+                <input autocomplete="off" type="text" name="cristal" class="form-control" value="<?php echo $cobertura->cristal; ?>" />
             </div>
             <div class="mb-3">
                 <label class="form-label">
                     <strong>Ingresa la prima de Vial</strong>
                 </label>
-                <input autocomplete="off" type="text" name="vial" class="form-control" value="<?php echo $cobertura->vial; ?>" required/>
+                <input autocomplete="off" type="text" name="vial" class="form-control" value="<?php echo $cobertura->vial; ?>" />
             </div>
             <div class="mb-3">
                 <label class="form-label">
                     <strong>Ingresa la prima de Muerte</strong>
                 </label>
-                <input autocomplete="off" type="text" name="muerte" class="form-control" value="<?php echo $cobertura->muerte; ?>" required/>
+                <input autocomplete="off" type="text" name="muerte" class="form-control" value="<?php echo $cobertura->muerte; ?>" />
             </div>
 			
 			<button type="submit" class="btn btn-primary">Enviar</button> 

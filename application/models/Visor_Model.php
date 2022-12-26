@@ -78,6 +78,7 @@ class Visor_Model extends CI_Model {
                 v.ano ,
                 v.color ,
                 v.version,
+                v.ocupantes,
                 (SELECT cb.cobertura FROM coberturas cb WHERE cb.id = p.id_cobertura  ) AS 'cobertura',
                 p.expedicion,
                 p.vigencia,
