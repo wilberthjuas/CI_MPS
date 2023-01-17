@@ -1738,8 +1738,8 @@ if($cobertura=="MULTIPLATAFORMA JUAREZ/LEON PROMO")
 if($cobertura=="PREMIUM LEON")
 {
 ?>
-<td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
-<td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
+<td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px">RESPONSABILIDAD CIVIL</td>
+<td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px">ROBO TOTAL</td>
 <td style="position:absolute; top:690px ;left:50px; border:0.0px; width:500px"><?php echo "DA&Ntilde;OS MATERIALES" ?></td>
 <td style="position:absolute; top:715px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
 <td style="position:absolute; top:740px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS CONDUCTOR"?></td>
@@ -1754,7 +1754,7 @@ if($cobertura=="PREMIUM LEON")
 <td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>10%</div></td>
 <td style="position:absolute; top:715px ; left:450px; border:0.1px"><div>10,185 UMAS</div></td> 
 <td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>10 UMA</div></td>
-<td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>10,080 UMA</div></td> 
+<td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>10,180 UMA</div></td> 
 <td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>10 UMA</div></td>
 <td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
 <td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
@@ -1767,6 +1767,26 @@ if($cobertura=="PREMIUM LEON")
 <?php	
 }
 ?>
+<?php	
+	if($cobertura=="DAÑOS 3ROS LEÓN APP")
+{
+?>
+<td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px">RESPONSABILIDAD CIVIL</td>
+<td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px">GASTOS MEDICOS OCUPANTES</td>
+<td style="position:absolute; top:690px ;left:50px; border:0.0px; width:500px">GASTOS MEDICOS CONDUCTOR</td>
+<td style="position:absolute; top:715px ;left:50px; border:0.0px; width:500px">ASISTENCIA LEGAL</td>
+
+<td style="position:absolute; top:640px ; left:450px; border:0.1px"><div>$3,000,000.00</div></td> 
+<td style="position:absolute; top:640px ; left:700px; border:0.1px"><div>50 UMAS</div></td> 
+<td style="position:absolute; top:665px ; left:450px; border:0.1px"><div>10,185 UMA</div></td>
+<td style="position:absolute; top:665px ; left:700px; border:0.1px"><div>10 UMA</div></td> 
+<td style="position:absolute; top:690px ; left:450px; border:0.1px"><div>10,180 UMA</div></td> 
+<td style="position:absolute; top:690px ; left:700px; border:0.1px"><div>10 UMA</div></td>
+<td style="position:absolute; top:715px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
+<td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
+<?php	
+}
+?> 
 <?php	
 	if($plataforma=="Multi Plataforma")
 {

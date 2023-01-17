@@ -62,7 +62,8 @@ class Colaborador extends CI_Controller {
 			$request = json_decode($this->input->raw_input_stream);
 			$reponse = $this->colaborador->savePayment($request);
 			if( $reponse != false ){
-				$this->api_utils->api_response($reponse, 1);
+				$resp['response'] = $reponse;
+				$this->api_utils->api_response($resp, 1);
 			}else{
 				$error = $this->api_utils->create_error_object(500, 'Error en el servidor' ,'Posible fallo');
 				$this->api_utils->api_response($error, 0, 500);
@@ -73,6 +74,4 @@ class Colaborador extends CI_Controller {
 			$this->api_utils->api_response($error, 0, 500);
 		}
 	}
-
-
 }

@@ -183,22 +183,31 @@ class Colaborador_Model extends CI_Model{
 
     public function savePayment($request){
         try{
+
             $poliza = $request->{'poliza'};
             $query = $this->db->query("SELECT * FROM polizas WHERE id ='$poliza' ");
             if( $query->num_rows() > 0 ){
                 $cobrador = $request->{'cobrador'};
+                $imagePath = "";
                 $queryC = $this->db->query("SELECT * FROM cctapm WHERE id_user='$cobrador' ");
                 if( $queryC->num_rows() > 0){
                     $this->db->set('poliza',        $request->{'poliza'});
                     $this->db->set('tipo',          $request->{'tipo'});
                     $this->db->set('cantidad',      $request->{'cantidad'});
                     $this->db->set('cobrador',      $request->{'cobrador'});
+                    $this->db->set('numPago',       $request->{'numPago'});
+                    //TODO si tiene imagen guardarla y guardar solo el nombre
                     $this->db->set('estatus',       "REGISTRADO");
                     $this->db->insert('pagos_transaccion');  
                     $idPayment = $this->db->insert_id();  
 
+                    if($request->{'image'} != ""){
+                        $imagePath = "uploads/".$poliza."-".uniqid()."-".$cobrador.".jpg";
+                        file_put_contents($imagePath,base64_decode($request->{'image'}));
+                    }
+
                     if($idPayment && $request->{'tipo'} == 1){
-                        $poliza = $request->{'poliza'};
+                        /*$poliza = $request->{'poliza'};
                         $queryP = $this->db->query("SELECT * FROM pagos WHERE id_poliza = '$poliza' ORDER BY id ASC ");
                         $pagos = $queryP->result_array();
 
@@ -229,11 +238,18 @@ class Colaborador_Model extends CI_Model{
                             break;
                           }
                           
-                        }
+                        }*/
+                        $this->db->set('estatus', "PAGADO");
+                        $this->db->set('id_pago', 0);
+                        $this->db->set('fecha_modificacion',date("Y-m-d H:m:s"));
+                        $this->db->set('imagen',$imagePath);
+                        $this->db->where('id_payment', $idPayment);
+                        $this->db->update('pagos_transaccion');
                     }
                     else{
                         $this->db->set('estatus', "VALIDACION PENDIENTE");
                         $this->db->set('fecha_modificacion',date("Y-m-d H:m:s"));
+                        $this->db->set('imagen',$imagePath);
                         $this->db->where('id_payment', $idPayment);
                         $this->db->update('pagos_transaccion');
                     }
