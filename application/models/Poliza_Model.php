@@ -10,10 +10,10 @@ class Poliza_Model extends CI_Model {
 	}
 
 	public function savePoliza($save){
-		$placas = $save['placas'];
-		$serie 	= $save['serie'];
+		$placas = strtoupper($save['placas']);
+		$serie 	= strtoupper($save['serie']);
 		//VALIDAR QUE LAS PLACAS NO EXITAN
-		$query = $this->db->query("SELECT * FROM vehiculo WHERE placas='$placas' AND serie='$serie' ");
+		$query = $this->db->query("SELECT * FROM vehiculo WHERE UPPER(placas)='$placas' AND UPPER(serie)='$serie' ");
 		if( $query->num_rows() == 0 ){	
 		
 			//CLIENTE
@@ -39,7 +39,7 @@ class Poliza_Model extends CI_Model {
 			$this->db->set('color',			$save['color']);
 			$this->db->set('placas',		$placas);
 			$this->db->set('version',		$save['version']);
-			$this->db->set('serie',			$save['serie']);
+			$this->db->set('serie',			$serie);
 			$this->db->set('nmotor',		$save['nmotor']);
 			$this->db->set('ocupantes',		$save['ocupantes']);
 			$this->db->insert('vehiculo');
