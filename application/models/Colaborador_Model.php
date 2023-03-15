@@ -260,8 +260,17 @@ class Colaborador_Model extends CI_Model{
         }catch (Exception $e) {
             return false;
         }
+    }
 
-        
+    public function getPaymentsByUser($request){
+        try{
+            $cobrador = $request->{'cobrador'};
+            $query = $this->db->query("SELECT poliza,tipo,cantidad,estatus,fecha_registro FROM pagos_transaccion WHERE cobrador = '$cobrador' order by fecha_modificacion desc limit 50");
+            return $query->result();
+        }
+        catch( Exception $e){
+            return false;
+        }
     }
 
 }

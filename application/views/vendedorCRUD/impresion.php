@@ -101,14 +101,12 @@ $plataforma=$row['plataforma'];
 <div align="center">
 <?php
 }
-}//AQUI TERMINA 1ER ID
+}
 ?>
 <div style="position:absolute; top:1090px ; left:10px">	
 <?php	  
-//if($cobertura=="POLIZA PARTICULAR AMPLIA 140 MIL")
-switch ($cobertura) 
+if($cobertura=="POLIZA PARTICULAR AMPLIA 140 MIL")
 {
-	case "POLIZA PARTICULAR AMPLIA 140 MIL":
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -135,12 +133,11 @@ switch ($cobertura)
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-break;
+}
 ?>
 <?php	  
-//if($cobertura=="POLIZA PARTICULAR VALLARTA  AMPLIA 140 MIL")
-//{
-case "POLIZA PARTICULAR VALLARTA  AMPLIA 140 MIL":
+if($cobertura=="POLIZA PARTICULAR VALLARTA  AMPLIA 140 MIL")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -167,13 +164,11 @@ case "POLIZA PARTICULAR VALLARTA  AMPLIA 140 MIL":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php	  
-//if($cobertura=="POLIZA PARTICULAR AMPLIA 130 MIL")
-//{
-case "POLIZA PARTICULAR AMPLIA 130 MIL":
+if($cobertura=="POLIZA PARTICULAR AMPLIA 130 MIL")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -200,13 +195,11 @@ case "POLIZA PARTICULAR AMPLIA 130 MIL":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php	  
-//if($cobertura=="POLIZA PARTICULAR VALLARTA  AMPLIA 130 MIL")
-//{
-case "POLIZA PARTICULAR VALLARTA  AMPLIA 130 MIL":
+if($cobertura=="POLIZA PARTICULAR VALLARTA  AMPLIA 130 MIL")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -233,13 +226,11 @@ case "POLIZA PARTICULAR VALLARTA  AMPLIA 130 MIL":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php
-//if($cobertura=="POLIZA PARTICULAR AMPLIA 120 MIL")
-//{
-case "POLIZA PARTICULAR AMPLIA 120 MIL"
+if($cobertura=="POLIZA PARTICULAR AMPLIA 120 MIL")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -266,13 +257,11 @@ case "POLIZA PARTICULAR AMPLIA 120 MIL"
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php
-//if($cobertura=="POLIZA PARTICULAR VALLARTA  AMPLIA 120 MIL")
-//{
-case "POLIZA PARTICULAR VALLARTA  AMPLIA 120 MIL":
+if($cobertura=="POLIZA PARTICULAR VALLARTA  AMPLIA 120 MIL")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -299,13 +288,11 @@ case "POLIZA PARTICULAR VALLARTA  AMPLIA 120 MIL":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php	 
-//if($cobertura=="POLIZA PARTICULAR AMPLIA 110 MIL")
-//{
-case "POLIZA PARTICULAR AMPLIA 110 MIL":
+if($cobertura=="POLIZA PARTICULAR AMPLIA 110 MIL")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -332,13 +319,11 @@ case "POLIZA PARTICULAR AMPLIA 110 MIL":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php	 
-//if($cobertura=="POLIZA PARTICULAR VALLARTA  AMPLIA 110 MIL")
-//{
-case "POLIZA PARTICULAR VALLARTA  AMPLIA 110 MIL":
+if($cobertura=="POLIZA PARTICULAR VALLARTA  AMPLIA 110 MIL")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -365,13 +350,11 @@ case "POLIZA PARTICULAR VALLARTA  AMPLIA 110 MIL":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php
-//if($cobertura=="POLIZA PARTICULAR AMPLIA 100 MIL")
-//{
-case "POLIZA PARTICULAR AMPLIA 100 MIL"
+if($cobertura=="POLIZA PARTICULAR AMPLIA 100 MIL")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -398,13 +381,11 @@ case "POLIZA PARTICULAR AMPLIA 100 MIL"
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php
-//if($cobertura=="POLIZA PARTICULAR VALLARTA  AMPLIA 100 MIL")
-//{
-case "POLIZA PARTICULAR VALLARTA  AMPLIA 100 MIL":
+if($cobertura=="POLIZA PARTICULAR VALLARTA  AMPLIA 100 MIL")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -431,13 +412,11 @@ case "POLIZA PARTICULAR VALLARTA  AMPLIA 100 MIL":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php	
-//if($cobertura=="POLIZA PARTICULAR AMPLIA 90 MIL")
-//{
-case "POLIZA PARTICULAR AMPLIA 90 MIL":
+if($cobertura=="POLIZA PARTICULAR AMPLIA 90 MIL")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -464,13 +443,11 @@ case "POLIZA PARTICULAR AMPLIA 90 MIL":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php	
-//if($cobertura=="POLIZA PARTICULAR VALLARTA  AMPLIA 90 MIL")
-//{
-case "POLIZA PARTICULAR VALLARTA  AMPLIA 90 MIL":
+if($cobertura=="POLIZA PARTICULAR VALLARTA  AMPLIA 90 MIL")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -497,13 +474,11 @@ case "POLIZA PARTICULAR VALLARTA  AMPLIA 90 MIL":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php
-//if($cobertura=="COTIZACION POLIZA MULTIPLATAFORMAS 4 MILLONES EN RC")
-//{
-case "COTIZACION POLIZA MULTIPLATAFORMAS 4 MILLONES EN RC":
+if($cobertura=="COTIZACION POLIZA MULTIPLATAFORMAS 4 MILLONES EN RC")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -533,13 +508,11 @@ case "COTIZACION POLIZA MULTIPLATAFORMAS 4 MILLONES EN RC":
 <td style="position:absolute; top:840px ; left:450px; border:0.1px"><div>$50,000.00</div></td> 
 <td style="position:absolute; top:840px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php
-//if($cobertura=="COTIZACION PARTICULAR RC ECONOMICA CON GRUA")
-//{
-case "COTIZACION PARTICULAR RC ECONOMICA CON GRUA":
+if($cobertura=="COTIZACION PARTICULAR RC ECONOMICA CON GRUA")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
@@ -557,13 +530,11 @@ case "COTIZACION PARTICULAR RC ECONOMICA CON GRUA":
 <td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php
-//if($cobertura=="INTERMEDIA PARTICULAR  VALLARTA 1 GRUA")
-//{
-case "INTERMEDIA PARTICULAR  VALLARTA 1 GRUA":
+if($cobertura=="INTERMEDIA PARTICULAR  VALLARTA 1 GRUA")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
@@ -581,13 +552,11 @@ case "INTERMEDIA PARTICULAR  VALLARTA 1 GRUA":
 <td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php	  
-//if($cobertura=="COTIZACION MULTIPLATAFORMAS PROMO JULIO 2021")
-//{
-case "COTIZACION MULTIPLATAFORMAS PROMO JULIO 2021":
+if($cobertura=="COTIZACION MULTIPLATAFORMAS PROMO JULIO 2021")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -617,13 +586,11 @@ case "COTIZACION MULTIPLATAFORMAS PROMO JULIO 2021":
 <td style="position:absolute; top:840px ; left:450px; border:0.1px"><div>$50,000.00</div></td> 
 <td style="position:absolute; top:840px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php
-//if($cobertura=="COTIZACION DANOS A TERCEROS 4 MILLONES CON GRUA")
-//{
-case "COTIZACION DANOS A TERCEROS 4 MILLONES CON GRUA":
+if($cobertura=="COTIZACION DANOS A TERCEROS 4 MILLONES CON GRUA")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
@@ -644,13 +611,11 @@ case "COTIZACION DANOS A TERCEROS 4 MILLONES CON GRUA":
 <td style="position:absolute; top:765px ; left:450px; border:0.1px"><div>$50,000.00</div></td> 
 <td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php
-//if($cobertura=="AMPLIA AUTOMOVIL PARTICULAR HASTA $50,000")
-//{
-case "AMPLIA AUTOMOVIL PARTICULAR HASTA $50,000":
+if($cobertura=="AMPLIA AUTOMOVIL PARTICULAR HASTA $50,000")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -677,13 +642,11 @@ case "AMPLIA AUTOMOVIL PARTICULAR HASTA $50,000":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php
-//if($cobertura=="POLIZA PARTICULAR VALLARTA  AMPLIA 50 MIL")
-//{
-case "POLIZA PARTICULAR VALLARTA  AMPLIA 50 MIL":
+if($cobertura=="POLIZA PARTICULAR VALLARTA  AMPLIA 50 MIL")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -710,13 +673,11 @@ case "POLIZA PARTICULAR VALLARTA  AMPLIA 50 MIL":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php
-//if($cobertura=="AMPLIA AUTOMOVIL PARTICULAR HASTA $70,000")
-//{
-case "AMPLIA AUTOMOVIL PARTICULAR HASTA $70,000":
+if($cobertura=="AMPLIA AUTOMOVIL PARTICULAR HASTA $70,000")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -743,13 +704,11 @@ case "AMPLIA AUTOMOVIL PARTICULAR HASTA $70,000":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php
-//if($cobertura=="POLIZA PARTICULAR VALLARTA  AMPLIA 70 MIL")
-//{
-case "POLIZA PARTICULAR VALLARTA  AMPLIA 70 MIL":
+if($cobertura=="POLIZA PARTICULAR VALLARTA  AMPLIA 70 MIL")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -776,13 +735,11 @@ case "POLIZA PARTICULAR VALLARTA  AMPLIA 70 MIL":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php
-//if($cobertura=="AMPLIA AUTOMOVIL PARTICULAR HASTA $80,000")
-//{
-case "AMPLIA AUTOMOVIL PARTICULAR HASTA $80,000":
+if($cobertura=="AMPLIA AUTOMOVIL PARTICULAR HASTA $80,000")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -809,13 +766,11 @@ case "AMPLIA AUTOMOVIL PARTICULAR HASTA $80,000":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php
-//if($cobertura=="POLIZA PARTICULAR VALLARTA  AMPLIA 80 MIL")
-//{
-case "POLIZA PARTICULAR VALLARTA  AMPLIA 80 MIL"
+if($cobertura=="POLIZA PARTICULAR VALLARTA  AMPLIA 80 MIL")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -842,13 +797,11 @@ case "POLIZA PARTICULAR VALLARTA  AMPLIA 80 MIL"
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php
-//if($cobertura=="VEHICULO PARTICULAR AMPLIA HASTA $60,000")
-//{
-case "VEHICULO PARTICULAR AMPLIA HASTA $60,000":
+if($cobertura=="VEHICULO PARTICULAR AMPLIA HASTA $60,000")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -875,13 +828,11 @@ case "VEHICULO PARTICULAR AMPLIA HASTA $60,000":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php
-//if($cobertura=="POLIZA PARTICULAR VALLARTA  AMPLIA 60 MIL")
-//{
-case "POLIZA PARTICULAR VALLARTA  AMPLIA 60 MIL":
+if($cobertura=="POLIZA PARTICULAR VALLARTA  AMPLIA 60 MIL")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -908,13 +859,11 @@ case "POLIZA PARTICULAR VALLARTA  AMPLIA 60 MIL":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php	  
-//if($cobertura=="TERCEROS CON GRUA PICKUP")
-//{
-case "TERCEROS CON GRUA PICKUP":
+if($cobertura=="TERCEROS CON GRUA PICKUP")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
@@ -932,13 +881,11 @@ case "TERCEROS CON GRUA PICKUP":
 <td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php	  
-//if($cobertura=="INTERMEDIA PICKUP   VALLARTA 1 GRUA")
-//{
-case "INTERMEDIA PICKUP   VALLARTA 1 GRUA":
+if($cobertura=="INTERMEDIA PICKUP   VALLARTA 1 GRUA")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
@@ -956,13 +903,11 @@ case "INTERMEDIA PICKUP   VALLARTA 1 GRUA":
 <td style="position:absolute; top:740px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:740px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php	  
-//if($cobertura=="AMPLIA PICKUP HASTA $50,000")
-//{
-case "AMPLIA PICKUP HASTA $50,000":
+if($cobertura=="AMPLIA PICKUP HASTA $50,000")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -989,13 +934,11 @@ case "AMPLIA PICKUP HASTA $50,000":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php	  
-//if($cobertura=="AMPLIA PICKUP VALLARTA  HASTA $50,000")
-//{
-case "AMPLIA PICKUP VALLARTA  HASTA $50,000":
+if($cobertura=="AMPLIA PICKUP VALLARTA  HASTA $50,000")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -1022,13 +965,11 @@ case "AMPLIA PICKUP VALLARTA  HASTA $50,000":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php	  
-//if($cobertura=="AMPLIA PICKUP HASTA $60,000")
-//{
-case "AMPLIA PICKUP HASTA $60,000":
+if($cobertura=="AMPLIA PICKUP HASTA $60,000")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -1055,13 +996,11 @@ case "AMPLIA PICKUP HASTA $60,000":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php	  
-//if($cobertura=="AMPLIA PICKUP VALLARTA  HASTA $60,000")
-//{
-case "AMPLIA PICKUP VALLARTA  HASTA $60,000":
+if($cobertura=="AMPLIA PICKUP VALLARTA  HASTA $60,000")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -1088,13 +1027,11 @@ case "AMPLIA PICKUP VALLARTA  HASTA $60,000":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php
-//if($cobertura=="AMPLIA PICKUP HASTA $70,000")
-//{
-case "AMPLIA PICKUP HASTA $70,000":
+if($cobertura=="AMPLIA PICKUP HASTA $70,000")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -1121,13 +1058,11 @@ case "AMPLIA PICKUP HASTA $70,000":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php
-//if($cobertura=="AMPLIA PICKUP VALLARTA  HASTA $70,000")
-//{
-case "AMPLIA PICKUP VALLARTA  HASTA $70,000":
+if($cobertura=="AMPLIA PICKUP VALLARTA  HASTA $70,000")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -1154,13 +1089,11 @@ case "AMPLIA PICKUP VALLARTA  HASTA $70,000":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php	  
-//if($cobertura=="AMPLIA PICKUP HASTA $80,000")
-//{
-case "AMPLIA PICKUP HASTA $80,000":
+if($cobertura=="AMPLIA PICKUP HASTA $80,000")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -1187,13 +1120,11 @@ case "AMPLIA PICKUP HASTA $80,000":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php	  
-//if($cobertura=="AMPLIA PICKUP VALLARTA  HASTA $80,000")
-//{
-case "AMPLIA PICKUP VALLARTA  HASTA $80,000":
+if($cobertura=="AMPLIA PICKUP VALLARTA  HASTA $80,000")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -1220,13 +1151,11 @@ case "AMPLIA PICKUP VALLARTA  HASTA $80,000":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php	
-//if($cobertura=="AMPLIA PICKUP HASTA $90,000")
-//{
-case "AMPLIA PICKUP HASTA $90,000":
+if($cobertura=="AMPLIA PICKUP HASTA $90,000")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -1253,13 +1182,11 @@ case "AMPLIA PICKUP HASTA $90,000":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php	
-//if($cobertura=="AMPLIA PICKUP VALLARTA  HASTA $90,000")
-//{
-case "AMPLIA PICKUP VALLARTA  HASTA $90,000":
+if($cobertura=="AMPLIA PICKUP VALLARTA  HASTA $90,000")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -1286,13 +1213,11 @@ case "AMPLIA PICKUP VALLARTA  HASTA $90,000":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php	  
-//if($cobertura=="AMPLIA PICKUP HASTA $100,000")
-//{
-case "AMPLIA PICKUP HASTA $100,000":
+if($cobertura=="AMPLIA PICKUP HASTA $100,000")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -1319,13 +1244,11 @@ case "AMPLIA PICKUP HASTA $100,000":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php	  
-//if($cobertura=="AMPLIA PICKUP VALLARTA  HASTA $100,000")
-//{
-case "AMPLIA PICKUP VALLARTA  HASTA $100,000":
+if($cobertura=="AMPLIA PICKUP VALLARTA  HASTA $100,000")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -1352,13 +1275,11 @@ case "AMPLIA PICKUP VALLARTA  HASTA $100,000":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php	  
-//if($cobertura=="AMPLIA PICKUP HASTA $110,000")
-//{
-case "AMPLIA PICKUP HASTA $110,000":
+if($cobertura=="AMPLIA PICKUP HASTA $110,000")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -1385,13 +1306,11 @@ case "AMPLIA PICKUP HASTA $110,000":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php	  
-//if($cobertura=="AMPLIA PICKUP VALLARTA  HASTA $110,000")
-//{
-case "AMPLIA PICKUP VALLARTA  HASTA $110,000":
+if($cobertura=="AMPLIA PICKUP VALLARTA  HASTA $110,000")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -1418,13 +1337,11 @@ case "AMPLIA PICKUP VALLARTA  HASTA $110,000":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php
-//if($cobertura=="AMPLIA PICKUP HASTA $120,000")
-//{
-case "AMPLIA PICKUP HASTA $120,000":
+if($cobertura=="AMPLIA PICKUP HASTA $120,000")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -1451,13 +1368,11 @@ case "AMPLIA PICKUP HASTA $120,000":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php
-//if($cobertura=="AMPLIA PICKUP VALLARTA  HASTA $120,000")
-//{
-case "AMPLIA PICKUP VALLARTA  HASTA $120,000":
+if($cobertura=="AMPLIA PICKUP VALLARTA  HASTA $120,000")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -1484,13 +1399,11 @@ case "AMPLIA PICKUP VALLARTA  HASTA $120,000":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php
-//if($cobertura=="AMPLIA PICKUP HASTA $130,000")
-//{
-case "AMPLIA PICKUP HASTA $130,000":
+if($cobertura=="AMPLIA PICKUP HASTA $130,000")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -1517,13 +1430,11 @@ case "AMPLIA PICKUP HASTA $130,000":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php
-//if($cobertura=="AMPLIA PICKUP VALLARTA  HASTA $130,000")
-//{
-case "AMPLIA PICKUP VALLARTA  HASTA $130,000":
+if($cobertura=="AMPLIA PICKUP VALLARTA  HASTA $130,000")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -1550,13 +1461,11 @@ case "AMPLIA PICKUP VALLARTA  HASTA $130,000":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php	 
-//if($cobertura=="AMPLIA PICKUP HASTA $140,000")
-//{
-case "AMPLIA PICKUP HASTA $140,000":
+if($cobertura=="AMPLIA PICKUP HASTA $140,000")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -1583,13 +1492,11 @@ case "AMPLIA PICKUP HASTA $140,000":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php	 
-//if($cobertura=="AMPLIA PICKUP VALLARTA  HASTA $140,000")
-//{
-case "AMPLIA PICKUP VALLARTA  HASTA $140,000":
+if($cobertura=="AMPLIA PICKUP VALLARTA  HASTA $140,000")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -1616,13 +1523,11 @@ case "AMPLIA PICKUP VALLARTA  HASTA $140,000":
 <td style="position:absolute; top:815px ; left:450px; border:0.1px"><div>$30,000.00</div></td> 
 <td style="position:absolute; top:815px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php
-//if($cobertura=="AMPLIA MOTO")
-//{
-case "AMPLIA MOTO":
+if($cobertura=="AMPLIA MOTO")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -1643,13 +1548,11 @@ case "AMPLIA MOTO":
 <td style="position:absolute; top:765px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 50KM </div></td> 
 <td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php
-//if($cobertura=="AMPLIA MOTO VALLARTA")
-//{
-case "AMPLIA MOTO VALLARTA":
+if($cobertura=="AMPLIA MOTO VALLARTA")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -1670,13 +1573,11 @@ case "AMPLIA MOTO VALLARTA":
 <td style="position:absolute; top:765px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 30KM </div></td> 
 <td style="position:absolute; top:765px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php
-//if($cobertura=="INTERMEDIA MOTO")
-//{
-case "INTERMEDIA MOTO":
+if($cobertura=="INTERMEDIA MOTO")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
@@ -1691,13 +1592,11 @@ case "INTERMEDIA MOTO":
 <td style="position:absolute; top:715px ; left:355px; border:0.1px"><div>1 GRUA POR A&Ntilde;O MAXIMO 50KM </div></td> 
 <td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php
-//if($cobertura=="INTERMEDIA MOTO VALLARTA")
-//{
-case "INTERMEDIA MOTO VALLARTA":
+if($cobertura=="INTERMEDIA MOTO VALLARTA")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "GASTOS MEDICOS OCUPANTES" ?></td>
@@ -1712,13 +1611,11 @@ case "INTERMEDIA MOTO VALLARTA":
 <td style="position:absolute; top:715px ; left:355px; border:0.1px"><div>1 GRUA POR A&Ntilde;O MAXIMO 30KM </div></td> 
 <td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php
-//if($cobertura=="TERCEROS MOTO")
-//{
-case "TERCEROS MOTO":
+if($cobertura=="TERCEROS MOTO")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ASISTENCIA LEGAL" ?></td>
@@ -1727,13 +1624,11 @@ case "TERCEROS MOTO":
 <td style="position:absolute; top:665px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
 <td style="position:absolute; top:665px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php	  
-//if($cobertura=="MULTIPLATAFORMAS ECONOMICA")
-//{
-case "MULTIPLATAFORMAS ECONOMICA":
+if($cobertura=="MULTIPLATAFORMAS ECONOMICA")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -1757,13 +1652,11 @@ case "MULTIPLATAFORMAS ECONOMICA":
 <td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 50KM </div></td> 
 <td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php	  
-//if($cobertura=="MULTIPLATAFORMAS VALLARTA")
-//{
-case "MULTIPLATAFORMAS VALLARTA":
+if($cobertura=="MULTIPLATAFORMAS VALLARTA")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -1787,13 +1680,11 @@ case "MULTIPLATAFORMAS VALLARTA":
 <td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 30KM </div></td> 
 <td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php
-//if($cobertura=="MULTIPLATAFORMAS CD JUAREZ")
-//{
-case "MULTIPLATAFORMAS CD JUAREZ":
+if($cobertura=="MULTIPLATAFORMAS CD JUAREZ")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -1817,13 +1708,11 @@ case "MULTIPLATAFORMAS CD JUAREZ":
 <td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 50KM </div></td> 
 <td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php
-//if($cobertura=="MULTIPLATAFORMA JUAREZ/LEON PROMO")
-//{
-case "MULTIPLATAFORMA JUAREZ/LEON PROMO":
+if($cobertura=="MULTIPLATAFORMA JUAREZ/LEON PROMO")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px"><?php echo "RESPONSABILIDAD CIVIL" ?></td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px"><?php echo "ROBO TOTAL" ?></td>
@@ -1847,13 +1736,11 @@ case "MULTIPLATAFORMA JUAREZ/LEON PROMO":
 <td style="position:absolute; top:790px ; left:355px; border:0.1px"><div>2 GRUAS POR A&Ntilde;O MAXIMO 35KM </div></td> 
 <td style="position:absolute; top:790px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php
-//if($cobertura=="PREMIUM LEON")
-//{
-case "PREMIUM LEON":
+if($cobertura=="PREMIUM LEON")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px">RESPONSABILIDAD CIVIL</td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px">ROBO TOTAL</td>
@@ -1882,18 +1769,17 @@ case "PREMIUM LEON":
 <td style="position:absolute; top:840px ; left:450px; border:0.1px"><div></div></td> 
 <td style="position:absolute; top:840px ; left:700px; border:0.1px"><div></div></td>
 <?php	
-//}
-break;
+}
 ?>
 <?php	
-//	if($cobertura=="DAÑOS 3ROS LEÓN APP")
-//{
-case "DAÑOS 3ROS LEÓN APP":
+	if($cobertura=="DAÑOS 3ROS LEÓN APP")
+{
 ?>
 <td style="position:absolute; top:640px ;left:50px; border:0.0px; width:500px">RESPONSABILIDAD CIVIL</td>
 <td style="position:absolute; top:665px ;left:50px; border:0.0px; width:500px">GASTOS MEDICOS OCUPANTES</td>
 <td style="position:absolute; top:690px ;left:50px; border:0.0px; width:500px">GASTOS MEDICOS CONDUCTOR</td>
 <td style="position:absolute; top:715px ;left:50px; border:0.0px; width:500px">ASISTENCIA LEGAL</td>
+
 <td style="position:absolute; top:640px ; left:450px; border:0.1px"><div>$3,000,000.00</div></td> 
 <td style="position:absolute; top:640px ; left:700px; border:0.1px"><div>50 UMAS</div></td> 
 <td style="position:absolute; top:665px ; left:450px; border:0.1px"><div>10,185 UMA</div></td>
@@ -1903,209 +1789,8 @@ case "DAÑOS 3ROS LEÓN APP":
 <td style="position:absolute; top:715px ; left:450px; border:0.1px"><div>AMPARADA</div></td> 
 <td style="position:absolute; top:715px ; left:700px; border:0.1px"><div>NO APLICA</div></td>
 <?php	
-break;
-?> 
-<?php	
-default:
-	foreach($primas as $pr ){
-		$patron1 = '/[^\w$%,.&;]/i';
-		$patron2 = '/(::){2,}/i';
-		$replacement = '-';
-		$x = 640;
-		if($pr['rca'] != ""){
-			$rca = preg_replace($patron1, "::", $pr['rca']);
-			$rca = preg_replace($patron2, $replacement, $rca);
-			$rca = str_replace("::", ' ', $rca);
-			$rca = explode($replacement,$rca);
-		
-		?>
-		<td style="position:absolute; top:<?php echo $x; ?>px ;left:50px; border:0.0px;">
-			<?php echo trim($rca[0]); ?>
-		</td>
-		<td style="position:absolute; top:<?php echo $x; ?>px ; left:400px; border:0.1px">
-			<?php echo trim($rca[1]); ?>
-		</td> 
-		<td style="position:absolute; top:<?php echo $x; ?>px ; left:700px; border:0.1px">
-			<?php echo trim($rca[2]); ?>
-		</td>
-		
-		<?php
-		$x = $x + 25;
-		}
-
-		if($pr['robo'] != ""){
-			$robo = preg_replace($patron1, "::", $pr['robo']);
-			$robo = preg_replace($patron2, $replacement, $robo);
-			$robo = str_replace("::", ' ', $robo);
-			$robo = explode($replacement,  $robo);
-
-		?>
-		<td style="position:absolute; top:<?php echo $x; ?>px ;left:50px; border:0.0px;">
-			<?php echo trim($robo[0]); ?>
-		</td>
-		<td style="position:absolute; top:<?php echo $x; ?>px ; left:400px; border:0.1px">
-			<?php echo trim($robo[1]); ?>
-		</td> 
-		<td style="position:absolute; top:<?php echo $x; ?>px ; left:700px; border:0.1px">
-			<?php echo trim($robo[2]); ?>
-		</td>
-		
-		<?php
-		$x = $x + 25;
-		}
-
-		if($pr['dano'] != ""){
-			$dano = preg_replace($patron1, "::", $pr['dano']);
-			$dano = preg_replace($patron2, $replacement, $dano);
-			$dano = str_replace("::", ' ', $dano);
-			$dano = explode($replacement,  $dano);
-		?>
-		<td style="position:absolute; top:<?php echo $x; ?>px ;left:50px; border:0.0px;">
-			<?php echo trim($dano[0]); ?>
-		</td>
-		<td style="position:absolute; top:<?php echo $x; ?>px ; left:400px; border:0.1px">
-			<?php echo trim($dano[1]); ?>
-		</td> 
-		<td style="position:absolute; top:<?php echo $x; ?>px ; left:700px; border:0.1px">
-			<?php echo trim($dano[2]); ?>
-		</td>
-		
-		<?php
-		$x = $x + 25;
-		}
-
-		if($pr['gastos'] != ""){
-			$gastos = preg_replace($patron1, "::", $pr['gastos']);
-			$gastos = preg_replace($patron2, $replacement, $gastos);
-			$gastos = str_replace("::", ' ', $gastos);
-			$gastos = explode($replacement,  $gastos);
-
-		?>
-		<td style="position:absolute; top:<?php echo $x; ?>px ;left:50px; border:0.0px;">
-			<?php echo trim($gastos[0]); ?>
-		</td>
-		<td style="position:absolute; top:<?php echo $x; ?>px ; left:400px; border:0.1px">
-			<?php echo trim($gastos[1]); ?>
-		</td> 
-		<td style="position:absolute; top:<?php echo $x; ?>px ; left:700px; border:0.1px">
-			<?php echo trim($gastos[2]); ?>
-		</td>
-		
-		<?php
-		$x = $x + 25;
-		}
-
-		if($pr['medico'] != ""){
-			$medico = preg_replace($patron1, "::", $pr['medico']);
-			$medico = preg_replace($patron2, $replacement, $medico);
-			$medico = str_replace("::", ' ', $medico);
-			$medico = explode($replacement,  $medico);
-
-		?>
-		<td style="position:absolute; top:<?php echo $x; ?>px ;left:50px; border:0.0px;">
-			<?php echo trim($medico[0]); ?>
-		</td>
-		<td style="position:absolute; top:<?php echo $x; ?>px ; left:400px; border:0.1px">
-			<?php echo trim($medico[1]); ?>
-		</td> 
-		<td style="position:absolute; top:<?php echo $x; ?>px ; left:700px; border:0.1px">
-			<?php echo trim($medico[2]); ?>
-		</td>
-		
-		<?php
-		$x = $x + 25;
-		}	
-
-		if($pr['asistencia'] != ""){
-			$asistencia = preg_replace($patron1, "::", $pr['asistencia']);
-			$asistencia = preg_replace($patron2, $replacement, $asistencia);
-			$asistencia = str_replace("::", ' ', $asistencia);
-			$asistencia = explode($replacement,  $asistencia);
-
-		?>
-		<td style="position:absolute; top:<?php echo $x; ?>px ;left:50px; border:0.0px;">
-			<?php echo trim($asistencia[0]); ?>
-		</td>
-		<td style="position:absolute; top:<?php echo $x; ?>px ; left:400px; border:0.1px">
-			<?php echo trim($asistencia[1]); ?>
-		</td> 
-		<td style="position:absolute; top:<?php echo $x; ?>px ; left:700px; border:0.1px">
-			<?php echo trim($asistencia[2]); ?>
-		</td>
-		
-		<?php
-		$x = $x + 25;
-		}
-
-		if($pr['cristal'] != ""){
-			$cristal = preg_replace($patron1, "::", $pr['cristal']);
-			$cristal = preg_replace($patron2, $replacement, $cristal);
-			$cristal = str_replace("::", ' ', $cristal);
-			$cristal = explode($replacement,  $cristal);
-
-		?>
-		<td style="position:absolute; top:<?php echo $x; ?>px ;left:50px; border:0.0px;">
-			<?php echo trim($cristal[0]); ?>
-		</td>
-		<td style="position:absolute; top:<?php echo $x; ?>px ; left:400px; border:0.1px">
-			<?php echo trim($cristal[1]); ?>
-		</td> 
-		<td style="position:absolute; top:<?php echo $x; ?>px ; left:700px; border:0.1px">
-			<?php echo trim($cristal[2]); ?>
-		</td>
-		
-		<?php
-		$x = $x + 25;
-		}
-
-
-		if($pr['vial'] != ""){
-			$vial = preg_replace($patron1, "::", $pr['vial']);
-			$vial = preg_replace($patron2, $replacement, $vial);
-			$vial = str_replace("::", ' ', $vial);
-			$vial = explode($replacement,  $vial);
-
-		?>
-		<td style="position:absolute; top:<?php echo $x; ?>px ;left:50px; border:0.0px;">
-			<?php echo trim($vial[0]); ?>
-		</td>
-		<td style="position:absolute; top:<?php echo $x; ?>px ; left:400px; border:0.1px">
-			<?php echo trim($vial[1]); ?>
-		</td> 
-		<td style="position:absolute; top:<?php echo $x; ?>px ; left:700px; border:0.1px">
-			<?php echo trim($vial[2]); ?>
-		</td>
-		
-		<?php
-		$x = $x + 25;
-		}
-
-
-		if($pr['muerte'] != ""){
-			$muerte = preg_replace($patron1, "::", $pr['muerte']);
-			$muerte = preg_replace($patron2, $replacement, $muerte);
-			$muerte = str_replace("::", ' ', $muerte);
-			$muerte = explode($replacement,  $muerte);
-
-		?>
-		<td style="position:absolute; top:<?php echo $x; ?>px ;left:50px; border:0.0px;">
-			<?php echo trim($muerte[0]); ?>
-		</td>
-		<td style="position:absolute; top:<?php echo $x; ?>px ; left:400px; border:0.1px">
-			<?php echo trim($muerte[1]); ?>
-		</td> 
-		<td style="position:absolute; top:<?php echo $x; ?>px ; left:700px; border:0.1px">
-			<?php echo trim($muerte[2]); ?>
-		</td>
-		
-		<?php
-		$x = $x + 25;
-		}
-	}
-	break;
 }
 ?> 
-
 <?php	
 	if($plataforma=="Multi Plataforma")
 {

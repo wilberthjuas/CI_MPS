@@ -885,32 +885,6 @@ class Poliza_Model extends CI_Model {
 		}
 		return true;
 	}
-
-
-	public function pendientesPagos(){
-		$query = $this->db->query("SELECT id, pagoinicial FROM polizas WHERE id NOT IN (SELECT id_poliza FROM pagos)");
-		foreach ($query->result() as $row) {
-
-			for ($i = 1; $i <= 12; $i++) {
-			    $this->db->set('id_poliza',		$row->id);
-				$this->db->set('num_pago',		$i);
-				if($i == 1){
-					$this->db->set('estatus',	'Pagado En Tarjeta');
-					$this->db->set('monto',		substr($row->pagoinicial,1));
-					$this->db->set('fecha',		date("Y-m-d"));
-					$this->db->set('recibo',	date("Y-m-d"));
-					$this->db->set('folio',		date("YmdHms"));
-				}
-				else{
-					$this->db->set('estatus',	'Pendiente');	
-				}
-				
-				$this->db->insert('pagos');
-			}
-		}
-
-		return true;
-	}
 }
 
 /*

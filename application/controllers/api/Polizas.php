@@ -56,16 +56,4 @@ class Polizas extends CI_Controller {
 		}
 	}
 
-	public function pendientesPagos()
-	{
-		$this->api_utils->validate_method($this->method, ['GET']);
-		try {
-			$poliza = $this->polizas->pendientesPagos();
-			$this->api_utils->api_response($poliza, 1);	
-		} catch (Exception $e) {
-			$error = $this->api_utils->create_error_object(500, 'Error en el servidor' ,$e->getMessage());
-			$this->api_utils->api_response($error, 0, 500);
-		}
-	}
-
 }

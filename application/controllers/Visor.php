@@ -23,8 +23,6 @@ class Visor extends CI_Controller {
 		$data['title'] = "HISTORIAL";
 		$data['url'] = base_url();
         $data['name'] = $this->session->userdata('name');
-        $resultado =$this->Visor_Model->getData();
-        $data['result1'] =  $resultado;
 		$this->load->view('header',$data);
 		$this->load->view('tablasDinamicas/libreriasH');
         $this->load->view('visores/historial',$data);
@@ -44,8 +42,10 @@ class Visor extends CI_Controller {
 	public function visorimpresionPdf(){
 		$a = $this->input->post('buscar');
         $b = $this->input->post('tipo');
-        $resultado =$this->Visor_Model->getImpresion($a,$b);
+        $resultado = $this->Visor_Model->getImpresion($a,$b);
+        $primas = $this->Visor_Model->getCoberturaDetails($resultado[0]['id_cobertura']);
         $data['result1'] = $resultado;
+        $data['primas'] = $primas;
         $data['url'] = base_url();
         $data['a'] = $a;
         $data['b'] = $b;

@@ -14,10 +14,9 @@ class Visor_Model extends CI_Model {
         SELECT 
             p.id  AS 'folio',
             c.nombre ,
-            c.domicilio ,
-            c.exterior ,
+            CONCAT(TRIM(c.domicilio),' ', TRIM(c.exterior)) AS domicilio,
+            c.municipio,
             c.telefono,
-            c.municipio ,
             v.marca ,
             v.tipo,
             v.placas ,
@@ -25,7 +24,7 @@ class Visor_Model extends CI_Model {
             v.ano ,
             v.nmotor,
             p.expedicion,
-            p.bit,
+            IF(p.bit = 0, 'Activa', 'Cancelada') AS bit,
             p.motivo,
             (SELECT cb.cobertura FROM coberturas cb WHERE cb.id = p.id_cobertura  ) AS 'cobertura',
             p.vendedor,
@@ -80,6 +79,7 @@ class Visor_Model extends CI_Model {
                 v.version,
                 v.ocupantes,
                 (SELECT cb.cobertura FROM coberturas cb WHERE cb.id = p.id_cobertura  ) AS 'cobertura',
+                p.id_cobertura,
                 p.expedicion,
                 p.vigencia,
                 p.pagomensual ,
@@ -105,7 +105,17 @@ class Visor_Model extends CI_Model {
     
         $queryExecute = $this->db->query($query);
         return $queryExecute->result_array();
-      }
+    }
+
+    public function getCoberturaDetails($idCobertura) {
+        $query = "
+            SELECT 
+                *
+            FROM coberturas c WHERE id = $idCobertura";
+    
+        $queryExecute = $this->db->query($query);
+        return $queryExecute->result_array();
+    }
 
 }
   

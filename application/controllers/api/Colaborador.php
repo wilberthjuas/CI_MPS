@@ -9,6 +9,7 @@ class Colaborador extends CI_Controller {
 		//Do your magic here
 		$this->load->helper('url');
 		$this->load->model('Colaborador_Model', 'colaborador');
+		$this->load->model('Municipio_Model', 'municipio');
 		$this->load->model('util/Api_Utils_Model', 'api_utils');
 		$this->method = $this->input->server('REQUEST_METHOD');
 	}
@@ -73,5 +74,37 @@ class Colaborador extends CI_Controller {
 			$error = $this->api_utils->create_error_object(500, 'Error en el servidor' ,$e->getMessage());
 			$this->api_utils->api_response($error, 0, 500);
 		}
+	}
+
+	public function getPaymentsByUser(){
+		$this->api_utils->validate_method($this->method, ['POST']);
+		try {
+			$request = json_decode($this->input->raw_input_stream);
+			$reponse = $this->colaborador->getPaymentsByUser($request);
+			if( $reponse != false ){
+				$this->api_utils->api_response($reponse, 1);
+			}else{
+				$error = $this->api_utils->create_error_object(500, 'Error en el servidor' ,'Error 01XDC');
+				$this->api_utils->api_response($error, 0, 500);
+			}
+				
+		} catch (Exception $e) {
+			$error = $this->api_utils->create_error_object(500, 'Error en el servidor' ,$e->getMessage());
+			$this->api_utils->api_response($error, 0, 500);
+		}
+	}
+
+
+	public function getMunicipios()
+	{
+		$this->api_utils->validate_method($this->method, ['GET']);
+		try {
+			$mails = $this->municipio->get_municipioCRUD();
+			$this->api_utils->api_response($mails, 1);	
+		} catch (Exception $e) {
+			$error = $this->api_utils->create_error_object(500, 'Error en el servidor' ,$e->getMessage());
+			$this->api_utils->api_response($error, 0, 500);
+		}
+
 	}
 }
