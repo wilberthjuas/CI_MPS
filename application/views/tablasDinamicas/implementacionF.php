@@ -1,7 +1,16 @@
+<div>
+  <?php
+    echo ''.$_SERVER['REQUEST_URI'];    
+  ?>
+</div>
 <script>
+  
   document.addEventListener("DOMContentLoaded", function() {
     // Datatables Responsive
     $("#datatables-reponsive").DataTable({
+      <?php
+        if (str_contains(''.$_SERVER['REQUEST_URI'], 'visor')) {
+      ?>
       ajax: {
         url: '/CI_MPS/api/Visor/getHistoric',
         dataSrc: 'data'
@@ -25,6 +34,9 @@
           { data: 'municipio' },
           { data: 'cobrador' },
         ],
+      <?php
+        }
+      ?>
       responsive: true,
       language:{
           "decimal":        "",
