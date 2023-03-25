@@ -14,7 +14,13 @@
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 	<link href="<?php echo $url?>css/light.css" rel="stylesheet">
+	<!--Jquery table-->
+	<link rel="stylesheet" href="<?php echo $url?>js/table-sortable.css" />
+	<script src="<?php echo $url?>js/jquery.min.js"></script>
 	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
 </head>
 
 <body data-theme="default" data-layout="fluid" data-sidebar-position="left" data-sidebar-behavior="sticky">
@@ -56,11 +62,33 @@
 						</a>
 					</li> 
 				<?php } ?>
+				<?php if( $_SESSION['type'] == "1" ){ ?>
+					<li class="sidebar-item active">
+					<a data-bs-target="#catalogs" data-bs-toggle="collapse" class="sidebar-link collapsed">
+              			<i class="align-middle" data-feather="check-square"></i>
+              			<span class="align-middle">Pagos / Reportes</span>
+            		</a>
+					<ul id="catalogs" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+						<li class="sidebar-item">
+							<a class="sidebar-link" href="<?= $url ?>PagoTransaccion">
+								<i class="align-middle" data-feather="dollar-sign"></i> 
+								<span class="align-middle">Pagos</span>
+							</a>
+						</li>
+						<li class="sidebar-item">
+							<a class="sidebar-link" href="<?= $url ?>PagoTransaccion/reportes">
+								<i class="align-middle" data-feather="dollar-sign"></i> 
+								<span class="align-middle">Reportes</span>
+							</a>
+						</li>
+					</ul>
+				</li> 
+				<?php } ?>
 				<?php if( $_SESSION['type'] == "1" or $_SESSION['type'] == "5"){ ?>
 				
 					<li class="sidebar-item <?= $url.'visor' == current_url() ?  (''):('active') ?>">
 						<a class="sidebar-link" href="<?= $url ?>visor">
-							<i class="align-middle" data-feather="book-open"></i> 
+							<i class="align-middle" data-feather="edit"></i> 
 							<span class="align-middle">Historial</span>
 						</a>
 					</li>
