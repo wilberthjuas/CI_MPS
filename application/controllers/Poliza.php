@@ -74,6 +74,7 @@
  				'vendedor'=> $this->input->post("vendedor"),
  				'cobrador'=> $this->input->post("cobrador"),
  				'plataforma'=> $this->input->post("plataforma"),
+ 				'ocupantes'=> $this->input->post("ocupantes"),
  			);
 
  			$resultSave['id'] = $this->Poliza_Model->savePoliza($save); 
@@ -148,6 +149,7 @@
 			'version'=> $this->input->post("version"),
 			'marca'=> $this->input->post("marca"),
 			'plataforma'=> $this->input->post("plataforma"),
+			'ocupantes'=> $this->input->post("ocupantes"),
  			);
  		$resultUpdate['id'] = $this->Poliza_Model->updatePolicy($update);
  		$this->load->view('header',$data);

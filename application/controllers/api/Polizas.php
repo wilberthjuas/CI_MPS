@@ -28,7 +28,7 @@ class Polizas extends CI_Controller {
 					$polizas["poliza"] = $poliza[0];
 					$polizas["pago"]   = $this->tarjetas->getPayments($poliza[0]['folio']);
 					$polizas["cobertura"] = $this->polizas->getCobertura($poliza[0]['id_cobertura']);
-
+					
 				} else{
 					$polizas= [];	
 				}
@@ -43,5 +43,17 @@ class Polizas extends CI_Controller {
 		}
 	}
 
+
+	public function testMail($value='')
+	{
+		$this->api_utils->validate_method($this->method, ['GET']);
+		try {
+			$poliza = $this->polizas->notifyNewPolicy("");
+			$this->api_utils->api_response($poliza, 1);	
+		} catch (Exception $e) {
+			$error = $this->api_utils->create_error_object(500, 'Error en el servidor' ,$e->getMessage());
+			$this->api_utils->api_response($error, 0, 500);
+		}
+	}
 
 }

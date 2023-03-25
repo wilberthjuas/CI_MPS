@@ -1,7 +1,42 @@
+<div>
+  <?php
+    echo ''.$_SERVER['REQUEST_URI'];    
+  ?>
+</div>
 <script>
+  
   document.addEventListener("DOMContentLoaded", function() {
     // Datatables Responsive
     $("#datatables-reponsive").DataTable({
+      <?php
+        if (str_contains(''.$_SERVER['REQUEST_URI'], 'visor')) {
+      ?>
+      ajax: {
+        url: '/CI_MPS/api/Visor/getHistoric',
+        dataSrc: 'data'
+      },
+      "deferRender": true,
+      columns: [
+          { data: 'folio' },
+          { data: 'nombre' },
+          { data: 'domicilio' },
+          { data: 'telefono' },
+          { data: 'marca' },
+          { data: 'tipo' },
+          { data: 'placas' },
+          { data: 'serie' },
+          { data: 'ano' },
+          { data: 'expedicion' },
+          { data: 'bit' },
+          { data: 'motivo' },
+          { data: 'cobertura' },
+          { data: 'vendedor' },
+          { data: 'municipio' },
+          { data: 'cobrador' },
+        ],
+      <?php
+        }
+      ?>
       responsive: true,
       language:{
           "decimal":        "",

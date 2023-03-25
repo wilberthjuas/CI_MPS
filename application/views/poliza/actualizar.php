@@ -30,6 +30,8 @@ foreach( $result as $row ){
       $vendedor   = $row['vendedor'];
       $cobrador   = $row['cobrador'];
       $plataforma = $row['plataforma'];
+
+      $ocupantes  = $row['ocupantes'];
     
   }
 
@@ -135,17 +137,23 @@ foreach( $result as $row ){
       </div>
     </div>
     <div class="row">
-      <div class="mb-3 col-md-6">
+      <div class="mb-3 col-md-4">
         <label class="form-label">
           <strong>No. serie</strong>
         </label>
         <input autocomplete="off" type="text" name="serie" class="form-control" value="<?php echo $serie; ?>" maxlength="255"  required/>
       </div>
-      <div class="mb-3 col-md-6">
+      <div class="mb-3 col-md-4">
         <label class="form-label">
           <strong>No. motor</strong>
         </label>
         <input autocomplete="off" type="text" name="nmotor" class="form-control" value="<?php echo $motor; ?>" maxlength="255"  required/>
+      </div>
+      <div class="mb-3 col-md-4">
+        <label class="form-label">
+          <strong>Ocupantes</strong>
+        </label>
+        <input autocomplete="off" type="text" name="ocupantes" class="form-control" value="<?php echo $ocupantes; ?>" maxlength="5"  />
       </div>  
     </div>
     <div>

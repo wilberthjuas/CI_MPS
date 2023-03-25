@@ -19,10 +19,17 @@ class Cobertura_Model extends CI_Model{
 
     public function insert_cobertura()
     {    
-        $data = array(
-            'nombre' => $this->input->post('name'),
-            'telefono' => $this->input->post('phone'),
-            'correo' => $this->input->post('email')
+        $data=array(
+            'cobertura' => $this->input->post('cobertura'),
+            'rca' => $this->input->post('rca'),
+            'robo' => $this->input->post('robo'),
+            'dano' => $this->input->post('dano'),
+            'gastos' => $this->input->post('gastos'),
+            'medico' => $this->input->post('medico'),
+            'asistencia' => $this->input->post('asistencia'),
+            'cristal' => $this->input->post('cristal'),
+            'vial' => $this->input->post('vial'),
+            'muerte' => $this->input->post('muerte')
         );
         return $this->db->insert('coberturas', $data);
     }

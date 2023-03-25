@@ -10,10 +10,10 @@ class Poliza_Model extends CI_Model {
 	}
 
 	public function savePoliza($save){
-		$placas = $save['placas'];
-		$serie 	= $save['serie'];
+		$placas = strtoupper($save['placas']);
+		$serie 	= strtoupper($save['serie']);
 		//VALIDAR QUE LAS PLACAS NO EXITAN
-		$query = $this->db->query("SELECT * FROM vehiculo WHERE placas='$placas' AND serie='$serie' ");
+		$query = $this->db->query("SELECT * FROM vehiculo WHERE UPPER(placas)='$placas' AND UPPER(serie)='$serie' ");
 		if( $query->num_rows() == 0 ){	
 		
 			//CLIENTE
@@ -39,8 +39,9 @@ class Poliza_Model extends CI_Model {
 			$this->db->set('color',			$save['color']);
 			$this->db->set('placas',		$placas);
 			$this->db->set('version',		$save['version']);
-			$this->db->set('serie',			$save['serie']);
+			$this->db->set('serie',			$serie);
 			$this->db->set('nmotor',		$save['nmotor']);
+			$this->db->set('ocupantes',		$save['ocupantes']);
 			$this->db->insert('vehiculo');
 			$idVehiculo = $this->db->insert_id();
 
@@ -71,38 +72,27 @@ class Poliza_Model extends CI_Model {
 			for ($i = 1; $i <= 12; $i++) {
 			    $this->db->set('id_poliza',		$idPoliza);
 				$this->db->set('num_pago',		$i);
-				if( $save['plazo'] == 0){
-					$this->db->set('estatus',	'Pagado');
-					$this->db->set('monto',		substr($save['pagomensual'],1));
-					$this->db->set('fecha',		date("Y-m-d"));
-					$this->db->set('recibo',	date("Y-m-d"));
-					$this->db->set('folio',		date("YmdHms"));
-					$this->db->insert('pagos');
-					return $idPoliza;
-				}
-				else if($i == 1){
+				if($i == 1){
 					$this->db->set('estatus',	'Pagado En Tarjeta');
 					$this->db->set('monto',		substr($save['pagomensual'],1));
 					$this->db->set('fecha',		date("Y-m-d"));
 					$this->db->set('recibo',	date("Y-m-d"));
 					$this->db->set('folio',		date("YmdHms"));
 				}
-				else if( $i <= ($save['plazo'] + 1)){
-					$this->db->set('estatus',	'Pagado');
-					$this->db->set('monto',		substr($save['pagomensual'],1));
-					$this->db->set('fecha',		date("Y-m-d"));
-					$this->db->set('recibo',	date("Y-m-d"));
-					$this->db->set('folio',		date("YmdHms"));
-
-					
-				}else{
+				else{
 					$this->db->set('estatus',	'Pendiente');	
 				}
 				
 				$this->db->insert('pagos');
 			}
+			$save['idPoliza'] = $idPoliza;
+			$number = $this->notifyNewPolicy($save);
 
-			return $idPoliza;
+			if($number){
+				return $idPoliza;	
+			}
+			return false;
+			
 
 		}
 		else{
@@ -128,6 +118,7 @@ class Poliza_Model extends CI_Model {
 	            v.version,
 	            v.serie,
 	            v.nmotor,
+	            v.ocupantes,
 	            p.expedicion,
 	            p.vigencia,
 	            p.ano2,
@@ -221,6 +212,7 @@ class Poliza_Model extends CI_Model {
 		$this->db->set('version',$update['version']);
 		$this->db->set('serie',$update['serie']);
 		$this->db->set('nmotor',$update['nmotor']);
+		$this->db->set('ocupantes',$update['ocupantes']);
 		$this->db->where('id', $poliza->id_vehiculo);
 		$this->db->update('vehiculo');
 
@@ -862,6 +854,37 @@ class Poliza_Model extends CI_Model {
 	}
 
 
+	public function notifyNewPolicy($save){
+		$query = $this->db->query("SELECT * FROM correos_notificacion WHERE tipo='POLIZA' ");
+		$notifiaciones = $query->result();
+		//$msg = "";
+		foreach( $notifiaciones  as $not){
+			try {
+	            $destinatario = $not->correo; 
+	            $asunto = "REGISTRO NUEVA POLIZA #".$save['idPoliza']; 
+	            $cuerpo = ' 
+	            <html> 
+	                <head> 
+	                   <title></title> 
+	                </head> 
+	                <body> 
+	                    <p> 
+	                        El usuario '.$save['captura'].' registro la poliza #'.$save['idPoliza'].' a nombre de '.$save['nombre'].'.<br>
+	                        Para revisar los detalles de la poliza consulte <a href="https://multiplataformaysimilaresmps.com.mx/Visor/visorPolizaWeb/'.$save['idPoliza'].'">Aqui</a>
+	                    </p> 
+	                </body> 
+	            </html> '; 
+	            $headers = "MIME-Version: 1.0\r\n"; 
+	            $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
+	            $headers .= "<noreply@noreply.com>\r\n"; 
+	            mail($destinatario,$asunto,$cuerpo,$headers);     
+	        } catch (Exception $e) {
+	            throw new Exception('Error al enviar el mail', 1);
+	        }
+	        //msg = $msg.$not->correo;
+		}
+		return true;
+	}
 }
 
 /*

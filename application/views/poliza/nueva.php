@@ -106,17 +106,23 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="mb-3 col-md-6">
+			<div class="mb-3 col-md-4">
 				<label class="form-label">
 					<strong>No. serie</strong>
 				</label>
 				<input autocomplete="off" type="text" name="serie" class="form-control" maxlength="255" placeholder="Ingrese número de serie" required/>
 			</div>
-			<div class="mb-3 col-md-6">
+			<div class="mb-3 col-md-4">
 				<label class="form-label">
 					<strong>No. motor</strong>
 				</label>
 				<input autocomplete="off" type="text" name="nmotor" class="form-control" maxlength="255" placeholder="Ingrese número de motor" required/>
+			</div>
+			<div class="mb-3 col-md-4">
+				<label class="form-label">
+					<strong>Ocupantes</strong>
+				</label>
+				<input autocomplete="off" type="text" name="ocupantes" class="form-control" maxlength="5" placeholder="Ingrese número de ocupantes" />
 			</div>	
 		</div>
 		<div>
