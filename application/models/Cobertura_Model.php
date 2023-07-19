@@ -68,4 +68,15 @@ class Cobertura_Model extends CI_Model{
     {
         return $this->db->delete('coberturas', array('id' => $id));
     }
+
+
+    public function getCoberturasDesc(){
+        try{
+            $query = $this->db->query("SELECT id, cobertura FROM coberturas ");
+            return $query->result();
+        }
+        catch( Exception $e){
+            return false;
+        }
+    }
 }

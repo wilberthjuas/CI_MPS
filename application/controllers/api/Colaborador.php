@@ -10,6 +10,9 @@ class Colaborador extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->model('Colaborador_Model', 'colaborador');
 		$this->load->model('Municipio_Model', 'municipio');
+		$this->load->model('Cobertura_Model', 'cobertura');
+		$this->load->model('Cobrador_Model', 'cobradores');
+		$this->load->model('Plataforma_Model', 'plataforma');
 		$this->load->model('util/Api_Utils_Model', 'api_utils');
 		$this->method = $this->input->server('REQUEST_METHOD');
 	}
@@ -107,4 +110,54 @@ class Colaborador extends CI_Controller {
 		}
 
 	}
+
+
+	public function getCoberturas()
+	{
+		$this->api_utils->validate_method($this->method, ['GET']);
+		try {
+			$mails = $this->cobertura->getCoberturasDesc();
+			$this->api_utils->api_response($mails, 1);	
+		} catch (Exception $e) {
+			$error = $this->api_utils->create_error_object(500, 'Error en el servidor' ,$e->getMessage());
+			$this->api_utils->api_response($error, 0, 500);
+		}
+
+	}
+
+	public function getCobradores()
+	{
+		$this->api_utils->validate_method($this->method, ['GET']);
+		try {
+			$mails = $this->cobradores->get_cobradorCRUD();
+			$this->api_utils->api_response($mails, 1);	
+		} catch (Exception $e) {
+			$error = $this->api_utils->create_error_object(500, 'Error en el servidor' ,$e->getMessage());
+			$this->api_utils->api_response($error, 0, 500);
+		}
+	}
+
+
+	public function getPlataformas()
+	{
+		$this->api_utils->validate_method($this->method, ['GET']);
+		try {
+			$mails = $this->plataforma->get_plataformaCRUD();
+			$this->api_utils->api_response($mails, 1);	
+		} catch (Exception $e) {
+			$error = $this->api_utils->create_error_object(500, 'Error en el servidor' ,$e->getMessage());
+			$this->api_utils->api_response($error, 0, 500);
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
 }

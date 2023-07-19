@@ -38,12 +38,6 @@
 				<li class="sidebar-header">
 					Bienvenido 
 				</li>
-				<li class="sidebar-item <?= $url.'mundialCRUD' == current_url() ?  (''):('active') ?>">
-					<a class="sidebar-link" href="<?= $url ?>mundialCRUD">
-						<i class="align-middle" data-feather="file-text"></i> 
-						<span class="align-middle">Mundial Qatar</span>
-					</a>
-				</li>
 				<?php if( $_SESSION['type'] == "1" or $_SESSION['type'] == "3" or $_SESSION['type'] == "12"  ){ ?>
 					<li class="sidebar-item <?= $url.'Poliza' == current_url() ?  (''):('active') ?>">
 						<a class="sidebar-link" href="<?= $url ?>Poliza">
@@ -90,7 +84,7 @@
 					</ul>
 				</li> 
 				<?php } ?>
-				<?php if( $_SESSION['type'] == "1" or $_SESSION['type'] == "5"){ ?>
+				<?php if( $_SESSION['type'] == "1" or $_SESSION['type'] == "5" or $_SESSION['type'] == "15"){ ?>
 				
 					<li class="sidebar-item <?= $url.'visor' == current_url() ?  (''):('active') ?>">
 						<a class="sidebar-link" href="<?= $url ?>visor">
@@ -115,7 +109,7 @@
 						</a>
 					</li>
 				<?php } ?>
-				<?php if( $_SESSION['type'] == "1" or $_SESSION['type'] == "3" or $_SESSION['type'] == "12"){ ?>
+				<?php if( $_SESSION['type'] == "1" or $_SESSION['type'] == "3" or $_SESSION['type'] == "12" or $_SESSION['type'] == "15"){ ?>
 				<li class="sidebar-item active">
 					<a class="sidebar-link" href="<?= $url ?>Visor/visorimpresion">
 						<i class="align-middle" data-feather="eye"></i>  
@@ -123,7 +117,7 @@
 					</a>
 				</li>
 				<?php } ?>
-				<?php if( $_SESSION['type'] == "1" or $_SESSION['type'] == "2" or $_SESSION['type'] == "3" or $_SESSION['type'] == "5"){ ?>
+				<?php if( $_SESSION['type'] == "1" or $_SESSION['type'] == "2" or $_SESSION['type'] == "3" or $_SESSION['type'] == "5" or $_SESSION['type'] == "15"){ ?>
 					<li class="sidebar-item <?= $url.'gruas' == current_url() ?  (''):('active') ?>">
 						<a class="sidebar-link" href="<?= $url ?>gruas">
 							<i class="align-middle" data-feather="phone"></i> 

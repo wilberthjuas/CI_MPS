@@ -103,7 +103,30 @@ class Siniestro_Model extends CI_Model {
 
     public function sendWhatsApp($id,$save,$telefono){
 
+        $url = "https://fcm.googleapis.com/fcm/send";
+
+        $headers = array( "Authorization: key=AAAAqLX08o8:APA91bHrsOiB4fy-i6rMoHucL8bv6iQqXsULm0EYLrhW2tdQSKGYrA5jC2EBlbuwO0zggPmSWYh2w6tcKDoRPrJHvEQ3uAxUQ-zLQs0zqjfVxwZHA-Vod0q8VCV9yzZDp5dwL7v2yAfw","Content-Type: application/json");
+
         $driverPhone = "";
+        if(property_exists($save, 'telefono'))
+        {
+            $driverPhone = $save->{'telefono'};
+        }else {
+            $driverPhone = "N/A";
+        }
+
+        $notification= new stdClass();
+        $notification->title = "SINIESTRO #1000$id";
+        $notification->body = "SINIESTRO #1000$id con poliza #".$save->{'poliza'}." reporta un siniestro en la ubicacion:".$save->{'direccion'}.", El numero de contacto asiociado a esa poliza es el siguiente: ".$telefono.", El numero del conductor es el siguiente: ".$driverPhone;
+
+        $obj0 = new stdClass();
+        $obj0->notification = $notification;
+        $obj0->direct_book_ok = true;
+        $obj0->to = "/topics/RolAdmin";
+
+        $res = $this->call($url,"POST",json_encode($obj0),$headers);
+        return $res;
+        /*$driverPhone = "";
         if(property_exists($save, 'telefono'))
         {
             $driverPhone = $save->{'telefono'};
@@ -170,7 +193,7 @@ class Siniestro_Model extends CI_Model {
 
             $res = $this->call($url,"POST",json_encode($obj2),$customHeaders);
             $result = $result.$res;
-        }
+        }*/
         
         return $result;
     }
