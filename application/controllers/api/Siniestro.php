@@ -48,5 +48,16 @@ class Siniestro extends CI_Controller {
 		$response = $this->siniestro->initializeWhats();
 	}
 
+	public function notifyTest(){
+		$this->api_utils->validate_method($this->method, ['GET']);
+		try {
+			$response = $this->siniestro->testNot();
+			$this->api_utils->api_response($response, 1);	
+		} catch (Exception $e) {
+			$error = $this->api_utils->create_error_object(500, 'Error en el servidor' ,$e->getMessage());
+			$this->api_utils->api_response($error, 0, 500);
+		}
+	}
+
 
 }
